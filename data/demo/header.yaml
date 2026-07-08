@@ -1,5 +1,6 @@
 type: header
 name: 张三
+avatar: header.c65cd8a.png
 contact:
   phone: 13800000000
   email: san.zhang@example.com
