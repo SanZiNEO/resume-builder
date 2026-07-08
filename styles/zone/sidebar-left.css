@@ -1,0 +1,22 @@
+/* ── 左侧栏：深色背景，右侧主内容 ── */
+.page { padding: 0; display: grid; grid-template-columns: 1fr 2.4fr; }
+
+.left {
+  display: block;
+  background: #254665;
+  color: #fff;
+  padding: 18px;
+}
+.right {
+  display: block;
+  padding: 18px;
+}
+
+.left .section-title { color: rgba(255,255,255,0.6); }
+.left .entry { background: rgba(255,255,255,0.08); border-left-color: rgba(255,255,255,0.2); }
+.left .entry-title { color: #fff; }
+.left .entry-meta { color: rgba(255,255,255,0.7); background: transparent; padding: 0; }
+.left .entry-sub { color: rgba(255,255,255,0.7); }
+.left .entry-body li { color: rgba(255,255,255,0.85); }
+.left .entry-body li::before { background: rgba(255,255,255,0.5); }
+.left .inline-item { color: rgba(255,255,255,0.9); }

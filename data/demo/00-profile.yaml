@@ -1,0 +1,22 @@
+type: entry-list
+zone: sidebar
+order: 1
+title: Info
+items:
+  - blocks:
+      - heading: 张三
+        heading_style: name-lg
+      - heading: 基本信息
+        body:
+          - 男 · 32岁
+          - 上海大学 · 计算机科学与技术 · 本科
+      - heading: 求职方向
+        tags: [前端架构师, 技术负责人, 全栈, 性能优化]
+        layout: horizontal
+        body:
+          - 工作地点：上海 / 杭州
+          - 状态：在职-看机会
+          - 薪资：35k-50k
+
+reference:
+  context: "示例人物：张三，高级前端工程师"

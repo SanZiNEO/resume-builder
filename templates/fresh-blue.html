@@ -5,50 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <style>
-  @page { size: A4; margin: 20mm 18mm; }
-  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
-  :root { --primary: #6c85a1; --primary-light: #f0f3f7; --primary-mid: #d0dae6; --text: #3d3d3d; --text-light: #777; }
-  body { font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif; background: #e8e8e8; font-size: 13px; line-height: 1.5; padding: 20px 0; color: var(--text); }
-  .page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 20mm 18mm; }
-  .header { margin-bottom: 20px; background: var(--primary); color: #fff; padding: 14px 18px; border-radius: 0 30px 30px 0; margin-left: -18mm; padding-left: calc(18mm + 14px); }
-  .header h1 { font-size: 26px; font-weight: 600; letter-spacing: 1px; }
-  .header .info-line { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
-  .header .target { font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 500; margin-top: 3px; }
-
-  .header-with-avatar { display: flex; align-items: center; gap: 20px; }
-  .header-with-avatar .header-text { flex: 1; }
-  .header-with-avatar .header-avatar { flex-shrink: 0; }
-  .avatar-img { width: 96px; height: 96px; object-fit: cover; display: block; }
-  .avatar-img-round { border-radius: 50%; border: 3px solid rgba(255,255,255,0.3); }
-  .avatar-img-square { border-radius: 8px; border: 3px solid rgba(255,255,255,0.3); }
-  .section { margin-bottom: 14px; }
-  .section-title { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--primary-mid); }
-  .entry { margin-bottom: 8px; padding-left: 4px; }
-  .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-  .entry-title { font-size: 13px; font-weight: 600; color: #222; }
-  .entry-meta { font-size: 11.5px; color: var(--primary); font-weight: 500; flex-shrink: 0; padding-left: 8px; white-space: nowrap; }
-  .entry-sub { font-size: 12px; color: var(--text-light); margin-bottom: 3px; display: flex; flex-wrap: wrap; gap: 4px 8px; }
-  .entry-body { margin-top: 2px; }
-  .entry-body ul { list-style: none; padding-left: 0; }
-  .entry-body li { position: relative; padding-left: 14px; margin-bottom: 2px; color: var(--text-light); font-size: 12px; }
-  .entry-body li::before { content: '▸'; position: absolute; left: 0; color: var(--primary); }
-  .entry-body li strong { color: var(--text); font-weight: 600; }
-  .two-col { display: flex; gap: 14px; margin-bottom: 14px; }
-  .two-col > div { flex: 1; }
-  .edu-entry { margin-bottom: 8px; }
-  .edu-entry .entry-header { margin-bottom: 4px; }
-  .skills-wrap { display: flex; flex-wrap: wrap; gap: 3px 0; }
-  .skills-wrap .item { font-size: 12px; color: var(--text-light); margin-right: 18px; }
-  .skills-wrap .item strong { color: var(--text); }
-  .footer-deco { margin-top: 20px; text-align: center; font-size: 8px; color: var(--primary-mid); letter-spacing: 4px; }
-  @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; padding: 0; width: auto; min-height: auto; } }
+{styles}
 </style>
 </head>
 <body>
 <div class="page">
-{header}
-{sections}
+{zone:main}
 {footer}
 </div>
 </body>

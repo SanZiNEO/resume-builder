@@ -1,0 +1,14 @@
+/* ── 卡片 ── */
+.entry {
+  background: var(--card);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 7px;
+  border-left: 3px solid var(--primary-mid);
+}
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}

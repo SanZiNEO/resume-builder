@@ -169,7 +169,139 @@ build.py 启动时：
 
 ---
 
-## 6. 迁移对照表
+## 6. 理想架构（v2 方向）
+
+当前协议仍存在硬编码（header 的特殊处理、two-column 的兼容代码）。
+v2 应当消除所有特例，让协议完全通用。
+
+### 6.1 核心原则
+
+> **模板声明区域，YAML 指定归属，builder 按规则分配。**
+
+不再有 `type: header`、`render_header_info_line()` 等特例。
+个人信息跟项目经历一样是普通数据，只是摆放区域不同。
+
+### 6.2 层级模型
+
+```
+纸张（Page）
+  └── 内容区域（Content Area）
+        ├── 区域 A（Zone: sidebar）
+        │     ├── 板块 1（Section）    ← YAML 文件
+        │     │     ├── 卡片 1（Item）
+        │     │     │     ├── 字段（heading / meta / body ...）
+        │     │     │     └── layout: vertical | horizontal
+        │     │     └── 卡片 2
+        │     └── 板块 2
+        └── 区域 B（Zone: main）
+              └── ...
+```
+
+### 6.3 模板声明区域
+
+模板在 HTML 中用 `{zone:xxx}` 占位符标记区域，builder 扫描模板发现所有 zone 占位符：
+
+```html
+<!-- two-column.html：双栏布局，模板自己声明两个区域 -->
+<div class="page">
+  <div class="left">
+    {zone:sidebar}
+  </div>
+  <div class="right">
+    {zone:main}
+  </div>
+</div>
+```
+
+```html
+<!-- default.html：单栏布局，只有一个主区域 -->
+<div class="page">
+  {zone:main}
+</div>
+```
+
+builder 扫描模板，发现 `{zone:sidebar}` 和 `{zone:main}` → 把带 `zone: sidebar` 的 YAML 塞进 `{zone:sidebar}`，其余塞进 `{zone:main}`。
+
+### 6.4 YAML 指定区域
+
+每个 YAML 文件可选的 `zone` 字段告诉 builder 去哪个区域：
+
+```yaml
+# 个人基本信息 → 侧边栏
+type: entry-list
+zone: sidebar
+title: Personal Info
+items:
+  - heading: 杨泽易
+    layout: horizontal
+    fields: [13800000000, email@example.com, 上海, 22岁]
+  - heading: 求职意向
+    tags: [数据分析, 游戏策划, 面议]
+```
+
+```yaml
+# 项目经历 → 主区域
+type: entry-list
+title: Projects
+# 没有 zone，默认去 main
+items:
+  - heading: 游戏互动产品
+    body:
+      - "......"
+```
+
+区域分配规则：
+1. 如果模板没有 `{zone:sidebar}`，即使 YAML 写了 `zone: sidebar` 也归入 `main`
+2. 如果 YAML 没写 `zone`，归入 `main`
+3. 模板可以有任意数量的区域（`sidebar`、`main`、`header`、`footer`、`left`、`right`...）
+
+### 6.5 布局模式（`layout`）
+
+每个 item 可以指定内部布局模式：
+
+| 模式 | 含义 | 适用 |
+|------|------|------|
+| `vertical`（默认） | 纵向排列 | 项目要点、长文本 bullets |
+| `horizontal` | 横向排列，自动换行 | 联系方式、标签、短字段列表 |
+
+```yaml
+type: entry-list
+title: Personal Info
+items:
+  - heading: 杨泽易
+    layout: horizontal
+    fields:
+      - 13800000000
+      - email@example.com
+      - 上海
+      - 22岁
+```
+
+`layout: horizontal` 的项目，`body` 或 `fields` 中的每一项渲染为内联元素（span），自动换行。
+`layout: vertical`（默认）渲染为列表项（li）。
+
+### 6.6 消除特例对照
+
+| 当前特例 | v2 方案 |
+|---------|--------|
+| `type: header` 专属渲染 | 用 `entry-list` + `zone: sidebar` + `layout: horizontal` 替代 |
+| `target/job_status/max_salary` 硬编码字段 | 统一为 `tags` 或 `fields`，渲染器遍历输出 |
+| `contact.phone/email/city` 硬编码 | 用 `layout: horizontal` 的 `fields` 列表 |
+| `two-column` 兼容代码 | 模板声明 `{zone:sidebar}` + `{zone:main}`，builder 通用处理 |
+| `render_header_info_line()` 重复函数 | 合并到通用 `entry-list` 渲染器 |
+| `render_header_target_line()` 重复函数 | 同上 |
+
+### 6.7 收益
+
+- build.py 只需处理 `{zone:xxx}` 占位符分配，不再关心具体字段名
+- 所有特殊字段变成普通数据，渲染器不关心字段名
+- 加新模板 = 加 HTML 文件 + 声明 zone 占位符，不需要改 build.py
+- 模板可以自由组合布局（左栏/右栏/上下栏/三栏），协议不受限
+- 个人信息换个区域放 = 改 YAML 里的 `zone` 值，不动模板
+
+---
+
+## 7. 迁移对照表
 
 | 现有文件 | 新 type | 改动 |
 |---------|---------|------|

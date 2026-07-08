@@ -1,4 +1,6 @@
 type: grouped-list
+zone: sidebar
+order: 2
 title: Skills
 groups:
   - name: 前端基础

@@ -1,0 +1,5 @@
+/* ── 横向排列，自动换行 ── */
+.entry-body-inline { display: flex; flex-wrap: wrap; }
+.inline-item { color: var(--text-light); font-size: 12px; white-space: nowrap; }
+.inline-item { margin-right: 10px; }
+.inline-item:last-child { margin-right: 0; }
