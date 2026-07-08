@@ -1,0 +1,2 @@
+/* ── 圆角卡片：左侧蓝线、圆角、浅灰底 ── */
+.entry { background: var(--card, #fafbfd); border-radius: 6px; padding: 10px 14px; margin-bottom: 7px; border-left: 3px solid var(--primary-mid, #bfdbfe); }
