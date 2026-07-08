@@ -19,6 +19,11 @@
   .header .info-line { font-size: 12.5px; color: var(--text-light); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
   .header .target { font-size: 13px; color: var(--primary); font-weight: 500; margin-top: 6px; }
 
+  .header-with-avatar { display: flex; align-items: center; gap: 20px; }
+  .header-with-avatar .header-text { flex: 1; }
+  .header-with-avatar .header-avatar { flex-shrink: 0; }
+  .avatar-img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; }
+
   .section { margin-bottom: 16px; }
   .section-title { font-size: 12px; font-weight: 700; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
   .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--primary-mid), transparent); }
