@@ -1,0 +1,17 @@
+type: grouped-list
+title: Skills
+groups:
+  - name: 前端基础
+    items: [HTML5, CSS3, JavaScript (ES6+), TypeScript, 语义化HTML, CSS动画]
+  - name: 框架与库
+    items: [React 18, Vue 3, Next.js, Nuxt, Redux, Pinia, React Query]
+  - name: 工程化与构建
+    items: [Webpack 5, Vite, Turbopack, Rollup, Babel, ESLint, Prettier]
+  - name: 跨端与移动
+    items: [React Native, Flutter, Taro, uni-app, PWA, Electron]
+  - name: 性能与质量
+    items: [Lighthouse, Chrome DevTools, Sentry, 性能监控, 自动化测试]
+  - name: 后端与工具
+    items: [Node.js, Express, NestJS, MySQL, Redis, Docker, Nginx]
+  - name: 团队与协作
+    items: [Code Review, 技术方案设计, 跨部门协作, 技术分享, 导师制]
