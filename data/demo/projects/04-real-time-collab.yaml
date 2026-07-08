@@ -1,0 +1,11 @@
+type: entry-list
+title: Projects
+heading: 实时协同编辑系统（毕业设计）
+meta: 2017.01 – 2017.06
+sub: 独立开发
+body:
+  - "基于 WebRTC + OT 算法（Operational Transformation）实现的多人实时文档协同编辑系统"
+  - "前端使用 React + Draft.js + WebSocket 实现富文本编辑器和实时光标同步"
+  - "后端 Node.js + Socket.IO 实现 OT 算法的服务端冲突解决和操作序列管理"
+  - "支持多人同时编辑同一文档，冲突解决延迟低于 100ms，支持操作回退和历史版本回溯"
+  - "获院级优秀毕业论文，后续作为公司内部协作工具的原型参考"

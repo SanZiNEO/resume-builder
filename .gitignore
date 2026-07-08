@@ -1,0 +1,18 @@
+# 输出文件
+output/*.html
+output/*.pdf
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/

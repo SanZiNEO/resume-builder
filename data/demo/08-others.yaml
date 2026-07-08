@@ -1,0 +1,20 @@
+type: entry-list
+title: Others
+items:
+  - heading: 技术博客
+    body:
+      - "坚持前端技术写作 6 年，累计发布 80+ 篇文章，全网阅读量 50 万+"
+      - "多篇被掘金、SegmentFault 推荐至首页，单篇最高阅读 8 万+"
+  - heading: 开源贡献
+    body:
+      - "维护 3 个个人开源项目，GitHub 累计 2000+ star"
+      - "向 Vue.js 核心仓库提交过文档和 bug fix PR（vuejs/core #8472）"
+      - "向 ant-design 提交过 Table 组件性能优化 PR，被合入 3.x 版本"
+  - heading: 技术大会
+    body:
+      - "2024 GMTC 全球前端技术大会 演讲嘉宾：《大型微前端架构的性能治理实践》"
+      - "2023 中国前端开发者大会 JSConf China 闪电演讲"
+  - heading: 语言能力
+    body:
+      - "中文：母语"
+      - "英语：流利读写，可独立阅读英文技术文档和技术会议交流"
