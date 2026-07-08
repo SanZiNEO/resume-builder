@@ -191,6 +191,8 @@ def render_avatar(data: dict, person_dir: str | None = None) -> str:
     avatar_path = data.get('avatar', '')
     if not avatar_path or not person_dir:
         return ''
+    avatar_style = data.get('avatar_style', 'round')
+    css_class = 'avatar-img-round' if avatar_style == 'round' else 'avatar-img-square'
     full_path = os.path.join(person_dir, avatar_path) if not os.path.isabs(avatar_path) else avatar_path
     if not os.path.exists(full_path):
         return ''
@@ -201,7 +203,7 @@ def render_avatar(data: dict, person_dir: str | None = None) -> str:
         mime_type = ext_map.get(os.path.splitext(full_path)[1].lower(), 'image/png')
     with open(full_path, 'rb') as f:
         b64 = base64.b64encode(f.read()).decode('ascii')
-    return f'<img src="data:{mime_type};base64,{b64}" class="avatar-img" alt="avatar">'
+    return f'<img src="data:{mime_type};base64,{b64}" class="avatar-img {css_class}" alt="avatar">'
 
 
 def render_header(data: dict, avatar_html: str = '') -> str:
@@ -450,8 +452,6 @@ def main():
 
     output_dir = os.path.join(BASE, 'output')
     os.makedirs(output_dir, exist_ok=True)
-    ts = datetime.now().strftime('%Y%m%d-%H%M')
-    output_path = os.path.join(output_dir, f'{person}-{ts}.html')
 
     person_dir = os.path.join(data_dir, person)
 
@@ -474,6 +474,9 @@ def main():
         else:
             print(f'\u6a21\u677f\u5e93: {", ".join(available)}')
             return
+
+    ts = datetime.now().strftime('%Y%m%d-%H%M')
+    output_path = os.path.join(output_dir, f'{person}-{ts}.html')
 
     template_path = os.path.join(BASE, 'templates', tmpl_name + '.html')
     if not os.path.exists(template_path):
