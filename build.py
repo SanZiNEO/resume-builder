@@ -13,6 +13,8 @@ import os
 import re
 import glob
 import sys
+import base64
+import mimetypes
 from datetime import datetime
 
 
@@ -184,7 +186,25 @@ SECTION_TYPES = {'header', 'block', 'entry-list', 'grouped-list'}
 
 # ── 渲染引擎 ────────────────────────────────────────────────
 
-def render_header(data: dict) -> str:
+def render_avatar(data: dict, person_dir: str | None = None) -> str:
+    """读取头像图片并生成 base64 内嵌的 img 标签"""
+    avatar_path = data.get('avatar', '')
+    if not avatar_path or not person_dir:
+        return ''
+    full_path = os.path.join(person_dir, avatar_path) if not os.path.isabs(avatar_path) else avatar_path
+    if not os.path.exists(full_path):
+        return ''
+    mime_type, _ = mimetypes.guess_type(full_path)
+    if not mime_type:
+        ext_map = {'.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+                   '.png': 'image/png', '.gif': 'image/gif', '.webp': 'image/webp'}
+        mime_type = ext_map.get(os.path.splitext(full_path)[1].lower(), 'image/png')
+    with open(full_path, 'rb') as f:
+        b64 = base64.b64encode(f.read()).decode('ascii')
+    return f'<img src="data:{mime_type};base64,{b64}" class="avatar-img" alt="avatar">'
+
+
+def render_header(data: dict, avatar_html: str = '') -> str:
     """type: header → 页面头部"""
     c = data.get('contact', {})
     parts = []
@@ -205,6 +225,16 @@ def render_header(data: dict) -> str:
     if data.get('max_salary'): target_parts.append(f'\u671f\u671b {data["max_salary"]}')
     sep = ' \u00b7 '
     target_line = f'<div class="target">{sep.join(target_parts)}</div>' if target_parts else ''
+
+    if avatar_html:
+        return '''<div class="header header-with-avatar">
+  <div class="header-text">
+    <h1>{name}</h1>
+    <div class="info-line">{info}</div>
+    {target}
+  </div>
+  <div class="header-avatar">{avatar}</div>
+</div>'''.format(name=data.get('name', ''), info=info, target=target_line, avatar=avatar_html)
 
     return '''<div class="header">
   <h1>{name}</h1>
@@ -454,7 +484,8 @@ def main():
     sections_data = discover_sections(person_dir)
 
     # ── 渲染 ──
-    header_html = render_header(header_data)
+    avatar_html = render_avatar(header_data, person_dir)
+    header_html = render_header(header_data, avatar_html)
 
     # 按文件名顺序拼接 sections
     sections_html_parts = []
@@ -472,6 +503,7 @@ def main():
         template = f.read()
 
     template = template.replace('{title}', header_data.get('name', '\u7b80\u5386'))
+    template = template.replace('{avatar}', avatar_html)
     template = template.replace('{header}', header_html)
     template = template.replace('{sections}', sections_html)
     template = template.replace('{footer}', footer_html)

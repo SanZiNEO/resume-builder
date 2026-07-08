@@ -30,6 +30,7 @@
 ```yaml
 type: header
 name: 杨泽易
+avatar: avatar.jpg          # 可选，头像图片路径（相对于人物目录）
 contact:
   phone:
   email:
@@ -42,6 +43,8 @@ max_salary: 面议
 ```
 
 所有字段可选，渲染时跳过空字段。
+`avatar` 指定头像图片路径，build 自动读取并 base64 内嵌到 HTML，
+支持 jpg/png/gif/webp 格式。单栏模板中头像靠右，双栏模板中头像在左侧栏居中。
 
 ### 2.2 `type: block`
 

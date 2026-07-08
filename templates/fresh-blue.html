@@ -14,6 +14,11 @@
   .header h1 { font-size: 26px; font-weight: 600; letter-spacing: 1px; }
   .header .info-line { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
   .header .target { font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 500; margin-top: 3px; }
+
+  .header-with-avatar { display: flex; align-items: center; gap: 20px; }
+  .header-with-avatar .header-text { flex: 1; }
+  .header-with-avatar .header-avatar { flex-shrink: 0; }
+  .avatar-img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; border: 3px solid rgba(255,255,255,0.3); }
   .section { margin-bottom: 14px; }
   .section-title { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
   .section-title::after { content: ''; flex: 1; height: 1px; background: var(--primary-mid); }
