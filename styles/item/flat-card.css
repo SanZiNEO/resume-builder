@@ -1,0 +1,2 @@
+/* ── 扁平卡片：无背景无边框无内边距 ── */
+.entry.flat-card { background: transparent; border: none; padding: 0; margin: 0; }

@@ -1,0 +1,2 @@
+/* ── 徽章式元信息：浅底圆角标签 ── */
+.entry-meta { background: var(--primary-light, #eef2ff); padding: 1px 8px; border-radius: 3px; white-space: nowrap; color: var(--primary, #2563EB); }

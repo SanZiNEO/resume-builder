@@ -1,57 +1,20 @@
 /* ── 标题 ── */
-.entry-title { font-size: 13px; font-weight: 600; color: #0f172a; }
+.entry-title { font-size: 13px; font-weight: 600; }
 
 /* ── 元信息 ── */
-.entry-meta {
-  font-size: 11px;
-  color: var(--primary);
-  font-weight: 500;
-  flex-shrink: 0;
-  padding-left: 8px;
-  background: var(--primary-light);
-  padding: 1px 8px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
+.entry-meta { font-size: 11.5px; }
 
 /* ── 副标题与标签 ── */
-.entry-sub {
-  font-size: 12px;
-  color: var(--text-light);
-  margin-bottom: 3px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-}
-.tag { font-size: 11px; color: var(--primary); }
-.tag::before { content: '·'; margin-right: 4px; }
-.tag:first-child::before { content: none; }
+.entry-sub { font-size: 12px; margin-bottom: 3px; }
+.tag { font-size: 11px; }
 
 /* ── 正文 ── */
 .entry-body { margin-top: 2px; }
-.entry-body ul { list-style: none; padding-left: 0; }
-.entry-body li {
-  position: relative;
-  padding-left: 14px;
-  margin-bottom: 2px;
-  color: var(--text-light);
-  font-size: 12px;
-}
-.entry-body li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--primary);
-  opacity: 0.45;
-}
-.entry-body li strong { color: var(--text); font-weight: 600; }
+.entry-body ul { padding-left: 16px; }
+.entry-body li { margin-bottom: 1px; font-size: 12px; }
 
 /* ── 通用文本 ── */
-.block-text { color: var(--text-light); font-size: 12.5px; line-height: 1.6; }
+.block-text { font-size: 12.5px; line-height: 1.6; }
 
 /* ── 链接 ── */
 .entry-link { text-decoration: none; color: inherit; }

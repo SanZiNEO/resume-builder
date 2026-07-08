@@ -1,0 +1,11 @@
+/* ── 深色区域：深海军蓝底白字 ── */
+.left { background: #254665; color: #fff; }
+.left .section-title { color: rgba(255,255,255,0.6); }
+.left .entry { background: rgba(255,255,255,0.08); }
+.left .entry-title { color: #fff; }
+.left .entry-meta { color: rgba(255,255,255,0.7); background: transparent; padding: 0; }
+.left .entry-sub { color: rgba(255,255,255,0.7); }
+.left .entry-body li { color: rgba(255,255,255,0.85); }
+.left .entry-body li::before { background: rgba(255,255,255,0.5); }
+.left .inline-item { color: rgba(255,255,255,0.9); }
+.left .block-avatar-wrap { margin-bottom: 14px; }

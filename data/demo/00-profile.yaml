@@ -2,11 +2,11 @@ type: entry-list
 zone: sidebar
 order: 1
 title: Info
-section_style: items-row
+section_style: inline-row
 items:
   - blocks:
       - heading: 张三
-        heading_style: name-lg
+        heading_style: large-heading
       - heading: 基本信息
         body:
           - 男 · 32岁

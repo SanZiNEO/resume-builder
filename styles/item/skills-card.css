@@ -1,0 +1,2 @@
+/* ── 技能卡片：左侧蓝线浅灰底 ── */
+.skills-wrap { background: var(--card, #fafbfd); border-radius: 6px; padding: 10px 14px; border-left: 3px solid var(--primary-mid, #bfdbfe); display: flex; flex-wrap: wrap; gap: 3px 0; }
