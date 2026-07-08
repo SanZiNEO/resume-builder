@@ -1,34 +1,26 @@
 # Changelog
 
-## [0.2.0] - 2026-07-08
+## [0.3.0] - 2026-07-09
 
 ### Added
-- 5 套 HTML 模板（来自 wangyafu/resume-skills）存入 `_preview/`
-- 修复所有模板：`@page { size: A4 }`、`@media print`、内嵌 CSS、去外部依赖
-- 浏览器预览样式：灰色背景 + 纸张居中 + 阴影
-- 分页策略：不限制分页，浏览器自动处理
-- 更新规划文档：记录模板决策、评估记录、不做清单
-- `docs/PLAN.md` 完整更新
+- 内容协议（4 种 type：block / entry-list / grouped-list / header）
+- blocks 多段落结构（一个卡片内多个独立段落）
+- zone 区域系统（模板声明 `{zone:xxx}`，YAML 指定 `zone`）
+- 样式库 `styles/`，按层级分类（content-area / zone / section / item / field / layout）
+- YAML 样式引用（`section_style` / `item_style` / `heading_style` / `body_style`）
+- 模板通过 `<!-- styles: xxx.css -->` 声明区域样式，build.py 按需加载
+- layout 布局模式（vertical / horizontal）
 
 ### Changed
-- 从 wangyafu/resume-skills 补充 8 条内容规则到 resume skill
-- 核心原则第 6 条：亮点前移
-- 新增"内容筛选标准"（相关性/含金量/时效性）
-- 新增"多页策略"（核心放第一页）
-- 新增"校招特殊规则"
-- 新增"长条目排版技巧"
-- 新增"交互规范"
-- remark 字段更名为 ai_notes
+- 重构 build.py：删除 200+ 行特例代码，改为协议化渲染引擎
+- 模板瘦身：从 6 套删至 2 套（default / two-column），仅保留区域骨架
+- YAML 数据：删除 `type: header` 特例，改为 `entry-list` + `blocks`
+- 样式分离：所有视觉样式从模板移至 `styles/` 样式库
+- 样式命名：按视觉效果命名（border-rounded, frosted-glass, underline-title...）
+- `.page` padding 改为 `1`，打印边距由浏览器对话框控制
 
 ### Removed
-- 一页双向控制策略（用户内容多，改为多页策略）
-- `example/` 目录（存放过的候选模板均不采用）
-
-## [0.1.0] - 2026-07-08
-
-### Added
-- 项目初始化，空仓库创建
-- 规划文档 `docs/PLAN.md`
-- 目录结构：`data/`、`templates/`、`output/`、`docs/`
-- `.gitignore` 基础配置
-- resume skill 初始版本（.kilo/skills/resume/）
+- 4 套主题模板（elegant-wine / fresh-blue / geek-tech / minimal-white）
+- `render_header()` 等 3 个特例渲染函数
+- 内联样式、emoji
+- 自定义 YAML 解析器中的嵌套 bug（`items → blocks` 三层嵌套支持已修复）

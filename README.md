@@ -1,93 +1,95 @@
 # Resume Builder
 
-数据 + 模板 → HTML 简历的轻量构建系统。**零外部依赖**（纯 Python 标准库）。
+YAML 数据 + 模板 → HTML 简历的轻量构建系统。**纯 Python 标准库，零外部依赖。**
 
 ## 快速开始
 
 ```bash
-# 使用示例人物构建简历
-python build.py --person demo
+# 构建默认模板简历
+python build.py --person me
 
-# 选择不同模板
-python build.py --person demo --template elegant-wine
-python build.py --person demo --template two-column
+# 双栏布局
+python build.py --person me two-column
 ```
-
-> 把你的 YAML 数据放到 `data/{你的名字}/` 下，运行 `python build.py --person {你的名字}` 即可生成。
 
 ## 目录结构
 
 ```
-resume-builder/
-├── build.py                # 构建脚本（纯标准库，零依赖）
-├── protocol-spec.md        # 内容协议规范
-├── templates/              # HTML 模板（只管视觉，不管数据）
-│   ├── default.html        # 卡片蓝
-│   ├── elegant-wine.html   # 典雅酒红
-│   ├── fresh-blue.html     # 清新蓝灰
-│   ├── geek-tech.html      # 极客风尚
-│   ├── minimal-white.html  # 极简纯白
-│   └── two-column.html     # 沉稳双栏
-├── data/                   # YAML 数据（每个人一个文件夹）
-│   └── demo/               # 示例人物：熊帅帅
-│       ├── header.yaml     # type: header
-│       ├── 01-summary.yaml # type: block
+resume/
+├── build.py                 # 构建脚本
+├── protocol-spec.md         # 内容协议规范
+├── templates/               # 区域骨架（只管结构，不管样式）
+│   ├── default.html         # 单栏布局
+│   └── two-column.html      # 左窄右宽双栏
+├── styles/                  # 样式库（按层级分类）
+│   ├── content-area/        # 页面基础视觉
+│   ├── zone/                # 区域样式（dark 深色栏）
+│   ├── section/             # 板块样式（underline-title, left-accent...）
+│   ├── item/                # 卡片样式（border-rounded, flat-card, frosted-glass...）
+│   ├── field/               # 字段样式（badge, dot-list, large-heading...）
+│   └── layout/              # 排列模式（vertical, horizontal）
+├── data/                    # YAML 数据
+│   └── me/                  # 个人简历
+│       ├── 00-profile.yaml  # 个人信息
+│       ├── 01-summary.yaml  # 摘要
 │       ├── 02-education.yaml
 │       ├── 03-skills.yaml
-│       ├── 04-experience.yaml
-│       ├── 05-honors.yaml
-│       ├── 06-others.yaml
-│       └── projects/       # 项目文件，自动合并渲染
-│           ├── 01-office-platform.yaml
-│           └── 02-ecommerce-refactor.yaml
-└── output/                 # 构建产物（gitignore）
+│       ├── 04-github.yaml
+│       └── projects/        # 项目文件
+│           ├── 01-xxx.yaml
+│           └── ...
+└── output/                  # 构建产物（不追踪）
 ```
 
-## 协议概览
+## 协议概要
 
-所有内容通过 4 种 `type` 统一表达：
+每个 YAML 文件是一个板块，通过 `type` 协议统一表达：
 
-| type | 含义 | 适用板块 |
-|------|------|---------|
-| `header` | 页面头部（姓名/联系方式/求职目标） | profile |
-| `block` | 单段文本 | summary, 个人总结 |
-| `entry-list` | 条目列表，每条含 heading/meta/body | education, experience, projects |
-| `grouped-list` | 分类列表（组名 → 条目） | skills |
+| type | 含义 | 适用 |
+|------|------|------|
+| `block` | 单段文本 | summary |
+| `entry-list` | 条目列表，支持 blocks 多段落 | education, projects, profile |
+| `grouped-list` | 分类列表 | skills |
 
-**核心规则：**
+**字段说明：**
 
 ```yaml
-# 每个文件声明 type，build.py 按 type 渲染
 type: entry-list
+order: 2                    # 板块排序
+zone: sidebar               # 归属区域（默认 main）
 title: Education
+section_style: underline-title   # 引用板块样式
 items:
-  - heading: 学校 · 专业 · 学历
-    meta: 时间
-    body:
-      - "要点1"
-      - "要点2"
-
-# reference 段仅供 AI 读写，build.py 完全忽略
-reference:
-  context: "AI 可以在这里写任何备注，不会进 HTML"
+  - item_style: border-rounded   # 引用卡片样式
+    blocks:
+      - heading: 标题
+        heading_style: badge     # 引用字段样式（heading）
+        meta: 2023-2027
+        body_style: dot-list     # 引用字段样式（body）
+        layout: horizontal       # 横向排列
+        body:
+          - 条目1
+          - 条目2
+      - heading: 子段落
+        tags: [标签1, 标签2]
 ```
 
-详细规范见 [`protocol-spec.md`](protocol-spec.md)。
+`reference` 段不会写进 HTML，专供 AI 读写上下文。
 
-## 加新板块
+## 样式库
 
-**只需加一个 YAML 文件，不需要改 build.py 和模板。**
+样式按视觉效果命名，通过 YAML 的 `section_style` / `item_style` / `heading_style` / `body_style` 引用：
 
+```yaml
+section_style: underline-title   # → styles/section/underline-title.css
+item_style: border-rounded       # → styles/item/border-rounded.css
+heading_style: large-heading     # → styles/field/large-heading.css
+body_style: dot-list             # → styles/field/dot-list.css
 ```
-在 data/{person}/ 下放一个新的 .yaml 文件 → build.py 自动发现并渲染
-文件名控制顺序：01-xxx.yaml、02-xxx.yaml
-项目放在 projects/ 子目录下，自动合并到 "Projects" 板块
-```
 
-## 模板
+模板通过 `<!-- styles: zone/dark.css -->` 声明区域样式。
+不加样式引用时使用默认无装饰样式。
 
-模板使用两个占位符：
-- `{header}` — 页面头部（姓名、联系方式、求职目标）
-- `{sections}` — 所有内容板块，按文件名顺序拼接
+## 打印
 
-**模板只管视觉样式**（颜色、字体、间距、布局），不管数据结构和内容。
+`.page { padding: 1; }`，打印边距由浏览器打印对话框手动调整。
