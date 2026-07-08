@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <style>
+@page { size: A4; margin: 20mm 18mm; }
+.page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 20mm 18mm; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; padding: 0; width: auto; min-height: auto; } }
 {styles}
 </style>
 </head>
 <body>
 <div class="page">
-
 {zone:main}
-
 {footer}
-
 </div>
 </body>
 </html>

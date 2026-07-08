@@ -1,0 +1,3 @@
+/* ── 下划线标题：右侧渐变横线 ── */
+.section-title { display: flex; align-items: center; gap: 10px; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--primary-mid, #bfdbfe), transparent); }

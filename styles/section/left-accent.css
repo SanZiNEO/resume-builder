@@ -1,0 +1,3 @@
+/* ── 左侧强调线：4px 蓝色竖线，隐藏 section 标题 ── */
+.section.left-accent { margin-bottom: 22px; padding-left: 14px; border-left: 4px solid #2563EB; }
+.section.left-accent .section-title { display: none; }

@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<!-- styles: content-area/two-column.css -->
+<!-- styles: zone/dark.css -->
 <style>
+@page { size: A4; margin: 0; }
+.page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); display: grid; grid-template-columns: 1fr 2.4fr; }
+.left { padding: 18px; }
+.right { padding: 18px; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
 {styles}
 </style>
 </head>

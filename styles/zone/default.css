@@ -1,3 +1,1 @@
-/* ── 单栏布局：无 sidebar 时隐藏 sidebar 区域 ── */
-/* 仅对 zone-sidebar 生效，不影响 .left（两栏模板用） */
-.zone-sidebar { display: none; }
+/* ── 单栏布局 ── */

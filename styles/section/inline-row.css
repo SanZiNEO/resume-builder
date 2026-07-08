@@ -1,0 +1,5 @@
+/* ── 弹性行排列：条目横向并排，头像在右无卡片样式 ── */
+.section.inline-row { display: flex; gap: 16px; align-items: flex-start; }
+.section.inline-row > .section-title { display: none; }
+.section.inline-row > .entry-avatar { order: 1; flex-shrink: 0; background: none; border: none; padding: 0; }
+.section.inline-row > .entry:not(.entry-avatar) { flex: 1; }
