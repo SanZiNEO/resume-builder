@@ -1,0 +1,36 @@
+/* ── 页面基础 ── */
+@page { size: A4; margin: 20mm 18mm; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
+
+:root {
+  --primary: #2563EB;
+  --primary-light: #eef2ff;
+  --primary-mid: #bfdbfe;
+  --card: #fafbfd;
+  --text: #1e293b;
+  --text-light: #64748b;
+}
+
+body {
+  font-family: "Inter","PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  background: #e8e8e8;
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 20px 0;
+  color: var(--text);
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 20mm 18mm;
+  display: block;
+}
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .page { box-shadow: none; margin: 0; padding: 0; width: auto; min-height: auto; }
+}

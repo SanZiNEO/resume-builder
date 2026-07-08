@@ -1,0 +1,7 @@
+/* ── 姓名大号标题 ── */
+.entry-title.name-lg {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 1px;
+}

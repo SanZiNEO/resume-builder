@@ -4,62 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
+<!-- styles: content-area/two-column.css -->
 <style>
-  @page { size: A4; margin: 0; }
-  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
-  :root { --theme: #254665; --text: #1f2937; --text-light: #6b7280; }
-  body { font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif; background: #e8e8e8; font-size: 13px; line-height: 1.5; padding: 20px 0; color: var(--text); }
-  .page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); display: grid; grid-template-columns: 1fr 2.4fr; }
-  .left { background: var(--theme); color: #fff; padding: 18px; }
-  .left .header h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-  .left .header .info-line { font-size: 12px; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
-  .left .header .target { font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 500; }
-  .left .header-avatar { text-align: center; margin-bottom: 14px; }
-  .avatar-img { width: 100px; height: 100px; object-fit: cover; display: inline-block; }
-  .avatar-img-round { border-radius: 50%; border: 3px solid rgba(255,255,255,0.3); }
-  .avatar-img-square { border-radius: 12px; border: 3px solid rgba(255,255,255,0.3); }
-  .left .section-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; margin: 14px 0 6px; }
-  .left .skills-wrap { display: flex; flex-direction: column; gap: 3px; }
-  .left .skills-wrap .item { font-size: 12px; color: rgba(255,255,255,0.9); }
-  .left .skills-wrap .item strong { color: #fff; }
-  .right { padding: 18px; }
-  .right .edu-entry .entry-header span { color: var(--theme); }
-  .right .section-title { font-size: 13px; font-weight: 700; color: var(--theme); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-  .right .section-title::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
-  .entry { margin-bottom: 8px; }
-  .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-  .entry-title { font-size: 13px; font-weight: 600; color: var(--text); }
-  .entry-meta { font-size: 11.5px; color: var(--theme); font-weight: 500; flex-shrink: 0; padding-left: 8px; }
-  .entry-sub { font-size: 12px; color: var(--text-light); margin-bottom: 3px; display: flex; flex-wrap: wrap; gap: 4px 8px; }
-  .entry-body { margin-top: 2px; }
-  .entry-body ul { list-style: none; padding-left: 0; }
-  .entry-body li { position: relative; padding-left: 14px; margin-bottom: 2px; color: var(--text-light); font-size: 12px; }
-  .entry-body li::before { content: ''; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border-radius: 50%; background: var(--theme); opacity: 0.3; }
-  .entry-body li strong { color: var(--text); font-weight: 600; }
-  .right .skills-wrap { display: flex; flex-wrap: wrap; gap: 3px 0; margin-top: 4px; }
-  .right .skills-wrap .item { font-size: 12px; color: var(--text-light); margin-right: 14px; }
-  .right .skills-wrap .item strong { color: var(--text); }
-  .right .footer-deco { margin-top: 20px; text-align: center; font-size: 8px; color: #d1d5db; letter-spacing: 4px; }
-  @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+{styles}
 </style>
 </head>
 <body>
 <div class="page">
 <div class="left">
-  {avatar}
-  <div class="header">
-    <h1>{title}</h1>
-    <div class="info-line">{header_content}</div>
-    <div class="target">{header_target}</div>
-  </div>
-  <div class="section-title">Skills</div>
-  <div class="skills-wrap">{skills_content}</div>
+  {zone:sidebar}
 </div>
 <div class="right">
-  {summary}
-  <div class="section-title">Education</div>
-  {education_content}
-  {projects}
+  {zone:main}
 </div>
 </div>
 </body>

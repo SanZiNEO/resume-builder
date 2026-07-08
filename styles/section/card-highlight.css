@@ -1,0 +1,9 @@
+/* ── 个人信息区：仿旧版 header 样式 ── */
+.section.card-highlight {
+  margin-bottom: 22px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+}
+.section.card-highlight .section-title {
+  display: none;
+}

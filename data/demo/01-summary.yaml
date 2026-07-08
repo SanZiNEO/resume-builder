@@ -1,4 +1,5 @@
 type: block
+order: 1
 title: Summary
 content: >
   10 年前端开发经验，5 年技术团队管理经验。历经互联网创业公司到万人规模大厂，

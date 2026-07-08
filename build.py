@@ -5,7 +5,6 @@ build.py — 协议化简历构建系统
 读取 data/*/*.yaml → 按内容协议渲染 → 注入模板 → 输出 HTML
 
 协议文档见 protocol-spec.md
-
 纯 Python 标准库，零外部依赖。
 """
 
@@ -13,12 +12,10 @@ import os
 import re
 import glob
 import sys
-import base64
-import mimetypes
 from datetime import datetime
 
 
-# ── YAML 解析（保留，零依赖）────────────────────────────────
+# ── YAML 解析 ──────────────────────────────────────────────
 
 def _parse_value(s: str):
     sv = s.strip()
@@ -43,6 +40,19 @@ def _parse_inline_list(s: str):
             return []
         return [_parse_value(x.strip()) for x in re.split(r',\s*', inner)]
     return None
+
+
+def _find_unquoted_colon(s: str) -> int:
+    in_single = False
+    in_double = False
+    for i, ch in enumerate(s):
+        if ch == '"' and not in_single:
+            in_double = not in_double
+        elif ch == "'" and not in_double:
+            in_single = not in_single
+        elif ch == ':' and not in_single and not in_double:
+            return i
+    return -1
 
 
 def parse_yaml(text: str) -> dict:
@@ -71,8 +81,8 @@ def parse_yaml(text: str) -> dict:
             i += 1
             continue
 
-        if ':' in stripped:
-            colon_at = stripped.index(':')
+        colon_at = _find_unquoted_colon(stripped)
+        if colon_at >= 0:
             key = stripped[:colon_at].rstrip()
 
             if key.startswith('- '):
@@ -98,7 +108,7 @@ def parse_yaml(text: str) -> dict:
                         new_item = {list_key: _parse_value(value)}
                         parent_list.append(new_item)
                     else:
-                        new_item = {}
+                        new_item = {list_key: []}
                         parent_list.append(new_item)
                         last_list_key = list_key
 
@@ -181,179 +191,157 @@ def read_yaml(path):
 # ── 常量 ────────────────────────────────────────────────────
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-SECTION_TYPES = {'header', 'block', 'entry-list', 'grouped-list'}
+
+# ── 样式收集 ────────────────────────────────────────────────
+
+STYLE_CATEGORIES = {
+    'section_style': 'section',
+    'item_style': 'item',
+    'heading_style': 'field',
+    'body_style': 'field',
+}
+
+
+def _scan_styles(data: dict, styles_dir: str, collected: set):
+    """递归扫描 dict 中的 style 引用字段，收集 CSS 文件路径"""
+    if not isinstance(data, dict):
+        return
+    for field, category in STYLE_CATEGORIES.items():
+        style = data.get(field, '')
+        if style:
+            fpath = os.path.join(styles_dir, category, style + '.css')
+            if os.path.exists(fpath):
+                collected.add(fpath)
+    for v in data.values():
+        if isinstance(v, dict):
+            _scan_styles(v, styles_dir, collected)
+        elif isinstance(v, list):
+            for item in v:
+                _scan_styles(item, styles_dir, collected)
+
+
+def collect_styles(styles_dir: str) -> str:
+    """加载所有默认样式"""
+    defaults = [
+        os.path.join(styles_dir, 'content-area', 'default.css'),
+        os.path.join(styles_dir, 'zone', 'default.css'),
+        os.path.join(styles_dir, 'section', 'default.css'),
+        os.path.join(styles_dir, 'item', 'default.css'),
+        os.path.join(styles_dir, 'field', 'default.css'),
+        os.path.join(styles_dir, 'layout', 'vertical.css'),
+        os.path.join(styles_dir, 'layout', 'horizontal.css'),
+    ]
+    lines = []
+    for fpath in defaults:
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                content = f.read().strip()
+                if content:
+                    lines.append(content)
+        except FileNotFoundError:
+            pass
+    return '\n\n'.join(lines)
 
 
 # ── 渲染引擎 ────────────────────────────────────────────────
 
-def render_avatar(data: dict, person_dir: str | None = None) -> str:
-    """读取头像图片并生成 base64 内嵌的 img 标签"""
-    avatar_path = data.get('avatar', '')
-    if not avatar_path or not person_dir:
-        return ''
-    avatar_style = data.get('avatar_style', 'round')
-    css_class = 'avatar-img-round' if avatar_style == 'round' else 'avatar-img-square'
-    full_path = os.path.join(person_dir, avatar_path) if not os.path.isabs(avatar_path) else avatar_path
-    if not os.path.exists(full_path):
-        return ''
-    mime_type, _ = mimetypes.guess_type(full_path)
-    if not mime_type:
-        ext_map = {'.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
-                   '.png': 'image/png', '.gif': 'image/gif', '.webp': 'image/webp'}
-        mime_type = ext_map.get(os.path.splitext(full_path)[1].lower(), 'image/png')
-    with open(full_path, 'rb') as f:
-        b64 = base64.b64encode(f.read()).decode('ascii')
-    return f'<img src="data:{mime_type};base64,{b64}" class="avatar-img {css_class}" alt="avatar">'
-
-
-def render_header(data: dict, avatar_html: str = '') -> str:
-    """type: header → 页面头部"""
-    c = data.get('contact', {})
-    parts = []
-    if c.get('phone'): parts.append(f'<span>{c["phone"]}</span>')
-    if c.get('email'): parts.append(f'<span>{c["email"]}</span>')
-    if c.get('city'): parts.append(f'<span>{c["city"]}</span>')
-    age_str = f'{c.get("age", "")}\u5c81' if c.get('age') else ''
-    gender = c.get('gender', '')
-    if age_str or gender:
-        parts.append(f'<span>{gender} \u00b7 {age_str}</span>' if gender and age_str
-                     else f'<span>{age_str}{gender}</span>')
-
-    info = ' '.join(parts)
-
-    target_parts = []
-    if data.get('target'): target_parts.append(data['target'])
-    if data.get('job_status'): target_parts.append(data['job_status'])
-    if data.get('max_salary'): target_parts.append(f'\u671f\u671b {data["max_salary"]}')
-    sep = ' \u00b7 '
-    target_line = f'<div class="target">{sep.join(target_parts)}</div>' if target_parts else ''
-
-    if avatar_html:
-        return '''<div class="header header-with-avatar">
-  <div class="header-text">
-    <h1>{name}</h1>
-    <div class="info-line">{info}</div>
-    {target}
-  </div>
-  <div class="header-avatar">{avatar}</div>
-</div>'''.format(name=data.get('name', ''), info=info, target=target_line, avatar=avatar_html)
-
-    return '''<div class="header">
-  <h1>{name}</h1>
-  <div class="info-line">{info}</div>
-  {target}
-</div>'''.format(name=data.get('name', ''), info=info, target=target_line)
-
-
-def render_header_info_line(data: dict) -> str:
-    """返回 info-line HTML（给 two-column 用）"""
-    c = data.get('contact', {})
-    parts = []
-    if c.get('phone'): parts.append(f'<span>{c["phone"]}</span>')
-    if c.get('email'): parts.append(f'<span>{c["email"]}</span>')
-    if c.get('city'): parts.append(f'<span>{c["city"]}</span>')
-    age_str = f'{c.get("age", "")}\u5c81' if c.get('age') else ''
-    gender = c.get('gender', '')
-    if age_str or gender:
-        parts.append(f'<span>{gender} \u00b7 {age_str}</span>' if gender and age_str
-                     else f'<span>{age_str}{gender}</span>')
-    return ' '.join(parts)
-
-
-def render_header_target_line(data: dict) -> str:
-    """返回 target-line HTML（给 two-column 用）"""
-    target_parts = []
-    if data.get('target'): target_parts.append(data['target'])
-    if data.get('job_status'): target_parts.append(data['job_status'])
-    if data.get('max_salary'): target_parts.append(f'\u671f\u671b {data["max_salary"]}')
-    sep = ' \u00b7 '
-    return sep.join(target_parts) if target_parts else ''
-
-
-def _section_wrapper(title: str, content: str) -> str:
-    """通用 section 外壳"""
+def _section_wrapper(title: str, content: str, extra_class: str = '') -> str:
     if not content:
         return ''
+    cls = 'section' + (f' {extra_class}' if extra_class else '')
     title_html = f'<div class="section-title">{title}</div>' if title else ''
-    return f'''<div class="section">
+    return f'''<div class="{cls}">
   {title_html}
   {content}
 </div>'''
 
 
 def render_block(data: dict) -> str:
-    """type: block → 单段文本"""
     content = data.get('content', '').strip()
     if not content:
         return ''
     title = data.get('title', '')
-    inner = f'<div class="entry"><div class="entry-body"><p style="color:var(--text-light);font-size:12.5px;line-height:1.6">{content}</p></div></div>'
-    return _section_wrapper(title, inner)
+    section_class = data.get('section_class', '') or data.get('section_style', '')
+    inner = f'<div class="entry"><div class="entry-body"><p class="block-text">{content}</p></div></div>'
+    return _section_wrapper(title, inner, section_class)
+
+
+def _render_block_in_item(block: dict) -> str:
+    """渲染 item 内部的单个 block（heading + sub/tags + body）"""
+    heading = block.get('heading', '')
+    meta = block.get('meta', '') or ''
+    sub = block.get('sub', '') or ''
+    tags = block.get('tags', [])
+    body = block.get('body', [])
+    layout = block.get('layout', 'vertical')
+    link = block.get('link', '')
+    heading_class = block.get('heading_class', '') or block.get('heading_style', '')
+    body_class = block.get('body_class', '') or block.get('body_style', '')
+
+    parts = []
+    # heading + link + meta
+    hdr_cls = f'entry-title{" " + heading_class if heading_class else ""}'
+    header_parts = [f'<span class="{hdr_cls}">{heading}</span>']
+    if link:
+        header_parts.append(f'<span class="entry-meta"><a href="{link}" target="_blank" rel="noopener" class="entry-link">{link}</a></span>')
+    if meta:
+        header_parts.append(f'<span class="entry-meta">{meta}</span>')
+    parts.append('<div class="entry-header">' + ''.join(header_parts) + '</div>')
+
+    # sub + tags
+    if sub or tags:
+        sub_parts = []
+        if sub:
+            sub_parts.append(sub)
+        for t in tags:
+            sub_parts.append(f'<span class="tag">{t}</span>')
+        parts.append('<div class="entry-sub">' + ' '.join(sub_parts) + '</div>')
+
+    # body
+    if body:
+        b_cls = 'entry-body' + (f' {body_class}' if body_class else '')
+        if layout == 'horizontal':
+            spans = '\n'.join(f'<span class="inline-item">{b}</span>' for b in body)
+            parts.append(f'<div class="{b_cls} entry-body-inline">{spans}</div>')
+        else:
+            lis = '\n'.join(f'<li>{b}</li>' for b in body)
+            parts.append(f'<div class="{b_cls}"><ul>\n{lis}\n</ul></div>')
+
+    return '\n'.join(parts)
 
 
 def render_entry_list(data: dict, entries: list | None = None) -> str:
-    """type: entry-list → 条目列表
-
-    两种输入模式：
-    - entries 传入 → 直接渲染该条目列表（projects 合并用）
-    - data['items'] 存在 → 渲染 items 列表
-    - 以上都无 → 把 data 自身视为一条 entry（平铺字段模式）
-    """
     if entries is None:
         entries = data.get('items', [])
     if not entries:
-        # 平铺字段模式：heading/meta/sub/tags/body 在顶层
         heading = data.get('heading', '')
         if not heading:
             return ''
         entries = [data]
 
     title = data.get('title', '')
+    section_class = data.get('section_class', '') or data.get('section_style', '')
     items_html = []
 
     for item in entries:
-        heading = item.get('heading', '')
-        meta = item.get('meta', '') or ''
-        sub = item.get('sub', '') or ''
-        tags = item.get('tags', [])
-        body = item.get('body', [])
+        item_class = item.get('item_class', '') or item.get('item_style', '')
+        blocks = item.get('blocks', None)
 
-        # heading + link + meta
-        header_parts = [f'<span class="entry-title">{heading}</span>']
-        link = item.get('link', '')
-        if link:
-            header_parts.append(f'<span class="entry-meta"><a href="{link}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">{link}</a></span>')
-        if meta:
-            header_parts.append(f'<span class="entry-meta">{meta}</span>')
-        header_html = '<div class="entry-header">' + ''.join(header_parts) + '</div>'
+        if blocks:
+            # 多 block 模式：一个卡片内多个独立段落
+            inner_html = '\n'.join(_render_block_in_item(b) for b in blocks)
+        else:
+            # 单 block 模式（向后兼容）：item 自身就是 block
+            inner_html = _render_block_in_item(item)
 
-        # sub + tags
-        sub_html = ''
-        if sub or tags:
-            sub_parts = []
-            if sub:
-                sub_parts.append(sub)
-            for t in tags:
-                sub_parts.append(f'<span class="tag">{t}</span>')
-            sub_html = '<div class="entry-sub">' + ' '.join(sub_parts) + '</div>'
-
-        # body bullets
-        body_html = ''
-        if body:
-            lis = '\n'.join(f'<li>{b}</li>' for b in body)
-            body_html = '<div class="entry-body"><ul>\n' + lis + '\n</ul></div>'
-
-        items_html.append(f'''<div class="entry">
-  {header_html}
-  {sub_html}{body_html}
-</div>''')
+        entry_cls = 'entry' + (f' {item_class}' if item_class else '')
+        items_html.append(f'<div class="{entry_cls}">\n{inner_html}\n</div>')
 
     inner = '\n'.join(items_html)
-    return _section_wrapper(title, inner)
+    return _section_wrapper(title, inner, section_class)
 
 
 def render_grouped_list(data: dict) -> str:
-    """type: grouped-list → 分类列表（技能）"""
     groups = data.get('groups', [])
     if not groups:
         return ''
@@ -364,11 +352,11 @@ def render_grouped_list(data: dict) -> str:
         items.append(f'<span class="item"><strong>{name}\uff1a</strong>{" / ".join(item_list)}</span>')
     inner = '<div class="skills-wrap">' + ' '.join(items) + '</div>' if items else ''
     title = data.get('title', '')
-    return _section_wrapper(title, inner)
+    section_class = data.get('section_class', '') or data.get('section_style', '')
+    return _section_wrapper(title, inner, section_class)
 
 
 def render_section(data: dict) -> str:
-    """按 type 分发到具体渲染器"""
     section_type = data.get('type', 'block')
     if section_type == 'block':
         return render_block(data)
@@ -384,27 +372,14 @@ def render_section(data: dict) -> str:
 # ── section 自动发现 ─────────────────────────────────────────
 
 def discover_sections(person_dir: str) -> dict:
-    """扫描 person 目录，返回 {stem: data} 字典
-
-    规则：
-    - header.yaml → 特例，不加入 sections
-    - *.yaml → 按文件名排序，加入 sections
-    - projects/*.yaml → 合并为 projects 条目列表
-    """
     sections = {}
-
-    # 扫描根目录 yaml（排除 header.yaml）
     yaml_files = glob.glob(os.path.join(person_dir, '*.yaml'))
     for f in sorted(yaml_files):
         name = os.path.basename(f)
-        if name == 'header.yaml':
-            continue
         data = read_yaml(f)
-        # 过滤掉 reference 字段
         data.pop('reference', None)
         sections[name] = data
 
-    # 扫描 projects 子目录
     project_dir = os.path.join(person_dir, 'projects')
     project_files = sorted(glob.glob(os.path.join(project_dir, '*.yaml')))
     if project_files:
@@ -412,7 +387,6 @@ def discover_sections(person_dir: str) -> dict:
         for pf in project_files:
             pdata = read_yaml(pf)
             pdata.pop('reference', None)
-            # 每个文件是一条 entry（平铺字段或 items 模式）
             items = pdata.get('items', [])
             if items:
                 project_entries.extend(items)
@@ -421,10 +395,10 @@ def discover_sections(person_dir: str) -> dict:
         if project_entries:
             sections['_projects'] = {
                 'type': 'entry-list',
+                'order': 50,
                 'title': 'Projects',
                 'items': project_entries,
             }
-
     return sections
 
 
@@ -433,7 +407,6 @@ def discover_sections(person_dir: str) -> dict:
 def main():
     data_dir = os.path.join(BASE, 'data')
 
-    # 选择人物
     persons = sorted(d for d in os.listdir(data_dir)
                      if os.path.isdir(os.path.join(data_dir, d)))
     person = 'shuaishuai'
@@ -452,10 +425,8 @@ def main():
 
     output_dir = os.path.join(BASE, 'output')
     os.makedirs(output_dir, exist_ok=True)
-
     person_dir = os.path.join(data_dir, person)
 
-    # 选择模板
     available = sorted(f.replace('.html', '') for f in os.listdir(os.path.join(BASE, 'templates'))
                        if f.endswith('.html'))
     tmpl_name = 'default'
@@ -475,73 +446,100 @@ def main():
             print(f'\u6a21\u677f\u5e93: {", ".join(available)}')
             return
 
-    ts = datetime.now().strftime('%Y%m%d-%H%M')
+    ts = datetime.now().strftime('%Y%m%d-%H%M%S')
     output_path = os.path.join(output_dir, f'{person}-{ts}.html')
-
     template_path = os.path.join(BASE, 'templates', tmpl_name + '.html')
     if not os.path.exists(template_path):
         return
 
     # ── 加载数据 ──
-    header_data = read_yaml(os.path.join(person_dir, 'header.yaml'))
     sections_data = discover_sections(person_dir)
 
-    # ── 渲染 ──
-    avatar_html = render_avatar(header_data, person_dir)
-    header_html = render_header(header_data, avatar_html)
-
-    # 按文件名顺序拼接 sections
-    sections_html_parts = []
-    for name in sorted(sections_data):
-        data = sections_data[name]
-        html = render_section(data)
-        if html:
-            sections_html_parts.append(html)
-    sections_html = '\n'.join(sections_html_parts)
-
-    footer_html = '<div class="footer-deco">\u25c6 \u25c7 \u25c6 \u25c7 \u25c6</div>'
-
-    # ── 读取模板并注入 ──
+    # ── 读取模板 ──
     with open(template_path, 'r', encoding='utf-8') as f:
         template = f.read()
 
-    template = template.replace('{title}', header_data.get('name', '\u7b80\u5386'))
-    template = template.replace('{avatar}', avatar_html)
-    template = template.replace('{header}', header_html)
-    template = template.replace('{sections}', sections_html)
-    template = template.replace('{footer}', footer_html)
+    # ── 发现模板中的 zone 占位符 ──
+    zone_pattern = re.compile(r'\{zone:(\w+)\}')
+    zones_in_template = zone_pattern.findall(template)
+    if not zones_in_template:
+        zones_in_template = ['main']
 
-    # ── 兼容 two-column 模板的特殊占位符 ──
-    # 这些在 Group A 模板中不存在（replace 无副作用）
-    template = template.replace('{header_content}', render_header_info_line(header_data))
-    template = template.replace('{header_target}', render_header_target_line(header_data))
+    # ── 收集并注入样式（按覆盖优先级排序） ──
+    styles_dir = os.path.join(BASE, 'styles')
 
-    # 按名称匹配 section 内容（给 two-column 等需要具体定位的模板用）
+    # 1. 默认样式
+    all_css = collect_styles(styles_dir)
+
+    # 2. 模板声明的额外样式（`<!-- styles: path/to/file.css -->`）
+    tmpl_styles = re.findall(r'<!--\s*styles:\s*(.+?)\s*-->', template)
+    for ref in tmpl_styles:
+        for path in ref.split(','):
+            path = path.strip()
+            if not path:
+                continue
+            sf = os.path.join(styles_dir, path) if not os.path.isabs(path) else path
+            if os.path.exists(sf):
+                with open(sf, 'r', encoding='utf-8') as f:
+                    content = f.read().strip()
+                    if content:
+                        all_css = all_css + '\n\n' + content
+
+    # 3. YAML 自定义样式（最优先）
+    extra_set = set()
     for name, data in sections_data.items():
-        section_type = data.get('type', 'block')
-        if section_type == 'grouped-list':
-            # skills_content 只需要 items，不要 section 外壳
-            groups = data.get('groups', [])
-            items = []
-            for g in groups:
-                gname = g.get('name', '')
-                item_list = g.get('items', [])
-                items.append(f'<span class="item"><strong>{gname}\uff1a</strong>{" / ".join(item_list)}</span>')
-            template = template.replace('{skills_content}', ' '.join(items) if items else '')
-        elif name == '_projects':
-            template = template.replace('{projects}', sections_html_parts[-1] if sections_html_parts else '')
-        else:
-            # 按 title 匹配占位符
-            title = data.get('title', '').lower().replace(' ', '_')
-            html = render_section(data)
-            # 生成 {section_summary}, {section_education} 等
-            template = template.replace('{section_' + title + '}', html)
-            # 也生成旧的直接名称（如 {summary}, {education_content}）
-            slug = os.path.splitext(name)[0]  # 如 '01-summary'
-            # 跳过带编号的，匹配精确 title 的占位符
-            title_lower = title.lower()
-            if title_lower == 'education':
-                template = template.replace('{education_content}', html)
+        _scan_styles(data, styles_dir, extra_set)
+    for ef in sorted(extra_set):
+        try:
+            with open(ef, 'r', encoding='utf-8') as f:
+                content = f.read().strip()
+                if content:
+                    all_css = all_css + '\n\n' + content
+        except FileNotFoundError:
+            pass
+
+    template = template.replace('{styles}', all_css)
+
+    # ── 按 zone 分组并排序（按 YAML 的 order 字段）──
+    zone_items = {z: [] for z in zones_in_template}
+    for name in sections_data:
+        data = sections_data[name]
+        zone = data.get('zone', 'main')
+        if zone not in zone_items:
+            zone = 'main'
+        order = data.get('order', 999)
+        html = render_section(data)
+        if html:
+            zone_items[zone].append((order, html))
+
+    # ── 注入 zone ──
+    for zone in zones_in_template:
+        items = sorted(zone_items.get(zone, []), key=lambda x: x[0])
+        content = '\n'.join(html for _, html in items)
+        template = template.replace(f'{{zone:{zone}}}', content)
+
+    template = re.sub(r'\{zone:\w+\}', '', template)
+
+    # ── 清理模板声明注释 ──
+    template = re.sub(r'<!--\s*styles:\s*.+?\s*-->\n?', '', template)
+
+    # ── 页面标题 ──
+    page_title = 'Resume'
+    for name in sorted(sections_data):
+        data = sections_data[name]
+        items = data.get('items', [])
+        for item in items:
+            heading = item.get('heading', '')
+            if heading:
+                page_title = heading
+                break
+        if page_title != 'Resume':
+            break
+
+    footer_html = ''
+
+    template = template.replace('{title}', page_title)
+    template = template.replace('{footer}', footer_html)
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:

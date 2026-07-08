@@ -1,0 +1,47 @@
+/* ── 个人信息卡片：无背景无边框 ── */
+.entry.profile-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 0;
+  border-left: none;
+}
+
+/* ── 第一段：姓名 + 基础信息，仿旧版 info-line ── */
+.entry.profile-card .entry-header:first-child .entry-meta {
+  background: transparent;
+  padding: 0;
+  font-size: 12.5px;
+  color: var(--text-light);
+  font-weight: normal;
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+.entry.profile-card + .entry-body-inline {
+  margin-top: 2px;
+}
+
+.entry.profile-card .entry-body-inline {
+  gap: 4px 16px;
+  margin-top: 4px;
+  font-size: 12.5px;
+}
+
+/* ── 第二段：求职方向 + 标签，仿旧版 target 行 ── */
+.entry.profile-card .entry-header:nth-child(3) .entry-title {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.entry.profile-card .entry-sub {
+  margin-top: 1px;
+  gap: 8px;
+}
+
+.entry.profile-card .entry-sub .tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+}
