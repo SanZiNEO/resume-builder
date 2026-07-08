@@ -62,6 +62,12 @@ body {
 .left .entry-body li::before { background: rgba(255,255,255,0.5); }
 .left .inline-item { color: rgba(255,255,255,0.9); }
 
+/* ── 左侧栏头像 ── */
+.left .block-avatar-wrap { margin-bottom: 14px; }
+
+/* ── 左侧栏头像 ── */
+.left .block-avatar-wrap { margin-bottom: 14px; }
+
 /* ── 右侧栏 ── */
 .right {
   padding: 18px;

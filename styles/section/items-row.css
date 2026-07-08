@@ -1,0 +1,5 @@
+/* ── 条目横向排列：文本 + 头像并排 ── */
+.section.items-row { display: flex; gap: 16px; align-items: flex-start; }
+.section.items-row > .section-title { display: none; }
+.section.items-row > .entry-avatar { order: 1; flex-shrink: 0; background: none; border: none; padding: 0; }
+.section.items-row > .entry:not(.entry-avatar) { flex: 1; }

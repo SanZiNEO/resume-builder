@@ -2,6 +2,7 @@ type: entry-list
 zone: sidebar
 order: 1
 title: Info
+section_style: items-row
 items:
   - blocks:
       - heading: 张三
@@ -17,6 +18,8 @@ items:
           - 工作地点：上海 / 杭州
           - 状态：在职-看机会
           - 薪资：35k-50k
+  - avatar: 09a6a4932b5886d4a28800e5c34aae84.jpeg
+    avatar_style: round
 
 reference:
   context: "示例人物：张三，高级前端工程师"

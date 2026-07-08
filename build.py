@@ -12,6 +12,8 @@ import os
 import re
 import glob
 import sys
+import base64
+import mimetypes
 from datetime import datetime
 
 
@@ -227,6 +229,7 @@ def collect_styles(styles_dir: str) -> str:
         os.path.join(styles_dir, 'zone', 'default.css'),
         os.path.join(styles_dir, 'section', 'default.css'),
         os.path.join(styles_dir, 'item', 'default.css'),
+        os.path.join(styles_dir, 'item', 'avatar.css'),
         os.path.join(styles_dir, 'field', 'default.css'),
         os.path.join(styles_dir, 'layout', 'vertical.css'),
         os.path.join(styles_dir, 'layout', 'horizontal.css'),
@@ -266,7 +269,19 @@ def render_block(data: dict) -> str:
     return _section_wrapper(title, inner, section_class)
 
 
-def _render_block_in_item(block: dict) -> str:
+def _avatar_img(avatar_path: str, avatar_style: str, person_dir: str) -> str:
+    """读取头像图片，返回 base64 内嵌的 img 标签"""
+    full_path = os.path.join(person_dir, avatar_path) if not os.path.isabs(avatar_path) else avatar_path
+    if not os.path.exists(full_path):
+        return ''
+    mime = mimetypes.guess_type(full_path)[0] or 'image/png'
+    with open(full_path, 'rb') as f:
+        b64 = base64.b64encode(f.read()).decode('ascii')
+    cls = f'avatar-{avatar_style}' if avatar_style else 'avatar-round'
+    return f'<img src="data:{mime};base64,{b64}" class="block-avatar {cls}" alt="avatar">'
+
+
+def _render_block_in_item(block: dict, person_dir: str | None = None) -> str:
     """渲染 item 内部的单个 block（heading + sub/tags + body）"""
     heading = block.get('heading', '')
     meta = block.get('meta', '') or ''
@@ -279,6 +294,13 @@ def _render_block_in_item(block: dict) -> str:
     body_class = block.get('body_class', '') or block.get('body_style', '')
 
     parts = []
+    # avatar（如果存在）
+    avatar_path = block.get('avatar', '')
+    if avatar_path and person_dir:
+        avatar_style = block.get('avatar_style', 'round')
+        avatar_html = _avatar_img(avatar_path, avatar_style, person_dir)
+        if avatar_html:
+            parts.append(f'<div class="block-avatar-wrap">{avatar_html}</div>')
     # heading + link + meta
     hdr_cls = f'entry-title{" " + heading_class if heading_class else ""}'
     header_parts = [f'<span class="{hdr_cls}">{heading}</span>']
@@ -310,7 +332,7 @@ def _render_block_in_item(block: dict) -> str:
     return '\n'.join(parts)
 
 
-def render_entry_list(data: dict, entries: list | None = None) -> str:
+def render_entry_list(data: dict, entries: list | None = None, person_dir: str | None = None) -> str:
     if entries is None:
         entries = data.get('items', [])
     if not entries:
@@ -327,12 +349,17 @@ def render_entry_list(data: dict, entries: list | None = None) -> str:
         item_class = item.get('item_class', '') or item.get('item_style', '')
         blocks = item.get('blocks', None)
 
-        if blocks:
-            # 多 block 模式：一个卡片内多个独立段落
-            inner_html = '\n'.join(_render_block_in_item(b) for b in blocks)
+        # avatar-only item（无 heading/body，仅头像）
+        avatar_path = item.get('avatar', '')
+        if avatar_path and not blocks and not item.get('heading'):
+            avatar_style = item.get('avatar_style', 'round')
+            avatar_html = _avatar_img(avatar_path, avatar_style, person_dir)
+            inner_html = f'<div class="block-avatar-wrap">{avatar_html}</div>'
+            item_class = (item_class + ' entry-avatar').strip()
+        elif blocks:
+            inner_html = '\n'.join(_render_block_in_item(b, person_dir) for b in blocks)
         else:
-            # 单 block 模式（向后兼容）：item 自身就是 block
-            inner_html = _render_block_in_item(item)
+            inner_html = _render_block_in_item(item, person_dir)
 
         entry_cls = 'entry' + (f' {item_class}' if item_class else '')
         items_html.append(f'<div class="{entry_cls}">\n{inner_html}\n</div>')
@@ -356,16 +383,16 @@ def render_grouped_list(data: dict) -> str:
     return _section_wrapper(title, inner, section_class)
 
 
-def render_section(data: dict) -> str:
+def render_section(data: dict, person_dir: str | None = None) -> str:
     section_type = data.get('type', 'block')
     if section_type == 'block':
         return render_block(data)
     elif section_type == 'entry-list':
-        return render_entry_list(data)
+        return render_entry_list(data, person_dir=person_dir)
     elif section_type == 'grouped-list':
         return render_grouped_list(data)
     else:
-        print(f'\u8b66\u544a: \u672a\u77e5\u7684 section type \u201c{section_type}\u201d')
+        print(f'\u8b66\u544a: \u672a\u77e5\u306e section type \u201c{section_type}\u201d')
         return ''
 
 
@@ -508,7 +535,7 @@ def main():
         if zone not in zone_items:
             zone = 'main'
         order = data.get('order', 999)
-        html = render_section(data)
+        html = render_section(data, person_dir)
         if html:
             zone_items[zone].append((order, html))
 
