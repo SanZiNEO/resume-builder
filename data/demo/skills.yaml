@@ -1,0 +1,45 @@
+type: entry-list
+zone: sidebar
+order: 2
+title: Skills
+section_style: [underline-title, skills-grid]
+items:
+  - blocks:
+      - heading: 前端基础
+        body:
+          - HTML5 / CSS3 / JavaScript / TypeScript
+  - blocks:
+      - heading: 框架与库
+        body:
+          - React 18 / Vue 3 / Next.js / Redux / Pinia
+  - blocks:
+      - heading: 工程化
+        body:
+          - Webpack / Vite / Babel / ESLint / CI/CD
+  - blocks:
+      - heading: 跨端与移动
+        body:
+          - React Native / Flutter / Taro / Electron
+  - blocks:
+      - heading: 性能与质量
+        body:
+          - Lighthouse / Sentry / 性能监控 / 自动化测试
+  - blocks:
+      - heading: 后端与工具
+        body:
+          - Node.js / Express / MySQL / Redis / Docker
+  - blocks:
+      - heading: 架构设计
+        body:
+          - 微前端 / 低代码 / 组件化设计 / 工程化体系
+  - blocks:
+      - heading: 开源与社区
+        body:
+          - GitHub 2000+ star / 技术分享 / 开源维护
+  - blocks:
+      - heading: 团队协作
+        body:
+          - Code Review / 技术方案设计 / 导师制
+
+reference:
+  note: "演示 skills-grid 九宫格布局：每组技能必须为独立 item（1 item = 1 block），section_style 含 skills-grid 时条目自动包裹卡片容器（标题在卡片外）"

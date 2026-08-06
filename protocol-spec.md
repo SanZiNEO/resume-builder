@@ -102,9 +102,10 @@ groups:
 
 ## 3. `reference:` 字段 —— AI 专属元数据
 
-**所有 type 都可以带 `reference`，build.py 完全忽略它，不渲染到 HTML。**
+**reference 必须位于文件末尾（顶层 `reference:` 起），解析时整段截断丢弃，完全不参与解析、不渲染到 HTML。**
 
 用途：AI 下次读这个文件时可以知道上下文、关联信息、原始设计意图等。
+**约束只有一个：`reference:` 必须写在文件最后**——AI 写 reference 无任何格式负担（不必符合 YAML 语法，自由文本/嵌套/乱格式均可），因为解析器根本不碰它。
 
 ```yaml
 type: entry-list
@@ -128,15 +129,17 @@ reference:
 build.py 启动时：
 
 1. 扫描 `data/{person}/` 下所有 `.yaml` 文件（**不包括** `header.yaml`）
-2. 按文件名**字典序**排序 → 作为 section 依次渲染
-3. 扫描 `data/{person}/projects/*.yaml` → 归入一个 "Projects" section
+2. 按文件内 `order` 字段排序（缺省 999）→ 作为 section 依次渲染
+3. 扫描 `data/{person}/projects/*.yaml` → 归入一个 "Projects" section（同样按文件内 `order` 排序）
 4. 读取 `data/{person}/header.yaml` → 渲染为页面头部
 
 **效果：**
-- 想加一个新板块 → 在 person 目录下放一个新的 `.yaml`，取名控制顺序即可
-- 想调整顺序 → 重命名文件（如 `01-xxx.yaml` → `03-xxx.yaml`）
-- 想删除板块 → 删除文件
+- 想加一个新板块 → 在 person 目录下放一个新的 `.yaml`
+- 想调整顺序 → 修改文件内的 `order` 字段即可，**无需重命名文件**
+- 想删除板块 → 删除文件，或改用 `.disabled` 后缀隐藏（扫描只匹配 `*.yaml`）
 - 所有操作**不需要改 build.py 和模板**
+
+> 文件名前缀（`01-`、`02-`…）仅为命名习惯，不再参与排序；同 `order` 时按文件名保持稳定顺序。
 
 ### 项目文件的特殊处理
 

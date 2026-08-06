@@ -1,0 +1,9 @@
+/* ── 左伸背景条：标题带圆角渐变背景，向左伸出卡片边缘 ── */
+.entry-title.left-bar {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-mid, #60a5fa), var(--primary, #2563EB));
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}

@@ -1,0 +1,9 @@
+/* ── 左伸背景条·B级：青蓝渐变（次级项目） ── */
+.entry-title.left-bar-soft {
+  display: inline-block;
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}

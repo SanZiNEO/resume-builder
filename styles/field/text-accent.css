@@ -1,0 +1,2 @@
+/* ── 主题色标题文字 ── */
+.entry-title.text-accent { color: var(--primary, #2563EB); }

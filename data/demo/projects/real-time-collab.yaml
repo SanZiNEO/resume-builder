@@ -1,0 +1,17 @@
+type: entry-list
+order: 4
+title: Projects
+heading: 实时协同编辑系统
+heading_style: [left-bar-soft]
+item_style: [bg-white, border-rounded, shadow-soft]
+tag_style: [tag-pill]
+meta: 2016.09 – 2017.06
+sub: 毕业设计
+tags: [WebRTC, 协同编辑]
+body:
+  - "毕业设计《基于 WebRTC 的实时协同编辑系统》，实现多人实时在线编辑同一文档"
+  - "基于 OT 算法解决并发编辑冲突，支持光标实时同步与在线人数展示"
+  - "获院级优秀毕业论文"
+
+reference:
+  note: "示例项目（虚构）：演示 left-bar-soft 次级配色"

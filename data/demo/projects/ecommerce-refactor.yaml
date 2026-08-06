@@ -1,0 +1,17 @@
+type: entry-list
+order: 3
+title: Projects
+heading: 电商中后台全量重构
+heading_style: [left-bar]
+item_style: [bg-white, border-rounded, shadow-soft]
+tag_style: [tag-pill]
+meta: 2019.03 – 2020.01
+sub: 核心开发者
+tags: [React, TypeScript, 性能优化]
+body:
+  - "主导电商中后台系统从 jQuery 到 React 16 + TypeScript 的全量重构，覆盖 50+ 业务模块"
+  - "设计通用业务组件库与状态管理方案，模块间代码复用率提升 60%"
+  - "构建性能优化：路由级代码分割 + 资源压缩，首屏加载时间从 6s 降至 2s"
+
+reference:
+  note: "示例项目（虚构）：演示 left-bar 主色标题样式"

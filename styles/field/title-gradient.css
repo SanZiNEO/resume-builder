@@ -1,0 +1,2 @@
+/* ── 渐变标题文字（提炼自 JZTHEME 紫蓝渐变） ── */
+.entry-title.title-gradient { background: linear-gradient(120deg, #2563eb, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }

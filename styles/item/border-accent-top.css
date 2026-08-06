@@ -1,0 +1,3 @@
+/* ── 顶部渐变强调条（伪元素方案，兼容圆角卡片） ── */
+.entry.border-accent-top { position: relative; }
+.entry.border-accent-top::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 6px 6px 0 0; }

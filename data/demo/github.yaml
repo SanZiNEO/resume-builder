@@ -1,0 +1,17 @@
+type: entry-list
+order: 5
+title: GitHub / 作品集
+section_style: [underline-title]
+item_style: [bg-white, shadow-muted]
+items:
+  - heading: GitHub 主页
+    link: https://github.com/
+    body:
+      - "开源项目与代码仓库，含微前端脚手架、低代码引擎、前端监控 SDK 等"
+  - heading: 个人作品集
+    link: https://example.com/
+    body:
+      - "作品集网站，集中展示项目案例与技术实践"
+
+reference:
+  note: "示例链接（虚构），演示带超链接的条目"

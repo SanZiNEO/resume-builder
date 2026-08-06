@@ -1,0 +1,21 @@
+type: entry-list
+zone: sidebar
+order: 0
+title: 基本信息
+items:
+  - layout: grid-2
+    item_style: [card-accent]
+    blocks:
+      - heading: ${NAME}
+        heading_style: [large-heading]
+      - body:
+          - "男 · 32岁 · 上海大学 计算机科学与技术 本科"
+          - "求职方向：前端架构师 / 技术负责人 / 全栈"
+          - "上海 / 杭州 · 在职-看机会 · 薪资面议"
+          - "电话：${PHONE} ｜ 邮箱：${EMAIL}"
+      - avatar: 09a6a4932b5886d4a28800e5c34aae84.jpeg
+        avatar_style: round
+
+reference:
+  context: "示例人物：张三，高级前端工程师（虚构数据，仅用于演示构建系统功能）"
+  note: "姓名/电话/邮箱使用占位符（形如 NAME/PHONE/EMAIL 的环境变量键），构建时通过环境变量注入（NAME=张三 PHONE=xxx EMAIL=xxx），演示隐私信息保护机制"

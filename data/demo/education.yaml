@@ -1,0 +1,18 @@
+type: entry-list
+order: 3
+title: Education
+section_style: [gradient-bar]
+item_style: [bg-soft-blue, border-rounded, shadow-soft]
+items:
+  - heading: 上海大学 · 计算机科学与技术 · 本科
+    heading_style: [badge]
+    meta: 2013.09 - 2017.06
+    body_style: [dot-list]
+    body:
+      - "GPA 3.7/4.0，专业排名前 10%，连续三年获校级奖学金"
+      - "毕业设计《基于 WebRTC 的实时协同编辑系统》获院级优秀毕业论文"
+      - "ACM 校队成员，2015 年省大学生程序设计竞赛银奖"
+      - "担任学院科技协会技术部部长，组织校级 Hackathon 3 届"
+
+reference:
+  note: "示例数据（虚构），演示 education 板块的 badge 标题、dot-list 正文与卡片样式组合"

@@ -14,7 +14,7 @@
 .entry-body li { margin-bottom: 1px; font-size: 12px; }
 
 /* ── 通用文本 ── */
-.block-text { font-size: 12.5px; line-height: 1.6; }
+.block-text { font-size: 12.5px; line-height: 1.6; text-indent: 2em; }
 
 /* ── 链接 ── */
 .entry-link { text-decoration: none; color: inherit; }

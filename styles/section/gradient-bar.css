@@ -1,0 +1,3 @@
+/* ── 标题下渐变横条（提炼自 JZTHEME 紫蓝渐变） ── */
+.section.gradient-bar .section-title { position: relative; padding-bottom: 6px; }
+.section.gradient-bar .section-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 2px; }

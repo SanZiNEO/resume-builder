@@ -1,6 +1,5 @@
-# 输出文件
-output/*.html
-output/*.pdf
+# 输出文件（构建产物 + 截图/PDF，全部不追踪）
+output/
 
 # 系统文件
 Thumbs.db
@@ -16,3 +15,8 @@ venv/
 # IDE
 .vscode/
 .idea/
+
+# AI 规划文件（会话临时文件）
+findings.md
+progress.md
+task_plan.md

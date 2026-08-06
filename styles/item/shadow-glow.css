@@ -1,0 +1,2 @@
+/* ── 紫色光晕阴影（提炼自 JZTHEME hover 发光） ── */
+.entry.shadow-glow { box-shadow: 0 0.1rem 0.8rem rgb(153 87 240 / 0.35); }
