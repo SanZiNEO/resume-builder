@@ -34,12 +34,12 @@ avatar: avatar.jpg          # 可选，头像图片路径（相对于人物目�
 contact:
   phone:
   email:
-  city: 全国
-  age: 22
+  city: 上海
+  age: 32
   gender: 男
-target: 游戏策划 / 用户研究 / 商业分析 / 营销分析
-job_status: 在校-随时到岗
-max_salary: 面议
+target: 前端架构师 / 技术负责人 / 全栈
+job_status: 在职-看机会
+max_salary: 35k-50k
 ```
 
 所有字段可选，渲染时跳过空字段。
@@ -237,7 +237,7 @@ title: Personal Info
 items:
   - heading: 张三
     layout: horizontal
-    fields: [13800000000, email@example.com, 上海, 22岁]
+    fields: [13800000000, email@example.com, 上海, 32岁]
   - heading: 求职意向
     tags: [数据分析, 游戏策划, 面议]
 ```
@@ -277,7 +277,7 @@ items:
       - 13800000000
       - email@example.com
       - 上海
-      - 22岁
+      - 32岁
 ```
 
 `layout: horizontal` 的项目，`body` 或 `fields` 中的每一项渲染为内联元素（span），自动换行。
