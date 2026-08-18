@@ -23,7 +23,7 @@ def inject_vars(text: str, vars: dict | None = None) -> str:
     """替换文本中的 ${KEY} 占位符（仅非注释行）；未提供的 key 保留原文并输出警告。
 
     vars 缺省时从环境变量读取（构建时通过环境变量注入真实值，
-    如 NAME=张三 python main.py build）。"""
+    如 NAME=你的姓名 python make.py）。"""
     if vars is None:
         vars = os.environ
     if not vars:

@@ -1,4 +1,4 @@
-"""CLI — main.py 的 argparse 子命令入口（build/validate/watch）+ build.py 的旧参数兼容入口。"""
+"""CLI — 旧版 main.py/build.py 的参数兼容层（现已并入 make.py，本模块仅供回溯参考）。"""
 
 import os
 import sys
@@ -10,7 +10,7 @@ from src import builder
 def main(argv: list[str] | None = None) -> int:
     """argparse 子命令 CLI（main.py 用）"""
     parser = argparse.ArgumentParser(
-        prog='main.py',
+        prog='make.py',
         description='协议化简历构建系统（YAML → HTML）')
     sub = parser.add_subparsers(dest='command', required=True)
 

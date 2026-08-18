@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.0] - 2026-08-18
+
+### Changed
+- 入口合并：`make.py` 成为唯一入口（校验 + 构建 + PDF + 截图一键完成），取代 `build.py` / `main.py` / `screenshot.py`
+- 示例数据沿用虚构人物（demo），README 全面更新为 make.py 用法
+
+### Removed
+- 旧入口脚本 `build.py` / `main.py` / `screenshot.py`
+- 过时协议文档 `protocol-spec.md`（协议概要已由 README 覆盖）
+
 ## [0.4.0] - 2026-08-06
 
 ### Added
