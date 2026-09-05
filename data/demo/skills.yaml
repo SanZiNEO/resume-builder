@@ -42,4 +42,16 @@ items:
           - Code Review / 技术方案设计 / 导师制
 
 reference:
-  note: "演示 skills-grid 九宫格布局：每组技能必须为独立 item（1 item = 1 block），section_style 含 skills-grid 时条目自动包裹卡片容器（标题在卡片外）"
+  capability_note: >
+    示例技能清单是“真实能力”，默认都会；实际使用时按岗位筛选。
+    用户学习面广，单点深度为熟练到资深，不写“精通”“大师”。
+  layout_note: >
+    skills-grid 九宫格：每组必须独立 item（1 item = 1 block），
+    卡片按渲染行数重排，避免同行高度悬殊。
+  wording_rules: >
+    技术词要让非技术 HR 也能看懂；不要写太细的库名；
+    “开源与社区”保留 star 数，但不要替代技术能力。
+  selection_principles: >
+    ① 跟岗位强相关；
+    ② 能和非技术 HR 沟通；
+    ③ 每个词都能在项目/经历中找到证据。
