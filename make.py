@@ -61,7 +61,7 @@ def cmd_build(args) -> int:
     # 1/4 构建
     print(f'== 1/4 构建 HTML（{person}）==')
     from src.builder import build
-    html = build(person=person, output_dir=folder)
+    html = build(person=person, tmpl_name=args.template, output_dir=folder)
     if not html:
         print('构建失败', file=sys.stderr)
         return 1
@@ -122,6 +122,7 @@ def main() -> int:
 
     p_build = sub.add_parser('build', help='构建 + 导出（默认命令）')
     p_build.add_argument('--person', default='me')
+    p_build.add_argument('--template', default='default', help='模板名（templates/ 下，不带 .html）')
     p_build.add_argument('--no-images', action='store_true', help='跳过图片（只构建 + PDF）')
     p_build.add_argument('--no-pdf', action='store_true', help='跳过 PDF（只构建 + 长图）')
     p_build.set_defaults(func=cmd_build)

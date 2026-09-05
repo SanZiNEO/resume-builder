@@ -15,8 +15,9 @@ python make.py build --person demo
 # 只校验 YAML（AI 写完后自查）
 python make.py validate --person demo
 
-# 指定人物 / 跳过部分步骤
+# 指定人物 / 模板 / 跳过部分步骤
 python make.py build --person me
+python make.py build --person demo --template two-column
 python make.py build --no-images        # 跳过图片（只构建 + PDF）
 python make.py build --no-pdf           # 跳过 PDF（只构建 + 长图）
 ```
@@ -54,13 +55,28 @@ resume-builder/
 └── output/                  # 构建产物（不追踪）
 ```
 
-## 依赖
+## 环境要求与安装
 
-- PyYAML：构建（`.venv` 已有）
-- playwright + PyMuPDF：PDF 导出与截图，用 `.venv` 安装：
-  ```bash
-  .venv\Scripts\python.exe -m pip install playwright PyMuPDF
-  ```
+- Python 3.10+
+- 建议使用虚拟环境
+
+安装依赖：
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+安装浏览器内核（PDF / 截图需要）：
+
+```bash
+python -m playwright install chromium
+```
+
+然后运行：
+
+```bash
+python make.py build --person demo
+```
 
 ## 协议概要
 
