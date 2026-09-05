@@ -1,0 +1,43 @@
+type: entry-list
+order: 4
+title: Honors & Awards
+section_style: [underline-title]
+items:
+  - item_style: [bg-white, shadow-muted]
+    heading: 2024 年度公司最佳技术贡献奖
+    sub: 集团级（Top 1%）
+  - item_style: [bg-white, shadow-muted]
+    heading: 2023 Q3 技术创新特等奖
+    sub: 微前端架构落地项目
+  - item_style: [bg-white, shadow-muted]
+    heading: 2021 年公司 Hackathon 一等奖
+    sub: AI 辅助代码评审工具
+  - item_style: [bg-white, shadow-muted]
+    heading: 2020 年度公司优秀员工
+
+reference:
+  用户提供奖项： >
+    2024 公司最佳技术贡献奖（集团级 Top 1%）；
+    2023 Q3 技术创新特等奖（微前端）；
+    2021 公司 Hackathon 一等奖（AI 辅助代码评审工具）；
+    2020 年度公司优秀员工。
+  整理决策： >
+    荣誉只保留有分量、与岗位相关、能展开的；
+    空间不足时保留最佳技术贡献奖和 Hackathon 一等奖；
+    每个奖项尽量和项目/经历对应。
+    2026-09-05 讨论后确认：荣誉不是越多越好，
+    写出来就一定要能在面试里讲清“为什么评上”。
+  奖项与项目对应： >
+    “2023 Q3 技术创新特等奖”对应微前端落地项目；
+    “2021 Hackathon 一等奖”对应 AI 辅助代码评审工具；
+    “2024 最佳技术贡献奖”可对应整体技术体系建设和团队管理。
+  面试展开点： >
+    面试被问奖项时，先讲奖项背景，再讲自己做了什么，
+    最后讲这个奖项对岗位能力有什么证明。
+  不写入： >
+    兴趣类、无证书类、未获奖、与岗位无关活动；
+    无法解释评选标准和含金量的奖项。
+  后续调整： >
+    如果未来有更高含金量的奖项（行业级/开源社区级），
+    可替换掉普通公司级奖项；
+    如果版面紧张，可只保留最近两年的奖项。

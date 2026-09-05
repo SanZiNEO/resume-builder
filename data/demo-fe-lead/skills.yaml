@@ -1,0 +1,65 @@
+type: entry-list
+zone: sidebar
+order: 2
+title: Skills
+section_style: [underline-title, skills-grid]
+items:
+  - blocks:
+      - heading: 三维可视化
+        body:
+          - Three.js / WebGL / ECharts / D3.js / 大屏可视化
+  - blocks:
+      - heading: 前端基础
+        body:
+          - HTML5 / CSS3 / JavaScript / TypeScript
+  - blocks:
+      - heading: 框架与库
+        body:
+          - React 18 / Vue 3 / Next.js / Redux / Pinia
+  - blocks:
+      - heading: 工程化
+        body:
+          - Webpack / Vite / Babel / ESLint / CI/CD
+  - blocks:
+      - heading: 性能与质量
+        body:
+          - WebGL 渲染优化 / Lighthouse / Sentry / 自动化测试
+  - blocks:
+      - heading: 后端与工具
+        body:
+          - Node.js / Express / MySQL / Redis / Docker
+  - blocks:
+      - heading: 架构设计
+        body:
+          - 微前端 / 低代码 / 数字孪生 / 组件化设计 / 工程化体系
+  - blocks:
+      - heading: 开源与社区
+        body:
+          - GitHub 2000+ star / 技术分享 / 开源维护
+  - blocks:
+      - heading: 团队协作
+        body:
+          - Code Review / 技术方案设计 / 导师制
+
+reference:
+  用户提供能力信息： >
+    技能清单为真实能力，默认都会；学习面广，单点深度为熟练到资深。
+    用户不愿意写“精通/大师”，因为容易被追问，也显得虚。
+  岗位定制说明： >
+    本版本为「前端主程 / 三维可视化方向」定制，
+    把“三维可视化”放在第一组，弱化跨端移动方向。
+  整理原则： >
+    ① 跟岗位强相关；
+    ② 非技术 HR 能看懂；
+    ③ 每个词都能在项目/经历中找到证据。
+  能力边界记录： >
+    Three.js / WebGL 能讲场景渲染、性能优化、编辑工具；
+    React / Vue 能讲工程化实践，不按源码级写；
+    低代码 / 数字孪生是架构主能力；
+    团队协作要保留，因为目标岗位包含技术负责人。
+  措辞决策： >
+    不写“精通”“大师”；不写太细库名；
+    “开源与社区”保留 star 数，但不替代技术能力。
+  后续调整： >
+    如果投纯架构岗，可弱化团队协作；
+    如果投更偏可视化，可把“性能与质量”改成“渲染性能优化”。
