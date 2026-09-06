@@ -1,0 +1,21 @@
+.page.warm-brown {
+  background: #7c4a2a;
+  color: #fef3c7;
+}
+.left.warm-brown {
+  background: #8b5e3c;
+  color: #fef3c7;
+}
+.right.warm-brown {
+  background: #fdf6e3;
+  color: #3f2d1c;
+}
+.left.warm-brown .section-title { color: #ffe4c4; }
+.left.warm-brown .entry { background: rgba(255, 255, 255, 0.12); color: #fef3c7; }
+.left.warm-brown .entry-title { color: #fff; }
+.left.warm-brown .entry-meta { color: rgba(255, 255, 255, 0.75); }
+.left.warm-brown .entry-sub { color: rgba(255, 255, 255, 0.8); }
+.left.warm-brown .entry-body li { color: rgba(255, 255, 255, 0.9); }
+.left.warm-brown .entry-body li::before { background: rgba(255, 255, 255, 0.5); }
+.left.warm-brown .tag { background: rgba(255, 255, 255, 0.15); color: #fef3c7; }
+.left.warm-brown .entry-link { color: #fde68a; }

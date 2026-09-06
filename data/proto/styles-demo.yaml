@@ -1,0 +1,94 @@
+type: entry-list
+style:
+- modern-section
+title: 样式库示例
+items:
+- style:
+  - neon-card
+  blocks:
+  - style:
+    - neon-panel
+    heading:
+      text: 霓虹风示例
+      style:
+      - neon-text
+    meta:
+      text: 现代 / 赛博
+      style:
+      - modern-sans
+    body:
+      items:
+      - 暗色背景 + **霓虹描边** + ==高亮==
+      - text: '{style:glow-text}发光文字{/style}'
+        style:
+        - typewriter
+      style:
+      - dot-list
+    tags:
+    - text: 霓虹
+      style:
+      - tag-neon
+    - text: 赛博
+      style:
+      - tag-neon
+- style:
+  - retro-paper
+  blocks:
+  - style:
+    - retro-panel
+    heading:
+      text: 复古风示例
+      style:
+      - serif-heading
+    meta:
+      text: 复古 / 纸质
+      style:
+      - retro-serif
+    body:
+      items:
+      - 米色背景 + 衬线字体 + {style:highlight-yellow}纸质高亮{/style}
+      style:
+      - dot-list-accent
+    tags:
+    - text: 复古
+      style:
+      - tag-retro
+    - text: 纸质
+      style:
+      - tag-retro
+- style:
+  - glass-card
+  blocks:
+  - style:
+    - glass-panel
+    heading:
+      text: 玻璃拟态示例
+      style:
+      - gradient-text
+    body:
+      items:
+      - 半透明背景 + 模糊 + 渐变标题
+      style:
+      - dot-list
+    tags:
+    - text: 玻璃
+      style:
+      - tag-modern
+- style:
+  - minimal-card
+  blocks:
+  - style:
+    - timeline-block
+    heading:
+      text: 极简时间轴示例
+      style:
+      - underline-thick
+    body:
+      items:
+      - 左侧时间轴 + 极简底部分隔
+      style:
+      - dot-sep
+    tags:
+    - text: 极简
+      style:
+      - tag-outline

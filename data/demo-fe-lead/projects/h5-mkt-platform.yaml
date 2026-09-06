@@ -1,17 +1,30 @@
 type: entry-list
 order: 5
 title: Projects
-heading: H5 营销活动配置平台
-heading_style: [left-bar-soft]
-item_style: [bg-white, border-rounded, shadow-soft]
-tag_style: [tag-pill]
 meta: 2017.06 – 2018.04
 sub: 全栈开发
-tags: [Vue.js, Node.js, 可视化搭建]
 body:
-  - "开发可视化 H5 营销页面搭建平台，运营人员拖拽组件即可生成活动页面"
-  - "提供 30+ 营销组件模板（抽奖/签到/拼团/秒杀等），支持一键发布与数据埋点"
-  - "非技术运营人员自助创建活动 100+ 场，单场活动最高带来 10 万+ 访问"
+- 开发可视化 H5 营销页面搭建平台，运营人员拖拽组件即可生成活动页面
+- 提供 30+ 营销组件模板（抽奖/签到/拼团/秒杀等），支持一键发布与数据埋点
+- 非技术运营人员自助创建活动 100+ 场，单场活动最高带来 10 万+ 访问
+style:
+- bg-white
+- border-rounded
+- shadow-soft
+heading:
+  text: H5 营销活动配置平台
+  style:
+  - left-bar-soft
+tags:
+- text: Vue.js
+  style:
+  - tag-pill
+- text: Node.js
+  style:
+  - tag-pill
+- text: 可视化搭建
+  style:
+  - tag-pill
 
 reference:
   用户提供项目背景： >

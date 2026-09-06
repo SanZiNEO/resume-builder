@@ -1,8 +1,9 @@
 type: block
 order: 1
 title: Summary
-section_style: [underline-title]
 content: 10 年前端开发经验，5 年技术团队管理经验。主导过低代码平台、微前端架构与三维可视化（Three.js/WebGL）方向的落地项目；具备完整的前端工程化体系和跨团队协作经验，擅长把复杂业务抽象成可配置平台，并推动团队高质量交付。
+style:
+- underline-title
 
 reference:
   摘要目标记录： >

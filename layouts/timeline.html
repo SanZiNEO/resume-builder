@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<!-- styles: content-area/default.css, section/default.css, item/default.css, field/default.css -->
+<style>
+@page { size: A4; margin: 0; }
+.page {
+  width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 20mm 18mm;
+}
+.timeline { position: relative; padding-left: 18px; }
+.timeline::before {
+  content: ''; position: absolute; left: 4px; top: 8px; bottom: 8px;
+  width: 2px; background: var(--primary-mid, #bfdbfe);
+}
+.timeline .section { position: relative; margin-bottom: 16px; }
+.timeline .section::before {
+  content: ''; position: absolute; left: -18px; top: 6px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--primary, #2563EB);
+  box-shadow: 0 0 0 3px #fff;
+}
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+{styles}
+</style>
+</head>
+<body>
+<div class="page {page_class}">
+  <div class="timeline">{zone:main}</div>
+</div>
+</body>
+</html>

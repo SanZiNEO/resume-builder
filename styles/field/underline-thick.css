@@ -1,0 +1,5 @@
+.underline-thick {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--primary, #2563EB);
+}

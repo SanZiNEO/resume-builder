@@ -4,9 +4,9 @@
 唯一入口，子命令式：
     python make.py                    # 一键全流程（校验 + 构建 + PDF + 图片）
     python make.py validate           # 只校验 YAML（AI 写完后自查）
-    python make.py --person me
-    python make.py --no-images        # 跳过图片（只构建 + PDF）
-    python make.py --no-pdf           # 跳过 PDF（只构建 + 长图）
+    python make.py build --person me
+    python make.py build --no-images  # 跳过图片（只构建 + PDF）
+    python make.py build --no-pdf     # 跳过 PDF（只构建 + 长图）
 
 执行链（默认）：
     0. validate  YAML 结构校验（发现问题即停）
@@ -43,6 +43,12 @@ def cmd_validate(args) -> int:
     return 0
 
 
+def cmd_watch(args) -> int:
+    from src.builder import watch
+    watch(person=args.person, layout_name=args.layout, interval=args.interval)
+    return 0
+
+
 def cmd_build(args) -> int:
     person = args.person
     ts = datetime.now().strftime('%Y%m%d-%H%M%S')
@@ -61,7 +67,7 @@ def cmd_build(args) -> int:
     # 1/4 构建
     print(f'== 1/4 构建 HTML（{person}）==')
     from src.builder import build
-    html = build(person=person, tmpl_name=args.template, output_dir=folder)
+    html = build(person=person, layout_name=args.layout, output_dir=folder)
     if not html:
         print('构建失败', file=sys.stderr)
         return 1
@@ -122,7 +128,7 @@ def main() -> int:
 
     p_build = sub.add_parser('build', help='构建 + 导出（默认命令）')
     p_build.add_argument('--person', default='me')
-    p_build.add_argument('--template', default='default', help='模板名（templates/ 下，不带 .html）')
+    p_build.add_argument('--layout', default='default', help='布局名（layouts/ 下，不带 .html）')
     p_build.add_argument('--no-images', action='store_true', help='跳过图片（只构建 + PDF）')
     p_build.add_argument('--no-pdf', action='store_true', help='跳过 PDF（只构建 + 长图）')
     p_build.set_defaults(func=cmd_build)
@@ -130,6 +136,12 @@ def main() -> int:
     p_val = sub.add_parser('validate', help='只校验 YAML（AI 写完后自查）')
     p_val.add_argument('--person', default='me')
     p_val.set_defaults(func=cmd_validate)
+
+    p_watch = sub.add_parser('watch', help='监听 YAML 变化自动重建')
+    p_watch.add_argument('--person', default='me')
+    p_watch.add_argument('--layout', default='default', help='布局名（layouts/ 下，不带 .html）')
+    p_watch.add_argument('--interval', type=float, default=1.0, help='轮询间隔秒')
+    p_watch.set_defaults(func=cmd_watch)
 
     # 兼容：无子命令时按 build 处理
     if len(sys.argv) == 1:

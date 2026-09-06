@@ -1,0 +1,17 @@
+type: entry-list
+heading:
+  text: 某公司 · 产品运营实习生
+  style:
+  - left-bar
+meta: 2025.06 – 2025.09
+sub: 用户增长与活动策划
+tags:
+- text: 实习
+  style:
+  - tag-pill
+body:
+  items:
+  - 负责用户增长活动策划与数据复盘，参与 3 个核心增长项目
+  - 独立搭建日常数据看板，输出 5 份周报
+  style:
+  - dot-list

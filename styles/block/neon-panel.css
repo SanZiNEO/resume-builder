@@ -1,0 +1,8 @@
+.block.neon-panel {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}

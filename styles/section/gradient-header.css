@@ -1,0 +1,6 @@
+.section.gradient-header .section-title {
+  background: linear-gradient(90deg, #2563eb, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

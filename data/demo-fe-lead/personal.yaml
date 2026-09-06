@@ -3,18 +3,21 @@ zone: sidebar
 order: 0
 title: 基本信息
 items:
-  - layout: grid-2
-    item_style: [card-accent]
-    blocks:
-      - heading: ${NAME}
-        heading_style: [large-heading]
-      - body:
-          - "男 · 32岁 · 上海大学 计算机科学与技术 本科"
-          - "求职方向：前端主程 / 前端架构师 / 技术负责人 / 三维可视化"
-          - "徐州 / 沛县 · 可到岗 · 薪资面议"
-          - "电话：${PHONE} ｜ 邮箱：${EMAIL}"
-      - avatar: 09a6a4932b5886d4a28800e5c34aae84.jpeg
-        avatar_style: round
+- layout: grid-2
+  blocks:
+  - heading:
+      text: ${NAME}
+      style:
+      - large-heading
+  - body:
+    - 男 · 32岁 · 上海大学 计算机科学与技术 本科
+    - 求职方向：前端主程 / 前端架构师 / 技术负责人 / 三维可视化
+    - 徐州 / 沛县 · 可到岗 · 薪资面议
+    - 电话：${PHONE} ｜ 邮箱：${EMAIL}
+  - avatar: 09a6a4932b5886d4a28800e5c34aae84.jpeg
+    avatar_style: round
+  style:
+  - card-accent
 
 reference:
   用户身份信息： >

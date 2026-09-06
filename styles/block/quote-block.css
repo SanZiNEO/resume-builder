@@ -1,0 +1,6 @@
+.block.quote-block {
+  background: #f1f5f9;
+  border-left: 4px solid #94a3b8;
+  padding: 10px 14px;
+  font-style: italic;
+}

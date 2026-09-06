@@ -1,0 +1,6 @@
+.section.cyber-header .section-title {
+  color: #22d3ee;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+  font-family: ui-monospace, "Courier New", monospace;
+  letter-spacing: 1px;
+}

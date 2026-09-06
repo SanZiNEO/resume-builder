@@ -1,0 +1,16 @@
+.entry.corner-accent {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.entry.corner-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #2563eb 50%, transparent 50%);
+  border-top-left-radius: 10px;
+}

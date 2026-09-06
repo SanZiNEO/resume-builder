@@ -1,2 +1,3 @@
-/* ── 主题色标题文字 ── */
+/* ── 主题色文字（任意容器通用） ── */
+.text-accent { color: var(--primary, #2563EB); }
 .entry-title.text-accent { color: var(--primary, #2563EB); }

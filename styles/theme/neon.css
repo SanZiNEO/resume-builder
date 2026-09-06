@@ -1,0 +1,21 @@
+.page.neon {
+  background: #0b1120;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #e2e8f0;
+}
+.left.neon {
+  background: #111827;
+  color: #e2e8f0;
+}
+.right.neon {
+  background: #0b1120;
+  color: #e2e8f0;
+}
+.page.neon .section-title { color: #22d3ee; text-shadow: 0 0 6px rgba(34, 211, 238, 0.5); }
+.page.neon .entry-title { color: #fff; }
+.page.neon .entry-meta { color: #94a3b8; }
+.page.neon .entry-link { color: #38bdf8; }
+.page.neon .tag { background: rgba(34, 211, 238, 0.1); border: 1px solid #22d3ee; color: #67e8f9; }

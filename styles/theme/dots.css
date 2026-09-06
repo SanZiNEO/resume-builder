@@ -1,0 +1,18 @@
+.page.dots {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 12px 12px;
+  color: #1e293b;
+}
+.left.dots {
+  background-color: #eef2ff;
+  background-image: radial-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
+  color: #1e293b;
+}
+.right.dots {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 12px 12px;
+  color: #1e293b;
+}

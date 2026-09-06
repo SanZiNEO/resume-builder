@@ -1,0 +1,6 @@
+.entry.top-stripe {
+  border-top: 4px solid var(--primary, #2563EB);
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+}

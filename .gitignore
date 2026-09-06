@@ -20,3 +20,15 @@ venv/
 findings.md
 progress.md
 task_plan.md
+
+# pytest 临时目录
+test-tmp-*/
+.test-tmp-*/
+.pytest_cache/
+.cache/
+
+# Steam 游戏清单导出（脚本产物，可随时重新生成）
+steam_games_*.csv
+
+# 个人网申填写模板（不追踪）
+notes/网申填写模板.md

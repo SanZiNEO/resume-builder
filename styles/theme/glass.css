@@ -1,0 +1,14 @@
+.page.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 249, 255, 0.5));
+  color: #1e293b;
+}
+.left.glass {
+  background: rgba(255, 255, 255, 0.55);
+  color: #1e293b;
+}
+.right.glass {
+  background: rgba(255, 255, 255, 0.65);
+  color: #1e293b;
+}
+.page.glass .section-title { color: #334155; }
+.page.glass .tag { background: rgba(226, 232, 240, 0.8); color: #334155; }

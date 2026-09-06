@@ -1,0 +1,13 @@
+.page.minimal {
+  background: #ffffff;
+  color: #111827;
+}
+.left.minimal {
+  background: #f8fafc;
+  color: #111827;
+}
+.right.minimal {
+  background: #ffffff;
+  color: #111827;
+}
+.page.minimal .section-title { color: #111827; }

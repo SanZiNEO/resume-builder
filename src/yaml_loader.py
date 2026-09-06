@@ -3,7 +3,7 @@
 reference 约定：永远位于文件末尾（顶层 `reference:` 起），解析时从该行起
 整段截断丢弃，不参与解析——AI 写 reference 无任何格式负担，想怎么写怎么写。
 
-占位符约定：`${KEY}` 形式，构建时由 --var KEY=VALUE 注入（仅 personal.yaml 生效），
+占位符约定：`${KEY}` 形式，构建时由环境变量注入（仅 personal.yaml 生效），
 未提供的占位符保留原文并输出警告。个人隐私信息（姓名/电话/邮箱）以占位符形式
 存在于 personal.yaml，AI 读到的只有占位符，真实值由用户构建时手动传入。
 """
@@ -23,7 +23,7 @@ def inject_vars(text: str, vars: dict | None = None) -> str:
     """替换文本中的 ${KEY} 占位符（仅非注释行）；未提供的 key 保留原文并输出警告。
 
     vars 缺省时从环境变量读取（构建时通过环境变量注入真实值，
-    如 NAME=你的姓名 python make.py）。"""
+    如 NAME=你的姓名 python make.py build）。"""
     if vars is None:
         vars = os.environ
     if not vars:

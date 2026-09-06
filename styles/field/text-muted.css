@@ -1,2 +1,3 @@
-/* ── 正文弱化文字 ── */
+/* ── 弱化文字（任意容器通用） ── */
+.text-muted { color: #4b5563; }
 .entry-body.text-muted { color: #4b5563; }

@@ -1,0 +1,7 @@
+.block.code-block {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 10px 12px;
+  border-radius: 6px;
+}

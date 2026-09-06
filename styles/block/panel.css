@@ -1,0 +1,7 @@
+.block.panel {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid #4a90d9;
+  border-radius: 8px;
+  background: #f7fafd;
+}

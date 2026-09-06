@@ -1,0 +1,15 @@
+.block.timeline-block {
+  border-left: 2px solid var(--primary, #2563EB);
+  padding: 8px 0 8px 14px;
+  position: relative;
+}
+.block.timeline-block::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary, #2563EB);
+}

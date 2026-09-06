@@ -1,0 +1,55 @@
+type: entry-list
+style:
+- underline-title
+title: 原型测试
+items:
+- style:
+  - border-rounded
+  - shadow-soft
+  blocks:
+  - style:
+    - panel
+    heading:
+      text: 容器样式原型
+      style:
+      - left-bar-accent
+    meta:
+      text: 2026.01 – 至今
+      style:
+      - text-muted
+      icons:
+      - name: calendar
+        position: before
+      - name: clock
+        position: after
+    sub: 这是 sub 文本
+    tags:
+    - text: Minecraft
+      style:
+      - tag-pill
+    - text: 直播互动
+      style:
+      - tag-pill
+    body:
+      items:
+      - text: 这是**加粗重点**和==高亮重点==，还有`代码片段`
+        icon: phone
+      - text: '{icon:email}自定义样式：{style:accent}这是强调词{/style}'
+        style:
+        - text-muted
+      - text: 图片插入示例
+        image: assets/images/demo.png
+        image_alt: 示例图片
+      - parts:
+        - icon: location
+        - text: 山东大学
+        - icon: link
+        - text: 作品集
+      - Markdown 图片：![示例](assets/images/demo.png)
+      style:
+      - dot-list
+  - style:
+    - panel
+    heading: 第二个 block
+    body:
+    - '**粗体** + *斜体* + [链接](https://example.com)'

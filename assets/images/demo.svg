@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#fdf2f8"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="380" height="280" rx="18" fill="url(#bg)"/>
+  <rect x="30" y="30" width="150" height="90" rx="12" fill="#ffffff" opacity="0.9"/>
+  <rect x="200" y="30" width="170" height="90" rx="12" fill="#ffffff" opacity="0.9"/>
+  <rect x="30" y="140" width="340" height="130" rx="12" fill="#ffffff" opacity="0.9"/>
+
+  <text x="50" y="65" font-family="sans-serif" font-size="16" font-weight="700" fill="#1e293b">数据概览</text>
+  <text x="50" y="92" font-family="sans-serif" font-size="12" fill="#64748b">用户增长趋势</text>
+  <text x="220" y="65" font-family="sans-serif" font-size="16" font-weight="700" fill="#1e293b">核心指标</text>
+  <text x="220" y="92" font-family="sans-serif" font-size="12" fill="#64748b">互动量 / 转化率</text>
+
+  <rect x="50" y="170" width="28" height="70" rx="4" fill="url(#bar1)"/>
+  <rect x="90" y="150" width="28" height="90" rx="4" fill="url(#bar1)"/>
+  <rect x="130" y="185" width="28" height="55" rx="4" fill="url(#bar1)"/>
+  <rect x="170" y="160" width="28" height="80" rx="4" fill="url(#bar2)"/>
+  <rect x="210" y="135" width="28" height="105" rx="4" fill="url(#bar2)"/>
+  <rect x="250" y="175" width="28" height="65" rx="4" fill="url(#bar2)"/>
+
+  <polyline points="300,220 330,190 355,200 370,170" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="300" cy="220" r="5" fill="#f59e0b"/>
+  <circle cx="330" cy="190" r="5" fill="#f59e0b"/>
+  <circle cx="355" cy="200" r="5" fill="#f59e0b"/>
+  <circle cx="370" cy="170" r="5" fill="#f59e0b"/>
+
+  <circle cx="280" cy="75" r="6" fill="#22c55e"/>
+  <text x="295" y="80" font-family="sans-serif" font-size="12" fill="#166534">+18.6%</text>
+</svg>

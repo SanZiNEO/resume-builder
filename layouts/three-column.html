@@ -7,15 +7,23 @@
 <!-- styles: content-area/default.css, section/default.css, item/default.css, field/default.css -->
 <style>
 @page { size: A4; margin: 0; }
-.page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 1; }
+.page {
+  width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  display: grid; grid-template-columns: 1fr 2fr 1fr;
+}
+.left, .center, .right { padding: 16px; min-width: 0; }
 @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
 {styles}
+/* 三栏铺满整页 */
+.page { padding: 0; }
 </style>
 </head>
 <body>
-<div class="page">
-{zone:main}
-{footer}
+<div class="page {page_class}">
+  <div class="left {sidebar_class}">{zone:left}</div>
+  <div class="center">{zone:main}</div>
+  <div class="right">{zone:right}</div>
 </div>
 </body>
 </html>

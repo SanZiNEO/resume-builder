@@ -1,0 +1,8 @@
+.tag.tag-neon {
+  color: #22d3ee;
+  border: 1px solid #22d3ee;
+  background: rgba(34, 211, 238, 0.08);
+  border-radius: 50px;
+  padding: 1px 8px;
+  text-shadow: 0 0 4px rgba(34, 211, 238, 0.5);
+}
