@@ -1,73 +1,190 @@
 # Resume Builder
 
-YAML 数据 + 布局 → 简历产物的轻量构建系统。一键产出 HTML / PDF / 分页 PNG / 长图。
+YAML 数据 + 布局 → 简历产物的轻量构建系统。
+一键产出 HTML / PDF / 分页 PNG / 长图，适合 AI 与用户协作生成、迭代简历。
 
-核心特性：每个 YAML 文件末尾的 `reference:` 是 **AI 记忆区**——不会被导入简历，却能让 AI 持续追踪用户上下文、写作口径与决策历史。
+## 特性
 
-仓库自带虚构示例人物：
+- **数据驱动**：简历内容全部由 `data/{person}/` 下的 YAML 定义
+- **AI 记忆区**：每个 YAML 末尾的 `reference:` 会被构建器截断，不参与渲染，用于记录口径、红线、决策与用户原话
+- **样式 / 主题 / 布局**：通过 `style`、`theme.yaml`、`--layout` 控制视觉
+- **一键导出**：HTML、PDF、长图、分页 PNG
+- **多人物 / 多版本**：一个人物一个目录，互不干扰
 
-```text
-data/demo/        张三（前端架构/技术负责人）
-data/demo-fe-lead/  demo-fe-lead（前端主程岗位定制示例）
-data/proto/        功能/样式原型示例
+## 效果预览
+
+```bash
+python make.py build --person demo
 ```
+
+然后打开 `output/demo-*/demo-*.html` 查看构建结果。
 
 ## 快速开始
 
 ```bash
-# 一键全流程：校验 YAML → 构建 HTML → 导出 PDF → 长图 + 分页 PNG
-python make.py build --person demo
-
-# 只校验 YAML（AI 写完后自查）
+# 校验所有 YAML
 python make.py validate --person demo
 
-# 指定人物 / 布局 / 跳过部分步骤
+# 完整构建（HTML + PDF + 长图 + 分页 PNG）
+python make.py build --person demo
+
+# 指定布局
 python make.py build --person demo --layout two-column
-python make.py build --person demo-fe-lead --layout timeline
-python make.py build --no-images        # 只构建 + PDF
-python make.py build --no-pdf           # 只构建 + 长图
-python make.py watch                    # 监听 YAML 变化自动重建
+
+# 只构建 HTML/长图，不导出 PDF
+python make.py build --person demo --no-pdf
+
+# 监听 YAML 变化自动重建
+python make.py watch
 ```
 
-产物输出到 `output/{person}-{时间戳}/` 文件夹（每次运行新建，不覆盖旧版）。
+## 项目用法（AI）
+
+使用本项目和 AI 协作时：
+
+1. 先加载仓库根目录的 `AGENTS.md`
+2. 按其中的“简历顾问”角色开始聊天
+3. 直接围绕用户简历内容讨论，不需要先介绍项目
+4. 一个 YAML 一个 YAML 来，边讨论、边确认、边修改
+
+AI 不需要做：代码审查、项目结构讲解、git 状态汇报、内部流程说明。
+
+## 使用方式
+
+### 创建一份新简历
+
+```text
+data/{person}/
+```
+
+每个目录代表一份简历。目录下放顶层板块 YAML，也可以放子目录作为 collection。
+
+### 添加一个板块
+
+```yaml
+# data/{person}/education.yaml
+type: entry-list
+title: 教育背景
+order: 1
+style:
+  - underline-title
+items:
+  - heading:
+      text: 山东大学 · 工商管理 · 本科
+    meta: 2023.09 - 2027.06
+    body:
+      - 主修课程：市场营销学、管理学、Python 数据分析
+```
+
+### 添加一个项目 / 经历条目
+
+子目录会自动成为一个板块，例如：
+
+```yaml
+# data/{person}/projects/_meta.yaml
+title: 项目经历
+order: 2
+zone: main
+style:
+  - underline-title
+```
+
+每个条目一个 YAML：
+
+```yaml
+# data/{person}/projects/example.yaml
+type: entry-list
+heading:
+  text: 项目名称
+body:
+  - 项目描述
+  - 使用的方法与工具
+  - 可量化的成果
+```
+
+### AI 记忆区（reference）
+
+每个 YAML 文件末尾都可以写：
+
+```yaml
+reference:
+  用户原话: >
+    用户说“我可以使用 Excel 做数据透视表”
+  口径: >
+    技能只写真实使用过的，不写“精通”
+  红线: >
+    不虚构经历、不编造数字
+```
+
+`reference:` 之后的内容构建时会被整段截断，不会出现在简历成品里。
+
+所有讨论记录、口径、红线、待确认事项都写进对应 YAML 的 `reference`；
+不要另外创建 `_notes.md`、`ai-notes.md` 等独立记忆文件。
+所有 YAML 使用同一套协议，没有特殊格式。
+
+## 与 AI 协作的使用建议
+
+- **一个 YAML 一个 YAML 来**：不要一次性收集完整简历后再统一写。先聊当前板块，确认后再落盘。
+- **边讨论边修改**：用户说一段、AI 给反馈或草稿、确认后再写对应的 YAML，再进入下一个板块。
+- **板块顺序灵活**：不需要严格从前往后。用户当前最想改哪块，就先讨论哪块。
+- **总结类内容最后处理**：`skills`、`summary`、`personal` 这类需要基于教育/实习/项目提炼的内容，放到最后再写，避免一开始空洞或前后矛盾。
+- **`reference` 同步记录**：讨论中形成的口径、红线、待确认事项随时记入 `reference`，但不打断对话节奏。
+
+## YAML 协议简述
+
+| type | 用途 |
+|---|---|
+| `block` | 单段文本，如自我评价 |
+| `entry-list` | 条目列表，如教育、实习、项目、技能 |
+| `grouped-list` | 分组列表，如技能分类 |
+
+常用字段：
+
+```text
+order   # 板块顺序
+zone    # main / sidebar
+title   # 板块标题
+style   # 样式列表，可叠加
+items   # 条目列表
+blocks  # 多段落结构
+heading / meta / sub / body / tags
+```
+
+行内标记：
+
+```text
+**加粗**        ==高亮==        `代码`
+{style:name}文本{/style}
+{icon:name}     ![图片](assets/images/demo.png)
+```
+
+更完整的示例直接看：
+
+```text
+data/demo/
+data/demo-fe-lead/
+data/proto/
+```
+
+这些是虚构示例数据，不是真实用户简历。
 
 ## 目录结构
 
 ```text
 resume-builder/
-├── make.py                  # 唯一入口（校验 + 构建 + PDF + 截图）
-├── src/                     # 核心代码包
-│   ├── builder.py           # 构建编排（build / validate / watch）
-│   ├── renderer.py          # 渲染引擎
-│   ├── inline.py            # 行内文本解析
-│   ├── styles.py            # 样式收集
-│   ├── assets.py            # SVG 图标与图片加载
-│   └── yaml_loader.py       # YAML 解析
-├── layouts/                 # 布局骨架
-│   ├── default.html
-│   ├── two-column.html
-│   ├── three-column.html
-│   ├── hero-two-column.html
-│   ├── timeline.html
-│   └── portfolio-grid.html
+├── make.py                  # 唯一入口：校验 + 构建 + PDF + 截图
+├── src/                     # 核心代码
+├── layouts/                 # 页面布局
 ├── styles/                  # 样式库
-│   ├── content-area/ zone/ section/ item/ block/ field/ layout/ theme/
-├── assets/                  # 图标和图片素材
-│   ├── icons/
-│   └── images/
-├── data/                    # YAML 数据
-│   ├── demo/
-│   ├── demo-fe-lead/
-│   └── proto/
-├── skills/                  # 人机协作 Skill 文档
+├── assets/                  # 图标与图片
+├── data/                    # YAML 简历数据
 ├── tests/                   # pytest 测试
 └── output/                  # 构建产物（不追踪）
 ```
 
-## 环境要求与安装
+## 环境要求
 
 - Python 3.10+
-- 建议使用虚拟环境
 
 安装依赖：
 
@@ -75,170 +192,25 @@ resume-builder/
 python -m pip install -r requirements.txt
 ```
 
-安装浏览器内核（PDF / 截图需要）：
+导出 PDF / PNG 需要浏览器内核：
 
 ```bash
 python -m playwright install chromium
 ```
 
-运行测试：
+安装测试依赖并运行：
 
 ```bash
 python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-## 协议概要
-
-每个 YAML 文件是一个板块，通过 `type` 协议统一表达：
-
-| type | 含义 | 适用 |
-|------|------|------|
-| `block` | 单段文本 | summary |
-| `entry-list` | 条目列表，支持 blocks 多段落 | education, projects, experience, profile |
-| `grouped-list` | 分类列表 | skills 的另一种形式 |
-
-**字段说明：**
-
-每个会生成容器的对象都可以写 `style: [样式名]`，样式列表可叠加：
-
-```yaml
-type: entry-list
-order: 2
-zone: sidebar
-title: Education
-style: [underline-title]
-items:
-  - style: [border-rounded, shadow-soft]
-    blocks:
-      - style: [panel]
-        heading:
-          text: 标题
-          style: [large-heading]
-        meta: 2023-2027
-        body:
-          items:
-            - 条目1
-            - 条目2
-          style: [dot-list]
-        tags:
-          - text: 标签1
-            style: [tag-pill]
-```
-
-### 行内文本协议
-
-| 写法 | 效果 |
-|---|---|
-| `**重点**` | 加粗 |
-| `*斜体*` | 斜体 |
-| `==高亮==` | 高亮 |
-| `` `代码` `` | 等宽代码 |
-| `[文字](url)` | 链接 |
-| `![alt](path)` | 插入图片 |
-| `{style:name}文本{/style}` | 自定义样式片段 |
-| `{icon:name}` | 插入 SVG 图标 |
-
-### 图标与图片
-
-```yaml
-icon: phone
-icons:
-  - name: calendar
-    position: before
-image: assets/images/demo.png
-images:
-  - assets/images/demo.png
-parts:
-  - icon: location
-  - text: "山东大学"
-```
-
-### 文件夹板块（Collection）
-
-`data/{person}/` 下任意子目录自动成为一个板块：
+## 布局
 
 ```text
-projects/    → Projects
-internships/ → 实习经历
-work/        → 工作经历
+default / two-column / three-column / hero-two-column / timeline / portfolio-grid
 ```
 
-可选 `_meta.yaml`：
+## License
 
-```yaml
-title: 实习经历
-order: 3
-zone: main
-style: [underline-title]
-```
-
-### theme.yaml
-
-```yaml
-page: [paper]
-sidebar: [warm-brown]
-main: []
-```
-
-## AI 记忆区：reference
-
-每个 YAML 文件末尾的 `reference:` 是 AI 记忆区。
-
-解析时，从顶层的 `reference:` 行开始，之后所有内容都会截断丢弃，不参与渲染。
-
-AI 可以在这里记录：
-
-- 用户背景与求职方向
-- 用户原话与专业化表述
-- 数字口径与来源
-- 红线与不写什么
-- 面试话术
-- 项目之间的差异与叙事关系
-
-示例：
-
-```yaml
-reference:
-  用户提供信息： >
-    10 年前端开发经验，目标岗位：前端架构 / 技术负责人。
-  数字口径： >
-    500 万日活、2000+ star 需能说明来源。
-  已确认不写入： >
-    与岗位无关的爱好、无法解释的绩效数字。
-```
-
-## 样式库与主题
-
-- 样式按视觉效果命名，通过任意对象 `style` 引用
-- 样式文件放在 `styles/` 下按分类组织
-- 主题背景通过 `theme.yaml` 控制
-- 布局通过 `--layout` 选择
-
-常用命令：
-
-```bash
-python make.py build --person demo --layout default
-python make.py build --person demo --layout two-column
-python make.py build --person demo --layout three-column
-python make.py build --person demo --layout hero-two-column
-python make.py build --person demo --layout timeline
-python make.py build --person demo --layout portfolio-grid
-```
-
-## 人机协作 Skill
-
-`skills/resume-builder/` 包含 AI 协作流程文档：
-
-```text
-SKILL.md            # 核心流程
-question-bank.md    # 提问库
-protocol.md         # YAML 协议
-style-layout.md     # 样式/主题/布局
-asset-guide.md      # SVG/图片素材
-reference-rules.md  # reference 规则/红线/隐私
-```
-
-## 打印
-
-`.page` 采用 A4，打印边距由浏览器打印对话框手动调整。
+MIT

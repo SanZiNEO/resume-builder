@@ -1,7 +1,7 @@
-type: entry-list
+﻿type: entry-list
 zone: sidebar
 order: 2
-title: Skills
+title: 个人技能
 items:
 - blocks:
   - heading: 前端基础
