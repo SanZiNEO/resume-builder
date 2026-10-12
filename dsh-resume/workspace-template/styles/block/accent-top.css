@@ -1,0 +1,4 @@
+.block.accent-top {
+  border-top: 2px solid var(--primary, #2563EB);
+  padding-top: 10px;
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>示例公司 · 示例岗位</title>
+<style>
+@page { size: A4; margin: 0; }
+.page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 1; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+/* ── 头像 ── */
+.block-avatar { width: 100px; height: 100px; object-fit: cover; }
+
+/* ── 纵向排列（默认） ── */
+
+/* ── 横向排列 ── */
+.entry-body-inline { display: flex; flex-wrap: wrap; }
+.inline-item { font-size: 12px; }
+.inline-item:not(:last-child)::after { content: ' | '; }
+
+/* ── 双列网格：左列上下两格 + 右列通栏（个人基本信息表格布局） ── */
+.entry.grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-2 .grid-cell { min-width: 0; }
+.entry.grid-2 .grid-cell:last-child { grid-column: 2; grid-row: 1 / -1; }
+.entry.grid-2 .grid-cell:last-child .block-avatar-wrap { margin-top: 0; height: 100%; }
+.entry.grid-2 .grid-cell:last-child .block-avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+
+/* ── 三列网格布局（左：基本信息 / 中：联系方式 / 右：照片） ── */
+.entry.grid-3 { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-3 .grid-cell { min-width: 0; }
+.entry.grid-3 .grid-cell .block-avatar { width: 100%; height: auto; border-radius: 8px; }
+.entry.grid-3 .grid-cell .block-avatar-wrap { margin-top: 2px; }
+
+.text-highlight {
+  background: #fff3bf;
+  color: #1e293b;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.icon {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  margin-right: 0.3em;
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.inline-image {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 4px 0;
+  vertical-align: middle;
+}
+
+/* ── 页面基础视觉 ── */
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
+
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #000;
+  background: #e8e8e8;
+  padding: 20px 0;
+}
+
+.page { background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 20mm 18mm; }
+
+@media print { body { background: #fff; padding: 0; } }
+
+/* ── 板块 ── */
+.section { margin-bottom: 14px; }
+.section-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+
+/* ── 卡片 ── */
+.entry { margin-bottom: 6px; }
+.entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+
+/* ── 标题 ── */
+.entry-title { font-size: 13px; font-weight: 600; }
+
+/* ── 元信息 ── */
+.entry-meta { font-size: 11.5px; }
+
+/* ── 副标题与标签 ── */
+.entry-sub { font-size: 12px; margin-bottom: 3px; }
+.tag { font-size: 11px; }
+
+/* ── 正文 ── */
+.entry-body { margin-top: 2px; }
+.entry-body ul { padding-left: 16px; }
+.entry-body li { margin-bottom: 1px; font-size: 12px; }
+
+/* ── 通用文本 ── */
+.block-text { font-size: 12.5px; line-height: 1.6; text-indent: 2em; }
+
+/* ── 链接 ── */
+.entry-link { text-decoration: none; color: inherit; }
+
+/* ── 徽章式元信息：浅底圆角标签 ── */
+.badge {
+  background: var(--primary-light, #eef2ff);
+  padding: 1px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: var(--primary, #2563EB);
+}
+.entry-meta { background: var(--primary-light, #eef2ff); padding: 1px 8px; border-radius: 3px; white-space: nowrap; color: var(--primary, #2563EB); }
+
+/* ── 小圆点列表项（关掉默认 marker） ── */
+.entry-body ul { list-style: none; padding-left: 0; }
+.entry-body li { position: relative; padding-left: 14px; }
+.entry-body li::before { content: ''; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--primary, #2563EB); opacity: 0.45; }
+
+/* ── 大号姓名：28px 粗体深色，略 spread ── */
+.entry-title.large-heading { font-size: 28px; font-weight: 700; color: #0f172a; letter-spacing: 1px; }
+
+/* ── 左伸背景条·S级：紫蓝渐变（头牌项目，呼应 gradient-bar 主题色） ── */
+.entry-title.left-bar-accent {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #d946ef);
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}
+
+/* ── 胶囊标签（参考 JZTHEME 50px 胶囊） ── */
+.tag.tag-pill {
+  background: #eef2ff;
+  border-radius: 50px;
+  padding: 2px 10px;
+}
+.entry.tag-pill .tag { background: #eef2ff; border-radius: 50px; padding: 2px 10px; }
+
+/* ── 浅蓝背景卡片 ── */
+.entry.bg-soft-blue { background: #f0f6ff; }
+
+/* ── 纯白底细边卡片 ── */
+.entry.bg-white { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 14px; margin-bottom: 7px; }
+
+/* ── 顶部渐变强调条（伪元素方案，兼容圆角卡片） ── */
+.entry.border-accent-top { position: relative; }
+.entry.border-accent-top::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 6px 6px 0 0; }
+
+/* ── 圆角卡片：左侧蓝线、圆角、浅灰底 ── */
+.entry.border-rounded { background: var(--card, #fafbfd); border-radius: 6px; padding: 10px 14px; margin-bottom: 7px; border-left: 3px solid var(--primary-mid, #bfdbfe); }
+
+/* ── 渐变左条卡片：左浅蓝→右白背景渐变 + 渐变左竖线 + 左侧阴影 ──
+   背景向右渐变为页面底色（右侧放照片，与页面融为一体）；
+   阴影负偏移只投在左侧。配色克制，打印友好。 */
+.entry.card-accent {
+  position: relative;
+  background: linear-gradient(to right, #dbe7ff 0%, #f2f7ff 50%, #ffffff 100%);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 7px;
+  box-shadow: -8px 2px 14px -6px rgba(15, 23, 42, 0.12);
+}
+.entry.card-accent::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6366f1, #d946ef);
+  border-radius: 8px 0 0 8px;
+}
+
+/* ── 紫色光晕阴影（提炼自 JZTHEME hover 发光） ── */
+.entry.shadow-glow { box-shadow: 0 0.1rem 0.8rem rgb(153 87 240 / 0.35); }
+
+/* ── 灰色短阴影（参考 JZTHEME 阴影参数：缩小偏移与模糊、去彩色、纯灰） ── */
+.entry.shadow-muted { box-shadow: 3px 3px 10px 0px rgba(15, 23, 42, 0.12); }
+
+/* ── 柔和阴影（双层） ── */
+.entry.shadow-soft { box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04); }
+
+/* ── 标题下渐变横条（提炼自 JZTHEME 紫蓝渐变） ── */
+.section.gradient-bar .section-title { position: relative; padding-bottom: 6px; }
+.section.gradient-bar .section-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 2px; }
+
+/* ── 技能总卡：标题在卡片外（underline-title 正常渲染），card-wrap 包裹 9 个小区块 ── */
+.section.skills-grid .card-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px 14px;
+}
+.section.skills-grid .entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 0;
+}
+.section.skills-grid .entry-header { margin-bottom: 2px; justify-content: center; }
+.section.skills-grid .entry-title { font-size: 12px; color: var(--primary, #2563EB); }
+.section.skills-grid .entry-body { margin-top: 0; }
+.section.skills-grid .entry-body ul { padding-left: 14px; margin: 0; }
+.section.skills-grid .entry-body li { font-size: 11.5px; line-height: 1.5; margin-bottom: 0; display: inline; }
+.section.skills-grid .entry-body li:not(:last-child)::after { content: '；'; }
+
+/* ── 下划线标题：右侧渐变横线 ── */
+.section-title { display: flex; align-items: center; gap: 10px; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--primary-mid, #bfdbfe), transparent); }
+</style>
+</head>
+<body>
+<div class="page ">
+<div class="section">
+  <div class="section-title">基本信息</div>
+  <div class="entry card-accent grid-2">
+<div class="grid-cell">
+<div class="block">
+<div class="entry-header"><span class="entry-title large-heading">${NAME}</span></div>
+</div>
+</div>
+<div class="grid-cell">
+<div class="block">
+<div class="entry-body"><ul>
+<li>性别 · 年龄 · 示例大学 示例专业</li>
+<li>求职方向：待填写</li>
+<li>期望城市 · 到岗时间 · 薪资面议</li>
+<li>电话：${PHONE} ｜ 邮箱：${EMAIL}</li>
+</ul></div>
+</div>
+</div>
+<div class="grid-cell">
+<div class="block">
+
+</div>
+</div>
+</div>
+</div>
+<div class="section underline-title">
+  <div class="section-title">Summary</div>
+  <div class="entry"><div class="entry-body"><p class="block-text">待填写：用 3-5 句话概括你的背景与核心优势（示例大学 示例专业 本科，聚焦……，独立完成……，擅长……）。</p></div></div>
+</div>
+<div class="section gradient-bar">
+  <div class="section-title">Education</div>
+  <div class="entry bg-soft-blue border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title badge">示例大学 · 示例专业 · 本科</span><span class="entry-meta">YYYY.MM - YYYY.MM</span></div>
+<div class="entry-body dot-list"><ul>
+<li>主修课程：待填写</li>
+<li>校园经历 / 科研 · 竞赛 · 社会实践：待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="section underline-title skills-grid">
+  <div class="section-title">Skills</div>
+  <div class="card-wrap">
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类一</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类二</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类三</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类四</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类五</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">技能分类六</span></div>
+<div class="entry-body"><ul>
+<li>待填写</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section underline-title">
+  <div class="section-title">GitHub / 作品集</div>
+  <div class="entry bg-white shadow-muted">
+<div class="entry-header"><span class="entry-title">待填写（用户名 / 站点名）</span><span class="entry-meta"><a href="https://example.com" target="_blank" rel="noopener" class="entry-link">https://example.com</a></span></div>
+<div class="entry-body"><ul>
+<li>待填写：一句话说明</li>
+</ul></div>
+</div>
+</div>
+<div class="section underline-title">
+  <div class="section-title">实习经历</div>
+  <div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title badge">示例公司 · 示例岗位</span><span class="entry-meta">YYYY.MM – YYYY.MM</span></div>
+<div class="entry-body dot-list"><ul>
+<li>待填写：负责的工作内容</li>
+<li>待填写：产出与结果（动作 → 数字 → 落点）</li>
+</ul></div>
+</div>
+</div>
+<div class="section">
+  <div class="section-title">Projects</div>
+  <div class="entry bg-white border-accent-top shadow-glow">
+<div class="block">
+<div class="entry-header"><span class="entry-title left-bar-accent">示例项目名称</span><span class="entry-meta">YYYY.MM – 至今</span></div>
+<div class="entry-sub">担任角色（示例） <span class="tag tag-pill">标签一</span> <span class="tag tag-pill">标签二</span></div>
+</div>
+<div class="block">
+<div class="entry-header"><span class="entry-title">子标题（做了什么）</span></div>
+<div class="entry-body dot-list"><ul>
+<li>待填写：项目背景 + 你的动作（动作 → 数字 → 落点）</li>
+<li>待填写：成果与量化数据</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

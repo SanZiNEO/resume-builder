@@ -1,0 +1,22 @@
+.page.retro {
+  background: #fdf6e3;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(180, 83, 9, 0.04) 0 1px,
+    transparent 1px 4px
+  );
+  color: #3f2d1c;
+  font-family: "Songti SC", "Noto Serif SC", Georgia, serif;
+}
+.left.retro {
+  background: #f5e8c9;
+  color: #3f2d1c;
+}
+.right.retro {
+  background: #fdf6e3;
+  color: #3f2d1c;
+}
+.page.retro .section-title { color: #7c2d12; }
+.page.retro .entry-meta { color: #8a6d4b; }
+.page.retro .entry-link { color: #b45309; }
+.page.retro .tag { background: #fef3c7; border: 1px solid #d4b483; color: #78350f; }

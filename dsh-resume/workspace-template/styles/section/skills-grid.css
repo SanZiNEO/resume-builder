@@ -1,0 +1,26 @@
+/* ── 技能总卡：标题在卡片外（underline-title 正常渲染），card-wrap 包裹 9 个小区块 ── */
+.section.skills-grid .card-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px 14px;
+}
+.section.skills-grid .entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 0;
+}
+.section.skills-grid .entry-header { margin-bottom: 2px; justify-content: center; }
+.section.skills-grid .entry-title { font-size: 12px; color: var(--primary, #2563EB); }
+.section.skills-grid .entry-body { margin-top: 0; }
+.section.skills-grid .entry-body ul { padding-left: 14px; margin: 0; }
+.section.skills-grid .entry-body li { font-size: 11.5px; line-height: 1.5; margin-bottom: 0; display: inline; }
+.section.skills-grid .entry-body li:not(:last-child)::after { content: '；'; }

@@ -1,0 +1,4 @@
+/* ── 横向排列 ── */
+.entry-body-inline { display: flex; flex-wrap: wrap; }
+.inline-item { font-size: 12px; }
+.inline-item:not(:last-child)::after { content: ' | '; }

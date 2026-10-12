@@ -1,0 +1,14 @@
+.page.sunset {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7, #fde68a);
+  color: #431407;
+}
+.left.sunset {
+  background: linear-gradient(180deg, #ffedd5, #fef3c7);
+  color: #431407;
+}
+.right.sunset {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  color: #431407;
+}
+.page.sunset .section-title { color: #9a3412; }
+.page.sunset .tag { background: #ffedd5; border: 1px solid #fdba74; color: #9a3412; }

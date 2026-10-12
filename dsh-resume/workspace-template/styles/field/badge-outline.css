@@ -1,0 +1,6 @@
+.badge-outline {
+  border: 1px solid var(--primary, #2563EB);
+  color: var(--primary, #2563EB);
+  border-radius: 999px;
+  padding: 1px 8px;
+}

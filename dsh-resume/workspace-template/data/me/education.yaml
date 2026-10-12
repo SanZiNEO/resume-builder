@@ -1,0 +1,18 @@
+type: entry-list
+order: 2
+title: Education
+style: [gradient-bar]
+items:
+  - style: [bg-soft-blue, border-rounded, shadow-soft]
+    heading:
+      text: 示例大学 · 示例专业 · 本科
+      style: [badge]
+    meta: YYYY.MM - YYYY.MM
+    body:
+      items:
+        - "主修课程：待填写"
+        - "校园经历 / 科研 · 竞赛 · 社会实践：待填写"
+      style: [dot-list]
+
+reference:
+  note: 一条 education item = 一段学历。可复制 item 增加多段学历；时间用 YYYY.MM - YYYY.MM 格式。

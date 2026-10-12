@@ -1,0 +1,10 @@
+type: block
+order: 1
+title: Summary
+style: [underline-title]
+content: 待填写：用 3-5 句话概括你的背景与核心优势（示例大学 示例专业 本科，聚焦……，独立完成……，擅长……）。
+
+reference:
+  note: >
+    Summary 建议最后写：先做完 education / projects / internships 等具体板块，
+    再从中提炼一句话定位。不要出现真实姓名（姓名走 personal.yaml 的 ${NAME}）。

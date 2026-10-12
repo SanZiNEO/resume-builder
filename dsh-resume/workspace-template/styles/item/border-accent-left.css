@@ -1,0 +1,2 @@
+/* ── 左侧强调条 ── */
+.entry.border-accent-left { border-left: 4px solid var(--primary, #2563EB); }

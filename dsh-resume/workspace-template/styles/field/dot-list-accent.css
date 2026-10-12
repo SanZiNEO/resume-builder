@@ -1,0 +1,2 @@
+/* ── 主题色圆点列表（比默认 dot-list 更醒目） ── */
+.entry-body.dot-list-accent li::before { background: var(--primary, #2563EB); opacity: 0.8; width: 5px; height: 5px; }

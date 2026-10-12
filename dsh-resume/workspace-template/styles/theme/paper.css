@@ -1,0 +1,17 @@
+.page.paper {
+  background: #fdf6e3;
+  color: #3f2d1c;
+}
+.left.paper {
+  background: #f5e8c9;
+  color: #3f2d1c;
+}
+.right.paper {
+  background: #fdf6e3;
+  color: #3f2d1c;
+}
+.page.paper .section-title { color: #7c2d12; }
+.page.paper .entry-meta { color: #8a6d4b; }
+.page.paper .entry-sub { color: #6b4f2a; }
+.page.paper .entry-link { color: #b45309; }
+.page.paper .tag { background: #fef3c7; color: #78350f; }

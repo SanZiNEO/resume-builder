@@ -1,0 +1,35 @@
+type: entry-list
+zone: sidebar
+order: 2
+title: Skills
+style: [underline-title, skills-grid]
+items:
+  - blocks:
+      - heading: 技能分类一
+        body:
+          - 待填写
+  - blocks:
+      - heading: 技能分类二
+        body:
+          - 待填写
+  - blocks:
+      - heading: 技能分类三
+        body:
+          - 待填写
+  - blocks:
+      - heading: 技能分类四
+        body:
+          - 待填写
+  - blocks:
+      - heading: 技能分类五
+        body:
+          - 待填写
+  - blocks:
+      - heading: 技能分类六
+        body:
+          - 待填写
+
+reference:
+  note: >
+    style 含 skills-grid 时，每组必须是独立 item（1 item = 1 block），渲染为卡片网格。
+    分组数量和名称随意增删；技能词尽量让非技术 HR 也看得懂。

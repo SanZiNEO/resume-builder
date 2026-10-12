@@ -32,3 +32,11 @@ steam_games_*.csv
 
 # 个人网申填写模板（不追踪）
 notes/网申填写模板.md
+
+# Node / TypeScript（dsh-resume 插件包的依赖与构建产物；构建产物随 npm 包分发，不入库）
+node_modules/
+lib/
+dist/
+*.tsbuildinfo
+.tsdown_cache/
+*.tgz

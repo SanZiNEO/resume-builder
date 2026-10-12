@@ -1,0 +1,2 @@
+/* ── 蓝色渐变背景卡片（浅色，打印友好） ── */
+.entry.bg-gradient-blue { background: linear-gradient(135deg, #eef4ff, #dbe7ff); }

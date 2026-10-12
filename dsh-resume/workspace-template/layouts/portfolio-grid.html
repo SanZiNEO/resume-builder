@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<!-- styles: content-area/default.css, section/default.css, item/default.css, field/default.css -->
+<style>
+@page { size: A4; margin: 0; }
+.page {
+  width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 20mm 18mm;
+}
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+}
+.portfolio-grid .section { break-inside: avoid; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+{styles}
+</style>
+</head>
+<body>
+<div class="page {page_class}">
+  <div class="portfolio-grid">{zone:main}</div>
+</div>
+</body>
+</html>

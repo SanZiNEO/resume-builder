@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<!-- styles: content-area/default.css, section/default.css, item/default.css, field/default.css -->
+<style>
+@page { size: A4; margin: 0; }
+.page {
+  width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  display: grid; grid-template-columns: 1fr 2.4fr; grid-template-rows: auto 1fr;
+}
+.header { grid-column: 1 / -1; padding: 20px 18px; margin-bottom: 4px; }
+.left { padding: 18px; }
+.right { padding: 18px; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+{styles}
+/* 头图 + 双栏铺满整页 */
+.page { padding: 0; }
+</style>
+</head>
+<body>
+<div class="page {page_class}">
+  <div class="header">{zone:header}</div>
+  <div class="left {sidebar_class}">{zone:sidebar}</div>
+  <div class="right {main_class}">{zone:main}</div>
+</div>
+</body>
+</html>

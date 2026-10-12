@@ -1,0 +1,17 @@
+type: entry-list
+order: 1
+title: 实习经历
+items:
+  - style: [bg-white, border-rounded, shadow-soft]
+    heading:
+      text: 示例公司 · 示例岗位
+      style: [badge]
+    meta: YYYY.MM – YYYY.MM
+    body:
+      items:
+        - "待填写：负责的工作内容"
+        - "待填写：产出与结果（动作 → 数字 → 落点）"
+      style: [dot-list]
+
+reference:
+  note: 一个 .yaml 文件就是一段实习。无实习经历可删除本条目或整个 internships/ 目录。

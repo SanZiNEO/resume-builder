@@ -1,0 +1,5 @@
+/* ── 三列网格布局（左：基本信息 / 中：联系方式 / 右：照片） ── */
+.entry.grid-3 { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-3 .grid-cell { min-width: 0; }
+.entry.grid-3 .grid-cell .block-avatar { width: 100%; height: auto; border-radius: 8px; }
+.entry.grid-3 .grid-cell .block-avatar-wrap { margin-top: 2px; }

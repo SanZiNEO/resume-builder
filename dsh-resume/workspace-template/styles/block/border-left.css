@@ -1,0 +1,4 @@
+.block.border-left {
+  border-left: 3px solid var(--primary-mid, #bfdbfe);
+  padding-left: 10px;
+}

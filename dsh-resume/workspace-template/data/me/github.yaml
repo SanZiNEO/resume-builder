@@ -1,0 +1,13 @@
+type: entry-list
+order: 3
+title: GitHub / 作品集
+style: [underline-title]
+items:
+  - style: [bg-white, shadow-muted]
+    heading: 待填写（用户名 / 站点名）
+    link: https://example.com
+    body:
+      - "待填写：一句话说明"
+
+reference:
+  note: 没有开源主页或作品集可直接删除本文件；有多个链接就复制 item。

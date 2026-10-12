@@ -1,0 +1,29 @@
+type: entry-list
+zone: sidebar
+order: 0
+title: 基本信息
+items:
+  - layout: grid-2
+    style: [card-accent]
+    blocks:
+      - heading:
+          text: ${NAME}
+          style: [large-heading]
+      - body:
+          - "性别 · 年龄 · 示例大学 示例专业"
+          - "求职方向：待填写"
+          - "期望城市 · 到岗时间 · 薪资面议"
+          - "电话：${PHONE} ｜ 邮箱：${EMAIL}"
+      - avatar: avatar.jpg
+        avatar_style: round
+
+reference:
+  # 占位说明（本段解析时整段丢弃，不参与渲染，可随意记录）
+  placeholders: >
+    姓名/电话/邮箱以 ${NAME}/${PHONE}/${EMAIL} 占位符存在，构建时用环境变量注入真实值
+    （NAME=xxx PHONE=xxx EMAIL=xxx python make.py build），未注入则保留占位符并输出警告。
+    其余字段请直接改写为你的真实信息；不需要头像可删除 avatar 行，
+    需要头像则把图片命名为 avatar.jpg 放到 data/me/ 下（自动内嵌）。
+  todos:
+    - 把示例大学 / 示例专业 / 求职方向 / 期望城市等换成你的真实信息
+    - 不想要的字段直接删除，YAML 缺少条目不会导致校验失败

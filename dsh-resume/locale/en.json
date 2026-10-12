@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Resume Mode",
+    "description": "Turns a session into a resume advisor: edits only the resume project's YAML / CSS, exports on demand, live preview in the right sidebar."
+  }
+}

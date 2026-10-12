@@ -1,0 +1,6 @@
+/* ── 双列网格：左列上下两格 + 右列通栏（个人基本信息表格布局） ── */
+.entry.grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-2 .grid-cell { min-width: 0; }
+.entry.grid-2 .grid-cell:last-child { grid-column: 2; grid-row: 1 / -1; }
+.entry.grid-2 .grid-cell:last-child .block-avatar-wrap { margin-top: 0; height: 100%; }
+.entry.grid-2 .grid-cell:last-child .block-avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }

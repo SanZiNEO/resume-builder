@@ -1,0 +1,5 @@
+.entry.gradient-soft {
+  background: linear-gradient(135deg, #eff6ff, #faf5ff);
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+}

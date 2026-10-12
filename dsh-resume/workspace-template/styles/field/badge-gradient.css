@@ -1,0 +1,6 @@
+.badge-gradient {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 10px;
+}

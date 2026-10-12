@@ -1,0 +1,91 @@
+{
+  "name": "dsh-resume-mode",
+  "version": "0.1.0",
+  "description": "Resume mode for DeepSeek Harness: a resume-advisor persona, a write boundary, HTML/PDF export, and a live read-only preview in the right sidebar.",
+  "license": "MIT",
+  "author": "ShanZhi",
+  "type": "module",
+  "homepage": "https://github.com/SanZiNEO/resume-builder/tree/main/dsh-resume#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanZiNEO/resume-builder.git",
+    "directory": "dsh-resume"
+  },
+  "bugs": {
+    "url": "https://github.com/SanZiNEO/resume-builder/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "plugin",
+    "resume",
+    "resume-builder",
+    "ui"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./policy": "./lib/policy.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale",
+    "knowledge",
+    "icon.svg",
+    "workspace-template"
+  ],
+  "meta": {
+    "title": "Resume Mode",
+    "description": "Turns a session into a resume advisor: edits only the resume project's YAML / CSS, exports on demand, live preview in the right sidebar."
+  },
+  "icon": "./icon.svg",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0",
+    "@deepseek-ai/dsh-agent-instructions": ">=0.2.0-rc.2",
+    "@deepseek-ai/dsh-agent-preset": ">=0.2.0-rc.2",
+    "@deepseek-ai/dsh-persona": ">=0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2",
+    "@deepseek-ai/schemastery": ">=3.18.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "watch": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.mjs",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-sidebar-browser",
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-api-settings-controller"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.badge-solid {
+  background: var(--primary, #2563EB);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 10px;
+}

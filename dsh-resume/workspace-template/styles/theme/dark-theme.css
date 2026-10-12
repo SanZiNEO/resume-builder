@@ -1,0 +1,19 @@
+.page.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+.left.dark {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+.right.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+.page.dark .section-title { color: #f1f5f9; }
+.page.dark .entry-title { color: #fff; }
+.page.dark .entry-meta { color: #94a3b8; }
+.page.dark .entry-sub { color: #cbd5e1; }
+.page.dark .entry-link { color: #38bdf8; }
+.page.dark .tag { background: rgba(255, 255, 255, 0.08); color: #e2e8f0; }
+.page.dark .entry-body li::before { background: rgba(255, 255, 255, 0.5); }

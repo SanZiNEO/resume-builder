@@ -1,0 +1,19 @@
+/* ── 渐变左条卡片：左浅蓝→右白背景渐变 + 渐变左竖线 + 左侧阴影 ──
+   背景向右渐变为页面底色（右侧放照片，与页面融为一体）；
+   阴影负偏移只投在左侧。配色克制，打印友好。 */
+.entry.card-accent {
+  position: relative;
+  background: linear-gradient(to right, #dbe7ff 0%, #f2f7ff 50%, #ffffff 100%);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 7px;
+  box-shadow: -8px 2px 14px -6px rgba(15, 23, 42, 0.12);
+}
+.entry.card-accent::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6366f1, #d946ef);
+  border-radius: 8px 0 0 8px;
+}

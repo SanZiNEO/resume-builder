@@ -1,0 +1,7 @@
+.entry.neon-card {
+  background: #0b1120;
+  color: #e2e8f0;
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.18);
+  border-radius: 10px;
+}

@@ -1,0 +1,2 @@
+/* ── 磨砂卡片：半透明底、模糊边缘 ── */
+.entry { background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); border-radius: 10px; padding: 12px 16px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.3); }

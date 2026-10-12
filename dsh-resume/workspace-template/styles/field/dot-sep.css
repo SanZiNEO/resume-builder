@@ -1,0 +1,3 @@
+/* ── 圆点分隔标签 ── */
+.tag::before { content: '·'; margin-right: 4px; }
+.tag:first-child::before { content: none; }

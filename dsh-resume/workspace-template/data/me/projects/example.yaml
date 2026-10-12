@@ -1,0 +1,27 @@
+type: entry-list
+order: 1
+title: Projects
+items:
+  - style: [bg-white, border-accent-top, shadow-glow]
+    blocks:
+      - heading:
+          text: 示例项目名称
+          style: [left-bar-accent]
+        meta: YYYY.MM – 至今
+        sub: 担任角色（示例）
+        tags:
+          - text: 标签一
+            style: [tag-pill]
+          - text: 标签二
+            style: [tag-pill]
+      - heading: 子标题（做了什么）
+        body:
+          items:
+            - "待填写：项目背景 + 你的动作（动作 → 数字 → 落点）"
+            - "待填写：成果与量化数据"
+          style: [dot-list]
+
+reference:
+  note: >
+    一个 .yaml 文件就是一个项目。文件名仅作稳定排序键，板块内排序看文件里的 order 字段。
+    可复制本文件新增项目；不需要的项目直接删文件。

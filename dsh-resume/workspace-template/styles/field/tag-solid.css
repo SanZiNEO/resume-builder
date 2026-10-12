@@ -1,0 +1,6 @@
+.tag.tag-solid {
+  background: var(--primary, #2563EB);
+  color: #fff;
+  border-radius: 50px;
+  padding: 1px 8px;
+}

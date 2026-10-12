@@ -1,0 +1,2 @@
+/* ── 灰色短阴影（参考 JZTHEME 阴影参数：缩小偏移与模糊、去彩色、纯灰） ── */
+.entry.shadow-muted { box-shadow: 3px 3px 10px 0px rgba(15, 23, 42, 0.12); }

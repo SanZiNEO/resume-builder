@@ -1,0 +1,15 @@
+/* ── 页面基础视觉 ── */
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
+
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #000;
+  background: #e8e8e8;
+  padding: 20px 0;
+}
+
+.page { background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 20mm 18mm; }
+
+@media print { body { background: #fff; padding: 0; } }

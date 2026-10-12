@@ -1,0 +1,10 @@
+.section.ornate-divider {
+  border-bottom: 2px solid #d4b483;
+  padding-bottom: 10px;
+}
+.section.ornate-divider .section-title::after {
+  content: '◆';
+  margin-left: 8px;
+  color: #b45309;
+  font-size: 10px;
+}
