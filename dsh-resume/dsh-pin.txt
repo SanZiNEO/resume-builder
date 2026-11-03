@@ -36,6 +36,10 @@ types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译�
   persona   `dsh-persona` 只能在 preset（agent 作用域）里挂；`prefix` 换掉部署级人设，
             `complete: true` 会把 system prompt 压成只剩这一段（会连带压掉工具指引、
             plan-mode 说明、harness identity）——本插件**不用** complete。
+            ⚠ dsh 0.2.1 起 `{{cwd}}` **不再由 loop 注册**，persona 模板里任何 `{{cwd}}`
+            都会让提示词组装失败，进而整个 preset 挂载失败——前端只看到
+            `Unknown agent preset: resume`，看不出真正原因。本插件已删掉
+            `suffix: Your working directory is {{cwd}}.`。`{{model}}` 仍然有效。
 
   preview   预览是一个 loopback HTTP 服务，固定 `/preview`（端口 39127）。
             应用内形态：插件自己注册的右栏标签页（`ctx.sidebarRightTabs.register`，
