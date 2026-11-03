@@ -47,6 +47,10 @@
               maxBytes: 65536
           - id: tool-fs
             name: '@deepseek-ai/dsh-tool-fs'
+          - id: tool-fs-search
+            name: '@deepseek-ai/dsh-tool-fs-search'
+            config:
+              sampleOverCapGlobResults: false
           - id: compaction
             name: cordis:group
             group: true
