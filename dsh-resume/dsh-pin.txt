@@ -86,5 +86,15 @@ types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译�
 
   render    渲染器已从 Python（make.py + src/*.py）迁到 TypeScript，随插件分发、跑在 dsh 的 Node 里
             （src/render/，进程内直接调，不起子进程、不落中间文件）。
-            **不需要 Python**；只有 PDF / 长图才要可选的 playwright 包（没装则只出 HTML）。
+            **不需要 Python**；PDF / 长图按能力分层（src/render/pdf.ts）：
+            ① 系统 Edge/Chrome（Windows 的 Edge 必装）——puppeteer-core 驱动 headless
+               渲染，零下载；探测顺序 Edge→Chrome 的常规安装位+PATH 常见名；
+            ② 可选 playwright（100MB+）——运行时动态 import，装了才用；
+            ③ 都没有 → 报指引错误（HTML 导出永远可用，Ctrl+P 兜底）。
+            两家驱动在 setContent/pdf/screenshot/newPage 形状一致，一套手写接口面对；
+            waitForTimeout 只有 playwright 有，等待统一 setTimeout；驱动全部动态
+            import（说明符用变量），缺失也不能拖垮宿主行激活。
+            ⚠ 桌面端插件进程拿不到 electron：宿主是壳 spawn 的 Node 模式子进程
+            （apps/desktop/host-process.ts），壳↔宿主 IPC 是封闭后端集合，没有
+            第三方原生动词扩展点——别想当然在插件里 printToPDF。
             `test/golden/*.html` 是原 Python 版生成的参照产物：渲染器改完必须 `pnpm test` 逐字节对齐。

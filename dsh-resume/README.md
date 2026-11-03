@@ -33,7 +33,7 @@ dsh plugin --profile <profile> add ./dsh-resume-0.1.0.tgz
 
 - dsh **0.2.0-rc.2**（桌面版 nightly feed 当前最新；`package.json` 的 `peerDependencies` 卡这个版本）
 - **不需要 Python**。渲染器（YAML → 自包含 HTML）已经随插件分发，跑在 dsh 的 Node 里。
-- 只有出 **PDF / 长图**才额外需要 `playwright`（可选）：`pnpm add playwright && npx playwright install chromium`；
+- 只有出 **PDF / 长图**才额外需要一个 Chromium 内核浏览器：优先用系统已装的 **Microsoft Edge / Google Chrome**（自动探测，零下载，`puppeteer-core` 驱动）；系统没有再装可选的 `playwright`（`pnpm add playwright && npx playwright install chromium`）；两者都没有时 HTML 导出不受影响，可用浏览器打开后自行打印为 PDF；
   没装也能用，导出 HTML 和预览都不受影响。
 
 ## 桌面端预览窗（可选）

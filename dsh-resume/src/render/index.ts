@@ -1,8 +1,9 @@
 /**
  * 渲染器公开 API — 插件的其它部分只通过这里使用渲染器。
  *
- * 与 Python 版（src/builder.py + make.py）逐字节一致；PDF / 长图需要可选的
- * playwright 包，没装时抛带安装指引的错误。
+ * 与 Python 版（src/builder.py + make.py）逐字节一致；PDF / 长图优先用系统
+ * Edge/Chrome 渲染（puppeteer-core 驱动，零下载），系统没有浏览器再落可选的
+ * playwright 包，都没有时抛带指引的错误。
  */
 
 import { build, listPersons as listPersonDirs, validate } from './builder.ts'
@@ -47,7 +48,7 @@ export async function listPersons(root: string): Promise<string[]> {
 export async function validateProject(request: ValidateRequest): Promise<string[]> {
   return validate(request.root, request.person)
 }
-/** 出 PDF（需要可选的 playwright 包，没装就报带指引的错误）。 */
+/** 出 PDF（优先系统 Edge/Chrome，没有再落可选的 playwright，都没有报指引错误）。 */
 export async function renderPdf(request: RenderRequest & { file: string }): Promise<void> {
   await exportPdf(await renderHtml(request), request.file)
 }
