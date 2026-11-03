@@ -1,0 +1,16 @@
+/* ── 北欧·板块标题：雾蓝小点 + 宽字距 ── */
+.section.sc-header .section-title {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--sc-ink, #2f3437);
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+.section.sc-header .section-title::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  margin-right: 8px; vertical-align: 1px;
+  background: var(--sc-fog, #8fa6b2);
+}

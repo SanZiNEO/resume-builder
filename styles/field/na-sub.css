@@ -1,0 +1,6 @@
+/* ── 航海·副标题：斜体衬线 ── */
+.entry-sub.na-sub {
+  font-size: 10px; font-style: italic;
+  letter-spacing: 0.05em;
+  color: #4a5c78;
+}

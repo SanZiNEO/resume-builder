@@ -1,0 +1,11 @@
+/* ── 七十年代·数字块：砖橙圆角片 ── */
+.block.sy-metric .entry-body li strong,
+.block.sy-metric .entry-body li b {
+  display: inline-block;
+  background: var(--sy-rust, #b4552d);
+  color: #fdf6e7;
+  border-radius: 8px;
+  padding: 0 6px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

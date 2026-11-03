@@ -1,0 +1,8 @@
+/* ── 临床·数字块：青绿数字 + 下划 ── */
+.block.cln-metric .entry-body li strong,
+.block.cln-metric .entry-body li b {
+  color: var(--cln-teal, #0f766e);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.35);
+}

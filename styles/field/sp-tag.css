@@ -1,0 +1,10 @@
+/* ── 太空时代·标签：方角细框 ── */
+.tag.sp-tag {
+  background: transparent;
+  border: 1px solid var(--sp-ink, #26282b);
+  border-radius: 0;
+  color: var(--sp-ink, #26282b);
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0 5px;
+}

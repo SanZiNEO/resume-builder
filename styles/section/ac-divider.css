@@ -1,0 +1,10 @@
+/* ── 学术论文风·分隔：居中星号 ── */
+.section.ac-divider::before {
+  content: '* * *';
+  display: block;
+  text-align: center;
+  letter-spacing: 0.6em;
+  color: var(--ac-rule, #9ca3af);
+  font-size: 10px;
+  margin-bottom: 10px;
+}

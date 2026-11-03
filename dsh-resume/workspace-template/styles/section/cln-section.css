@@ -1,0 +1,9 @@
+/* ── 临床·板块：青绿左边 + 白底 ── */
+.section.cln-section {
+  background: #ffffff;
+  border: 1px solid var(--cln-rule, #d7e3e1);
+  border-left: 4px solid var(--cln-teal, #0f766e);
+  border-radius: 6px;
+  padding: 10px 12px 9px;
+  margin-bottom: 11px;
+}

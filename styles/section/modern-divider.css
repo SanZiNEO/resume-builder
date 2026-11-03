@@ -1,0 +1,6 @@
+/* ── 现代简约·分隔：浅灰细线 ── */
+.section.modern-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 12px;
+  background: var(--md-rule, #e5e7eb);
+}

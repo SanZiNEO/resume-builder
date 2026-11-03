@@ -1,0 +1,6 @@
+/* ── 报纸·引文块：缩进 + 红引号 ── */
+.block.np-quote { position: relative; padding: 4px 12px 4px 22px; margin: 10px 0; }
+.block.np-quote::before {
+  content: '\201C'; position: absolute; left: 0; top: -2px;
+  font-size: 26px; line-height: 1; color: var(--np-red, #b3261e); font-family: Georgia, serif;
+}

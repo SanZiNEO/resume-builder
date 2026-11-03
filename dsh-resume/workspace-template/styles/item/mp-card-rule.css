@@ -1,0 +1,6 @@
+/* ── 孟菲斯·重点条目：黄底虚线圆角 ── */
+.entry.mp-card-rule {
+  background: #fff9e0; border: 2px dashed var(--mp-ink, #1a1a1a);
+  border-radius: 14px; padding: 10px 12px; margin-bottom: 10px;
+}
+.entry.mp-card-rule .block:last-child { margin-bottom: 0; }

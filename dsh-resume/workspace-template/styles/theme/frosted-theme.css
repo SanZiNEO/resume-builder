@@ -1,0 +1,14 @@
+/* ── 磨砂玻璃·主题：浅灰蓝底 + 冷灰字 ── */
+.page.frosted-theme {
+  --fr-ink: #1e293b;
+  --fr-muted: #64748b;
+  background:
+    radial-gradient(circle at 18% 12%, #dbeafe 0%, transparent 45%),
+    radial-gradient(circle at 82% 78%, #ede9fe 0%, transparent 42%),
+    #eef2f7;
+  color: var(--fr-ink);
+  font-family: "Inter", "PingFang SC", system-ui, sans-serif;
+}
+.left.frosted-theme { background: #e8eef6; }
+.right.frosted-theme { background: transparent; }
+.page.frosted-theme .section-title { color: var(--fr-ink); }

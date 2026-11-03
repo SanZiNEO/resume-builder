@@ -1,0 +1,9 @@
+/* ── 黏土·栏线条目：淡紫厚边 ── */
+.entry.cl-card-rule {
+  background: #ffffff;
+  border: 3px solid var(--cl-lilac, #d9cdf0);
+  border-radius: 18px;
+  padding: 8px 11px;
+  margin-bottom: 9px;
+}
+.entry.cl-card-rule .block:last-child { margin-bottom: 0; }

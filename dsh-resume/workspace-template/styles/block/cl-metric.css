@@ -1,0 +1,12 @@
+/* ── 黏土·数字块：粉色糖片 ── */
+.block.cl-metric .entry-body li strong,
+.block.cl-metric .entry-body li b {
+  display: inline-block;
+  background: var(--cl-pink, #f7c9c0);
+  color: #6b4038;
+  border-radius: 8px;
+  padding: 0 6px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 2px 4px rgba(214, 173, 158, 0.4);
+}

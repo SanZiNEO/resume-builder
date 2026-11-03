@@ -1,0 +1,6 @@
+/* ── 登机牌·副标题：等宽小字 ── */
+.entry-sub.bd-sub {
+  font-size: 9.5px; font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #6b6558;
+}

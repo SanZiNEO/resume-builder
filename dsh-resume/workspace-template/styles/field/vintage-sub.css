@@ -1,0 +1,7 @@
+/* ── 复古做旧·副标题：斜体褐字 ── */
+.entry-sub.vintage-sub {
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  font-size: 10.5px;
+  color: var(--vt-muted, #7a6449);
+}

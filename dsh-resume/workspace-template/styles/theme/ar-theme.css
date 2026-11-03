@@ -1,0 +1,11 @@
+/* ── 年报·主题：白底 + 深海军蓝 + 金 ── */
+.page.ar-theme {
+  --ar-paper: #ffffff; --ar-navy: #12304f;
+  --ar-gold: #a8894f; --ar-ink: #1a2430; --ar-rule: #d7dee5;
+  background: var(--ar-paper);
+  color: var(--ar-ink);
+  font-family: "Inter", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.ar-theme { background: #f4f6f8; }
+.right.ar-theme { background: var(--ar-paper); }
+.page.ar-theme .section-title { color: #ffffff; }

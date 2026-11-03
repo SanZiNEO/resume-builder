@@ -1,0 +1,8 @@
+/* ── 纸张·数字块：墨褐下划线 ── */
+.block.paper-metric .entry-body li strong,
+.block.paper-metric .entry-body li b {
+  color: var(--pp-title, #7c2d12);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid rgba(124, 45, 18, 0.35);
+}

@@ -1,0 +1,7 @@
+/* ── 报纸·重点条目：红色左线 ── */
+.entry.np-card-rule {
+  background: transparent; border: none;
+  border-left: 2px solid var(--np-red, #b3261e);
+  border-radius: 0; padding: 2px 0 2px 10px; margin-bottom: 10px;
+}
+.entry.np-card-rule .block:last-child { margin-bottom: 0; }

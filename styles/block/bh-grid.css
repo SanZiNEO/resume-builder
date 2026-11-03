@@ -1,0 +1,9 @@
+/* ── 包豪斯·网格块：三栏几何排列 ── */
+.block.bh-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.bh-grid .entry-body li {
+  background: #fff; border: 2px solid var(--bh-ink, #111);
+  padding: 6px 8px; font-size: 10.5px;
+}

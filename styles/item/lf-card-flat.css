@@ -1,0 +1,8 @@
+/* ── 高奢·扁平条目：纯留白 ── */
+.entry.lf-card-flat {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}

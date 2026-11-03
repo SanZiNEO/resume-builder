@@ -1,0 +1,8 @@
+/* ── 学术论文风·图表说明：居中灰字 ── */
+.block.ac-figure .entry-body li {
+  font-size: 10px;
+  text-align: center;
+  color: var(--ac-muted, #4b5563);
+  border-top: 1px solid var(--ac-rule, #9ca3af);
+  padding-top: 6px;
+}

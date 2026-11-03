@@ -1,0 +1,6 @@
+/* ── 孟菲斯·数字强调：粉色胶囊数字 ── */
+.block.mp-metric .entry-body li strong,
+.block.mp-metric .entry-body li b {
+  display: inline-block; background: var(--mp-pink, #ff6b9d); color: #fff;
+  padding: 0 6px; border-radius: 6px; font-weight: 800; font-variant-numeric: tabular-nums;
+}

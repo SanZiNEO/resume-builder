@@ -1,0 +1,7 @@
+/* ── 终端·分隔：点阵虚线 ── */
+.section.tm-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 12px;
+  background-image: linear-gradient(90deg, #22332b 0 3px, transparent 3px 7px);
+  background-size: 7px 1px;
+}

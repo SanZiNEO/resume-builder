@@ -1,0 +1,11 @@
+/* ── 现代简约·栏线条目：蓝色左线 ── */
+.entry.modern-card-rule {
+  background: #ffffff;
+  border: none;
+  border-left: 3px solid var(--md-accent, #2563eb);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+}
+.entry.modern-card-rule .block:last-child { margin-bottom: 0; }

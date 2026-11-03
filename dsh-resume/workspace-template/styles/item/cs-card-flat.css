@@ -1,0 +1,9 @@
+/* ── 构成主义·扁平条目：黑色顶杠 ── */
+.entry.cs-card-flat {
+  background: transparent;
+  border: none;
+  border-top: 4px solid var(--cs-black, #111);
+  border-radius: 0;
+  padding: 8px 0 2px;
+  margin-bottom: 11px;
+}

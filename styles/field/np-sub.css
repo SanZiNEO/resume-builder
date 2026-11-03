@@ -1,0 +1,5 @@
+/* ── 报纸·副标题：斜体小字 ── */
+.entry-sub.np-sub {
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-style: italic; font-size: 10.5px; color: var(--np-muted, #6b655c);
+}

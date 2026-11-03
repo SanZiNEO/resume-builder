@@ -1,5 +1,5 @@
 /**
- * dsh-resume-mode —— client 半（浏览器端 bundle）。
+ * dsh-resume —— client 半（浏览器端 bundle）。
  *
  * 用户看到的东西：
  *   1. 左栏「简历」入口 —— 点它 = 进简历模式：确保简历项目已注册成工作区、开一个会话
@@ -91,10 +91,10 @@ interface SessionProps {
 
 /** 一次性把样式挂进 head（官方包也是这么做的）。 */
 function ensureStyles(): void {
-  const id = 'dsh-resume-mode/styles'
+  const id = 'dsh-resume/styles'
   if (document.querySelector(`style[data-plugin-css="${id}"]`) !== null) return
   const tag = document.createElement('style')
-  tag.dataset['plugin'] = 'dsh-resume-mode'
+  tag.dataset['plugin'] = 'dsh-resume'
   tag.dataset['pluginCss'] = id
   tag.textContent = CSS
   document.head.appendChild(tag)
@@ -150,7 +150,7 @@ function samePath(left: string, right: string): boolean {
 
 /**
  * 打开预览：优先用**插件自己的右栏标签页** —— 只有画面，没有地址栏/前进后退那套浏览器外壳
- * （web 与桌面壳都实测可用）。万一这个类型没注册上，退回官方「浏览器」标签页，再不行开独立窗口。
+ * （web 与桌面壳都实测可用）。万一这个类型没注册上，退回官方「浏览器」标签页。
  * @returns 给用户看的一句话说明。
  */
 function openPreviewTab(ctx: ClientContext): string {
@@ -169,8 +169,9 @@ function openPreviewTab(ctx: ClientContext): string {
       // 都没有：退到独立窗口
     }
   }
-  const handle = window.open(PREVIEW_URL, 'dsh-resume-preview', 'popup=yes,width=680,height=900')
-  return handle === null || handle === undefined ? `浏览器拦了弹窗；也可以直接打开 ${PREVIEW_URL}` : '预览已开在独立窗口。'
+  // 桌面壳里 window.open 会开一个不受 dsh 管理的裸窗口，体验差也不跟随主窗；
+  // 宁可让用户知道右栏没起来，也不要弹一个野窗口。
+  return `右栏预览没打开；也可以直接打开 ${PREVIEW_URL}`
 }
 
 /** 等会话真正在屏（`startSession` 是异步的），最多等 timeoutMs。 */
@@ -531,7 +532,7 @@ function createPlugin(require: ClientRequire) {
           description: () => '只读的简历画面，改完自动刷新',
           icon: PreviewTabIcon,
         }],
-      }), 'dsh-resume-mode: preview tab type')
+      }), 'dsh-resume: preview tab type')
 
       // 它的内容（按类型的 id 注册）
       ctx.slots.inject('sidebar.right.pane.tab', () => ctx.slots.register({
@@ -570,6 +571,6 @@ function createPlugin(require: ClientRequire) {
 }
 
 window.__ModuleLoader__.load({
-  id: 'dsh-resume-mode',
+  id: 'dsh-resume',
   factory: createPlugin,
 })

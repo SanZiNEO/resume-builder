@@ -1,0 +1,7 @@
+/* ── 数据面板·分隔：状态条 ── */
+.section.db-divider::before {
+  content: '';
+  display: block; height: 2px; margin: 0 0 11px;
+  background: linear-gradient(90deg, #3ddc97 0 12%, #4ea1ff 12% 30%, #232b36 30%);
+  border-radius: 2px;
+}

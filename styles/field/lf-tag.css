@@ -1,0 +1,10 @@
+/* ── 高奢·标签：无框纯字 ── */
+.tag.lf-tag {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--lf-gray, #8b8b86);
+  font-size: 8px; font-weight: 400;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0 4px 0 0;
+}

@@ -1,0 +1,7 @@
+/* ── 黑色电影·板块：顶部硬光 + 深底 ── */
+.section.fn-section {
+  background: #111111;
+  border-top: 1px solid #3a3a3a;
+  padding: 11px 13px 10px;
+  margin-bottom: 13px;
+}

@@ -1,0 +1,6 @@
+/* ── 手写笔记风·副标题：铅笔灰小字 ── */
+.entry-sub.hw-sub {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", cursive;
+  font-size: 11px;
+  color: var(--hw-muted, #6b7280);
+}

@@ -1,0 +1,6 @@
+/* ── 构成主义·正文：常规字重收住 ── */
+.entry-body.cs-body li, .entry-body.cs-body .block-text {
+  font-size: 10.5px; line-height: 1.68;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1b1a18;
+}

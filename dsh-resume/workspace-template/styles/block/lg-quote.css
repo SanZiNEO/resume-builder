@@ -1,0 +1,9 @@
+/* ── 合同文书·引言块：缩进引文 ── */
+.block.lg-quote {
+  padding: 8px 0 8px 26px;
+  margin: 10px 0;
+  border-left: 2px solid var(--lg-rule, #b9b9b9);
+  color: var(--lg-gray, #555);
+  font-style: italic;
+  line-height: 1.85;
+}

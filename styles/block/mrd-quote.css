@@ -1,0 +1,10 @@
+/* ── 莫兰迪·引言块：柔灰蓝左线 + 斜体 ── */
+.block.mrd-quote {
+  padding: 7px 12px;
+  margin: 10px 0;
+  border-left: 3px solid var(--mrd-blue, #a9b8c4);
+  background: rgba(169, 184, 196, 0.09);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--mrd-soft, #857f78);
+}

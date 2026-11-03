@@ -1,5 +1,5 @@
 /**
- * dsh-resume-mode/policy —— 挂在「简历顾问」preset 里的那一行。
+ * dsh-resume/policy —— 挂在「简历顾问」preset 里的那一行。
  *
  * 两件事，都只对使用该 preset 的会话生效（同一 profile 里的其它会话不受影响）：
  *   1. 写边界：`edit` / `write` 只能落在简历项目里，且只能是 .yaml / .yml / .css；
@@ -87,14 +87,15 @@ export function apply(ctx: Context, config: PolicyConfig = {}): void {
       }
     }
     return undefined
-  }), 'dsh-resume-mode: write guard')
+  }), 'dsh-resume: write guard')
 
   ctx.effect(() => ctx.tools.register(defineTool({
     name: 'export',
     description:
       '导出简历：先校验 YAML 再构建。缺省导出当前选中的版本，' +
       'format=html 打包成自包含 HTML（默认）、pdf 出 PDF、image 出长图、all 全量。' +
-      '校验或构建失败时把错误原文返回，据此自己修 YAML 后重试。',
+      '校验或构建失败时把错误原文返回，据此自己修 YAML 后重试。' +
+      '导出成功后用 `present` 把这些文件声明为交付物，用户才能点开。',
     parameters: {
       person: { type: 'string', description: '要导出的版本目录名（data/ 下的子目录）；缺省用当前选中的版本' },
       format: { type: 'string', description: 'html（默认）/ pdf / image / all' },
@@ -108,5 +109,5 @@ export function apply(ctx: Context, config: PolicyConfig = {}): void {
       const person = typeof args['person'] === 'string' && args['person'] !== '' ? args['person'] : undefined
       return await ctx.resumeProject.exportResume({ person, format })
     },
-  })), 'dsh-resume-mode: export tool')
+  })), 'dsh-resume: export tool')
 }

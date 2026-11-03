@@ -1,0 +1,5 @@
+/* ── 终端·正文：浅灰等宽 + 宽行距 ── */
+.entry-body.tm-body li, .entry-body.tm-body .block-text {
+  font-size: 10.5px; line-height: 1.72;
+  color: var(--tm-ink, #c9d1d9);
+}

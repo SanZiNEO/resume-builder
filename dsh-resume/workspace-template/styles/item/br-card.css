@@ -1,0 +1,7 @@
+/* ── 粗野主义·条目：粗边 + 硬阴影 ── */
+.entry.br-card {
+  background: #ffffff; border: 3px solid var(--br-ink, #000);
+  border-radius: 0; padding: 10px 12px; margin-bottom: 10px;
+  box-shadow: 5px 5px 0 var(--br-ink, #000);
+}
+.entry.br-card .block:last-child { margin-bottom: 0; }

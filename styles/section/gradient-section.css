@@ -1,0 +1,8 @@
+/* ── 渐变·板块：浅渐变容器 ── */
+.section.gradient-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 12px 14px 10px;
+  margin-bottom: 12px;
+}

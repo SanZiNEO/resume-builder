@@ -1,0 +1,12 @@
+/* ── 装饰艺术·板块标题：居中 + 两侧金线 ── */
+.section.ad-header .section-title {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--ad-gold, #a8863c);
+  border-bottom: none;
+}
+.section.ad-header .section-title::before,
+.section.ad-header .section-title::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ad-gold, #a8863c), transparent);
+}

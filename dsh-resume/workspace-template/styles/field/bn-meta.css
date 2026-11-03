@@ -1,0 +1,7 @@
+/* ── 便当·元信息：灰字 + 数字对齐 ── */
+.entry-meta.bn-meta {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--bn-soft, #6b7280);
+  font-variant-numeric: tabular-nums;
+}

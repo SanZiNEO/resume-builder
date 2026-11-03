@@ -1,0 +1,6 @@
+/* ── 黑色电影·正文：浅灰细字 ── */
+.entry-body.fn-body li, .entry-body.fn-body .block-text {
+  font-size: 10.5px; line-height: 1.85;
+  color: #c4c4c4;
+  letter-spacing: 0.01em;
+}

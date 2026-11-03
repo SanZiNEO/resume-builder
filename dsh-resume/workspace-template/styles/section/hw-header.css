@@ -1,0 +1,10 @@
+/* ── 手写笔记风·板块标题：荧光笔划重点 ── */
+.section.hw-header .section-title {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--hw-ink, #1e3a8a);
+  background: linear-gradient(transparent 58%, var(--hw-highlight, #fef08a) 58%);
+  padding: 0 4px;
+  border-bottom: none;
+}

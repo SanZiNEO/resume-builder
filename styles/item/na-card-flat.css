@@ -1,0 +1,9 @@
+/* ── 航海·扁平条目：藏青左线 ── */
+.entry.na-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--na-navy, #0f2a4a);
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 12px;
+}

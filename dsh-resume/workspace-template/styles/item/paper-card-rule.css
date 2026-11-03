@@ -1,0 +1,10 @@
+/* ── 纸张·重点条目：左侧墨线 ── */
+.entry.paper-card-rule {
+  background: #fffef9;
+  border: none;
+  border-left: 2px solid #57534e;
+  border-radius: 0;
+  padding: 8px 10px 8px 12px;
+  margin-bottom: 8px;
+}
+.entry.paper-card-rule .block:last-child { margin-bottom: 0; }

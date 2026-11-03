@@ -1,0 +1,11 @@
+/* ── 临床·主题：冷白 + 医疗青绿 ── */
+.page.cln-theme {
+  --cln-paper: #fbfdfd; --cln-teal: #0f766e;
+  --cln-cyan: #e0f2f1; --cln-ink: #1f2d2b; --cln-rule: #d7e3e1;
+  background: var(--cln-paper);
+  color: var(--cln-ink);
+  font-family: "Inter", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.cln-theme { background: #f2f7f6; }
+.right.cln-theme { background: var(--cln-paper); }
+.page.cln-theme .section-title { color: var(--cln-teal); }

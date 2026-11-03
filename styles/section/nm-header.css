@@ -1,0 +1,12 @@
+/* ── 新拟态·板块标题：凸起小胶囊 ── */
+.section.nm-header .section-title {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--nm-ink, #3d4654);
+  border-bottom: none;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--nm-bg, #e8ecf3);
+  box-shadow: 2px 2px 5px var(--nm-lo, #c2cad8), -2px -2px 5px var(--nm-hi, #fff);
+}

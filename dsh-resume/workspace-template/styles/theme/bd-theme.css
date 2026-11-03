@@ -1,0 +1,11 @@
+/* ── 登机牌·主题：米黄纸 + 虚线 + 砖红 ── */
+.page.bd-theme {
+  --bd-paper: #f7f4ec; --bd-ink: #1c1c1c;
+  --bd-dash: #b9b2a0; --bd-accent: #c2452d; --bd-rule: #ded7c6;
+  background: var(--bd-paper);
+  color: var(--bd-ink);
+  font-family: "IBM Plex Mono", "Courier New", "PingFang SC", monospace;
+}
+.left.bd-theme { background: #f2eee3; }
+.right.bd-theme { background: var(--bd-paper); }
+.page.bd-theme .section-title { color: var(--bd-ink); }

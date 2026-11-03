@@ -1,0 +1,6 @@
+/* ── 年报·标题：深蓝粗字 ── */
+.entry-title.ar-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--ar-navy, #12304f);
+}

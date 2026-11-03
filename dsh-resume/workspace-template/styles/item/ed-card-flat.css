@@ -1,0 +1,9 @@
+/* ── 杂志编辑风·扁平条目：底部细线分隔 ── */
+.entry.ed-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ed-rule, #d8d4cc);
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}

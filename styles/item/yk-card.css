@@ -1,0 +1,8 @@
+/* ── 千禧·条目：亮面卡 + 蓝边 ── */
+.entry.yk-card {
+  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  border: 1px solid #b3dcf7; border-radius: 12px;
+  padding: 10px 12px; margin-bottom: 9px;
+  box-shadow: 0 2px 8px rgba(0, 180, 255, 0.1);
+}
+.entry.yk-card .block:last-child { margin-bottom: 0; }

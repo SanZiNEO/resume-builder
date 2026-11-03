@@ -1,0 +1,12 @@
+/* ── 太空时代·板块标题：技术标注体 ── */
+.section.sp-header .section-title {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--sp-ink, #26282b);
+  border-bottom: 1px solid var(--sp-ink, #26282b);
+  padding-bottom: 4px;
+}
+.section.sp-header .section-title::after {
+  content: ' /';
+  color: var(--sp-orange, #d95f2b);
+}

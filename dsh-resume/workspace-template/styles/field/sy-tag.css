@@ -1,0 +1,9 @@
+/* ── 七十年代·标签：牛油果胶囊 ── */
+.tag.sy-tag {
+  background: var(--sy-avocado, #7b8c4a);
+  border: none;
+  border-radius: 999px;
+  color: #f6f7ec;
+  font-size: 8.5px; font-weight: 700;
+  padding: 1px 9px;
+}

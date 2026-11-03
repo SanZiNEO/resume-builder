@@ -1,0 +1,8 @@
+/* ── 霓虹·板块：发光描边框 ── */
+.section.neon-section {
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 4px;
+  padding: 11px 13px 9px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.12), inset 0 0 12px rgba(34, 211, 238, 0.05);
+}

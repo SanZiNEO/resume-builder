@@ -1,0 +1,8 @@
+/* ── 动能·内容块：浅黄底 ── */
+.block.kn-block {
+  background: rgba(242, 196, 0, 0.16);
+  border: none;
+  border-left: 3px solid var(--kn-yellow, #f2c400);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

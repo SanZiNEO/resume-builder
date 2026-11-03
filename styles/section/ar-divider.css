@@ -1,0 +1,6 @@
+/* ── 年报·分隔：金色细横带 ── */
+.section.ar-divider::before {
+  content: '';
+  display: block; height: 3px; margin: 0 0 12px;
+  background: linear-gradient(90deg, var(--ar-gold, #a8894f) 0 40px, var(--ar-rule, #d7dee5) 40px);
+}

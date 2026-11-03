@@ -1,0 +1,7 @@
+/* ── 霓虹·分隔：青色光条 ── */
+.section.neon-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 12px;
+  background: linear-gradient(90deg, #22d3ee, rgba(34, 211, 238, 0.1), transparent);
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.6);
+}

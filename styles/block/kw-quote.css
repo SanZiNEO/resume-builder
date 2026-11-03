@@ -1,0 +1,10 @@
+/* ── 可爱贴纸·引言块：薄荷软块 ── */
+.block.kw-quote {
+  background: rgba(159, 230, 207, 0.35);
+  border: 2px dashed var(--kw-ink, #3b2c3a);
+  border-radius: 16px;
+  padding: 11px 14px;
+  margin: 10px 0;
+  color: #26443a;
+  line-height: 1.8;
+}

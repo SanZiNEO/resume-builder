@@ -1,0 +1,5 @@
+/* ── 镭射·副标题：淡紫 ── */
+.entry-sub.hl-sub {
+  font-size: 10px; font-weight: 500;
+  color: var(--hl-dim, #9e97b0);
+}

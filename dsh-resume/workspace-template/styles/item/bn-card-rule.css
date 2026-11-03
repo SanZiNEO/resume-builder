@@ -1,0 +1,10 @@
+/* ── 便当·栏线条目：彩色顶条 ── */
+.entry.bn-card-rule {
+  background: var(--bn-card, #fff);
+  border: 1px solid var(--bn-line, #e5e7eb);
+  border-top: 3px solid var(--bn-c, #bbf7d0);
+  border-radius: 12px;
+  padding: 8px 11px;
+  margin-bottom: 8px;
+}
+.entry.bn-card-rule .block:last-child { margin-bottom: 0; }

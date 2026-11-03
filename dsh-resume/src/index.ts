@@ -1,12 +1,12 @@
 /**
- * dsh-resume-mode —— host 半：简历项目、Python 解释器、本地预览服务。
+ * dsh-resume —— host 半：简历项目、Python 解释器、本地预览服务。
  *
  * 这个包提供三样东西：
  *   1. `resumeProject` 服务 —— 项目目录（首次使用铺一份自带模板）、Python 探测、
  *      版本列表与选中版本、导出；
  *   2. 一个本地 HTTP 预览服务（loopback）—— `/preview` 给右栏浏览器标签页看，
  *      `/status` `/config` `/select` `/refresh` 给插件的界面用；
- *   3. `dsh-resume-mode/policy`（另一个入口）—— 写边界 + export 工具，挂在 preset 作用域上，
+ *   3. `dsh-resume/policy`（另一个入口）—— 写边界 + export 工具，挂在 preset 作用域上，
  *      只对「简历顾问」会话生效，不影响同一 profile 里的其它会话。
  *
  * 装配在 cordis.patch.yml。
@@ -80,7 +80,7 @@ async function listVersions(root: string): Promise<string[]> {
 }
 
 /**
- * 简历项目服务。装配：`- id: dsh-resume-mode, name: dsh-resume-mode`。
+ * 简历项目服务。装配：`- id: dsh-resume, name: dsh-resume`。
  */
 export class ResumeProject extends Service implements ResumeProjectService {
   static Config = z.object({
@@ -107,10 +107,10 @@ export class ResumeProject extends Service implements ResumeProjectService {
     // 激活即拉起预览服务：界面与右栏预览都靠它，不能等到有人问才启动。
     ctx.effect(() => {
       void this.ensurePreview().catch((error: unknown) => {
-        console.error('[dsh-resume-mode] 预览服务启动失败：', error)
+        console.error('[dsh-resume] 预览服务启动失败：', error)
       })
       return () => { void this.stopServer() }
-    }, 'dsh-resume-mode: preview server')
+    }, 'dsh-resume: preview server')
   }
 
   /** 生效的项目目录：界面写的 > 配置行 > 默认（并确保模板已铺好）。 */
@@ -281,7 +281,12 @@ export class ResumeProject extends Service implements ResumeProjectService {
       const message = String((error as Error).message ?? error)
       return [`导出失败（${format}，${person}）：`, message, ...produced.map((file) => `已产出：${file}`)].join('\n')
     }
-    return [`导出成功（${format}，${person}）。`, ...produced.map((file) => `产出：${file}`)].join('\n')
+    return [
+      `导出成功（${format}，${person}）。`,
+      ...produced.map((file) => `产出：${file}`),
+      '',
+      '调用 `present` 把上面这些文件声明为交付物（每个文件一条，带一句说明），用户才能点开。',
+    ].join('\n')
   }
 
   /** 预览服务的 HTTP 路由。 */

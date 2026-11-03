@@ -1,0 +1,6 @@
+/* ── 商务金融风·元信息：等宽数字右对齐感 ── */
+.entry-meta.co-meta {
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--co-muted, #64748b);
+}

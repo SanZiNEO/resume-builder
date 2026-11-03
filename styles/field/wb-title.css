@@ -1,0 +1,7 @@
+/* ── 侘寂·标题：细体衬线 ── */
+.entry-title.wb-title {
+  font-family: "Songti SC", "Source Han Serif SC", Georgia, serif;
+  font-size: 13.5px; font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--wb-ink, #4a4238);
+}

@@ -1,0 +1,11 @@
+/* ── 侘寂·引言块：留白 + 斜体衬线 ── */
+.block.wb-quote {
+  padding: 10px 16px;
+  margin: 14px 0;
+  border: none;
+  color: var(--wb-soft, #8a7f70);
+  font-family: "Songti SC", Georgia, serif;
+  font-style: italic;
+  line-height: 1.9;
+  text-align: center;
+}

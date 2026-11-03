@@ -1,0 +1,7 @@
+/* ── 蓝图·副标题：青色淡字 ── */
+.entry-sub.bp-sub {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--bp-cyan, #8fd6ff);
+  opacity: 0.85;
+}

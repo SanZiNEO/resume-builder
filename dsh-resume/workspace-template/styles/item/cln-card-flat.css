@@ -1,0 +1,8 @@
+/* ── 临床·扁平条目：浅青底 ── */
+.entry.cln-card-flat {
+  background: rgba(224, 242, 241, 0.55);
+  border: none;
+  border-radius: 6px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+}

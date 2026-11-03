@@ -1,0 +1,9 @@
+/* ── 新拟态·内容块：内凹面板 ── */
+.block.nm-block {
+  background: var(--nm-bg, #e8ecf3);
+  border: none;
+  border-radius: 12px;
+  padding: 9px 11px;
+  margin-bottom: 7px;
+  box-shadow: inset 2px 2px 5px var(--nm-lo, #c2cad8), inset -2px -2px 5px var(--nm-hi, #fff);
+}

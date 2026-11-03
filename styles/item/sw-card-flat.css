@@ -1,0 +1,9 @@
+/* ── 极简瑞士风·扁平条目：底部分隔线 ── */
+.entry.sw-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--sw-rule, #d4d4d4);
+  border-radius: 0;
+  padding: 0 0 12px;
+  margin-bottom: 12px;
+}

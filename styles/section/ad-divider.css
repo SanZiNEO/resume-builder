@@ -1,0 +1,5 @@
+/* ── 装饰艺术·分隔：菱形装饰 ── */
+.section.ad-divider::before {
+  content: '\25C6'; display: block; text-align: center;
+  color: var(--ad-gold, #a8863c); font-size: 9px; margin-bottom: 10px;
+}

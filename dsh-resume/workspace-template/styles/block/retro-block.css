@@ -1,0 +1,8 @@
+/* ── 复古印刷·内容块：旧纸底 + 细边 ── */
+.block.retro-block {
+  background: #f4eddd;
+  border: 1px solid var(--rt-rule, #d6c9ad);
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

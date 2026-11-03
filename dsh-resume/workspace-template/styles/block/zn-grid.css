@@ -1,0 +1,12 @@
+/* ── 手工志·网格块：剪贴双栏 ── */
+.block.zn-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.zn-grid .entry-body li {
+  background: var(--zn-paper, #fbf7ec);
+  border: 1px solid rgba(22, 19, 15, 0.7);
+  padding: 6px 8px; font-size: 10px;
+}
+.block.zn-grid .entry-body li:nth-child(2n) { transform: rotate(0.7deg); }
+.block.zn-grid .entry-body li:nth-child(2n+1) { transform: rotate(-0.5deg); }

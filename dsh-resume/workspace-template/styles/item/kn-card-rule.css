@@ -1,0 +1,9 @@
+/* ── 动能·栏线条目：蓝色顶线 + 斜角 ── */
+.entry.kn-card-rule {
+  background: #ffffff;
+  border: none;
+  border-top: 6px solid var(--kn-blue, #1f4bff);
+  border-radius: 0;
+  padding: 9px 12px 8px;
+  margin-bottom: 10px;
+}

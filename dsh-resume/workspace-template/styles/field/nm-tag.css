@@ -1,0 +1,10 @@
+/* ── 新拟态·标签：小浮块 ── */
+.tag.nm-tag {
+  background: var(--nm-bg, #e8ecf3);
+  border: none;
+  border-radius: 999px;
+  color: var(--nm-soft, #7b8798);
+  font-size: 8.5px; font-weight: 600;
+  padding: 1px 8px;
+  box-shadow: 2px 2px 4px var(--nm-lo, #c2cad8), -2px -2px 4px var(--nm-hi, #fff);
+}

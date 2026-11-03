@@ -1,0 +1,7 @@
+/* ── 学术论文风·板块：上下双线（论文版式） ── */
+.section.ac-section {
+  border-top: 1px solid var(--ac-ink, #111);
+  border-bottom: 1px solid var(--ac-ink, #111);
+  padding: 10px 0 12px;
+  margin-bottom: 16px;
+}

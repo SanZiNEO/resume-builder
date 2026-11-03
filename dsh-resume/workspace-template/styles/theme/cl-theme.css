@@ -1,0 +1,12 @@
+/* ── 黏土·主题：奶油底 + 糖果色 + 膨胀感 ── */
+.page.cl-theme {
+  --cl-bg: #fdf6f0; --cl-pink: #f7c9c0; --cl-lilac: #d9cdf0;
+  --cl-mint: #c7e8d8; --cl-butter: #fbe6b2;
+  --cl-ink: #4a3f3a; --cl-soft: #a3948b;
+  background: var(--cl-bg);
+  color: var(--cl-ink);
+  font-family: "Quicksand", "Nunito", "PingFang SC", sans-serif;
+}
+.left.cl-theme { background: #faf0e8; }
+.right.cl-theme { background: var(--cl-bg); }
+.page.cl-theme .section-title { color: var(--cl-ink); }

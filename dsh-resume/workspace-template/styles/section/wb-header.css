@@ -1,0 +1,8 @@
+/* ── 侘寂·板块标题：宽字距 + 细横线 ── */
+.section.wb-header .section-title {
+  font-size: 11px; font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--wb-ink, #4a4238);
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(74, 66, 56, 0.22);
+}

@@ -1,0 +1,10 @@
+/* ── 复古做旧·网格块：细线分栏 ── */
+.block.vintage-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px;
+  padding-left: 0; list-style: none;
+}
+.block.vintage-grid .entry-body li {
+  padding: 5px 0 5px 10px;
+  border-left: 1px solid var(--vt-rule, #c9b896);
+  font-size: 10px;
+}

@@ -1,0 +1,13 @@
+/* ── 蒸汽波·网格块：霓虹描边格 ── */
+.block.vw-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.vw-grid .entry-body li {
+  background: rgba(45, 27, 105, 0.55);
+  border: 1px solid rgba(255, 110, 199, 0.45);
+  border-radius: 2px;
+  padding: 6px 8px; font-size: 10px;
+  color: var(--vw-ink, #f5e9ff);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.12);
+}

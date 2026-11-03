@@ -1,0 +1,14 @@
+/* ── 孔版印刷·主题：双色叠印 + 米白纸 ── */
+.page.rs-theme {
+  --rs-pink: #ff5c8a; --rs-blue: #2c7da0;
+  --rs-ink: #1b2b34; --rs-paper: #fdf9f3; --rs-rule: #ded5c8;
+  background:
+    radial-gradient(circle at 18% 26%, rgba(255, 92, 138, 0.07) 0 38%, transparent 39%),
+    radial-gradient(circle at 82% 74%, rgba(44, 125, 160, 0.07) 0 38%, transparent 39%),
+    var(--rs-paper);
+  color: var(--rs-ink);
+  font-family: "Space Grotesk", "PingFang SC", sans-serif;
+}
+.left.rs-theme { background: #faf3ec; }
+.right.rs-theme { background: var(--rs-paper); }
+.page.rs-theme .section-title { color: var(--rs-ink); }

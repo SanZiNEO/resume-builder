@@ -1,0 +1,16 @@
+/* ── 手写笔记风·摘录块：引号装饰 ── */
+.block.hw-quote {
+  position: relative;
+  padding: 6px 12px 6px 28px;
+  margin: 10px 0;
+}
+.block.hw-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 4px;
+  top: -2px;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--hw-accent, #dc2626);
+  opacity: 0.6;
+}

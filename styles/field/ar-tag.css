@@ -1,0 +1,10 @@
+/* ── 年报·标签：蓝框小块 ── */
+.tag.ar-tag {
+  background: transparent;
+  border: 1px solid var(--ar-navy, #12304f);
+  border-radius: 0;
+  color: var(--ar-navy, #12304f);
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 5px;
+}

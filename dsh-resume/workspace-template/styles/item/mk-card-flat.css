@@ -1,0 +1,9 @@
+/* ── 马克笔·扁平条目：无框手写下划线 ── */
+.entry.mk-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--mk-yellow, #ffe45e);
+  border-radius: 0;
+  padding: 4px 0 8px;
+  margin-bottom: 11px;
+}

@@ -1,0 +1,8 @@
+/* ── 航海·分隔：绳结双线 ── */
+.section.na-divider::before {
+  content: '';
+  display: block; margin: 0 0 13px;
+  border-top: 3px double var(--na-rope, #c9b48a);
+  height: 4px;
+  border-bottom: 1px solid rgba(15, 42, 74, 0.25);
+}

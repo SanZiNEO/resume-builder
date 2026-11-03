@@ -1,0 +1,9 @@
+/* ── 巴洛克·扁平条目：酒红左线 ── */
+.entry.bq-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--bq-wine, #5c1a1b);
+  border-radius: 0;
+  padding: 3px 0 3px 13px;
+  margin-bottom: 12px;
+}

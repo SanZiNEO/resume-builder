@@ -1,0 +1,9 @@
+/* ── 登机牌·数字块：等宽大字 ── */
+.block.bd-metric .entry-body li strong,
+.block.bd-metric .entry-body li b {
+  color: var(--bd-ink, #1c1c1c);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,12 @@
+/* ── 便当·主题：浅灰底 + 模块化卡盒 ── */
+.page.bn-theme {
+  --bn-bg: #f5f6f8; --bn-card: #ffffff; --bn-line: #e5e7eb;
+  --bn-ink: #111827; --bn-soft: #6b7280;
+  --bn-a: #fde68a; --bn-b: #bfdbfe; --bn-c: #bbf7d0; --bn-d: #fecdd3;
+  background: var(--bn-bg);
+  color: var(--bn-ink);
+  font-family: "Inter", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.bn-theme { background: #eef0f3; }
+.right.bn-theme { background: var(--bn-bg); }
+.page.bn-theme .section-title { color: var(--bn-ink); }

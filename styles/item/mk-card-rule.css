@@ -1,0 +1,9 @@
+/* ── 马克笔·栏线条目：蓝笔左线 ── */
+.entry.mk-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 4px solid var(--mk-blue, #2f6fed);
+  border-radius: 6px 0 0 6px;
+  padding: 4px 0 4px 12px;
+  margin-bottom: 11px;
+}

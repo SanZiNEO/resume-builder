@@ -1,0 +1,5 @@
+/* ── 数据面板·正文：冷灰 ── */
+.entry-body.db-body li, .entry-body.db-body .block-text {
+  font-size: 10px; line-height: 1.75;
+  color: #b8c6d6;
+}

@@ -1,0 +1,9 @@
+/* ── 合同文书·数字块：黑体加粗 ── */
+.block.lg-metric .entry-body li strong,
+.block.lg-metric .entry-body li b {
+  color: var(--lg-ink, #111);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

@@ -1,0 +1,7 @@
+/* ── 风格派·分隔：黑杠 + 蓝块 ── */
+.section.ds-divider::before {
+  content: '';
+  display: block; height: 7px; margin: 0 0 11px;
+  background: linear-gradient(90deg,
+    var(--ds-ink, #101010) 0 74%, var(--ds-blue, #1356a2) 74% 88%, transparent 88%);
+}

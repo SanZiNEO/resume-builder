@@ -1,0 +1,10 @@
+/* ── 巴洛克·栏线条目：金色顶线 ── */
+.entry.bq-card-rule {
+  background: #fbf7ec;
+  border: none;
+  border-top: 3px solid var(--bq-gold, #c9a227);
+  border-bottom: 1px solid var(--bq-rule, #d9c9a8);
+  border-radius: 0;
+  padding: 9px 12px 8px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,11 @@
+/* ── 杂志编辑风·标签：方角细框、无底色 ── */
+.tag.ed-tag {
+  background: transparent;
+  border: 1px solid var(--ed-ink, #1c1917);
+  border-radius: 0;
+  color: var(--ed-ink, #1c1917);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+}

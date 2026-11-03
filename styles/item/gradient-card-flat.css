@@ -1,0 +1,8 @@
+/* ── 渐变·扁平条目：无框渐变底 ── */
+.entry.gradient-card-flat {
+  background: linear-gradient(135deg, rgba(224, 231, 255, 0.55), rgba(250, 232, 255, 0.4));
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+}

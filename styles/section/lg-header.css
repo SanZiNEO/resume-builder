@@ -1,0 +1,13 @@
+/* ── 合同文书·板块标题：条款编号 + 粗衬线 ── */
+.section.lg-header .section-title {
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--lg-ink, #111);
+  border-bottom: 1px solid var(--lg-rule, #b9b9b9);
+  padding-bottom: 4px;
+}
+.section.lg-header .section-title::before {
+  content: '第 ' counter(lg-clause) ' 条　';
+  font-weight: 400;
+  color: var(--lg-gray, #555);
+}

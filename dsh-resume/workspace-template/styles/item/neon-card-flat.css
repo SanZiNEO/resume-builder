@@ -1,0 +1,9 @@
+/* ── 霓虹·扁平条目：暗底 + 底部霓虹线 ── */
+.entry.neon-card-flat {
+  background: rgba(15, 23, 42, 0.55);
+  border: none;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

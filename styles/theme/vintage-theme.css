@@ -1,0 +1,14 @@
+/* ── 复古做旧·主题：羊皮纸 + 深褐 + 暗金 ── */
+.page.vintage-theme {
+  --vt-ink: #3e2c1c;
+  --vt-paper: #f0e6d2;
+  --vt-accent: #a16207;
+  --vt-rule: #c9b896;
+  --vt-muted: #7a6449;
+  background: var(--vt-paper);
+  color: var(--vt-ink);
+  font-family: Georgia, "Songti SC", serif;
+}
+.left.vintage-theme { background: #eadfc8; }
+.right.vintage-theme { background: var(--vt-paper); }
+.page.vintage-theme .section-title { color: var(--vt-ink); }

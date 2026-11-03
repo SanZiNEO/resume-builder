@@ -1,1 +1,2 @@
-.text-warning { color: #d97706; }
+/* ── 文字·待办 / 风险（行内 {style:text-warning}） ── */
+.text-warning { color: #b45309; font-weight: 600; }

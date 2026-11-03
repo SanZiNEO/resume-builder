@@ -1,0 +1,12 @@
+/* ── 生态未来·主题：薄荷白 + 深绿 + 荧光叶绿 ── */
+.page.sl-theme {
+  --sl-bg: #f2fbf5; --sl-green: #14532d;
+  --sl-lime: #84cc16; --sl-mint: #d9f99d;
+  --sl-ink: #1b2e22; --sl-rule: #cdebd6;
+  background: var(--sl-bg);
+  color: var(--sl-ink);
+  font-family: "Inter", "PingFang SC", system-ui, sans-serif;
+}
+.left.sl-theme { background: #e9f7ee; }
+.right.sl-theme { background: var(--sl-bg); }
+.page.sl-theme .section-title { color: var(--sl-green); }

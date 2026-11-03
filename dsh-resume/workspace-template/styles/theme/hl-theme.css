@@ -1,0 +1,13 @@
+/* ── 镭射·主题：深灰底 + 全息渐变 ── */
+.page.hl-theme {
+  --hl-bg: #14121a; --hl-panel: #1b1924;
+  --hl-ink: #efeaf6; --hl-dim: #9e97b0;
+  --hl-c1: #7cf5ff; --hl-c2: #b48cff; --hl-c3: #ff8ad4; --hl-c4: #ffe27a;
+  --hl-grad: linear-gradient(120deg, #7cf5ff, #b48cff, #ff8ad4, #ffe27a);
+  background: var(--hl-bg);
+  color: var(--hl-ink);
+  font-family: "Inter", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.hl-theme { background: #110f16; }
+.right.hl-theme { background: var(--hl-bg); }
+.page.hl-theme .section-title { color: var(--hl-c1); }

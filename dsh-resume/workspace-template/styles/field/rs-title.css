@@ -1,0 +1,2 @@
+/* ── 孔版印刷·标题：粗体 + 粉错位影 ── */
+.entry-title.rs-title { font-size: 14px; font-weight: 800; letter-spacing: -0.01em; color: var(--rs-ink, #1b2b34); text-shadow: 1px 1px 0 rgba(255, 92, 138, 0.3); }

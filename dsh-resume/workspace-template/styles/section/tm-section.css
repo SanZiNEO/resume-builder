@@ -1,0 +1,7 @@
+/* ── 终端·板块：左侧虚线树状导轨 ── */
+.section.tm-section {
+  position: relative;
+  border-left: 1px dashed var(--tm-line, #22332b);
+  padding: 2px 0 4px 14px;
+  margin-bottom: 14px;
+}

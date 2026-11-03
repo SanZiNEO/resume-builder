@@ -1,0 +1,15 @@
+/* ── 学术论文风·主题：黑 + 白 + 引用蓝 ── */
+.page.ac-theme {
+  --ac-ink: #111111;
+  --ac-paper: #ffffff;
+  --ac-rule: #9ca3af;
+  --ac-muted: #4b5563;
+  --ac-cite: #1e40af;
+  counter-reset: ac-sec;
+  background: var(--ac-paper);
+  color: var(--ac-ink);
+  font-family: "Times New Roman", "Songti SC", "Noto Serif CJK SC", serif;
+}
+.left.ac-theme { background: #fbfbfb; }
+.right.ac-theme { background: var(--ac-paper); }
+.page.ac-theme .section-title { color: var(--ac-ink); }

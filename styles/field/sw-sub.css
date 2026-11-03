@@ -1,0 +1,5 @@
+/* ── 极简瑞士风·副标题：小号灰字 ── */
+.entry-sub.sw-sub {
+  font-size: 10.5px;
+  color: var(--sw-muted, #71717a);
+}

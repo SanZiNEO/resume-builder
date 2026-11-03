@@ -1,0 +1,8 @@
+/* ── 航海·内容块：帆布浅底 ── */
+.block.na-block {
+  background: rgba(201, 180, 138, 0.16);
+  border: none;
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

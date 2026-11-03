@@ -1,0 +1,13 @@
+/* ── 包豪斯·板块：顶部粗黑线 + 红色方块 ── */
+.section.bh-section {
+  position: relative;
+  border-top: 3px solid var(--bh-ink, #111);
+  padding: 12px 0 14px 16px;
+  margin-bottom: 16px;
+}
+.section.bh-section::before {
+  content: '';
+  position: absolute; left: 0; top: 0;
+  width: 6px; height: 26px;
+  background: var(--bh-red, #d62828);
+}

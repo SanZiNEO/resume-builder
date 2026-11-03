@@ -1,0 +1,10 @@
+/* ── 侘寂·条目：无框，仅顶部细线 ── */
+.entry.wb-card {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(74, 66, 56, 0.14);
+  border-radius: 0;
+  padding: 9px 0 3px;
+  margin-bottom: 12px;
+}
+.entry.wb-card .block:last-child { margin-bottom: 0; }

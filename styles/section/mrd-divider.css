@@ -1,0 +1,10 @@
+/* ── 莫兰迪·分隔：三色柔光条 ── */
+.section.mrd-divider::before {
+  content: '';
+  display: block; height: 3px; margin: 0 0 12px;
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+    var(--mrd-pink, #d3b8b4) 0 26%, var(--mrd-blue, #a9b8c4) 26% 58%,
+    var(--mrd-green, #b3bda9) 58% 82%, transparent 82%);
+  opacity: 0.75;
+}

@@ -1,0 +1,15 @@
+/* ── 手工志·引言块：手写引号 + 蓝字 ── */
+.block.zn-quote {
+  position: relative;
+  padding: 8px 10px 8px 30px;
+  margin: 11px 0;
+  color: var(--zn-blue, #2b4c7e);
+  font-style: italic;
+}
+.block.zn-quote::before {
+  content: '\201C';
+  position: absolute; left: 4px; top: -6px;
+  font-family: Georgia, serif;
+  font-size: 40px; line-height: 1;
+  color: var(--zn-red, #cf3a2c);
+}

@@ -1,0 +1,12 @@
+/* ── 动能·网格块：双栏硬格 ── */
+.block.kn-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px; padding-left: 0; list-style: none;
+  background: var(--kn-ink, #111);
+  border: 3px solid var(--kn-ink, #111);
+}
+.block.kn-grid .entry-body li {
+  background: #ffffff;
+  padding: 6px 8px; font-size: 10px; font-weight: 600;
+}
+.block.kn-grid .entry-body li:nth-child(2n) { background: #fffdf2; }

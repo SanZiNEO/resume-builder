@@ -1,0 +1,7 @@
+/* ── 植物标本·板块：标本台纸 ── */
+.section.bt-section {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--bt-rule, #d5cdb8);
+  padding: 11px 13px 10px;
+  margin-bottom: 13px;
+}

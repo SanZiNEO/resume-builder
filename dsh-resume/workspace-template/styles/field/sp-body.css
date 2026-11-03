@@ -1,0 +1,5 @@
+/* ── 太空时代·正文：紧凑中性 ── */
+.entry-body.sp-body li, .entry-body.sp-body .block-text {
+  font-size: 10.5px; line-height: 1.72;
+  color: #35383c;
+}

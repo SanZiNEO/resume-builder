@@ -1,0 +1,10 @@
+/* ── 包豪斯·栏线条目：红色顶线 ── */
+.entry.bh-card-rule {
+  background: #ffffff;
+  border: none;
+  border-top: 4px solid var(--bh-red, #d62828);
+  border-radius: 0;
+  padding: 10px 12px 8px;
+  margin-bottom: 10px;
+}
+.entry.bh-card-rule .block:last-child { margin-bottom: 0; }

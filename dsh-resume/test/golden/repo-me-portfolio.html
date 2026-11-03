@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咖啡茶饮品牌社交媒体广告效果对比研究</title>
+<style>
+@page { size: A4; margin: 0; }
+.page {
+  width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 20mm 18mm;
+}
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+}
+.portfolio-grid .section { break-inside: avoid; }
+@media print { body { background: #fff; padding: 0; } .page { box-shadow: none; margin: 0; width: auto; min-height: auto; } }
+/* ── 头像 ── */
+.block-avatar { width: 100px; height: 100px; object-fit: cover; }
+
+/* ── 纵向排列（默认） ── */
+
+/* ── 横向排列 ── */
+.entry-body-inline { display: flex; flex-wrap: wrap; }
+.inline-item { font-size: 12px; }
+.inline-item:not(:last-child)::after { content: ' | '; }
+
+/* ── 双列网格：左列上下两格 + 右列通栏（个人基本信息表格布局） ── */
+.entry.grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-2 .grid-cell { min-width: 0; }
+.entry.grid-2 .grid-cell:last-child { grid-column: 2; grid-row: 1 / -1; }
+.entry.grid-2 .grid-cell:last-child .block-avatar-wrap { margin-top: 0; height: 100%; }
+.entry.grid-2 .grid-cell:last-child .block-avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+
+/* ── 三列网格布局（左：基本信息 / 中：联系方式 / 右：照片） ── */
+.entry.grid-3 { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr; gap: 12px; align-items: start; }
+.entry.grid-3 .grid-cell { min-width: 0; }
+.entry.grid-3 .grid-cell .block-avatar { width: 100%; height: auto; border-radius: 8px; }
+.entry.grid-3 .grid-cell .block-avatar-wrap { margin-top: 2px; }
+
+.text-highlight {
+  background: #fff3bf;
+  color: #1e293b;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.icon {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  margin-right: 0.3em;
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.inline-image {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 4px 0;
+  vertical-align: middle;
+}
+
+/* ── 页面基础视觉 ── */
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 0; }
+
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #000;
+  background: #e8e8e8;
+  padding: 20px 0;
+}
+
+.page { background: #fff; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 20mm 18mm; }
+
+@media print { body { background: #fff; padding: 0; } }
+
+/* ── 板块 ── */
+.section { margin-bottom: 14px; }
+.section-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+
+/* ── 卡片 ── */
+.entry { margin-bottom: 6px; }
+.entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+
+/* ── 标题 ── */
+.entry-title { font-size: 13px; font-weight: 600; }
+
+/* ── 元信息 ── */
+.entry-meta { font-size: 11.5px; }
+
+/* ── 副标题与标签 ── */
+.entry-sub { font-size: 12px; margin-bottom: 3px; }
+.tag { font-size: 11px; }
+
+/* ── 正文 ── */
+.entry-body { margin-top: 2px; }
+.entry-body ul { padding-left: 16px; }
+.entry-body li { margin-bottom: 1px; font-size: 12px; }
+
+/* ── 通用文本 ── */
+.block-text { font-size: 12.5px; line-height: 1.6; text-indent: 2em; }
+
+/* ── 链接 ── */
+.entry-link { text-decoration: none; color: inherit; }
+
+/* ── 徽章式元信息：浅底圆角标签 ── */
+.badge {
+  background: var(--primary-light, #eef2ff);
+  padding: 1px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: var(--primary, #2563EB);
+}
+.entry-meta { background: var(--primary-light, #eef2ff); padding: 1px 8px; border-radius: 3px; white-space: nowrap; color: var(--primary, #2563EB); }
+
+/* ── 小圆点列表项（关掉默认 marker） ── */
+.entry-body ul { list-style: none; padding-left: 0; }
+.entry-body li { position: relative; padding-left: 14px; }
+.entry-body li::before { content: ''; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--primary, #2563EB); opacity: 0.45; }
+
+/* ── 大号姓名：28px 粗体深色，略 spread ── */
+.entry-title.large-heading { font-size: 28px; font-weight: 700; color: #0f172a; letter-spacing: 1px; }
+
+/* ── 左伸背景条·S级：紫蓝渐变（头牌项目，呼应 gradient-bar 主题色） ── */
+.entry-title.left-bar-accent {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #d946ef);
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}
+
+/* ── 左伸背景条·B级：青蓝渐变（次级项目） ── */
+.entry-title.left-bar-soft {
+  display: inline-block;
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}
+
+/* ── 左伸背景条：标题带圆角渐变背景，向左伸出卡片边缘 ── */
+.entry-title.left-bar {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-mid, #60a5fa), var(--primary, #2563EB));
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 12px 3px 24px;
+  margin-left: -24px;
+}
+
+/* ── 胶囊标签（参考 JZTHEME 50px 胶囊） ── */
+.tag.tag-pill {
+  background: #eef2ff;
+  border-radius: 50px;
+  padding: 2px 10px;
+}
+.entry.tag-pill .tag { background: #eef2ff; border-radius: 50px; padding: 2px 10px; }
+
+/* ── 浅蓝背景卡片 ── */
+.entry.bg-soft-blue { background: #f0f6ff; }
+
+/* ── 纯白底细边卡片 ── */
+.entry.bg-white { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 14px; margin-bottom: 7px; }
+
+/* ── 顶部渐变强调条（伪元素方案，兼容圆角卡片） ── */
+.entry.border-accent-top { position: relative; }
+.entry.border-accent-top::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 6px 6px 0 0; }
+
+/* ── 圆角卡片：左侧蓝线、圆角、浅灰底 ── */
+.entry.border-rounded { background: var(--card, #fafbfd); border-radius: 6px; padding: 10px 14px; margin-bottom: 7px; border-left: 3px solid var(--primary-mid, #bfdbfe); }
+
+/* ── 渐变左条卡片：左浅蓝→右白背景渐变 + 渐变左竖线 + 左侧阴影 ──
+   背景向右渐变为页面底色（右侧放照片，与页面融为一体）；
+   阴影负偏移只投在左侧。配色克制，打印友好。 */
+.entry.card-accent {
+  position: relative;
+  background: linear-gradient(to right, #dbe7ff 0%, #f2f7ff 50%, #ffffff 100%);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 7px;
+  box-shadow: -8px 2px 14px -6px rgba(15, 23, 42, 0.12);
+}
+.entry.card-accent::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6366f1, #d946ef);
+  border-radius: 8px 0 0 8px;
+}
+
+/* ── 紫色光晕阴影（提炼自 JZTHEME hover 发光） ── */
+.entry.shadow-glow { box-shadow: 0 0.1rem 0.8rem rgb(153 87 240 / 0.35); }
+
+/* ── 灰色短阴影（参考 JZTHEME 阴影参数：缩小偏移与模糊、去彩色、纯灰） ── */
+.entry.shadow-muted { box-shadow: 3px 3px 10px 0px rgba(15, 23, 42, 0.12); }
+
+/* ── 柔和阴影（双层） ── */
+.entry.shadow-soft { box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04); }
+
+/* ── 标题下渐变横条（提炼自 JZTHEME 紫蓝渐变） ── */
+.section.gradient-bar .section-title { position: relative; padding-bottom: 6px; }
+.section.gradient-bar .section-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, #6366f1, #d946ef); border-radius: 2px; }
+
+/* ── 技能总卡：标题在卡片外（underline-title 正常渲染），card-wrap 包裹 9 个小区块 ── */
+.section.skills-grid .card-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px 14px;
+}
+.section.skills-grid .entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 0;
+}
+.section.skills-grid .entry-header { margin-bottom: 2px; justify-content: center; }
+.section.skills-grid .entry-title { font-size: 12px; color: var(--primary, #2563EB); }
+.section.skills-grid .entry-body { margin-top: 0; }
+.section.skills-grid .entry-body ul { padding-left: 14px; margin: 0; }
+.section.skills-grid .entry-body li { font-size: 11.5px; line-height: 1.5; margin-bottom: 0; display: inline; }
+.section.skills-grid .entry-body li:not(:last-child)::after { content: '；'; }
+
+/* ── 下划线标题：右侧渐变横线 ── */
+.section-title { display: flex; align-items: center; gap: 10px; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--primary-mid, #bfdbfe), transparent); }
+</style>
+</head>
+<body>
+<div class="page ">
+  <div class="portfolio-grid"><div class="section">
+  <div class="section-title">基本信息</div>
+  <div class="entry card-accent grid-2">
+<div class="grid-cell">
+<div class="block">
+<div class="entry-header"><span class="entry-title large-heading">${NAME}</span></div>
+</div>
+</div>
+<div class="grid-cell">
+<div class="block">
+<div class="entry-body"><ul>
+<li>男 · 22岁 · 山东大学 工商管理（数字营销方向）</li>
+<li>求职方向：游戏策划 / 产品运营 / 市场营销 / 用户研究 / 商业分析</li>
+<li>全国 · 在校随时到岗 · 薪资面议</li>
+<li>电话：${PHONE} ｜ 邮箱：${EMAIL}</li>
+</ul></div>
+</div>
+</div>
+<div class="grid-cell">
+<div class="block">
+
+</div>
+</div>
+</div>
+</div>
+<div class="section underline-title">
+  <div class="section-title">Summary</div>
+  <div class="entry"><div class="entry-body"><p class="block-text">山东大学（985）工商管理（数字营销方向）本科。以用户洞察与数据驱动为核心，独立完成多个从需求定义到方案交付的全链路项目。主导游戏互动产品从需求发现、开源分发到收入闭环，获社区数万播放与数千收藏；完成覆盖微博、抖音、B站、快手、小红书五大平台的社交媒体用户研究（用户画像、广告效果、弹幕行为、误导内容识别），累计采集与分析 300 万+ 条真实数据，输出 20+ 份用户画像与传播效果分析报告。技术能力（Python、爬虫、NLP、数据挖掘）始终服务于用户洞察与商业决策。</p></div></div>
+</div>
+<div class="section gradient-bar">
+  <div class="section-title">Education</div>
+  <div class="entry bg-soft-blue border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title badge">山东大学（985）· 工商管理（数字营销方向 · 学科评估A-）· 本科</span><span class="entry-meta">2023.09 - 2027.06</span></div>
+<div class="entry-body dot-list"><ul>
+<li>科研助理（2024.03 – 2026.03）：开展 AI 营销前沿方向研究，独立完成多平台数据采集、消费者建模与分析报告，并为国际合作研究提供数据支持</li>
+<li>社会实践（2025.07 – 2025.09）：同期推进 4 个项目，获跨校区校级优秀 1 项、院级三等奖 2 项</li>
+</ul></div>
+</div>
+</div>
+<div class="section underline-title skills-grid">
+  <div class="section-title">Skills</div>
+  <div class="card-wrap">
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">开发编程类</span></div>
+<div class="entry-body"><ul>
+<li>Python / Java / SQLite</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">NLP与文本挖掘</span></div>
+<div class="entry-body"><ul>
+<li>BERT / 情感分析 / 文本挖掘</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">AI 工具链</span></div>
+<div class="entry-body"><ul>
+<li>AI 辅助开发 / MCP 工具</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">用户研究类</span></div>
+<div class="entry-body"><ul>
+<li>问卷调研（300+份） / 用户画像 / 消费者洞察 / 实地调研</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">商业分析类</span></div>
+<div class="entry-body"><ul>
+<li>竞品分析 / 广告效果分析 / 横向对比分析 / 数据报告</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">爬虫与自动化</span></div>
+<div class="entry-body"><ul>
+<li>DrissionPage / 浏览器自动化 / 多线程并发</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">游戏方向</span></div>
+<div class="entry-body"><ul>
+<li>Minecraft 模组开发 / 玩法与机制设计 / 直播互动玩法</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">大数据类</span></div>
+<div class="entry-body"><ul>
+<li>数据挖掘 / 数据建模 / 数据可视化 / MySQL / pandas</li>
+</ul></div>
+</div>
+</div>
+<div class="entry">
+<div class="block">
+<div class="entry-header"><span class="entry-title">设计工具</span></div>
+<div class="entry-body"><ul>
+<li>Photoshop / AE / PR / 剪映 / Office</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section underline-title">
+  <div class="section-title">GitHub / 作品集</div>
+  <div class="entry bg-white shadow-muted">
+<div class="entry-header"><span class="entry-title">SanZiNEO</span><span class="entry-meta"><a href="https://github.com/SanZiNEO" target="_blank" rel="noopener" class="entry-link">https://github.com/SanZiNEO</a></span></div>
+<div class="entry-body"><ul>
+<li>个人 GitHub 主页</li>
+</ul></div>
+</div>
+<div class="entry bg-white shadow-muted">
+<div class="entry-header"><span class="entry-title">个人作品集</span><span class="entry-meta"><a href="https://sanzineo.github.io/" target="_blank" rel="noopener" class="entry-link">https://sanzineo.github.io/</a></span></div>
+<div class="entry-body"><ul>
+<li>作品集网站</li>
+</ul></div>
+</div>
+<div class="entry bg-white shadow-muted">
+<div class="entry-header"><span class="entry-title">3D跳棋</span><span class="entry-meta"><a href="https://sanzineo.github.io/polyjump/" target="_blank" rel="noopener" class="entry-link">https://sanzineo.github.io/polyjump/</a></span></div>
+<div class="entry-body"><ul>
+<li>好玩且烧脑的小游戏</li>
+</ul></div>
+</div>
+</div>
+<div class="section">
+  <div class="section-title">Projects</div>
+  <div class="entry bg-white border-accent-top shadow-glow">
+<div class="block">
+<div class="entry-header"><span class="entry-title left-bar-accent">游戏互动产品设计与开发</span><span class="entry-meta">2026.01 – 至今</span></div>
+<div class="entry-sub">独立产品人与开发者 <span class="tag tag-pill">Minecraft</span> <span class="tag tag-pill">直播互动</span> <span class="tag tag-pill">开源</span></div>
+</div>
+<div class="block">
+<div class="entry-header"><span class="entry-title">开源过场动画模组（ImmersiveCinematics）</span></div>
+<div class="entry-body dot-list"><ul>
+<li>发现Minecraft整合包制作场景中缺乏低门槛过场动画工具的细分需求，独立完成从需求定义、产品设计到技术实现的全流程，设计「服务端触发 + 客户端播放」的编辑器-播放器双层架构</li>
+<li>实现过场动画系统：16种触发条件（登录/位置/进度/击杀/合成等）驱动播放，6自由度相机关键帧动画（贝塞尔曲线路径、镜头追踪），六轨时间轴（镜头/遮幅/音频/指令/覆盖层），兼容光影，支持Forge与Fabric双加载器</li>
+<li>配套开发游戏内可视化时间轴编辑器，玩家无需编写代码即可制作电影级过场动画：多选、框选、拖拽吸附、剪贴板、50步撤销重做；上架CurseForge与Modrinth，视频获数万播放、数千收藏，模组累计下载2400+次</li>
+</ul></div>
+</div>
+<div class="block">
+<div class="entry-header"><span class="entry-title">直播互动玩法系统</span></div>
+<div class="entry-body dot-list"><ul>
+<li>设计并落地直播互动玩法系统：独立开发桌面应用实时采集抖音、B站直播间互动数据（礼物/弹幕/点赞等），通过带回执确认的可靠传输驱动游戏模组即时响应，观众行为可直接触发游戏内对战、怪物生成、奖励发放等玩法</li>
+<li>构建采集端-指令端-玩法端三层解耦架构，玩法全由配置定义——阵营对战/塔防/MOBA等模式无需改代码即可扩展至多游戏场景；上线两周即产生实际收入，跑通从需求到收入的完整闭环</li>
+</ul></div>
+</div>
+</div>
+<div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title left-bar">咖啡茶饮品牌社交媒体广告效果对比研究</span><span class="entry-meta">2026.04</span></div>
+<div class="entry-sub">独立负责 <span class="tag tag-pill">微博</span> <span class="tag tag-pill">广告效果</span> <span class="tag tag-pill">用户画像</span></div>
+<div class="entry-body"><ul>
+<li>以瑞幸「生椰拿铁5周年」联名营销、星巴克「高蛋白拿铁PRO」功能营销、古茗「吴彦祖品质合伙人」明星代言三场代表性campaign为对照样本，基于微博全量真实互动数据开展广告效果对比研究</li>
+<li>全量采集三品牌78条campaign帖文及广告素材（区分广告投放帖与自然帖），获取8093名评论用户与近70万条关注关系数据，覆盖活动预热、官宣、放量各阶段</li>
+<li>词云分析揭示三场campaign的内容语义差异，时间线分析还原活动各阶段的互动节奏与声量变化，据此横向对比三种营销打法的传播效果</li>
+<li>构建人口属性、社交影响力、兴趣渗透、互动层级、用户价值五维画像，量化三品牌受众重合度，识别同时参与多场活动的高价值重叠用户，为品牌差异化定位与竞争策略提供依据</li>
+<li>产出对比分析报告与14张可视化图表，分析全流程可复现</li>
+</ul></div>
+</div>
+<div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title left-bar-soft">汽车品牌社交媒体用户画像与消费者洞察研究</span><span class="entry-meta">2026.03 – 2026.04</span></div>
+<div class="entry-sub">独立负责 <span class="tag tag-pill">微博</span> <span class="tag tag-pill">用户画像</span> <span class="tag tag-pill">消费者洞察</span></div>
+<div class="entry-body"><ul>
+<li>独立完成特斯拉、比亚迪、理想、小米等 20 个汽车品牌的微博消费者画像研究，从零搭建「数据采集—画像建模—跨品牌对比」全流程分析框架</li>
+<li>采集 71 条品牌帖文下 7292 名评论用户及近 110 万条关注关系，构建覆盖社交关系与兴趣关注的多层消费者行为数据集</li>
+<li>搭建 7 大维度画像体系（性别、地域、社交影响力、品牌互动、兴趣偏好、关注行为、用户价值），结合评论情感判别完成用户价值分层，识别各品牌核心用户群体</li>
+<li>建立 10 大兴趣领域用户渗透率模型，以雷达图与排名对比揭示品牌间受众差异；量化官方账号/KOL/素人三类关注结构，为 KOL 投放与社群运营策略提供数据依据</li>
+<li>输出 20 份品牌画像报告（各含统计报告与 11 张图表）及 22 张跨品牌对比图表，沉淀可复用的画像研究方法</li>
+</ul></div>
+</div>
+<div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title left-bar">B站植入式广告的用户反应模式实证研究</span><span class="entry-meta">2026.05 – 2026.07</span></div>
+<div class="entry-sub">独立负责 <span class="tag tag-pill">B站</span> <span class="tag tag-pill">弹幕分析</span> <span class="tag tag-pill">广告效果</span></div>
+<div class="entry-body"><ul>
+<li>基于 12 个品牌 120 条 B站植入广告视频的 57.9 万条弹幕，实证研究植入式广告的用户反应模式</li>
+<li>参考消费者参与理论，构建行为、认知、情感三层弹幕分析指标体系（分别对应弹幕密度、话语内容、态度表达），系统刻画用户在广告段落的互动行为、话语内容与态度特征</li>
+<li>发现广告段弹幕『开头识别→中段讨论→结尾态度』三阶段时序模式：『甲方』『猝不及防』等社区表达集中出现于开头段，正面态度与行动意图集中于结尾段，解释用户『接受广告但未即时购买』的行为断层</li>
+<li>提出基于密度异常度的广告闯入强度测量方法，据此将 12 个品牌的广告表现聚类为争议型、识别型、融入型三类模式，为广告效果评估与投放策略提供量化框架</li>
+<li>独立完成从弹幕采集、存储、分析到可视化的全流程，产出研究报告与 9 张图表，分析全程可复现</li>
+</ul></div>
+</div>
+<div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title left-bar-soft">短视频视域下鲁豫文旅品牌数字化传播效能研究</span><span class="entry-meta">2025.07 – 2025.09</span></div>
+<div class="entry-sub">核心成员 <span class="tag tag-pill">抖音</span> <span class="tag tag-pill">NLP</span> <span class="tag tag-pill">文旅</span> <span class="tag tag-pill">社会实践</span></div>
+<div class="entry-body"><ul>
+<li>研究山东、河南文旅品牌在抖音的传播效果，主导调研方案设计（平台选用、问卷设计），独立完成数据采集、NLP文本分析与可视化全链路</li>
+<li>采集威海文旅、好客山东、洛阳旅游、河南省文旅厅 4 个官方账号共 6040 条视频与 17.7 万条评论</li>
+<li>基于BERT预训练模型微调构建评论情感三分类模型（负面/中性/正面），验证准确率85.75%；与SnowNLP加权融合提升判别可靠性，并将抖音表情符号纳入情感特征</li>
+<li>产出词云、情感分布、高频词、高频表情等图表，对比两省账号的评论情感结构与地域来源差异，定位各自运营短板与传播优势</li>
+<li>赴洛阳洛邑古城、丽景门等景区实地调研与拍摄；项目获跨学院社会实践三等奖</li>
+</ul></div>
+</div>
+<div class="entry bg-white border-rounded shadow-soft">
+<div class="entry-header"><span class="entry-title left-bar">流量新闻特征识别与短视频悬浮球应用</span><span class="entry-meta">2026.07 – 2026.08</span></div>
+<div class="entry-sub">核心成员 · 数据挖掘与特征提取 <span class="tag tag-pill">快手</span> <span class="tag tag-pill">数据挖掘</span> <span class="tag tag-pill">特征工程</span> <span class="tag tag-pill">社会实践</span></div>
+<div class="entry-body"><ul>
+<li>为『智鉴先锋』社会实践的短视频悬浮球产品构建流量新闻（毒科普/养生/政策类误导内容）识别能力，负责数据挖掘与特征提取，产出规则已集成至产品识别模块</li>
+<li>采集快手平台 7.5 万条视频与 5300+ 作者数据，构建含 7.5 万张封面图、3.2GB 的误导性内容样本库</li>
+<li>标题侧构建三档权重种子词库，以 PMI 共现扩展与 N-gram 模式挖掘提炼标题套路模板，输出贝叶斯词概率表；封面侧提取颜色指纹聚类、OCR 文字分布与 17 项视觉特征（煽动色占比/文字覆盖率/模糊度等）</li>
+<li>设计标题与封面 OCR 双源联合判定评分制，输出轻量规则文件与概率表交付 APP 端集成，阈值两档可调、规则库持续增量更新</li>
+<li>与 APP 开发、服务器成员协同定义数据接口与交付格式，将特征规则转化为可直接集成的轻量配置，保障识别模块按期上线</li>
+</ul></div>
+</div>
+</div></div>
+</div>
+</body>
+</html>

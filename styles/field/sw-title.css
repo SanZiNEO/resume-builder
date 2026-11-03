@@ -1,0 +1,7 @@
+/* ── 极简瑞士风·标题：中号无衬线 + 紧字距 ── */
+.entry-title.sw-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--sw-ink, #111);
+}

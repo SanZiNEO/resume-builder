@@ -1,0 +1,8 @@
+/* ── 单色·内容块：浅灰底 ── */
+.block.mc-block {
+  background: var(--mc-soft, #f4f4f4);
+  border: none;
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

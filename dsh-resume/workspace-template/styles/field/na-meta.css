@@ -1,0 +1,7 @@
+/* ── 航海·元信息：绳索色大写 ── */
+.entry-meta.na-meta {
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9a7f4e;
+  font-variant-numeric: tabular-nums;
+}

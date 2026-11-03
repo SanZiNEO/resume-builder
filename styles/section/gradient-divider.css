@@ -1,0 +1,9 @@
+/* ── 渐变·分隔：渐隐细线 ── */
+.section.gradient-divider { padding-top: 8px; }
+.section.gradient-divider::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, transparent, #818cf8, #e879f9, transparent);
+}

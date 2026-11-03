@@ -1,0 +1,7 @@
+/* ── 构成主义·标题：重磅窄字 ── */
+.entry-title.cs-title {
+  font-size: 14.5px; font-weight: 800;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--cs-black, #111);
+}

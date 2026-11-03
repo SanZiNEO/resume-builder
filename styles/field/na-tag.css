@@ -1,0 +1,10 @@
+/* ── 航海·标签：藏青细框 ── */
+.tag.na-tag {
+  background: transparent;
+  border: 1px solid rgba(15, 42, 74, 0.4);
+  border-radius: 0;
+  color: var(--na-navy, #0f2a4a);
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 6px;
+}

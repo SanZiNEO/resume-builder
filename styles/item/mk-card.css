@@ -1,0 +1,10 @@
+/* ── 马克笔·条目：白纸卡 + 双描边 ── */
+.entry.mk-card {
+  background: #ffffff;
+  border: 1.5px solid var(--mk-ink, #14130f);
+  border-radius: 10px 4px 12px 6px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: 3px 2px 0 rgba(20, 19, 15, 0.18);
+}
+.entry.mk-card .block:last-child { margin-bottom: 0; }

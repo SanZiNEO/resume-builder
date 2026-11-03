@@ -1,0 +1,10 @@
+/* ── 镭射·栏线条目：顶部渐变细条 ── */
+.entry.hl-card-rule {
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-top: 2px solid;
+  border-image: linear-gradient(90deg, #b48cff, #7cf5ff) 1;
+  border-radius: 0;
+  padding: 10px 12px 8px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,5 @@
+/* ── 双色调·正文：深紫灰 ── */
+.entry-body.dt-body li, .entry-body.dt-body .block-text {
+  font-size: 10.5px; line-height: 1.74;
+  color: #3a2b52;
+}

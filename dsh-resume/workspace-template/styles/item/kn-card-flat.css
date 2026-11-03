@@ -1,0 +1,9 @@
+/* ── 动能·扁平条目：黑粗左杠 ── */
+.entry.kn-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 8px solid var(--kn-ink, #111);
+  border-radius: 0;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 12px;
+}

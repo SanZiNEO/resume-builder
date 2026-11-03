@@ -1,0 +1,7 @@
+/* ── 高奢·标题：大字号细衬线 ── */
+.entry-title.lf-title {
+  font-family: "Didot", "Songti SC", "Playfair Display", serif;
+  font-size: 15px; font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--lf-ink, #141414);
+}

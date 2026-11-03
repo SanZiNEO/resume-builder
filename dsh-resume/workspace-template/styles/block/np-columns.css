@@ -1,0 +1,7 @@
+/* ── 报纸·双栏块：分栏排版 ── */
+.block.np-columns .entry-body ul {
+  column-count: 2; column-gap: 16px;
+  column-rule: 1px solid var(--np-rule, #c9c4b8);
+  padding-left: 0; list-style: none;
+}
+.block.np-columns .entry-body li { font-size: 10.5px; line-height: 1.7; break-inside: avoid; margin-bottom: 6px; }

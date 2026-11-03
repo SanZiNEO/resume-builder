@@ -1,0 +1,10 @@
+/* ── 复古印刷·栏线条目：砖红左线 ── */
+.entry.retro-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--rt-accent, #b45309);
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 11px;
+}
+.entry.retro-card-rule .block:last-child { margin-bottom: 0; }

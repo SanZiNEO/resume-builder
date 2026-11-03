@@ -1,0 +1,5 @@
+/* ── 北欧·正文：中性灰 + 舒展 ── */
+.entry-body.sc-body li, .entry-body.sc-body .block-text {
+  font-size: 10.5px; line-height: 1.82;
+  color: #454b4e;
+}

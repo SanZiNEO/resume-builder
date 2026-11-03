@@ -1,0 +1,9 @@
+/* ── 纸张·网格块：双栏点线格 ── */
+.block.paper-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.paper-grid .entry-body li {
+  border: 1px dotted var(--pp-rule, #ddd6c3);
+  padding: 6px 8px; font-size: 10px;
+}

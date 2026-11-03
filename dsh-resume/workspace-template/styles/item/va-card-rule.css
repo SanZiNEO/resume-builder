@@ -1,0 +1,10 @@
+/* ── 校队·栏线条目：双线顶 ── */
+.entry.va-card-rule {
+  background: #fffdf6;
+  border: none;
+  border-top: 3px double var(--va-ink, #17150f);
+  border-bottom: 1px solid var(--va-rule, #d8cfb8);
+  border-radius: 0;
+  padding: 9px 12px 8px;
+  margin-bottom: 10px;
+}

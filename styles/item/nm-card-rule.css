@@ -1,0 +1,11 @@
+/* ── 新拟态·栏线条目：蓝光左缘 ── */
+.entry.nm-card-rule {
+  background: var(--nm-bg, #e8ecf3);
+  border: none;
+  border-left: 3px solid var(--nm-accent, #5b7cfa);
+  border-radius: 14px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+  box-shadow: 3px 3px 8px var(--nm-lo, #c2cad8), -3px -3px 8px var(--nm-hi, #fff);
+}
+.entry.nm-card-rule .block:last-child { margin-bottom: 0; }

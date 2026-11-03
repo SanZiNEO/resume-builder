@@ -1,0 +1,7 @@
+/* ── 构成主义·元信息：红色重字距 ── */
+.entry-meta.cs-meta {
+  font-size: 8.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cs-red, #c1121f);
+  font-variant-numeric: tabular-nums;
+}

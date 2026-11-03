@@ -1,0 +1,7 @@
+/* ── 登机牌·标题：等宽粗字 ── */
+.entry-title.bd-title {
+  font-family: "IBM Plex Mono", "Courier New", "PingFang SC", monospace;
+  font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--bd-ink, #1c1c1c);
+}

@@ -1,0 +1,17 @@
+/* ── 黏土·板块标题：糖果色黏点 ── */
+.section.cl-header .section-title {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--cl-ink, #4a3f3a);
+  border-bottom: none;
+  padding-bottom: 7px;
+}
+.section.cl-header .section-title::before {
+  content: '';
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 8px; vertical-align: 0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0 12%, var(--cl-pink, #f7c9c0) 55%);
+  box-shadow: 0 2px 3px rgba(214, 173, 158, 0.45);
+}

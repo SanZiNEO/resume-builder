@@ -1,0 +1,11 @@
+/* ── 赛博科技风·分隔：虚线扫描条 ── */
+.section.cy-divider { padding-top: 10px; }
+.section.cy-divider::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: 10px;
+  background: repeating-linear-gradient(90deg,
+    var(--cy-cyan, #22d3ee) 0 6px, transparent 6px 12px);
+  opacity: 0.45;
+}

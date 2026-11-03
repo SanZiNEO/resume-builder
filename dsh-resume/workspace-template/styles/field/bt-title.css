@@ -1,0 +1,7 @@
+/* ── 植物标本·标题：衬线 + 微字距 ── */
+.entry-title.bt-title {
+  font-family: "Songti SC", Georgia, serif;
+  font-size: 13.5px; font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--bt-ink, #343a2c);
+}

@@ -1,0 +1,11 @@
+/* ── 校队·主题：米白 + 深红 + 粗衬线 ── */
+.page.va-theme {
+  --va-cream: #f7f3e8; --va-crimson: #8c1d18;
+  --va-ink: #17150f; --va-rule: #d8cfb8;
+  background: var(--va-cream);
+  color: var(--va-ink);
+  font-family: "Rockwell", "Songti SC", Georgia, serif;
+}
+.left.va-theme { background: #f2ecdd; }
+.right.va-theme { background: var(--va-cream); }
+.page.va-theme .section-title { color: var(--va-crimson); }

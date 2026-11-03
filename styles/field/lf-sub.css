@@ -1,0 +1,6 @@
+/* ── 高奢·副标题：金色小字距 ── */
+.entry-sub.lf-sub {
+  font-size: 9px; font-weight: 400;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--lf-gold, #9a7b4f);
+}

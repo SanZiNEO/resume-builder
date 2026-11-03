@@ -1,0 +1,10 @@
+/* ── 风格派·标签：黄底黑框 ── */
+.tag.ds-tag {
+  background: var(--ds-yellow, #f7d842);
+  border: 2px solid var(--ds-ink, #101010);
+  border-radius: 0;
+  color: var(--ds-ink, #101010);
+  font-size: 8.5px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0 5px;
+}

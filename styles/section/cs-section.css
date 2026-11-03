@@ -1,0 +1,14 @@
+/* ── 构成主义·板块：斜切红杠 + 粗底 ── */
+.section.cs-section {
+  position: relative;
+  padding: 4px 0 6px 16px;
+  margin-bottom: 14px;
+  border-bottom: 3px solid var(--cs-black, #111);
+}
+.section.cs-section::before {
+  content: '';
+  position: absolute; left: 0; top: 3px; bottom: 5px;
+  width: 7px;
+  background: var(--cs-red, #c1121f);
+  transform: skewX(-8deg);
+}

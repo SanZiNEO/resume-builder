@@ -1,0 +1,5 @@
+/* ── 孟菲斯·分隔：粉点排 ── */
+.section.mp-divider::before {
+  content: ''; display: block; height: 8px; margin-bottom: 12px;
+  background: radial-gradient(circle at 4px 4px, var(--mp-pink, #ff6b9d) 3px, transparent 3.5px) 0 0 / 20px 8px repeat-x;
+}

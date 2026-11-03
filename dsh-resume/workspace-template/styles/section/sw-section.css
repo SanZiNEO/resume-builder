@@ -1,0 +1,6 @@
+/* ── 极简瑞士风·板块：无边框，仅顶部细线 ── */
+.section.sw-section {
+  border-top: 1px solid var(--sw-ink, #111);
+  padding: 12px 0 14px;
+  margin-bottom: 20px;
+}

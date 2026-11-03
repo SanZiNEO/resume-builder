@@ -1,0 +1,9 @@
+/* ── 登机牌·扁平条目：等宽票面行 ── */
+.entry.bd-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--bd-dash, #b9b2a0);
+  border-radius: 0;
+  padding: 6px 0 8px;
+  margin-bottom: 9px;
+}

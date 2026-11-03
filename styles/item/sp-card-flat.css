@@ -1,0 +1,9 @@
+/* ── 太空时代·扁平条目：灰色引线 ── */
+.entry.sp-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--sp-gray, #8a8d91);
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 12px;
+}

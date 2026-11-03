@@ -1,0 +1,6 @@
+/* ── 复古做旧·元信息：暗金小字 ── */
+.entry-meta.vintage-meta {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--vt-accent, #a16207);
+}

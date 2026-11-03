@@ -1,0 +1,6 @@
+/* ── 粗野主义·重点条目：荧光黄底 ── */
+.entry.br-card-rule {
+  background: var(--br-accent, #eaff00); border: 3px solid var(--br-ink, #000);
+  border-radius: 0; padding: 10px 12px; margin-bottom: 10px;
+}
+.entry.br-card-rule .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,8 @@
+/* ── 蓝图·数字块：暖黄标注色 ── */
+.block.bp-metric .entry-body li strong,
+.block.bp-metric .entry-body li b {
+  color: var(--bp-accent, #ffd166);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}

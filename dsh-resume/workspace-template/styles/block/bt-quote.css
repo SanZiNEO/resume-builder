@@ -1,0 +1,11 @@
+/* ── 植物标本·引言块：居中标本批注 ── */
+.block.bt-quote {
+  padding: 10px 14px;
+  margin: 12px 0;
+  border-top: 1px solid var(--bt-rule, #d5cdb8);
+  border-bottom: 1px solid var(--bt-rule, #d5cdb8);
+  color: var(--bt-sage, #6b7f5e);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.9;
+}

@@ -1,0 +1,7 @@
+/* ── 临床·元信息：青绿标签感 ── */
+.entry-meta.cln-meta {
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--cln-teal, #0f766e);
+  font-variant-numeric: tabular-nums;
+}

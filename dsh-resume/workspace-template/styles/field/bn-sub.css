@@ -1,0 +1,5 @@
+/* ── 便当·副标题：灰色小字 ── */
+.entry-sub.bn-sub {
+  font-size: 10px; font-weight: 500;
+  color: var(--bn-soft, #6b7280);
+}

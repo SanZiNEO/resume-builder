@@ -1,0 +1,12 @@
+/* ── 终端·主题：深色底 + 等宽字 + 荧光绿 ── */
+.page.tm-theme {
+  --tm-bg: #0c1210; --tm-panel: #101a16; --tm-line: #22332b;
+  --tm-green: #7ee787; --tm-cyan: #79c0ff; --tm-amber: #e3b341;
+  --tm-ink: #c9d1d9; --tm-dim: #7d9488;
+  background: var(--tm-bg);
+  color: var(--tm-ink);
+  font-family: "JetBrains Mono", "Sarasa Mono SC", "Cascadia Code", ui-monospace, monospace;
+}
+.left.tm-theme { background: #0a0f0d; }
+.right.tm-theme { background: var(--tm-bg); }
+.page.tm-theme .section-title { color: var(--tm-green); }

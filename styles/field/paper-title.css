@@ -1,0 +1,7 @@
+/* ── 纸张·标题：衬线加粗 ── */
+.entry-title.paper-title {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #44403c;
+}

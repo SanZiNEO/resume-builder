@@ -1,0 +1,9 @@
+/* ── 太空时代·栏线条目：粗黑顶线 ── */
+.entry.sp-card-rule {
+  background: transparent;
+  border: none;
+  border-top: 2px solid var(--sp-ink, #26282b);
+  border-radius: 0;
+  padding: 9px 2px 5px;
+  margin-bottom: 11px;
+}

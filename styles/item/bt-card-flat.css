@@ -1,0 +1,9 @@
+/* ── 植物标本·扁平条目：绿色细左线 ── */
+.entry.bt-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--bt-sage, #6b7f5e);
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 12px;
+}

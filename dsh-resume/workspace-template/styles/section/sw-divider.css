@@ -1,0 +1,5 @@
+/* ── 极简瑞士风·分隔：纯细线 ── */
+.section.sw-divider {
+  border-top: 1px solid var(--sw-rule, #d4d4d4);
+  padding-top: 12px;
+}

@@ -1,0 +1,8 @@
+/* ── 校队·内容块：淡红底 ── */
+.block.va-block {
+  background: rgba(140, 29, 24, 0.05);
+  border: none;
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

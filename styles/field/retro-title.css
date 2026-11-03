@@ -1,0 +1,8 @@
+/* ── 复古印刷·标题：衬线加粗 ── */
+.entry-title.retro-title {
+  font-family: "Courier New", "Songti SC", Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--rt-ink, #4a3728);
+}

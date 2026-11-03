@@ -1,0 +1,8 @@
+/* ── 风格派·板块：粗黑框 + 白底 ── */
+.section.ds-section {
+  position: relative;
+  border: 3px solid var(--ds-ink, #101010);
+  background: #ffffff;
+  padding: 10px 12px 10px;
+  margin-bottom: 12px;
+}

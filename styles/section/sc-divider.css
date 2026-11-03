@@ -1,0 +1,6 @@
+/* ── 北欧·分隔：一根发丝线 ── */
+.section.sc-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 16px;
+  background: var(--sc-rule, #e3e0d9);
+}

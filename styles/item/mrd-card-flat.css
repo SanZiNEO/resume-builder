@@ -1,0 +1,9 @@
+/* ── 莫兰迪·扁平条目：灰绿左线 ── */
+.entry.mrd-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--mrd-green, #b3bda9);
+  border-radius: 0;
+  padding: 2px 0 2px 11px;
+  margin-bottom: 11px;
+}

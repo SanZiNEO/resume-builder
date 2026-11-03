@@ -1,0 +1,5 @@
+/* ── 磨砂玻璃·副标题：冷灰小字 ── */
+.entry-sub.frosted-sub {
+  font-size: 10.5px;
+  color: var(--fr-muted, #64748b);
+}

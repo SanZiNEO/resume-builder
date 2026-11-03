@@ -1,0 +1,3 @@
+/* ── 蒸汽波·数字强调：青色发光 ── */
+.block.vw-metric .entry-body li strong,
+.block.vw-metric .entry-body li b { color: var(--vw-cyan, #00f0ff); text-shadow: 0 0 8px rgba(0, 240, 255, 0.55); font-variant-numeric: tabular-nums; }

@@ -1,0 +1,8 @@
+/* ── 复古做旧·数字块：暗金衬线数字 ── */
+.block.vintage-metric .entry-body li strong,
+.block.vintage-metric .entry-body li b {
+  color: var(--vt-accent, #a16207);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-variant-numeric: oldstyle-nums;
+}

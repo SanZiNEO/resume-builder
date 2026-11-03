@@ -1,0 +1,5 @@
+/* ── 孔版印刷·双色块：粉蓝分层底 ── */
+.block.rs-duotone {
+  background: linear-gradient(135deg, rgba(255, 92, 138, 0.12), rgba(44, 125, 160, 0.12));
+  border: 1px solid var(--rs-rule, #ded5c8); padding: 9px 11px; margin-bottom: 8px;
+}

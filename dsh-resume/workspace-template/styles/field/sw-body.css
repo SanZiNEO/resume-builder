@@ -1,0 +1,8 @@
+/* ── 极简瑞士风·正文：常规字重 + 宽行距 ── */
+.entry-body.sw-body li,
+.entry-body.sw-body .block-text {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #27272a;
+}

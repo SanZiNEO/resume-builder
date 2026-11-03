@@ -1,0 +1,7 @@
+/* ── 赛博科技风·副标题：青灰等宽小字 ── */
+.entry-sub.cy-sub {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--cy-dim, #7c8da3);
+}

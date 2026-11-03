@@ -1,0 +1,18 @@
+/* ── 现代简约·板块标题：左侧蓝点 + 无下划线 ── */
+.section.modern-header .section-title {
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--md-ink, #1f2937);
+  padding-left: 12px;
+  border-bottom: none;
+}
+.section.modern-header .section-title::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 4px; height: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--md-accent, #2563eb);
+}

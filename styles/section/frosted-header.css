@@ -1,0 +1,9 @@
+/* ── 磨砂玻璃·板块标题：冷灰 + 细光底 ── */
+.section.frosted-header .section-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--fr-ink, #1e293b);
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}

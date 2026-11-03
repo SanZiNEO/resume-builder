@@ -1,0 +1,5 @@
+/* ── 新艺术·正文：衬线 + 宽行距 ── */
+.entry-body.nv-body li, .entry-body.nv-body .block-text {
+  font-size: 10.5px; line-height: 1.86;
+  color: #4a4736;
+}

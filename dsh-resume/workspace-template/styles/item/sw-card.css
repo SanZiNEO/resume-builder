@@ -1,0 +1,9 @@
+/* ── 极简瑞士风·条目：无底色无边框，纯留白 ── */
+.entry.sw-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}
+.entry.sw-card .block:last-child { margin-bottom: 0; }

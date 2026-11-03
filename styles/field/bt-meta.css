@@ -1,0 +1,7 @@
+/* ── 植物标本·元信息：采集标签 ── */
+.entry-meta.bt-meta {
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #8b9276;
+  font-variant-numeric: tabular-nums;
+}

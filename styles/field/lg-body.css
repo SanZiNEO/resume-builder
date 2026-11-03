@@ -1,0 +1,6 @@
+/* ── 合同文书·正文：首行缩进 + 两端对齐 ── */
+.entry-body.lg-body li, .entry-body.lg-body .block-text {
+  font-size: 10.5px; line-height: 1.9;
+  color: #1a1a1a;
+  text-align: justify;
+}

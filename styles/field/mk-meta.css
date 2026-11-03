@@ -1,0 +1,7 @@
+/* ── 马克笔·元信息：红笔小字 ── */
+.entry-meta.mk-meta {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--mk-red, #e5484d);
+  font-variant-numeric: tabular-nums;
+}

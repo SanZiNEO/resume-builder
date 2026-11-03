@@ -1,0 +1,9 @@
+/* ── 马克笔·分隔：手画波浪线 ── */
+.section.mk-divider::before {
+  content: '';
+  display: block; height: 6px; margin: 0 0 12px;
+  background-image: radial-gradient(circle at 3px 6px, var(--mk-ink, #14130f) 0 1.5px, transparent 1.5px);
+  background-size: 9px 6px;
+  background-repeat: repeat-x;
+  opacity: 0.35;
+}

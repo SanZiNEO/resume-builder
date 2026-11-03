@@ -1,0 +1,7 @@
+/* ── 装饰艺术·数字强调：金色衬线大号 ── */
+.block.ad-metric .entry-body li strong,
+.block.ad-metric .entry-body li b {
+  color: var(--ad-gold, #a8863c);
+  font-family: "Didot", "Playfair Display", serif;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.02em;
+}

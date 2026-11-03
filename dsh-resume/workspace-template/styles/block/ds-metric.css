@@ -1,0 +1,10 @@
+/* ── 风格派·数字块：蓝底白字方片 ── */
+.block.ds-metric .entry-body li strong,
+.block.ds-metric .entry-body li b {
+  display: inline-block;
+  background: var(--ds-blue, #1356a2);
+  color: #ffffff;
+  padding: 0 5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

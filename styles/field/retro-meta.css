@@ -1,0 +1,6 @@
+/* ── 复古印刷·元信息：小号宽字距 ── */
+.entry-meta.retro-meta {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--rt-muted, #8a7355);
+}

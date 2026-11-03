@@ -1,0 +1,8 @@
+/* ── 镭射·内容块：深色凹槽 ── */
+.block.hl-block {
+  background: rgba(0, 0, 0, 0.22);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

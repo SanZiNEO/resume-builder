@@ -1,0 +1,14 @@
+/* ── 巴洛克·板块：双线边框 + 四角方块 ── */
+.section.bq-section {
+  position: relative;
+  border: 3px double var(--bq-wine, #5c1a1b);
+  padding: 11px 13px 10px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.section.bq-section::before {
+  content: '';
+  position: absolute; inset: 3px;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  pointer-events: none;
+}

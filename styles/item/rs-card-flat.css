@@ -1,0 +1,6 @@
+/* ── 孔版印刷·扁平条目：蓝虚线分隔 ── */
+.entry.rs-card-flat {
+  background: transparent; border: none;
+  border-bottom: 1px dashed var(--rs-blue, #2c7da0);
+  border-radius: 0; padding: 0 0 10px; margin-bottom: 10px;
+}

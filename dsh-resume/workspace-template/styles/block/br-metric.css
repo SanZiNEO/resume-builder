@@ -1,0 +1,5 @@
+/* ── 粗野主义·数字强调：荧光黄标记 ── */
+.block.br-metric .entry-body li strong,
+.block.br-metric .entry-body li b {
+  background: var(--br-accent, #eaff00); padding: 0 3px; font-weight: 900; font-variant-numeric: tabular-nums;
+}

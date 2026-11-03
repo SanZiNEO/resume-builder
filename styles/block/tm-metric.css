@@ -1,0 +1,10 @@
+/* ── 终端·数字块：荧光绿数值 + 深色底 ── */
+.block.tm-metric .entry-body li strong,
+.block.tm-metric .entry-body li b {
+  color: var(--tm-green, #7ee787);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: rgba(126, 231, 135, 0.1);
+  padding: 0 3px;
+  border-radius: 2px;
+}

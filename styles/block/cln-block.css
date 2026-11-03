@@ -1,0 +1,8 @@
+/* ── 临床·内容块：表单浅底 ── */
+.block.cln-block {
+  background: #f6fbfa;
+  border: 1px solid var(--cln-rule, #d7e3e1);
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

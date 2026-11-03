@@ -1,0 +1,8 @@
+/* ── 手写笔记风·内容块：浅纸底 + 点线框 ── */
+.block.hw-block {
+  background: #fffdf2;
+  border: 1px dotted #ddd2b2;
+  border-radius: 3px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,10 @@
+/* ── 七十年代·分隔：三色弧纹条 ── */
+.section.sy-divider::before {
+  content: '';
+  display: block; height: 6px; margin: 0 0 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    var(--sy-rust, #b4552d) 0 34%, var(--sy-mustard, #d9a13b) 34% 67%,
+    var(--sy-avocado, #7b8c4a) 67%);
+  opacity: 0.85;
+}

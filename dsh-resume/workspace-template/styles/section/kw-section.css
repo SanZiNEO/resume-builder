@@ -1,0 +1,9 @@
+/* ── 可爱贴纸·板块：白底粗描边 ── */
+.section.kw-section {
+  background: #ffffff;
+  border: 2px solid var(--kw-ink, #3b2c3a);
+  border-radius: 18px;
+  padding: 12px 14px 10px;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 0 var(--kw-pink, #ff9ec7);
+}

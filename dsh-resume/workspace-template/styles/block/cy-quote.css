@@ -1,0 +1,7 @@
+/* ── 赛博科技风·告警块：洋红左条 ── */
+.block.cy-quote {
+  background: rgba(232, 121, 249, 0.05);
+  border-left: 2px solid var(--cy-magenta, #e879f9);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}

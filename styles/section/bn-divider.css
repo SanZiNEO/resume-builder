@@ -1,0 +1,7 @@
+/* ── 便当·分隔：短胶囊条 ── */
+.section.bn-divider::before {
+  content: '';
+  display: block; width: 46px; height: 5px; margin: 0 0 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bn-a, #fde68a) 0 50%, var(--bn-b, #bfdbfe) 50%);
+}

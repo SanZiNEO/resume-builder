@@ -1,0 +1,8 @@
+/* ── 太空时代·内容块：浅灰面板 ── */
+.block.sp-block {
+  background: rgba(38, 40, 43, 0.035);
+  border: none;
+  border-left: 1px solid var(--sp-rule, #cfcdc6);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

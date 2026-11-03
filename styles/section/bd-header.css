@@ -1,0 +1,13 @@
+/* ── 登机牌·板块标题：票面字段名 ── */
+.section.bd-header .section-title {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--bd-ink, #1c1c1c);
+  border-bottom: 1px dashed var(--bd-dash, #b9b2a0);
+  padding-bottom: 5px;
+}
+.section.bd-header .section-title::after {
+  content: '  ·  ·  ·';
+  color: var(--bd-dash, #b9b2a0);
+  letter-spacing: 0.1em;
+}

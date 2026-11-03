@@ -1,0 +1,9 @@
+/* ── 终端·扁平条目：无框 + 虚线底 ── */
+.entry.tm-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--tm-line, #22332b);
+  border-radius: 0;
+  padding: 4px 0 8px;
+  margin-bottom: 10px;
+}

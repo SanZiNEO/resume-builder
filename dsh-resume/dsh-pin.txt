@@ -1,0 +1,50 @@
+# dsh-resume —— 运行时版本对齐（改这个文件前先读）
+
+runtime   = dsh 0.2.0-rc.2
+            桌面 app（E:\DeepSeek Harness\）的 nightly feed 最新就是 0.2.0-rc.2，
+            也是本插件唯一的兼容目标。alpha（0.2.1-alpha.x）与 rc 的 API 不同，
+            不要拿 alpha 的包/文档当准。
+
+install   = 源码是 TypeScript，构建产物在 lib/：
+              pnpm install && pnpm build      # tsdown → lib/{index,policy,client}.js
+              pnpm pack                       # prepack 会先 build，出 dsh-resume-0.1.0.tgz
+            装进 profile 后由 dsh 的 loader 直接加载 lib/*.js；
+            宿主包（@deepseek-ai/*）一律 external，由 dsh 运行时解析提供。
+
+types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译期挡住"API 用错"——
+            例如 inject 少写命名空间、把 mounted 的读法写成 .get() 而不是 getSnapshot()。
+            注意（2026-11 实测）：`@deepseek-ai/*` 的 0.2.0-rc.2 **已经能从 npm 装上**，
+            升级时优先读 node_modules 里的真实 .d.ts，手抄件退为兜底。
+
+契约要点（都对着 0.2.0-rc.2 核对过，改代码前先看这几条）：
+
+  preset    cordis.patch.yml 里 preset 的 `plugins` 是**完整替换**，没有继承；
+            registry 挂载审计是"任何一行 import 失败 → 整个 preset 挂载失败"。
+            所以列表里的包名必须逐个在目标运行时里存在：
+              - @deepseek-ai/dsh-tool-schedule  → 0.2.0-rc.2 不存在（0.2.1-alpha.2 才有）
+              - @deepseek-ai/dsh-time-context   → 存在但 standard preset 不挂它
+            升级 dsh 后，照新版的 `@deepseek-ai/dsh-web-app/presets/standard.patch.yml`
+            重新同步这个列表。
+
+  cwd       0.2.0-rc.2 **没有** `ctx.workingDirectory` 服务（0.2.1-alpha.2 才有）。
+            会话工作区读 `agent.session.header.cwd`（guard 的 exec 上是 `exec.agent.session.header.cwd`）。
+
+  tools     `ctx.tools.guard()` 挂普通 ctx = 全局；`ctx.tools.restrict()` **必须在
+            agent 作用域**（挂普通 ctx 会抛错）。本插件只加 guard，且把它放在
+            preset 里 → 只作用于用该 preset 的会话。
+
+  persona   `dsh-persona` 只能在 preset（agent 作用域）里挂；`prefix` 换掉部署级人设，
+            `complete: true` 会把 system prompt 压成只剩这一段（会连带压掉工具指引、
+            plan-mode 说明、harness identity）——本插件**不用** complete。
+
+  preview   预览是一个 loopback HTTP 服务，固定 `/preview`（端口 39127）。
+            应用内形态：插件自己注册的右栏标签页（`ctx.sidebarRightTabs.register`，
+            kind `resume-preview`），注册失败时退回官方 `ui-sidebar-browser` 的标签页。
+            桌面壳另有一条路：`dsh-overlay/` 往 `apps/desktop/src/main.ts` 插两行，
+            挂一个贴主窗右侧的独立 BrowserWindow（见 README「桌面端预览窗」）。
+            **不再用 `window.open`** —— 桌面壳里会开不受管的裸窗口。
+
+  render    渲染器已从 Python（make.py + src/*.py）迁到 TypeScript，随插件分发、跑在 dsh 的 Node 里
+            （src/render/，进程内直接调，不起子进程、不落中间文件）。
+            **不需要 Python**；只有 PDF / 长图才要可选的 playwright 包（没装则只出 HTML）。
+            `test/golden/*.html` 是原 Python 版生成的参照产物：渲染器改完必须 `pnpm test` 逐字节对齐。

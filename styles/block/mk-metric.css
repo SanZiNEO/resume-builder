@@ -1,0 +1,9 @@
+/* ── 马克笔·数字块：荧光底数字 ── */
+.block.mk-metric .entry-body li strong,
+.block.mk-metric .entry-body li b {
+  color: var(--mk-ink, #14130f);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background-image: linear-gradient(180deg, transparent 55%, rgba(255, 228, 94, 0.85) 55%);
+  padding: 0 1px;
+}

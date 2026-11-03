@@ -1,0 +1,8 @@
+/* ── 生态未来·内容块：浅绿面板 ── */
+.block.sl-block {
+  background: rgba(20, 83, 45, 0.04);
+  border: 1px solid var(--sl-rule, #cdebd6);
+  border-radius: 3px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,9 @@
+/* ── 磨砂玻璃·标签：冷灰胶囊 ── */
+.tag.frosted-tag {
+  background: rgba(226, 232, 240, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  color: #475569;
+  font-size: 8.5px; font-weight: 500;
+  padding: 0 7px;
+}

@@ -1,0 +1,10 @@
+/* ── 镭射·板块标题：全息小标 ── */
+.section.hl-header .section-title {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--hl-c1, #7cf5ff);
+  border-bottom: none;
+  padding-bottom: 5px;
+  background-image: var(--hl-grad, linear-gradient(120deg, #7cf5ff, #b48cff, #ff8ad4, #ffe27a));
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 46px 1px;
+}

@@ -1,0 +1,3 @@
+/* ── 孔版印刷·引言块：蓝引号 + 粉左线 ── */
+.block.rs-quote { position: relative; padding: 8px 12px 8px 26px; margin: 10px 0; border-left: 3px solid var(--rs-pink, #ff5c8a); }
+.block.rs-quote::before { content: '\201C'; position: absolute; left: 6px; top: 0; font-size: 28px; color: var(--rs-blue, #2c7da0); font-family: Georgia, serif; }

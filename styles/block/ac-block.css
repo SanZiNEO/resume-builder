@@ -1,0 +1,8 @@
+/* ── 学术论文风·内容块：浅灰底 + 细边 ── */
+.block.ac-block {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 9px;
+}

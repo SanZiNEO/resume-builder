@@ -1,0 +1,10 @@
+/* ── 终端·栏线条目：荧光绿细顶线 ── */
+.entry.tm-card-rule {
+  background: rgba(126, 231, 135, 0.04);
+  border: none;
+  border-top: 1px solid rgba(126, 231, 135, 0.45);
+  border-radius: 0;
+  padding: 9px 10px 6px;
+  margin-bottom: 9px;
+}
+.entry.tm-card-rule .block:last-child { margin-bottom: 0; }

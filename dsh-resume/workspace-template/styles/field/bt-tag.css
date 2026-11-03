@@ -1,0 +1,11 @@
+/* ── 植物标本·标签：标本签 ── */
+.tag.bt-tag {
+  background: rgba(255, 253, 246, 0.9);
+  border: 1px solid var(--bt-rule, #d5cdb8);
+  border-bottom: 1px dotted var(--bt-sage, #6b7f5e);
+  border-radius: 0;
+  color: #5c684f;
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0 6px;
+}

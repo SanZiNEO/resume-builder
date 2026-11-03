@@ -1,0 +1,10 @@
+/* ── 巴洛克·标签：酒红细框 ── */
+.tag.bq-tag {
+  background: transparent;
+  border: 1px solid rgba(92, 26, 27, 0.45);
+  border-radius: 0;
+  color: var(--bq-wine, #5c1a1b);
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0 6px;
+}

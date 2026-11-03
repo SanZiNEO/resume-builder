@@ -1,0 +1,6 @@
+/* ── 报纸·板块：双线上 + 单线下（报头感） ── */
+.section.np-section {
+  border-top: 3px double var(--np-ink, #1a1a1a);
+  border-bottom: 1px solid var(--np-rule, #c9c4b8);
+  padding: 10px 0 12px; margin-bottom: 14px;
+}

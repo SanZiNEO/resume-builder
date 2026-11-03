@@ -1,0 +1,2 @@
+/* ── 粗野主义·分隔：粗黑横条 ── */
+.section.br-divider::before { content: ''; display: block; height: 6px; margin-bottom: 12px; background: var(--br-ink, #000); }

@@ -1,0 +1,11 @@
+/* ── 新拟态·引言块：凹槽斜体 ── */
+.block.nm-quote {
+  padding: 10px 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  background: var(--nm-bg, #e8ecf3);
+  box-shadow: inset 2px 2px 5px var(--nm-lo, #c2cad8), inset -2px -2px 5px var(--nm-hi, #fff);
+  color: var(--nm-soft, #7b8798);
+  font-style: italic;
+}

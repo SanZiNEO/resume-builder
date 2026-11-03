@@ -1,0 +1,9 @@
+/* ── 合同文书·元信息：括号式 ── */
+.entry-meta.lg-meta {
+  font-size: 8.5px; font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--lg-gray, #555);
+  font-variant-numeric: tabular-nums;
+}
+.entry-meta.lg-meta::before { content: '（'; }
+.entry-meta.lg-meta::after { content: '）'; }

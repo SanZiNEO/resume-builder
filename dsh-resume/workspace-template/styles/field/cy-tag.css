@@ -1,0 +1,10 @@
+/* ── 赛博科技风·标签：青色描边方角 ── */
+.tag.cy-tag {
+  background: rgba(34, 211, 238, 0.07);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 2px;
+  color: var(--cy-cyan, #22d3ee);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  padding: 1px 6px;
+}

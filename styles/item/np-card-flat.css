@@ -1,0 +1,6 @@
+/* ── 报纸·扁平条目：点线分隔 ── */
+.entry.np-card-flat {
+  background: transparent; border: none;
+  border-bottom: 1px dotted var(--np-rule, #c9c4b8);
+  border-radius: 0; padding: 0 0 9px; margin-bottom: 9px;
+}

@@ -1,0 +1,8 @@
+/* ── 霓虹·数字块：青色发光数字 ── */
+.block.neon-metric .entry-body li strong,
+.block.neon-metric .entry-body li b {
+  color: #67e8f9;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 6px rgba(34, 211, 238, 0.7);
+}

@@ -1,0 +1,6 @@
+/* ── 孔版印刷·数字强调：粉字 + 蓝错位影 ── */
+.block.rs-metric .entry-body li strong,
+.block.rs-metric .entry-body li b {
+  color: var(--rs-pink, #ff5c8a); font-weight: 800;
+  font-variant-numeric: tabular-nums; text-shadow: 1px 1px 0 rgba(44, 125, 160, 0.28);
+}

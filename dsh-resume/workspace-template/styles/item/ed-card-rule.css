@@ -1,0 +1,10 @@
+/* ── 杂志编辑风·栏线条目：顶部粗线压住 ── */
+.entry.ed-card-rule {
+  background: transparent;
+  border: none;
+  border-top: 3px solid var(--ed-accent, #9f1239);
+  border-radius: 0;
+  padding: 10px 0 0;
+  margin-bottom: 12px;
+}
+.entry.ed-card-rule .block:last-child { margin-bottom: 0; }

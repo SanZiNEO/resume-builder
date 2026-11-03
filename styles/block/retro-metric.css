@@ -1,0 +1,8 @@
+/* ── 复古印刷·数字块：砖红衬线数字 ── */
+.block.retro-metric .entry-body li strong,
+.block.retro-metric .entry-body li b {
+  color: var(--rt-accent, #b45309);
+  font-family: Georgia, "Courier New", serif;
+  font-weight: 700;
+  font-variant-numeric: oldstyle-nums;
+}

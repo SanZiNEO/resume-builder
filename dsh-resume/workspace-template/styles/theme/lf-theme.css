@@ -1,0 +1,11 @@
+/* ── 高奢·主题：象牙白 + 细衬线 + 极少金 ── */
+.page.lf-theme {
+  --lf-paper: #fbfaf7; --lf-ink: #141414;
+  --lf-gold: #9a7b4f; --lf-gray: #8b8b86; --lf-rule: #e0ddd6;
+  background: var(--lf-paper);
+  color: var(--lf-ink);
+  font-family: "Didot", "Songti SC", "Playfair Display", serif;
+}
+.left.lf-theme { background: #f6f4ef; }
+.right.lf-theme { background: var(--lf-paper); }
+.page.lf-theme .section-title { color: var(--lf-ink); }

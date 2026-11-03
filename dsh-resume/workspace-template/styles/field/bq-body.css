@@ -1,0 +1,5 @@
+/* ── 巴洛克·正文：衬线舒展 ── */
+.entry-body.bq-body li, .entry-body.bq-body .block-text {
+  font-size: 10.5px; line-height: 1.85;
+  color: #3a2a1e;
+}

@@ -1,0 +1,13 @@
+/* ── 杂志编辑风·拉引块：衬线大字 + 左粗线 ── */
+.block.ed-quote {
+  border-left: 4px solid var(--ed-accent, #9f1239);
+  background: transparent;
+  padding: 4px 0 4px 16px;
+  margin: 10px 0 12px;
+}
+.block.ed-quote .entry-body li {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--ed-ink, #1c1917);
+}

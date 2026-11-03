@@ -1,0 +1,8 @@
+/* ── 手工志·分隔：撕纸虚线 ── */
+.section.zn-divider::before {
+  content: '';
+  display: block; height: 2px; margin: 0 0 12px;
+  background-image: linear-gradient(90deg, #16130f 0 6px, transparent 6px 11px);
+  background-size: 11px 2px;
+  opacity: 0.55;
+}

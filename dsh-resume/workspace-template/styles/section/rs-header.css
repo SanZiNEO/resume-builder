@@ -1,0 +1,9 @@
+/* ── 孔版印刷·板块标题：粉色粗体大写 ── */
+.section.rs-header .section-title {
+  display: inline-block;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--rs-pink, #ff5c8a);
+  border-bottom: 2px solid var(--rs-blue, #2c7da0);
+  padding-bottom: 3px;
+}

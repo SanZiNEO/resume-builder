@@ -1,0 +1,7 @@
+/* ── 新艺术·标题：衬线中等字重 ── */
+.entry-title.nv-title {
+  font-family: "Songti SC", "Playfair Display", Georgia, serif;
+  font-size: 13.5px; font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--nv-ink, #37362a);
+}

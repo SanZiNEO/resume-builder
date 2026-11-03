@@ -1,0 +1,8 @@
+/* ── 终端·标题：等宽 + 微光 ── */
+.entry-title.tm-title {
+  font-family: inherit;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #e6edf3;
+  text-shadow: 0 0 6px rgba(126, 231, 135, 0.18);
+}

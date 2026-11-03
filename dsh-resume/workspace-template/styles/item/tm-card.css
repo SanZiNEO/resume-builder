@@ -1,0 +1,10 @@
+/* ── 终端·条目：深色面板 + 绿色左边 ── */
+.entry.tm-card {
+  background: var(--tm-panel, #101a16);
+  border: 1px solid var(--tm-line, #22332b);
+  border-left: 2px solid var(--tm-green, #7ee787);
+  border-radius: 3px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+}
+.entry.tm-card .block:last-child { margin-bottom: 0; }

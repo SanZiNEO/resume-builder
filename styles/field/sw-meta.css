@@ -1,0 +1,8 @@
+/* ── 极简瑞士风·元信息：大写小字 + 等宽数字 ── */
+.entry-meta.sw-meta {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sw-muted, #71717a);
+  font-variant-numeric: tabular-nums;
+}

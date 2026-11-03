@@ -1,0 +1,9 @@
+/* ── 可爱贴纸·栏线条目：紫边贴纸 ── */
+.entry.kw-card-rule {
+  background: #ffffff;
+  border: 2px solid var(--kw-lilac, #c9a7ff);
+  border-left: 8px solid var(--kw-lilac, #c9a7ff);
+  border-radius: 16px;
+  padding: 9px 13px;
+  margin-bottom: 10px;
+}

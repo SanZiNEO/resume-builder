@@ -1,0 +1,17 @@
+/* ── 年报·板块标题：深蓝反白横带 ── */
+.section.ar-header .section-title {
+  display: block;
+  background: var(--ar-navy, #12304f);
+  color: #ffffff;
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 4px 10px;
+  margin: 0 -12px 10px;
+  border-bottom: none;
+}
+.section.ar-header .section-title::after {
+  content: '　—　ANNUAL';
+  color: var(--ar-gold, #a8894f);
+  font-size: 7.5px;
+  letter-spacing: 0.14em;
+}

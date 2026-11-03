@@ -1,0 +1,9 @@
+/* ── 商务金融风·板块：白底细边 + 极轻阴影 ── */
+.section.co-section {
+  background: #ffffff;
+  border: 1px solid var(--co-rule, #cbd5e1);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}

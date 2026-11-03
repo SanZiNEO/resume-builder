@@ -1,0 +1,6 @@
+/* ── 北欧·板块：极简留白 ── */
+.section.sc-section {
+  border: none;
+  padding: 4px 0 6px;
+  margin-bottom: 18px;
+}

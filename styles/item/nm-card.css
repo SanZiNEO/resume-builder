@@ -1,0 +1,10 @@
+/* ── 新拟态·条目：轻浮卡 ── */
+.entry.nm-card {
+  background: var(--nm-bg, #e8ecf3);
+  border: none;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+  box-shadow: 3px 3px 8px var(--nm-lo, #c2cad8), -3px -3px 8px var(--nm-hi, #fff);
+}
+.entry.nm-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,8 @@
+/* ── 赛博科技风·标题：亮白 + 微发光 ── */
+.entry-title.cy-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e8f2fa;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.18);
+}

@@ -1,0 +1,10 @@
+/* ── 可爱贴纸·条目：白贴纸 + 偏移边 ── */
+.entry.kw-card {
+  background: #ffffff;
+  border: 2px solid var(--kw-ink, #3b2c3a);
+  border-radius: 16px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 0 var(--kw-mint, #9fe6cf);
+}
+.entry.kw-card .block:last-child { margin-bottom: 0; }

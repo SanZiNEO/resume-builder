@@ -1,0 +1,10 @@
+/* ── 莫兰迪·栏线条目：灰粉顶条 ── */
+.entry.mrd-card-rule {
+  background: rgba(211, 184, 180, 0.1);
+  border: none;
+  border-top: 3px solid var(--mrd-pink, #d3b8b4);
+  border-radius: 4px;
+  padding: 9px 11px 8px;
+  margin-bottom: 9px;
+}
+.entry.mrd-card-rule .block:last-child { margin-bottom: 0; }

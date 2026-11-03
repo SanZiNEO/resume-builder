@@ -1,0 +1,9 @@
+/* ── 合同文书·栏线条目：粗顶线 ── */
+.entry.lg-card-rule {
+  background: transparent;
+  border: none;
+  border-top: 2px solid var(--lg-ink, #111);
+  border-radius: 0;
+  padding: 8px 0 6px;
+  margin-bottom: 10px;
+}

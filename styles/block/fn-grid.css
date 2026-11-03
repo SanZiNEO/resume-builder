@@ -1,0 +1,11 @@
+/* ── 黑色电影·网格块：双栏暗格 ── */
+.block.fn-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0; padding-left: 0; list-style: none;
+}
+.block.fn-grid .entry-body li {
+  padding: 7px 10px; font-size: 9.5px;
+  border-top: 1px solid var(--fn-line, #2b2b2b);
+  color: #c9c9c9;
+}
+.block.fn-grid .entry-body li:nth-child(odd) { border-right: 1px solid var(--fn-line, #2b2b2b); }

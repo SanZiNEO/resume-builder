@@ -1,0 +1,12 @@
+/* ── 巴洛克·板块标题：居中大写 + 双侧短横 ── */
+.section.bq-header .section-title {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--bq-wine, #5c1a1b);
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 6px;
+  background-image:
+    linear-gradient(90deg, var(--bq-gold, #c9a227) 0 20%, transparent 20% 80%, var(--bq-gold, #c9a227) 80%);
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px;
+}

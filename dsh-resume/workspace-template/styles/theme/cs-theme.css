@@ -1,0 +1,11 @@
+/* ── 构成主义·主题：红黑 + 米白 + 重字 ── */
+.page.cs-theme {
+  --cs-red: #c1121f; --cs-black: #111110;
+  --cs-cream: #f3ede2; --cs-warm: #faf6ed; --cs-gray: #6e675c;
+  background: var(--cs-cream);
+  color: var(--cs-black);
+  font-family: "Oswald", "Impact", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.left.cs-theme { background: #eae3d5; }
+.right.cs-theme { background: var(--cs-cream); }
+.page.cs-theme .section-title { color: var(--cs-black); }

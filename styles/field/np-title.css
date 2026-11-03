@@ -1,0 +1,5 @@
+/* ── 报纸·标题：大号衬线粗体 ── */
+.entry-title.np-title {
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-size: 14.5px; font-weight: 700; line-height: 1.3; color: var(--np-ink, #1a1a1a);
+}

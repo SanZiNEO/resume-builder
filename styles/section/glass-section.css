@@ -1,4 +1,4 @@
-.section.glass-panel {
+.section.glass-section, .section.glass-panel {
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.5);

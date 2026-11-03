@@ -1,0 +1,10 @@
+/* ── 单色·栏线条目：黑细左线 ── */
+.entry.mc-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--mc-ink, #0a0a0a);
+  border-radius: 0;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 11px;
+}
+.entry.mc-card-rule .block:last-child { margin-bottom: 0; }

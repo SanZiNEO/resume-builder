@@ -1,0 +1,11 @@
+/* ── 动能·条目：黑框硬卡 + 斜切角标 ── */
+.entry.kn-card {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid var(--kn-ink, #111);
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 6px 6px 0 var(--kn-yellow, #f2c400);
+}
+.entry.kn-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,16 @@
+/* ── 植物标本·板块标题：叶饰 + 细线 ── */
+.section.bt-header .section-title {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--bt-sage, #6b7f5e);
+  border-bottom: none;
+  padding-bottom: 6px;
+  background-image: linear-gradient(90deg, var(--bt-rule, #d5cdb8) 0 100%);
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px;
+}
+.section.bt-header .section-title::before {
+  content: '\2766  ';
+  font-size: 9px;
+  color: var(--bt-sage, #6b7f5e);
+  opacity: 0.7;
+}

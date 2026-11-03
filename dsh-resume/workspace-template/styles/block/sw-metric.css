@@ -1,0 +1,8 @@
+/* ── 极简瑞士风·数字强调：大号细体数字 ── */
+.block.sw-metric .entry-body li strong,
+.block.sw-metric .entry-body li b {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--sw-accent, #dc2626);
+  font-variant-numeric: tabular-nums;
+}

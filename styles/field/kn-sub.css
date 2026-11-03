@@ -1,0 +1,6 @@
+/* ── 动能·副标题：蓝色斜体 ── */
+.entry-sub.kn-sub {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--kn-blue, #1f4bff);
+}

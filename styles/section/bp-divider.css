@@ -1,0 +1,7 @@
+/* ── 蓝图·分隔：尺寸标注线 ── */
+.section.bp-divider::before {
+  content: '';
+  display: block; height: 5px; margin: 0 0 10px;
+  border-top: 1px solid rgba(232,244,255,0.3);
+  border-bottom: 1px solid rgba(232,244,255,0.12);
+}

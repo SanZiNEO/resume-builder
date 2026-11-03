@@ -1,0 +1,2 @@
+/* ── 孟菲斯·标签：蓝底白字胶囊 ── */
+.tag.mp-tag { background: var(--mp-blue, #4dabf7); border: 2px solid var(--mp-ink, #1a1a1a); border-radius: 999px; color: #fff; font-size: 9px; font-weight: 700; padding: 1px 8px; }

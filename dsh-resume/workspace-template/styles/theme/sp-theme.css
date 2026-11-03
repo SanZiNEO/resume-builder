@@ -1,0 +1,11 @@
+/* ── 太空时代·主题：灰白纸 + 炭黑 + 火箭橙 ── */
+.page.sp-theme {
+  --sp-paper: #f2efe9; --sp-ink: #26282b;
+  --sp-orange: #d95f2b; --sp-gray: #8a8d91; --sp-rule: #cfcdc6;
+  background: var(--sp-paper);
+  color: var(--sp-ink);
+  font-family: "DIN Alternate", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.sp-theme { background: #ece9e2; }
+.right.sp-theme { background: var(--sp-paper); }
+.page.sp-theme .section-title { color: var(--sp-ink); }

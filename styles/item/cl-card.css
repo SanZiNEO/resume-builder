@@ -1,0 +1,10 @@
+/* ── 黏土·条目：白黏土卡 ── */
+.entry.cl-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 13px;
+  margin-bottom: 9px;
+  box-shadow: 0 5px 12px rgba(214, 173, 158, 0.2), inset 0 -2px 0 rgba(247, 201, 192, 0.35);
+}
+.entry.cl-card .block:last-child { margin-bottom: 0; }

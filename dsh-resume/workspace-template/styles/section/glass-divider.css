@@ -1,0 +1,6 @@
+/* ── 玻璃拟态·分隔：高光细条 ── */
+.section.glass-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(148,163,184,0.25), transparent);
+}

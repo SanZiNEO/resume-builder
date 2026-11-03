@@ -1,0 +1,11 @@
+/* ── 杂志编辑风·数据块：上下细线 + 衬线数字 ── */
+.block.ed-figure {
+  border-top: 1px solid var(--ed-ink, #1c1917);
+  border-bottom: 1px solid var(--ed-ink, #1c1917);
+  padding: 10px 0;
+  margin: 12px 0;
+}
+.block.ed-figure .entry-body li {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 11.5px;
+}

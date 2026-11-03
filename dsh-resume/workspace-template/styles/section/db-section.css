@@ -1,0 +1,8 @@
+/* ── 数据面板·板块：面板容器 ── */
+.section.db-section {
+  background: var(--db-panel, #1a2029);
+  border: 1px solid #232b36;
+  border-radius: 6px;
+  padding: 11px 13px 10px;
+  margin-bottom: 11px;
+}

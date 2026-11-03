@@ -1,0 +1,8 @@
+/* ── 莫兰迪·数字块：灰粉下划线 ── */
+.block.mrd-metric .entry-body li strong,
+.block.mrd-metric .entry-body li b {
+  color: #4d4843;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 2px solid var(--mrd-pink, #d3b8b4);
+}

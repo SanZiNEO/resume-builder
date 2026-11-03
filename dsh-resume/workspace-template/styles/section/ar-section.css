@@ -1,0 +1,6 @@
+/* ── 年报·板块：深蓝标题带 + 细框 ── */
+.section.ar-section {
+  border: 1px solid var(--ar-rule, #d7dee5);
+  padding: 0 12px 10px;
+  margin-bottom: 12px;
+}

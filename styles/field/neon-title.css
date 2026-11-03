@@ -1,0 +1,7 @@
+/* ── 霓虹·标题：亮白 + 青色辉光 ── */
+.entry-title.neon-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0f9ff;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}

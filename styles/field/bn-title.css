@@ -1,0 +1,6 @@
+/* ── 便当·标题：紧凑粗字 ── */
+.entry-title.bn-title {
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--bn-ink, #111827);
+}

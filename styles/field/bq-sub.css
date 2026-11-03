@@ -1,0 +1,6 @@
+/* ── 巴洛克·副标题：小字距衬线 ── */
+.entry-sub.bq-sub {
+  font-size: 9.5px; font-style: italic;
+  letter-spacing: 0.1em;
+  color: #6b4a3a;
+}

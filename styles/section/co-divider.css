@@ -1,0 +1,14 @@
+/* ── 商务金融风·分隔：细灰线 + 左侧短强调 ── */
+.section.co-divider {
+  border-top: 1px solid var(--co-rule, #cbd5e1);
+  padding-top: 10px;
+}
+.section.co-divider .section-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  background: var(--co-accent, #0e7490);
+  margin-right: 6px;
+  vertical-align: -1px;
+}

@@ -1,0 +1,13 @@
+/* ── 极简瑞士风·网格块：两栏 + 细线分隔 ── */
+.block.sw-grid .entry-body ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.block.sw-grid .entry-body li {
+  padding: 6px 10px 6px 0;
+  border-top: 1px solid var(--sw-rule, #d4d4d4);
+  font-size: 11px;
+}

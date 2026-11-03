@@ -1,0 +1,11 @@
+/* ── 巴洛克·主题：象牙纸 + 酒红 + 金 ── */
+.page.bq-theme {
+  --bq-paper: #f7f2e4; --bq-ink: #2b1a12;
+  --bq-wine: #5c1a1b; --bq-gold: #c9a227; --bq-rule: #d9c9a8;
+  background: var(--bq-paper);
+  color: var(--bq-ink);
+  font-family: "Songti SC", "Baskerville", Georgia, serif;
+}
+.left.bq-theme { background: #f2ebd9; }
+.right.bq-theme { background: var(--bq-paper); }
+.page.bq-theme .section-title { color: var(--bq-wine); }

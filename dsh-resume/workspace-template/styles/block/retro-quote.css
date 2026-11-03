@@ -1,0 +1,10 @@
+/* ── 复古印刷·引言块：双线夹引文 ── */
+.block.retro-quote {
+  padding: 9px 14px;
+  margin: 11px 0;
+  border-top: 3px double var(--rt-rule, #d6c9ad);
+  border-bottom: 3px double var(--rt-rule, #d6c9ad);
+  color: var(--rt-muted, #8a7355);
+  font-family: "Songti SC", Georgia, serif;
+  font-style: italic;
+}

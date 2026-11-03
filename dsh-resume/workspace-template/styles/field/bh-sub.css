@@ -1,0 +1,2 @@
+/* ── 包豪斯·副标题：红色大写小字 ── */
+.entry-sub.bh-sub { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bh-red, #d62828); }

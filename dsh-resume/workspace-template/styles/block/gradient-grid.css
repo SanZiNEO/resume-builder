@@ -1,0 +1,11 @@
+/* ── 渐变·网格块：浅渐变格 ── */
+.block.gradient-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.gradient-grid .entry-body li {
+  background: linear-gradient(135deg, #ffffff, #f5f3ff);
+  border: 1px solid #e9e5ff;
+  border-radius: 8px;
+  padding: 7px 9px; font-size: 10px;
+}

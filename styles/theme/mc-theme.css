@@ -1,0 +1,11 @@
+/* ── 单色·主题：纯黑白灰 + 大留白 ── */
+.page.mc-theme {
+  --mc-ink: #0a0a0a; --mc-gray: #8a8a8a;
+  --mc-line: #dcdcdc; --mc-soft: #f4f4f4;
+  background: #ffffff;
+  color: var(--mc-ink);
+  font-family: "Helvetica Neue", "Arial", "PingFang SC", sans-serif;
+}
+.left.mc-theme { background: #fbfbfb; }
+.right.mc-theme { background: #ffffff; }
+.page.mc-theme .section-title { color: var(--mc-ink); }

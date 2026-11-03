@@ -1,0 +1,6 @@
+/* ── 千禧·标签：渐变胶囊 ── */
+.tag.yk-tag {
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.16), rgba(255, 105, 180, 0.16));
+  border: 1px solid #b3dcf7; border-radius: 999px;
+  color: #2a6d99; font-size: 9px; font-weight: 600; padding: 1px 8px;
+}

@@ -5,3 +5,4 @@
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
   border: 1px solid #f1f5f9;
 }
+.entry.modern-card .block:last-child { margin-bottom: 0; }

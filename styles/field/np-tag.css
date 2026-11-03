@@ -1,0 +1,6 @@
+/* ── 报纸·标签：小号衬线方框 ── */
+.tag.np-tag {
+  background: transparent; border: 1px solid var(--np-rule, #c9c4b8); border-radius: 0;
+  color: var(--np-muted, #6b655c); font-family: "Times New Roman", serif;
+  font-size: 9px; letter-spacing: 0.06em; padding: 0 5px;
+}

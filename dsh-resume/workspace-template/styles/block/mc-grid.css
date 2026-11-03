@@ -1,0 +1,11 @@
+/* ── 单色·网格块：三栏细线格 ── */
+.block.mc-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+  padding-left: 0; list-style: none;
+  border-top: 1px solid var(--mc-ink, #0a0a0a);
+}
+.block.mc-grid .entry-body li {
+  padding: 6px 8px 6px 0; font-size: 9.5px;
+  border-bottom: 1px solid var(--mc-line, #dcdcdc);
+}
+.block.mc-grid .entry-body li + li { padding-left: 8px; border-left: 1px solid var(--mc-line, #dcdcdc); }

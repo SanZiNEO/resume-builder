@@ -1,0 +1,8 @@
+/* ── 镭射·数字块：全息描边数字 ── */
+.block.hl-metric .entry-body li strong,
+.block.hl-metric .entry-body li b {
+  color: var(--hl-c1, #7cf5ff);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px rgba(124, 245, 255, 0.45);
+}

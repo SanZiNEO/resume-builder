@@ -1,0 +1,9 @@
+/* ── 渐变·标题：渐变文字 ── */
+.entry-title.gradient-title {
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f46e5, #c026d3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

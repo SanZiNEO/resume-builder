@@ -1,0 +1,15 @@
+/* ── 风格派·板块标题：黑字 + 红方块前缀 ── */
+.section.ds-header .section-title {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ds-ink, #101010);
+  border-bottom: 2px solid var(--ds-ink, #101010);
+  padding-bottom: 3px;
+}
+.section.ds-header .section-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  margin-right: 6px; vertical-align: 1px;
+  background: var(--ds-red, #d40920);
+}

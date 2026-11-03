@@ -1,0 +1,7 @@
+/* ── 杂志编辑风·副标题：斜体衬线 ── */
+.entry-sub.ed-sub {
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  font-size: 11.5px;
+  color: var(--ed-muted, #78716c);
+}

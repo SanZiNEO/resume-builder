@@ -1,0 +1,6 @@
+/* ── 手写笔记风·元信息：手写日期感 ── */
+.entry-meta.hw-meta {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", cursive;
+  font-size: 10.5px;
+  color: var(--hw-muted, #6b7280);
+}

@@ -1,0 +1,10 @@
+/* ── 校队·引言块：红框引文 ── */
+.block.va-quote {
+  padding: 10px 14px;
+  margin: 11px 0;
+  border-left: 5px solid var(--va-crimson, #8c1d18);
+  background: #fffdf6;
+  color: #332a20;
+  font-style: italic;
+  line-height: 1.85;
+}

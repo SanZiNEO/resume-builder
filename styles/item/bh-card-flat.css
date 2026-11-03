@@ -1,0 +1,9 @@
+/* ── 包豪斯·扁平条目：蓝色粗左线 ── */
+.entry.bh-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 4px solid var(--bh-blue, #1d3557);
+  border-radius: 0;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 12px;
+}

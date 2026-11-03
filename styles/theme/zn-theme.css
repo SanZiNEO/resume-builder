@@ -1,0 +1,11 @@
+/* ── 手工志·主题：复印纸 + 剪贴 + 红黑双色 ── */
+.page.zn-theme {
+  --zn-bg: #f2eee3; --zn-paper: #fbf7ec;
+  --zn-ink: #16130f; --zn-red: #cf3a2c; --zn-blue: #2b4c7e;
+  background: var(--zn-bg);
+  color: var(--zn-ink);
+  font-family: "Courier New", "PingFang SC", monospace;
+}
+.left.zn-theme { background: #eee9dc; }
+.right.zn-theme { background: var(--zn-bg); }
+.page.zn-theme .section-title { color: var(--zn-ink); }

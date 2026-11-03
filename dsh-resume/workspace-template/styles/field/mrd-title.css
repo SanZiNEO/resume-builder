@@ -1,0 +1,6 @@
+/* ── 莫兰迪·标题：中等字重 ── */
+.entry-title.mrd-title {
+  font-size: 13.5px; font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--mrd-ink, #5b5651);
+}

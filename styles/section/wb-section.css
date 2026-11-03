@@ -1,0 +1,6 @@
+/* ── 侘寂·板块：无框留白 + 一行细线 ── */
+.section.wb-section {
+  border: none;
+  padding: 2px 0 8px;
+  margin-bottom: 18px;
+}

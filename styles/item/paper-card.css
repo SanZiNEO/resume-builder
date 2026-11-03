@@ -1,0 +1,10 @@
+/* ── 纸张·条目：米白纸卡 + 细边 ── */
+.entry.paper-card {
+  background: #fffef9;
+  border: 1px solid #ebe5d5;
+  border-radius: 2px;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+  box-shadow: 1px 1px 0 rgba(180, 160, 120, 0.12);
+}
+.entry.paper-card .block:last-child { margin-bottom: 0; }

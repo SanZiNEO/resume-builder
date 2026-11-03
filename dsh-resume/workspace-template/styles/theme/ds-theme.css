@@ -1,0 +1,11 @@
+/* ── 风格派·主题：蒙德里安三原色 + 黑格线 ── */
+.page.ds-theme {
+  --ds-red: #d40920; --ds-blue: #1356a2; --ds-yellow: #f7d842;
+  --ds-ink: #101010; --ds-paper: #fcfcf9;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  font-family: "Futura", "Century Gothic", "PingFang SC", sans-serif;
+}
+.left.ds-theme { background: #f6f5f0; }
+.right.ds-theme { background: var(--ds-paper); }
+.page.ds-theme .section-title { color: var(--ds-ink); }

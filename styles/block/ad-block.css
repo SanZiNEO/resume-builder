@@ -1,0 +1,5 @@
+/* ── 装饰艺术·内容块：浅米底 ── */
+.block.ad-block {
+  background: #f7f2e6; border: 1px solid var(--ad-rule, #d8cdb4);
+  border-radius: 0; padding: 9px 11px; margin-bottom: 8px;
+}

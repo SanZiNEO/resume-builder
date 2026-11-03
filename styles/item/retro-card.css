@@ -1,0 +1,10 @@
+/* ── 复古印刷·条目：旧纸卡 + 细边 + 硬阴影 ── */
+.entry.retro-card {
+  background: #fbf7ee;
+  border: 1px solid var(--rt-rule, #d6c9ad);
+  border-radius: 2px;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+  box-shadow: 2px 2px 0 rgba(122, 96, 60, 0.1);
+}
+.entry.retro-card .block:last-child { margin-bottom: 0; }

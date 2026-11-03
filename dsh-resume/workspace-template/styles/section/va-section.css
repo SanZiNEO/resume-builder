@@ -1,0 +1,7 @@
+/* ── 校队·板块：粗框 + 内细线 ── */
+.section.va-section {
+  border: 3px solid var(--va-crimson, #8c1d18);
+  padding: 10px 13px 9px;
+  margin-bottom: 13px;
+  background: rgba(255, 255, 255, 0.45);
+}

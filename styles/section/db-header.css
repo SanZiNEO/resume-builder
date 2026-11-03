@@ -1,0 +1,16 @@
+/* ── 数据面板·板块标题：面板标签 ── */
+.section.db-header .section-title {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--db-dim, #7d8b9c);
+  border-bottom: 1px solid #232b36;
+  padding-bottom: 5px;
+  display: flex; align-items: center; gap: 6px;
+}
+.section.db-header .section-title::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--db-green, #3ddc97);
+  box-shadow: 0 0 6px rgba(61, 220, 151, 0.7);
+}

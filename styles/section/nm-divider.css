@@ -1,0 +1,8 @@
+/* ── 新拟态·分隔：凹槽线 ── */
+.section.nm-divider::before {
+  content: '';
+  display: block; height: 6px; margin: 0 0 12px;
+  border-radius: 999px;
+  background: var(--nm-bg, #e8ecf3);
+  box-shadow: inset 1px 1px 3px var(--nm-lo, #c2cad8), inset -1px -1px 3px var(--nm-hi, #fff);
+}

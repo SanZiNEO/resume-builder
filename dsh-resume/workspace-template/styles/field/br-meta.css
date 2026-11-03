@@ -1,0 +1,2 @@
+/* ── 粗野主义·元信息：等宽黑字 ── */
+.entry-meta.br-meta { font-family: "Courier New", monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; color: var(--br-ink, #000); font-variant-numeric: tabular-nums; }

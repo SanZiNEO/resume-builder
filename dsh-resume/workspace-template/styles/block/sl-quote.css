@@ -1,0 +1,10 @@
+/* ── 生态未来·引言块：绿色提示条 ── */
+.block.sl-quote {
+  background: rgba(132, 204, 22, 0.1);
+  border-left: 3px solid var(--sl-lime, #84cc16);
+  border-radius: 0 4px 4px 0;
+  padding: 9px 12px;
+  margin: 9px 0;
+  color: #26513a;
+  line-height: 1.8;
+}

@@ -1,0 +1,8 @@
+/* ── 复古做旧·标题：衬线加粗 + 字间距 ── */
+.entry-title.vintage-title {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--vt-ink, #3e2c1c);
+}

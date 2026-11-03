@@ -1,0 +1,10 @@
+/* ── 临床·引言块：青绿提示框 ── */
+.block.cln-quote {
+  background: var(--cln-cyan, #e0f2f1);
+  border-left: 3px solid var(--cln-teal, #0f766e);
+  border-radius: 0 4px 4px 0;
+  padding: 9px 12px;
+  margin: 9px 0;
+  color: #14504b;
+  line-height: 1.8;
+}

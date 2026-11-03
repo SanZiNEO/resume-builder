@@ -1,0 +1,7 @@
+/* ── 新艺术·元信息：金褐小字 ── */
+.entry-meta.nv-meta {
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--nv-gold, #b08d3f);
+  font-variant-numeric: tabular-nums;
+}

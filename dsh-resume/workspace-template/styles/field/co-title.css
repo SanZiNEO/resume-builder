@@ -1,0 +1,7 @@
+/* ── 商务金融风·标题：无衬线半粗 + 藏青 ── */
+.entry-title.co-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--co-navy, #1e3a5f);
+  letter-spacing: 0.01em;
+}

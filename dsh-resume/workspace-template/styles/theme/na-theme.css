@@ -1,0 +1,11 @@
+/* ── 航海·主题：米白帆布 + 深藏青 + 绳索金 ── */
+.page.na-theme {
+  --na-paper: #f6f4ee; --na-navy: #0f2a4a;
+  --na-rope: #c9b48a; --na-red: #9b2226; --na-rule: #d8cfb8;
+  background: var(--na-paper);
+  color: var(--na-navy);
+  font-family: "Songti SC", "Baskerville", Georgia, serif;
+}
+.left.na-theme { background: #f1eee6; }
+.right.na-theme { background: var(--na-paper); }
+.page.na-theme .section-title { color: var(--na-navy); }

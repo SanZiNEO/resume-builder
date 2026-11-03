@@ -1,0 +1,7 @@
+/* ── 单色·元信息：大写灰字 ── */
+.entry-meta.mc-meta {
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mc-gray, #8a8a8a);
+  font-variant-numeric: tabular-nums;
+}

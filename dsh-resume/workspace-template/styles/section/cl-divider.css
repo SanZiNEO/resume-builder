@@ -1,0 +1,8 @@
+/* ── 黏土·分隔：厚重胶囊条 ── */
+.section.cl-divider::before {
+  content: '';
+  display: block; width: 60px; height: 8px; margin: 0 0 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cl-pink, #f7c9c0) 0 55%, var(--cl-lilac, #d9cdf0) 55%);
+  box-shadow: 0 3px 5px rgba(214, 173, 158, 0.3);
+}

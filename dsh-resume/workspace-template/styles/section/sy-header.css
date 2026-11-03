@@ -1,0 +1,12 @@
+/* ── 七十年代·板块标题：圆润贴纸标题 ── */
+.section.sy-header .section-title {
+  display: inline-block;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff8ea;
+  background: var(--sy-rust, #b4552d);
+  border-bottom: none;
+  border-radius: 999px;
+  padding: 3px 13px 4px;
+  box-shadow: 2px 2px 0 var(--sy-mustard, #d9a13b);
+}

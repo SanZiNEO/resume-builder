@@ -1,0 +1,12 @@
+/* ── 侘寂·主题：亚麻底 + 陶土色 + 衬线 ── */
+.page.wb-theme {
+  --wb-bg: #ece6da; --wb-paper: #f5f1e8;
+  --wb-ink: #4a4238; --wb-soft: #8a7f70;
+  --wb-clay: #a98363; --wb-moss: #6f7a63;
+  background: var(--wb-bg);
+  color: var(--wb-ink);
+  font-family: "Songti SC", "Source Han Serif SC", Georgia, serif;
+}
+.left.wb-theme { background: #e6dfd2; }
+.right.wb-theme { background: var(--wb-bg); }
+.page.wb-theme .section-title { color: var(--wb-ink); font-weight: 400; }

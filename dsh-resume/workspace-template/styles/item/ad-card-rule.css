@@ -1,0 +1,7 @@
+/* ── 装饰艺术·重点条目：金色顶线 ── */
+.entry.ad-card-rule {
+  background: #fffdf8; border: none;
+  border-top: 2px solid var(--ad-gold, #a8863c);
+  border-radius: 0; padding: 10px 12px 8px; margin-bottom: 10px;
+}
+.entry.ad-card-rule .block:last-child { margin-bottom: 0; }

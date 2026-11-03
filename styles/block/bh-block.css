@@ -1,0 +1,8 @@
+/* ── 包豪斯·内容块：浅黄底 + 粗边 ── */
+.block.bh-block {
+  background: #fdf6e3;
+  border: 2px solid var(--bh-ink, #111);
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

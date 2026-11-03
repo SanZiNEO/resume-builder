@@ -1,0 +1,9 @@
+/* ── 临床·栏线条目：青绿顶条 ── */
+.entry.cln-card-rule {
+  background: #ffffff;
+  border: 1px solid var(--cln-rule, #d7e3e1);
+  border-top: 3px solid var(--cln-teal, #0f766e);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 9px;
+}

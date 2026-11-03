@@ -1,0 +1,14 @@
+/* ── 包豪斯·引言块：蓝色大引号 ── */
+.block.bh-quote {
+  position: relative;
+  padding: 6px 12px 6px 32px;
+  margin: 10px 0;
+  border-left: 3px solid var(--bh-blue, #1d3557);
+}
+.block.bh-quote::before {
+  content: '\201C';
+  position: absolute; left: 8px; top: -4px;
+  font-size: 30px; line-height: 1;
+  color: var(--bh-blue, #1d3557);
+  font-family: Georgia, serif;
+}

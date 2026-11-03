@@ -1,0 +1,10 @@
+/* ── 黏土·引言块：淡紫软块 ── */
+.block.cl-quote {
+  background: rgba(217, 205, 240, 0.42);
+  border: none;
+  border-radius: 18px;
+  padding: 11px 14px;
+  margin: 10px 0;
+  color: #5b4a6b;
+  font-style: italic;
+}

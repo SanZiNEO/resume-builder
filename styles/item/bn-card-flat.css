@@ -1,0 +1,8 @@
+/* ── 便当·扁平条目：浅灰内嵌盒 ── */
+.entry.bn-card-flat {
+  background: #f9fafb;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

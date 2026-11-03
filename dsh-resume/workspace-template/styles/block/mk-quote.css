@@ -1,0 +1,16 @@
+/* ── 马克笔·引言块：红笔引号 + 手写体 ── */
+.block.mk-quote {
+  position: relative;
+  padding: 8px 10px 8px 30px;
+  margin: 11px 0;
+  color: #3a352a;
+  font-style: italic;
+  line-height: 1.85;
+}
+.block.mk-quote::before {
+  content: '\201C';
+  position: absolute; left: 4px; top: -2px;
+  font-family: Georgia, serif;
+  font-size: 34px; line-height: 1;
+  color: var(--mk-red, #e5484d);
+}

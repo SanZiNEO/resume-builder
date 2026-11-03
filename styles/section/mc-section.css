@@ -1,0 +1,6 @@
+/* ── 单色·板块：一条黑线起头 ── */
+.section.mc-section {
+  border-top: 1px solid var(--mc-ink, #0a0a0a);
+  padding: 9px 0 4px;
+  margin-bottom: 15px;
+}

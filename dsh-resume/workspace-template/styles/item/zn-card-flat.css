@@ -1,0 +1,9 @@
+/* ── 手工志·扁平条目：手绘下划线 ── */
+.entry.zn-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--zn-ink, #16130f);
+  border-radius: 0;
+  padding: 3px 0 8px;
+  margin-bottom: 11px;
+}

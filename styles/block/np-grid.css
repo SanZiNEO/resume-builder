@@ -1,0 +1,10 @@
+/* ── 报纸活字·网格块：双栏报格 ── */
+.block.np-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px; padding-left: 0; list-style: none;
+  column-rule: 1px solid var(--np-rule, #c9c4b8);
+}
+.block.np-grid .entry-body li {
+  padding: 4px 0; font-size: 9.5px; line-height: 1.5;
+  border-bottom: 1px solid var(--np-rule, #c9c4b8);
+}

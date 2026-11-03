@@ -1,0 +1,8 @@
+/* ── 手写笔记风·数字强调：红笔 + 波浪下划线 ── */
+.block.hw-metric .entry-body li strong,
+.block.hw-metric .entry-body li b {
+  color: var(--hw-accent, #dc2626);
+  font-weight: 700;
+  text-decoration: underline wavy rgba(220, 38, 38, 0.4);
+  text-underline-offset: 3px;
+}

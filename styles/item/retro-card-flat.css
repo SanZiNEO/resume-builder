@@ -1,0 +1,9 @@
+/* ── 复古印刷·扁平条目：底部分隔线 ── */
+.entry.retro-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rt-rule, #d6c9ad);
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}

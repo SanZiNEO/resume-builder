@@ -1,0 +1,9 @@
+/* ── 玻璃拟态·扁平条目：半透明白 + 模糊 ── */
+.entry.glass-card-flat {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(6px);
+}

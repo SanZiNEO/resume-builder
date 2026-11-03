@@ -1,0 +1,9 @@
+/* ── 粗野主义·主题：纯黑纯白 + 荧光黄 ── */
+.page.br-theme {
+  --br-ink: #000000; --br-paper: #ffffff; --br-accent: #eaff00;
+  background: var(--br-paper); color: var(--br-ink);
+  font-family: "Arial Black", "Helvetica Neue", Impact, "PingFang SC", sans-serif;
+}
+.left.br-theme { background: #f0f0f0; }
+.right.br-theme { background: var(--br-paper); }
+.page.br-theme .section-title { color: var(--br-ink); }

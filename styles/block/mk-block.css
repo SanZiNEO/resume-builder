@@ -1,0 +1,8 @@
+/* ── 马克笔·内容块：淡黄便签 ── */
+.block.mk-block {
+  background: rgba(255, 228, 94, 0.22);
+  border: none;
+  border-radius: 8px 3px 10px 4px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,17 @@
+/* ── 赛博科技风·终端块：等宽 + 提示符前缀 ── */
+.block.cy-term {
+  background: #05080c;
+  border: 1px solid #15202b;
+  border-radius: 2px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+}
+.block.cy-term .entry-body li {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 10.5px;
+  color: #9fb3c8;
+}
+.block.cy-term .entry-body li::before {
+  content: '> ';
+  color: var(--cy-cyan, #22d3ee);
+}

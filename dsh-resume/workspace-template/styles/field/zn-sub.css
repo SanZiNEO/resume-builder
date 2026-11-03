@@ -1,0 +1,6 @@
+/* ── 手工志·副标题：蓝墨小字 ── */
+.entry-sub.zn-sub {
+  font-size: 9.5px; font-weight: 400;
+  font-style: italic;
+  color: var(--zn-blue, #2b4c7e);
+}

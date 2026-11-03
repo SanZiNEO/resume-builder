@@ -1,0 +1,10 @@
+/* ── 年报·引言块：主席致辞风格 ── */
+.block.ar-quote {
+  padding: 10px 14px;
+  margin: 11px 0;
+  border-left: 3px solid var(--ar-navy, #12304f);
+  background: #f6f8fa;
+  color: #2c3c4d;
+  font-style: italic;
+  line-height: 1.85;
+}

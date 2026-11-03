@@ -1,0 +1,17 @@
+/* ── 动能·引言块：巨大引号 + 粗杠 ── */
+.block.kn-quote {
+  position: relative;
+  padding: 10px 12px 10px 40px;
+  margin: 11px 0;
+  border-left: 6px solid var(--kn-ink, #111);
+  font-size: 11px; font-weight: 700;
+  line-height: 1.5;
+}
+.block.kn-quote::before {
+  content: '\201C';
+  position: absolute; left: 8px; top: -10px;
+  font-family: Georgia, serif;
+  font-size: 48px; line-height: 1;
+  color: var(--kn-yellow, #f2c400);
+  -webkit-text-stroke: 1px var(--kn-ink, #111);
+}

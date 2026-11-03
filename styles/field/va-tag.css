@@ -1,0 +1,10 @@
+/* ── 校队·标签：深红方块 ── */
+.tag.va-tag {
+  background: var(--va-crimson, #8c1d18);
+  border: none;
+  border-radius: 0;
+  color: #f7f3e8;
+  font-size: 8px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 1px 6px;
+}

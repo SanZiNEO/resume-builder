@@ -1,0 +1,13 @@
+/* ── 孟菲斯·主题：撞色 + 波点 + 几何 ── */
+.page.mp-theme {
+  --mp-pink: #ff6b9d; --mp-yellow: #ffd93d; --mp-blue: #4dabf7;
+  --mp-ink: #1a1a1a; --mp-paper: #fdfbf7;
+  background:
+    radial-gradient(circle, rgba(255, 107, 157, 0.12) 1.5px, transparent 1.6px) 0 0 / 18px 18px,
+    var(--mp-paper);
+  color: var(--mp-ink);
+  font-family: "Poppins", "Nunito", "PingFang SC", sans-serif;
+}
+.left.mp-theme { background: #fdf3f7; }
+.right.mp-theme { background: var(--mp-paper); }
+.page.mp-theme .section-title { color: var(--mp-ink); }

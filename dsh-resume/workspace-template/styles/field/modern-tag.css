@@ -1,0 +1,9 @@
+/* ── 现代简约·标签：浅蓝胶囊 ── */
+.tag.modern-tag {
+  background: #eff6ff;
+  border: none;
+  border-radius: 999px;
+  color: #1d4ed8;
+  font-size: 8.5px; font-weight: 500;
+  padding: 1px 8px;
+}

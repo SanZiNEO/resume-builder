@@ -1,0 +1,6 @@
+/* ── 双色调·副标题：紫色小字 ── */
+.entry-sub.dt-sub {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--dt-violet, #5b21b6);
+}

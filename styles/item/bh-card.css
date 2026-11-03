@@ -1,0 +1,10 @@
+/* ── 包豪斯·条目：白底粗黑边 + 黄硬阴影 ── */
+.entry.bh-card {
+  background: #ffffff;
+  border: 3px solid var(--bh-ink, #111);
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 4px 4px 0 var(--bh-yellow, #fcbf49);
+}
+.entry.bh-card .block:last-child { margin-bottom: 0; }

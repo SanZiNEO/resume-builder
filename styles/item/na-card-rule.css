@@ -1,0 +1,10 @@
+/* ── 航海·栏线条目：绳索色顶线 ── */
+.entry.na-card-rule {
+  background: #fffdf7;
+  border: none;
+  border-top: 3px solid var(--na-rope, #c9b48a);
+  border-bottom: 1px solid var(--na-navy, #0f2a4a);
+  border-radius: 0;
+  padding: 9px 12px 8px;
+  margin-bottom: 10px;
+}

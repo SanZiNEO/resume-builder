@@ -1,0 +1,7 @@
+/* ── 终端·元信息：琥珀色时间戳 ── */
+.entry-meta.tm-meta {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--tm-amber, #e3b341);
+  font-variant-numeric: tabular-nums;
+}

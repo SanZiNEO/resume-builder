@@ -1,0 +1,10 @@
+/* ── 黑色电影·条目：深灰卡 + 左硬光 ── */
+.entry.fn-card {
+  background: #151515;
+  border: none;
+  border-left: 2px solid #f2f2f2;
+  border-radius: 0;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}
+.entry.fn-card .block:last-child { margin-bottom: 0; }

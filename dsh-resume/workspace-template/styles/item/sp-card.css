@@ -1,0 +1,16 @@
+/* ── 太空时代·条目：白卡 + 橙色角标 ── */
+.entry.sp-card {
+  position: relative;
+  background: #fdfcfa;
+  border: 1px solid var(--sp-rule, #cfcdc6);
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.entry.sp-card::before {
+  content: '';
+  position: absolute; left: -1px; top: -1px;
+  width: 8px; height: 8px;
+  background: var(--sp-orange, #d95f2b);
+}
+.entry.sp-card .block:last-child { margin-bottom: 0; }

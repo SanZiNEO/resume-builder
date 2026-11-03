@@ -1,0 +1,11 @@
+/* ── 装饰艺术·纹样块：菱形角饰 ── */
+.block.ad-ornament {
+  position: relative; padding: 12px 16px; margin: 10px 0;
+  border: 1px solid var(--ad-rule, #d8cdb4);
+}
+.block.ad-ornament::before, .block.ad-ornament::after {
+  content: ''; position: absolute; width: 6px; height: 6px;
+  border: 1px solid var(--ad-gold, #a8863c); transform: rotate(45deg);
+}
+.block.ad-ornament::before { top: -4px; left: -4px; }
+.block.ad-ornament::after { bottom: -4px; right: -4px; }

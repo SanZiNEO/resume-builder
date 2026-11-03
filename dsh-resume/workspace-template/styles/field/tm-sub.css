@@ -1,0 +1,5 @@
+/* ── 终端·副标题：暗色斜体 ── */
+.entry-sub.tm-sub {
+  font-size: 10px; font-style: italic;
+  color: var(--tm-dim, #7d9488);
+}

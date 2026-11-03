@@ -1,0 +1,10 @@
+/* ── 学术论文风·条目：左侧引用线 + 浅底 ── */
+.entry.ac-card-rule {
+  background: #fafafa;
+  border: none;
+  border-left: 2px solid var(--ac-cite, #1e40af);
+  border-radius: 0;
+  padding: 8px 10px 8px 12px;
+  margin-bottom: 10px;
+}
+.entry.ac-card-rule .block:last-child { margin-bottom: 0; }

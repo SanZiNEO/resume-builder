@@ -1,0 +1,9 @@
+/* ── 北欧·条目：白卡 + 极淡边 ── */
+.entry.sc-card {
+  background: #ffffff;
+  border: 1px solid var(--sc-rule, #e3e0d9);
+  border-radius: 6px;
+  padding: 11px 14px;
+  margin-bottom: 10px;
+}
+.entry.sc-card .block:last-child { margin-bottom: 0; }

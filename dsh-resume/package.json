@@ -1,32 +1,9 @@
 {
-  "name": "dsh-resume-mode",
-  "version": "0.1.0",
-  "description": "Resume mode for DeepSeek Harness: a resume-advisor persona, a write boundary, HTML/PDF export, and a live read-only preview in the right sidebar.",
-  "license": "MIT",
-  "author": "ShanZhi",
+  "name": "dsh-resume",
+  "version": "0.2.1",
+  "private": true,
+  "description": "简历模式：把 dsh 变成简历顾问（人设 + 写边界 + 导出 + 右栏实时预览）",
   "type": "module",
-  "homepage": "https://github.com/SanZiNEO/resume-builder/tree/main/dsh-resume#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SanZiNEO/resume-builder.git",
-    "directory": "dsh-resume"
-  },
-  "bugs": {
-    "url": "https://github.com/SanZiNEO/resume-builder/issues"
-  },
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "dsh-plugin",
-    "cordis",
-    "plugin",
-    "resume",
-    "resume-builder",
-    "ui"
-  ],
-  "engines": {
-    "node": "^22.19.0 || >=24.0.0"
-  },
   "exports": {
     ".": "./lib/index.js",
     "./policy": "./lib/policy.js",
@@ -43,33 +20,27 @@
     "workspace-template"
   ],
   "meta": {
-    "title": "Resume Mode",
-    "description": "Turns a session into a resume advisor: edits only the resume project's YAML / CSS, exports on demand, live preview in the right sidebar."
+    "title": "简历模式",
+    "description": "把当前会话变成简历顾问：只改简历项目里的 YAML / CSS，随时导出，右栏实时预览。"
   },
   "icon": "./icon.svg",
   "peerDependencies": {
-    "@deepseek-ai/cordis": ">=4.0.0",
-    "@deepseek-ai/dsh-agent-instructions": ">=0.2.0-rc.2",
-    "@deepseek-ai/dsh-agent-preset": ">=0.2.0-rc.2",
-    "@deepseek-ai/dsh-persona": ">=0.2.0-rc.2",
-    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2",
-    "@deepseek-ai/schemastery": ">=3.18.0"
+    "@deepseek-ai/dsh-agent-instructions": "*",
+    "@deepseek-ai/dsh-agent-preset": "*",
+    "@deepseek-ai/dsh-persona": "*",
+    "@deepseek-ai/dsh-tools": "*"
   },
   "scripts": {
     "build": "tsdown",
     "watch": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "test": "node --test test/*.test.mjs",
-    "prepare": "npm run build",
     "prepack": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^22.20.1",
     "tsdown": "^0.22.2",
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "yaml": "2.9.1"
   },
   "dsh": {
     "bundle": {
@@ -87,5 +58,8 @@
         "@deepseek-ai/dsh-api-settings-controller"
       ]
     }
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
   }
 }

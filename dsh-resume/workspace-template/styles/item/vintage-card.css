@@ -1,0 +1,10 @@
+/* ── 复古做旧·条目：羊皮卡 + 内描边 ── */
+.entry.vintage-card {
+  background: #f6eddc;
+  border: 1px solid var(--vt-rule, #c9b896);
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45);
+}
+.entry.vintage-card .block:last-child { margin-bottom: 0; }

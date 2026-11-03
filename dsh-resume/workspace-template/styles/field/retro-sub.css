@@ -1,0 +1,7 @@
+/* ── 复古印刷·副标题：斜体衬线 ── */
+.entry-sub.retro-sub {
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  font-size: 10.5px;
+  color: var(--rt-muted, #8a7355);
+}

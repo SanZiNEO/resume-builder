@@ -1,0 +1,5 @@
+/* ── 黏土·副标题：暖褐小字 ── */
+.entry-sub.cl-sub {
+  font-size: 10px; font-weight: 600;
+  color: var(--cl-soft, #a3948b);
+}

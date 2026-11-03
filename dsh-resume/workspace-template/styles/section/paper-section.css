@@ -1,0 +1,6 @@
+/* ── 纸张·板块：纸片 + 细点框 ── */
+.section.paper-section {
+  border: none;
+  padding: 2px 0 6px;
+  margin-bottom: 14px;
+}

@@ -1,0 +1,13 @@
+/* ── 航海·板块：双线船舷框 ── */
+.section.na-section {
+  position: relative;
+  border: 1px solid var(--na-navy, #0f2a4a);
+  padding: 12px 14px 10px;
+  margin-bottom: 14px;
+}
+.section.na-section::before {
+  content: '';
+  position: absolute; inset: 3px;
+  border: 1px solid var(--na-rope, #c9b48a);
+  pointer-events: none;
+}

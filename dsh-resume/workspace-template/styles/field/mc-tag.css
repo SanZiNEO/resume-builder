@@ -1,0 +1,10 @@
+/* ── 单色·标签：细黑框 ── */
+.tag.mc-tag {
+  background: transparent;
+  border: 1px solid var(--mc-ink, #0a0a0a);
+  border-radius: 0;
+  color: var(--mc-ink, #0a0a0a);
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 5px;
+}

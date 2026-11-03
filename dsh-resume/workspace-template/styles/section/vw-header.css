@@ -1,0 +1,7 @@
+/* ── 蒸汽波·板块标题：粉青双色发光 ── */
+.section.vw-header .section-title {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--vw-pink, #ff6ec7);
+  text-shadow: 0 0 10px rgba(255, 110, 199, 0.6), 1px 0 0 var(--vw-cyan, #00f0ff);
+  border-bottom: none;
+}

@@ -1,0 +1,8 @@
+/* ── 单色·分隔：双线（粗+细） ── */
+.section.mc-divider::before {
+  content: '';
+  display: block; margin: 0 0 12px;
+  border-top: 2px solid var(--mc-ink, #0a0a0a);
+  border-bottom: 1px solid var(--mc-line, #dcdcdc);
+  height: 3px;
+}

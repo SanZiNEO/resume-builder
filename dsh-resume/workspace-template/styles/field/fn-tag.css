@@ -1,0 +1,10 @@
+/* ── 黑色电影·标签：灰线小框 ── */
+.tag.fn-tag {
+  background: transparent;
+  border: 1px solid #3f3f3f;
+  border-radius: 0;
+  color: #a3a3a3;
+  font-size: 8px; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0 6px;
+}

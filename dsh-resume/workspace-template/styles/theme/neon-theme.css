@@ -1,0 +1,14 @@
+/* ── 霓虹·主题别名：等同 theme/neon.css ── */
+.page.neon-theme {
+  --nn-cyan: #22d3ee; --nn-ink: #e2e8f0;
+  background-color: #0b1120;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--nn-ink);
+  font-family: "Orbitron", "PingFang SC", system-ui, sans-serif;
+}
+.left.neon-theme { background: #111827; color: var(--nn-ink); }
+.right.neon-theme { background: transparent; color: var(--nn-ink); }
+.page.neon-theme .section-title { color: var(--nn-cyan); text-shadow: 0 0 6px rgba(34, 211, 238, 0.5); }

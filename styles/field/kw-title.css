@@ -1,0 +1,6 @@
+/* ── 可爱贴纸·标题：圆胖粗字 ── */
+.entry-title.kw-title {
+  font-size: 13.5px; font-weight: 800;
+  letter-spacing: 0.005em;
+  color: var(--kw-ink, #3b2c3a);
+}

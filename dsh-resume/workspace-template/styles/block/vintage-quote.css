@@ -1,0 +1,11 @@
+/* ── 复古做旧·引言块：居中衬线引文 ── */
+.block.vintage-quote {
+  padding: 10px 16px;
+  margin: 13px 0;
+  border-top: 1px solid rgba(161, 98, 7, 0.3);
+  border-bottom: 1px solid rgba(161, 98, 7, 0.3);
+  color: var(--vt-muted, #7a6449);
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  text-align: center;
+}

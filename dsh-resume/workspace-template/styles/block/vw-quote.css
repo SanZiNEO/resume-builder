@@ -1,0 +1,2 @@
+/* ── 蒸汽波·引言块：粉左条 ── */
+.block.vw-quote { border-left: 3px solid var(--vw-pink, #ff6ec7); background: rgba(255, 110, 199, 0.06); padding: 8px 12px; margin-bottom: 8px; }

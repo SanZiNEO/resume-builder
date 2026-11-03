@@ -1,0 +1,5 @@
+/* ── 年报·正文：中性深灰 ── */
+.entry-body.ar-body li, .entry-body.ar-body .block-text {
+  font-size: 10.5px; line-height: 1.75;
+  color: #2b3846;
+}

@@ -1,0 +1,9 @@
+/* ── 北欧·栏线条目：雾蓝细线 ── */
+.entry.sc-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--sc-fog, #8fa6b2);
+  border-radius: 0;
+  padding: 3px 0 3px 13px;
+  margin-bottom: 12px;
+}

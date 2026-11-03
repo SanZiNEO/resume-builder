@@ -1,0 +1,9 @@
+/* ── 便当·条目：白盒 + 细边 ── */
+.entry.bn-card {
+  background: var(--bn-card, #fff);
+  border: 1px solid var(--bn-line, #e5e7eb);
+  border-radius: 12px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}
+.entry.bn-card .block:last-child { margin-bottom: 0; }

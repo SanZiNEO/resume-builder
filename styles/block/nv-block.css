@@ -1,0 +1,8 @@
+/* ── 新艺术·内容块：淡金纸底 ── */
+.block.nv-block {
+  background: rgba(176, 141, 63, 0.055);
+  border: 1px solid rgba(176, 141, 63, 0.22);
+  border-radius: 4px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

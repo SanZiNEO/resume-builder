@@ -1,0 +1,5 @@
+/* ── 千禧·分隔：星光点 ── */
+.section.yk-divider::before {
+  content: '\2726 \2727 \2726'; display: block; text-align: center;
+  color: var(--yk-blue, #00b4ff); font-size: 10px; letter-spacing: 0.6em; margin-bottom: 10px;
+}

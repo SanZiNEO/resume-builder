@@ -1,0 +1,8 @@
+/* ── 纸张·内容块：米白底 + 点线框 ── */
+.block.paper-block {
+  background: #fffef9;
+  border: 1px dotted #ddd6c3;
+  border-radius: 2px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

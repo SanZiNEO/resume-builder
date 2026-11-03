@@ -1,0 +1,7 @@
+/* ── 黑色电影·标题：细衬线大字 ── */
+.entry-title.fn-title {
+  font-family: "Didot", "Songti SC", Georgia, serif;
+  font-size: 14px; font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}

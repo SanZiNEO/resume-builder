@@ -1,0 +1,10 @@
+/* ── 渐变·引言块：渐变左线 + 淡底 ── */
+.block.gradient-quote {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(217, 70, 239, 0.05));
+  border-left: 2px solid #8b5cf6;
+  border-radius: 0 8px 8px 0;
+  padding: 9px 13px;
+  margin: 10px 0;
+  color: #4c1d95;
+  font-style: italic;
+}

@@ -1,0 +1,18 @@
+/* ── 蓝图·栏线条目：顶部标注线 + 角标 ── */
+.entry.bp-card-rule {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(143, 214, 255, 0.6);
+  border-radius: 0;
+  padding: 10px 2px 6px;
+  margin-bottom: 10px;
+}
+.entry.bp-card-rule::after {
+  content: '';
+  position: absolute; right: 0; top: 0;
+  width: 6px; height: 6px;
+  border-right: 1px solid rgba(143, 214, 255, 0.6);
+  border-bottom: 1px solid rgba(143, 214, 255, 0.6);
+}
+.entry.bp-card-rule .block:last-child { margin-bottom: 0; }

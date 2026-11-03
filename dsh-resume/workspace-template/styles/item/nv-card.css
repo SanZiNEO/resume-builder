@@ -1,0 +1,10 @@
+/* ── 新艺术·条目：金边圆角 + 内细线 ── */
+.entry.nv-card {
+  background: #faf7ee;
+  border: 1px solid var(--nv-gold, #b08d3f);
+  border-radius: 10px 10px 4px 4px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 3px #faf7ee, inset 0 0 0 4px rgba(176, 141, 63, 0.28);
+}
+.entry.nv-card .block:last-child { margin-bottom: 0; }

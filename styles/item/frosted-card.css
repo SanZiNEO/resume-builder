@@ -1,0 +1,10 @@
+/* ── 磨砂玻璃·条目：半透明卡 ── */
+.entry.frosted-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+}
+.entry.frosted-card .block:last-child { margin-bottom: 0; }

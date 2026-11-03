@@ -1,0 +1,17 @@
+/* ── 登机牌·条目：票根卡 + 右侧齿孔 ── */
+.entry.bd-card {
+  position: relative;
+  background: #fffdf7;
+  border: 1px solid var(--bd-rule, #ded7c6);
+  border-radius: 6px;
+  padding: 10px 40px 10px 12px;
+  margin-bottom: 10px;
+}
+.entry.bd-card::after {
+  content: '';
+  position: absolute; top: 6px; bottom: 6px; right: 26px;
+  width: 1px;
+  background-image: linear-gradient(180deg, var(--bd-dash, #b9b2a0) 0 5px, transparent 5px 10px);
+  background-size: 1px 10px;
+}
+.entry.bd-card .block:last-child { margin-bottom: 0; }

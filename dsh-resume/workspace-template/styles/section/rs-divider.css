@@ -1,0 +1,6 @@
+/* ── 孔版印刷·分隔：网点条 ── */
+.section.rs-divider::before {
+  content: ''; display: block; height: 6px; margin-bottom: 10px;
+  background: radial-gradient(circle at 3px 3px, var(--rs-blue, #2c7da0) 1.2px, transparent 1.3px) 0 0 / 8px 6px repeat-x;
+  opacity: 0.6;
+}

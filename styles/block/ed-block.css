@@ -1,0 +1,8 @@
+/* ── 杂志编辑风·内容块：纸色底 + 极浅边 ── */
+.block.ed-block {
+  background: #f7f4ed;
+  border: 1px solid var(--ed-rule, #d8d4cc);
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}

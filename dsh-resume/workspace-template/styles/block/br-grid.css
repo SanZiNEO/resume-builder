@@ -1,0 +1,11 @@
+/* ── 粗野主义·网格块：粗黑缝方格 ── */
+.block.br-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px; padding-left: 0; list-style: none;
+  background: var(--br-ink, #000);
+  border: 3px solid var(--br-ink, #000);
+}
+.block.br-grid .entry-body li {
+  background: var(--br-paper, #fff);
+  padding: 6px 8px; font-size: 10px; font-weight: 600;
+}

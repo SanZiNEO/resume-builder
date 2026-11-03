@@ -1,0 +1,2 @@
+/* ── 粗野主义·标签：荧光黄 + 粗边方角 ── */
+.tag.br-tag { background: var(--br-accent, #eaff00); border: 2px solid var(--br-ink, #000); border-radius: 0; color: var(--br-ink, #000); font-size: 9px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 6px; }

@@ -1,0 +1,6 @@
+/* ── 孟菲斯·扁平条目：粉色左条 ── */
+.entry.mp-card-flat {
+  background: #fffdfe; border: none;
+  border-left: 6px solid var(--mp-pink, #ff6b9d);
+  border-radius: 0 12px 12px 0; padding: 8px 12px; margin-bottom: 9px;
+}

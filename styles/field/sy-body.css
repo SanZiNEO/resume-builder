@@ -1,0 +1,5 @@
+/* ── 七十年代·正文：暖调 + 松行距 ── */
+.entry-body.sy-body li, .entry-body.sy-body .block-text {
+  font-size: 10.5px; line-height: 1.78;
+  color: #52402f;
+}

@@ -1,0 +1,17 @@
+/* ── 便当·板块标题：色点 + 小标签 ── */
+.section.bn-header .section-title {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--bn-ink, #111827);
+  border-bottom: none;
+  padding-bottom: 6px;
+}
+.section.bn-header .section-title::before {
+  content: '';
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  margin-right: 7px; vertical-align: 0;
+  background: var(--bn-a, #fde68a);
+  box-shadow: 10px 0 0 var(--bn-b, #bfdbfe);
+}

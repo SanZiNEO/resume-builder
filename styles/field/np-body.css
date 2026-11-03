@@ -1,0 +1,5 @@
+/* ── 报纸·正文：衬线 + 紧凑行距 ── */
+.entry-body.np-body li, .entry-body.np-body .block-text {
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-size: 11px; line-height: 1.68; color: #2b2b2b;
+}

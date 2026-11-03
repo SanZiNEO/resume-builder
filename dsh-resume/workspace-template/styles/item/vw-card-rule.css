@@ -1,0 +1,3 @@
+/* ── 蒸汽波·数据卡：青色描边发光 ── */
+.entry.vw-card-rule { background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.45); border-radius: 4px; padding: 10px 12px; margin-bottom: 9px; box-shadow: 0 0 14px rgba(0, 240, 255, 0.1); }
+.entry.vw-card-rule .block:last-child { margin-bottom: 0; }

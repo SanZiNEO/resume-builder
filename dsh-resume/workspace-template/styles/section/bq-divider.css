@@ -1,0 +1,10 @@
+/* ── 巴洛克·分隔：三线 + 中心菱形 ── */
+.section.bq-divider::before {
+  content: '\25C6';
+  display: block; margin: 0 0 13px;
+  font-size: 8px; color: var(--bq-gold, #c9a227);
+  text-align: center; line-height: 1;
+  background-image: linear-gradient(90deg,
+    transparent 0 36%, var(--bq-rule, #d9c9a8) 36% 64%, transparent 64%);
+  background-repeat: no-repeat; background-position: 0 50%; background-size: 100% 1px;
+}

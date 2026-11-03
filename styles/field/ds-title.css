@@ -1,0 +1,6 @@
+/* ── 风格派·标题：几何无衬线 ── */
+.entry-title.ds-title {
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ds-ink, #101010);
+}

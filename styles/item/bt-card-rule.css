@@ -1,0 +1,9 @@
+/* ── 植物标本·栏线条目：牛皮纸底 ── */
+.entry.bt-card-rule {
+  background: rgba(232, 221, 198, 0.45);
+  border: none;
+  border-top: 1px solid var(--bt-sage, #6b7f5e);
+  border-radius: 0;
+  padding: 9px 12px 8px;
+  margin-bottom: 10px;
+}

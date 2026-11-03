@@ -1,0 +1,12 @@
+/* ── 孟菲斯·引言块：蓝色气泡 ── */
+.block.mp-quote {
+  position: relative; background: #eef7ff;
+  border: 2px solid var(--mp-blue, #4dabf7); border-radius: 16px;
+  padding: 10px 14px; margin: 10px 0;
+}
+.block.mp-quote::after {
+  content: ''; position: absolute; left: 24px; bottom: -8px;
+  width: 12px; height: 12px; background: #eef7ff;
+  border-right: 2px solid var(--mp-blue, #4dabf7); border-bottom: 2px solid var(--mp-blue, #4dabf7);
+  transform: rotate(45deg);
+}

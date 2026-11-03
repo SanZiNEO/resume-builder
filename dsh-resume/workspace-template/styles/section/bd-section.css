@@ -1,0 +1,9 @@
+/* ── 登机牌·板块：票券容器 ── */
+.section.bd-section {
+  position: relative;
+  background: #fffdf7;
+  border: 1px solid var(--bd-rule, #ded7c6);
+  border-radius: 4px;
+  padding: 11px 13px 10px;
+  margin-bottom: 12px;
+}

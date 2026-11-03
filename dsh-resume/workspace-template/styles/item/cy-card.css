@@ -1,0 +1,18 @@
+/* ── 赛博科技风·条目：暗卡 + 渐变霓虹左条 ── */
+.entry.cy-card {
+  position: relative;
+  background: linear-gradient(135deg, #10161f, #0d131a);
+  border: 1px solid var(--cy-line, #1e2b3a);
+  border-radius: 2px;
+  padding: 10px 12px 10px 14px;
+  margin-bottom: 9px;
+}
+.entry.cy-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cy-cyan, #22d3ee), var(--cy-magenta, #e879f9));
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+.entry.cy-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,6 @@
+/* ── 侘寂·分隔：短细线 ── */
+.section.wb-divider::before {
+  content: '';
+  display: block; width: 34px; height: 1px; margin: 0 0 16px;
+  background: var(--wb-clay, #a98363);
+}

@@ -1,0 +1,11 @@
+/* ── 新拟态·网格块：双列浮块 ── */
+.block.nm-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;
+  padding-left: 0; list-style: none;
+}
+.block.nm-grid .entry-body li {
+  background: var(--nm-bg, #e8ecf3);
+  border-radius: 12px;
+  padding: 7px 9px; font-size: 10px;
+  box-shadow: 3px 3px 7px var(--nm-lo, #c2cad8), -3px -3px 7px var(--nm-hi, #fff);
+}

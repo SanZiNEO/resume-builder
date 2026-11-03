@@ -1,0 +1,9 @@
+/* ── 年报·扁平条目：浅灰数据块 ── */
+.entry.ar-card-flat {
+  background: #f6f8fa;
+  border: none;
+  border-left: 3px solid var(--ar-gold, #a8894f);
+  border-radius: 0;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,6 @@
+/* ── 蓝图·标题：白色 + 轻字距 ── */
+.entry-title.bp-title {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f4faff;
+}

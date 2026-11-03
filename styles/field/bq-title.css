@@ -1,0 +1,7 @@
+/* ── 巴洛克·标题：酒红衬线 ── */
+.entry-title.bq-title {
+  font-family: "Songti SC", "Baskerville", Georgia, serif;
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--bq-wine, #5c1a1b);
+}

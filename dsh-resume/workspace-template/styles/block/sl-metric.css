@@ -1,0 +1,10 @@
+/* ── 生态未来·数字块：深绿等宽数字 ── */
+.block.sl-metric .entry-body li strong,
+.block.sl-metric .entry-body li b {
+  color: var(--sl-green, #14532d);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background-image: linear-gradient(180deg, transparent 68%, rgba(132, 204, 22, 0.4) 68%);
+  padding: 0 1px;
+}

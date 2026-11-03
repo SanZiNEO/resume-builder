@@ -1,0 +1,11 @@
+/* ── 装饰艺术·网格块：金线双栏格 ── */
+.block.ad-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px; padding-left: 0; list-style: none;
+}
+.block.ad-grid .entry-body li {
+  padding: 7px 0 7px 12px; font-size: 10px;
+  border-left: 1px solid var(--ad-rule, #d8cdb4);
+  font-family: "Songti SC", "Playfair Display", serif;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,9 @@
+/* ── 临床·标签：青绿胶囊 ── */
+.tag.cln-tag {
+  background: var(--cln-cyan, #e0f2f1);
+  border: none;
+  border-radius: 999px;
+  color: var(--cln-teal, #0f766e);
+  font-size: 8.5px; font-weight: 600;
+  padding: 1px 8px;
+}

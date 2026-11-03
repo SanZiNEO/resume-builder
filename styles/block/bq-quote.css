@@ -1,0 +1,11 @@
+/* ── 巴洛克·引言块：居中 + 金色分隔 ── */
+.block.bq-quote {
+  padding: 10px 16px;
+  margin: 12px 0;
+  border-top: 1px solid var(--bq-gold, #c9a227);
+  border-bottom: 1px solid var(--bq-gold, #c9a227);
+  color: var(--bq-wine, #5c1a1b);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.9;
+}

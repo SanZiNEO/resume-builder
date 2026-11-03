@@ -1,0 +1,8 @@
+/* ── 侘寂·扁平条目：完全无装饰 ── */
+.entry.wb-card-flat {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2px 0;
+  margin-bottom: 14px;
+}

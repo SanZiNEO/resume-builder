@@ -1,0 +1,6 @@
+/* ── 生态未来·标题：深绿半粗 ── */
+.entry-title.sl-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--sl-green, #14532d);
+}

@@ -1,0 +1,8 @@
+/* ── 数据面板·元信息：等宽时间戳 ── */
+.entry-meta.db-meta {
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #8ea0b5;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-variant-numeric: tabular-nums;
+}

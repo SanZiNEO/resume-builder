@@ -1,0 +1,14 @@
+/* ── 杂志编辑风·主题：墨黑 + 纸白 + 砖红 ── */
+.page.ed-theme {
+  --ed-ink: #1c1917;
+  --ed-paper: #fdfcf9;
+  --ed-accent: #9f1239;
+  --ed-rule: #d8d4cc;
+  --ed-muted: #78716c;
+  background: var(--ed-paper);
+  color: var(--ed-ink);
+  font-family: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+}
+.left.ed-theme { background: #f6f3ec; }
+.right.ed-theme { background: var(--ed-paper); }
+.page.ed-theme .section-title { color: var(--ed-ink); letter-spacing: 0.02em; }

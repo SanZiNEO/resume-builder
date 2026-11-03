@@ -1,0 +1,8 @@
+/* ── 合同文书·分隔：双横线 ── */
+.section.lg-divider::before {
+  content: '';
+  display: block; margin: 0 0 12px;
+  border-top: 1px solid var(--lg-ink, #111);
+  border-bottom: 1px solid var(--lg-rule, #b9b9b9);
+  height: 3px;
+}

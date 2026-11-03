@@ -1,0 +1,7 @@
+/* ── 黏土·元信息：淡褐 ── */
+.entry-meta.cl-meta {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--cl-soft, #a3948b);
+  font-variant-numeric: tabular-nums;
+}

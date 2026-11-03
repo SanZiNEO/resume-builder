@@ -1,0 +1,8 @@
+/* ── 双色调·内容块：淡紫面板 ── */
+.block.dt-block {
+  background: rgba(91, 33, 182, 0.05);
+  border: 1px solid rgba(91, 33, 182, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

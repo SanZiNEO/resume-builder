@@ -1,0 +1,9 @@
+/* ── 蓝图·扁平条目：左侧引线 ── */
+.entry.bp-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--bp-cyan, #8fd6ff);
+  border-radius: 0;
+  padding: 3px 0 3px 11px;
+  margin-bottom: 11px;
+}

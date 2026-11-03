@@ -1,0 +1,10 @@
+/* ── 双色调·引言块：紫色左杠 ── */
+.block.dt-quote {
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-left: 3px solid var(--dt-violet, #5b21b6);
+  background: rgba(91, 33, 182, 0.04);
+  border-radius: 0 6px 6px 0;
+  color: #4b3570;
+  font-style: italic;
+}

@@ -1,0 +1,9 @@
+/* ── 商务金融风·扁平条目：浅底 + 左侧细线 ── */
+.entry.co-card-flat {
+  background: #f8fafc;
+  border: none;
+  border-left: 2px solid var(--co-accent, #0e7490);
+  border-radius: 0;
+  padding: 8px 12px;
+  margin-bottom: 7px;
+}

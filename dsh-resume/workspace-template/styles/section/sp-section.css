@@ -1,0 +1,8 @@
+/* ── 太空时代·板块：左侧橙标 + 细框 ── */
+.section.sp-section {
+  position: relative;
+  border: 1px solid var(--sp-rule, #cfcdc6);
+  border-left: 3px solid var(--sp-orange, #d95f2b);
+  padding: 10px 12px 9px;
+  margin-bottom: 12px;
+}

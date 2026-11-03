@@ -1,0 +1,7 @@
+/* ── 黑色电影·元信息：灰阶字距 ── */
+.entry-meta.fn-meta {
+  font-size: 8.5px; font-weight: 400;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #8c8c8c;
+  font-variant-numeric: tabular-nums;
+}

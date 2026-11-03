@@ -1,0 +1,10 @@
+/* ── 手工志·板块标题：荧光笔划痕 ── */
+.section.zn-header .section-title {
+  display: inline-block;
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--zn-ink, #16130f);
+  border-bottom: none;
+  padding: 1px 6px;
+  background-image: linear-gradient(180deg, transparent 52%, rgba(207, 58, 44, 0.3) 52%);
+}

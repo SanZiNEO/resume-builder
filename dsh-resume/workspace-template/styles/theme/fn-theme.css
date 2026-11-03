@@ -1,0 +1,11 @@
+/* ── 黑色电影·主题：纯黑 + 灰阶 + 硬光 ── */
+.page.fn-theme {
+  --fn-bg: #0d0d0d; --fn-ink: #f2f2f2;
+  --fn-mid: #a3a3a3; --fn-dim: #5e5e5e; --fn-line: #2b2b2b;
+  background: var(--fn-bg);
+  color: var(--fn-ink);
+  font-family: "Didot", "Helvetica Neue", "PingFang SC", serif;
+}
+.left.fn-theme { background: #080808; }
+.right.fn-theme { background: var(--fn-bg); }
+.page.fn-theme .section-title { color: var(--fn-ink); }

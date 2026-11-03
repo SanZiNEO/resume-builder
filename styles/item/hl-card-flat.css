@@ -1,0 +1,10 @@
+/* ── 镭射·扁平条目：渐变左光边 ── */
+.entry.hl-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 2px solid;
+  border-image: linear-gradient(180deg, #7cf5ff, #ff8ad4) 1;
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 12px;
+}

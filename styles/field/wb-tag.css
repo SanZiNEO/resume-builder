@@ -1,0 +1,10 @@
+/* ── 侘寂·标签：素面细框 ── */
+.tag.wb-tag {
+  background: transparent;
+  border: 1px solid rgba(74, 66, 56, 0.2);
+  border-radius: 999px;
+  color: var(--wb-soft, #8a7f70);
+  font-size: 8px; font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: 0 7px;
+}

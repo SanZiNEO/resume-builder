@@ -1,0 +1,7 @@
+/* ── 霓虹·正文：冷白 + 宽行距 ── */
+.entry-body.neon-body li,
+.entry-body.neon-body .block-text {
+  font-size: 11px;
+  line-height: 1.75;
+  color: #cbd5e1;
+}

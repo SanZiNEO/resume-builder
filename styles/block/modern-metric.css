@@ -1,0 +1,7 @@
+/* ── 现代简约·数字块：蓝色强调 ── */
+.block.modern-metric .entry-body li strong,
+.block.modern-metric .entry-body li b {
+  color: var(--md-accent, #2563eb);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

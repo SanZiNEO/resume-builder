@@ -1,0 +1,13 @@
+/* ── 千禧·主题：银色亮面 + 亮蓝粉 ── */
+.page.yk-theme {
+  --yk-blue: #00b4ff; --yk-pink: #ff69b4; --yk-ink: #1a1a2e; --yk-paper: #f4f7fb;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(0, 180, 255, 0.14), transparent 38%),
+    radial-gradient(circle at 88% 92%, rgba(255, 105, 180, 0.12), transparent 36%),
+    var(--yk-paper);
+  color: var(--yk-ink);
+  font-family: "Trebuchet MS", "PingFang SC", sans-serif;
+}
+.left.yk-theme { background: #eaf3fb; }
+.right.yk-theme { background: var(--yk-paper); }
+.page.yk-theme .section-title { color: var(--yk-ink); }

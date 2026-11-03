@@ -1,0 +1,85 @@
+# ── 风格套登记表 ─────────────────────────────────────────────
+# 样式手册、预览画廊、styles/INDEX.md、styles/manifest.json 全部从这里取数据。
+# 新增一套风格：在 styles/ 里放好 16 个文件，然后在这里加一条。
+#
+# prefix      文件名前缀（styles/**/{prefix}-*.css）
+# page_class  挂在 .page 上的主题类名（配合 data/{person}/theme.yaml 使用）
+# zh / en     中文名 / 英文名
+# desc        一句话视觉特征，用于手册页眉与索引表
+# fit         适合投什么岗位
+
+groups:
+  - name: 经典排版
+    suites:
+      - { prefix: ed,  page_class: ed-theme,  zh: 杂志编辑, en: editorial,      desc: 纸白底 / 衬线标题 / 砖红眉题 / 首字下沉 / 拉引块, fit: 内容 / 媒体 / 品牌 / 市场 }
+      - { prefix: co,  page_class: co-theme,  zh: 商务金融, en: corporate,      desc: 藏青标题条 / 白底细边卡 / 数据卡 / 等宽数字,       fit: 金融 / 咨询 / 大厂 / 商分 }
+      - { prefix: sw,  page_class: sw-theme,  zh: 极简瑞士, en: swiss,          desc: 网格 / 大量留白 / 瑞士红方点 / 无圆角无阴影,       fit: 通用（最高级感） }
+      - { prefix: ac,  page_class: ac-theme,  zh: 学术论文, en: academic,       desc: 衬线正文 / 自动编号 / 三线表 / 首行缩进,           fit: 研究岗 / 读研 / 学术 }
+      - { prefix: np,  page_class: np-theme,  zh: 报纸活字, en: newsprint,      desc: 窄栏密排 / 双线报头 / 灰底反白 / 高密度,           fit: 媒体 / 咨询 / 信息密集岗 }
+      - { prefix: lf,  page_class: lf-theme,  zh: 高奢时装, en: luxury,          desc: 象牙白 / 细衬线大字 / 超宽字距 / 金色只用一次,     fit: 奢侈 / 时尚 / 品牌 }
+      - { prefix: lg,  page_class: lg-theme,  zh: 合同文书, en: legal,           desc: 纯白条款 / 自动编号 / 两端对齐 / 括号元信息,       fit: 法务 / 公文 / 体制内 }
+      - { prefix: ar,  page_class: ar-theme,  zh: 年报,     en: annual report,   desc: 深蓝标题带 / 金色数字 / 报表式网格,               fit: 金融 / 咨询 / 审计 }
+
+  - name: 单色与几何
+    suites:
+      - { prefix: mc,  page_class: mc-theme,  zh: 单色极简, en: monochrome,     desc: 纯黑白灰 / 发丝线 / 超宽字距 / 零装饰,             fit: 通用 / 设计 / 咨询 }
+      - { prefix: bh,  page_class: bh-theme,  zh: 包豪斯,   en: bauhaus,        desc: 三原色 / 粗黑边 / 硬阴影方块 / 几何构成,           fit: 设计 / 品牌 / 创意 }
+      - { prefix: ds,  page_class: ds-theme,  zh: 风格派,   en: de stijl,       desc: 蒙德里安黑格 / 三原色角块 / 纯正矩形,             fit: 设计 / 建筑 / 艺术 }
+      - { prefix: br,  page_class: br-theme,  zh: 粗野主义, en: brutalist,      desc: 生边框 / 无修饰 / 撞色块 / 超粗字,                 fit: 创意 / 潮流 / 内容 }
+      - { prefix: cs,  page_class: cs-theme,  zh: 构成主义, en: constructivism, desc: 斜切红杠 / 黑底反白 / 重字距 / 宣传画感,           fit: 品牌 / 广告 / 策划 }
+      - { prefix: mp,  page_class: mp-theme,  zh: 孟菲斯,   en: memphis,        desc: 跳跃几何 / 高饱和撞色 / 波点 / 俏皮,               fit: 创意 / 运营 / 校园 }
+
+  - name: 复古印刷
+    suites:
+      - { prefix: retro,   page_class: retro-theme,   zh: 复古印刷, en: retro,      desc: 旧纸底 / 衬线 / 砖红 / 硬阴影,                   fit: 内容 / 文化 / 出版 }
+      - { prefix: vintage, page_class: vintage-theme, zh: 复古做旧, en: vintage,    desc: 羊皮纸 / 角饰边框 / 内描边 / 暗金,               fit: 文化 / 出版 / 博物 }
+      - { prefix: rs,      page_class: rs-theme,      zh: 孔版印刷, en: risograph, desc: 双色套印 / 网点 / 错位叠印 / 荧光粉蓝,           fit: 设计 / 潮流 / 青年文化 }
+      - { prefix: zn,      page_class: zn-theme,      zh: 手工志,   en: zine,       desc: 剪贴纸片 / 胶带 / 荧光笔 / 手作微歪,             fit: 创意 / 内容 / 社群 }
+      - { prefix: nv,  page_class: nv-theme,  zh: 新艺术,   en: art nouveau,  desc: 金色藤蔓弧线 / 米色纸 / 灰绿衬线,               fit: 文化 / 品牌 / 艺术 }
+      - { prefix: bq,  page_class: bq-theme,  zh: 巴洛克,   en: baroque,      desc: 酒红双线框 / 金色菱形 / 居中大写衬线,           fit: 文化 / 高端服务 / 古典 }
+      - { prefix: sy,  page_class: sy-theme,  zh: 七十年代, en: seventies,    desc: 奶油底 / 砖橙与芥末黄 / 圆角贴纸标题,           fit: 快消 / 生活方式 / 内容 }
+      - { prefix: sp,  page_class: sp-theme,  zh: 太空时代, en: space age,    desc: 灰白纸 / 火箭橙 / 刻度尺分隔 / 技术标注,        fit: 工程 / 硬件 / 航天 }
+      - { prefix: va,  page_class: va-theme,  zh: 校队,     en: varsity,      desc: 米白与深红 / 双杠框 / 厚重衬线 / 方块标签,      fit: 教育 / 体育 / 校园 }
+
+  - name: 科技深色
+    suites:
+      - { prefix: cy,   page_class: cy-theme,   zh: 赛博科技, en: cyber,       desc: 深空底 / 网格扫描线 / 青霓虹 / 终端块,           fit: 游戏 / 互联网 / 技术 }
+      - { prefix: neon, page_class: neon-theme, zh: 霓虹,     en: neon,        desc: 深底 / 青洋红发光 / 霓虹描边,                     fit: 游戏 / 娱乐 / 电竞 }
+      - { prefix: tm,   page_class: tm-theme,   zh: 终端,     en: terminal,    desc: 等宽字 / 命令行提示符 / 荧光绿 / 代码块,         fit: 技术 / 数据 / 运维 }
+      - { prefix: bp,   page_class: bp-theme,   zh: 蓝图,     en: blueprint,   desc: 工程蓝底 / 网格 / 虚线图纸框 / 标注体,           fit: 工程 / 硬件 / 制造 }
+      - { prefix: vw,   page_class: vw-theme,   zh: 蒸汽波,   en: vaporwave,   desc: 紫粉渐变 / 网格地平线 / 复古未来,                fit: 创意 / 潮流 / 游戏 }
+      - { prefix: yk,   page_class: yk-theme,   zh: 千禧,     en: y2k,         desc: 银蓝渐变 / 圆角气泡 / 高光 / 千禧未来感,         fit: 潮流 / 消费 / 互联网 }
+      - { prefix: hl,  page_class: hl-theme,  zh: 镭射,     en: holographic,  desc: 深灰底 / 全息渐变描边 / 虹彩微光,               fit: 潮流 / 美妆 / 数字艺术 }
+      - { prefix: db,  page_class: db-theme,  zh: 数据面板, en: dashboard,    desc: 深灰面板 / 状态色 / 等宽数字 / 指标格,          fit: 数据 / 增长 / 商业分析 }
+
+  - name: 柔和质感
+    suites:
+      - { prefix: modern,   page_class: modern-theme,   zh: 现代简约, en: modern,     desc: 白底 / 蓝点标题 / 圆角浅灰卡,                    fit: 通用 }
+      - { prefix: paper,    page_class: paper-theme,    zh: 纸张,     en: paper,      desc: 米白纸底 / 墨线 / 点线框 / 衬线,                  fit: 出版 / 学术 / 文职 }
+      - { prefix: frosted,  page_class: frosted-theme,  zh: 磨砂玻璃, en: frosted,    desc: 浅灰蓝径向底 / 半透明卡 / 光边,                  fit: 科技 / 产品 / SaaS }
+      - { prefix: glass,    page_class: glass-theme,    zh: 玻璃拟态, en: glass,      desc: 半透明白 / 毛玻璃 / 细光边,                      fit: 科技 / 设计 / 产品 }
+      - { prefix: gradient, page_class: gradient-theme, zh: 渐变,     en: gradient,   desc: 紫粉渐变描边 / 渐变标题 / 浅渐变底,              fit: 互联网 / 创意 }
+      - { prefix: wb,       page_class: wb-theme,       zh: 侘寂,     en: wabi-sabi,  desc: 亚麻底 / 陶土色 / 极细线 / 大留白,               fit: 研究 / 内容 / 设计 }
+      - { prefix: mrd,      page_class: mrd-theme,      zh: 莫兰迪,   en: morandi,    desc: 低饱和灰调 / 柔光圆角 / 无强对比,                fit: 美妆 / 时尚 / 消费品 }
+      - { prefix: sc,  page_class: sc-theme,  zh: 北欧,     en: scandinavian, desc: 白桦白 / 雾蓝小点 / 发丝线 / 大留白,           fit: 通用 / 家居 / 设计 }
+      - { prefix: bt,  page_class: bt-theme,  zh: 植物标本, en: botanical,    desc: 牛皮纸 / 鼠尾草绿 / 标本签标签 / 衬线斜体,      fit: 环保 / 食品 / 茶饮 }
+
+  - name: 现代组件
+    suites:
+      - { prefix: bn, page_class: bn-theme, zh: 便当盒,   en: bento,        desc: 模块化白盒 / 彩色圆点 / 圆角网格,                fit: 互联网 / 产品 / 运营 }
+      - { prefix: nm, page_class: nm-theme, zh: 新拟态,   en: neumorphism,  desc: 同色双向柔光 / 凸起与凹槽 / 低对比,              fit: 产品 / 交互 / 设计 }
+      - { prefix: cl, page_class: cl-theme, zh: 黏土,     en: clay,         desc: 糖果色 / 膨胀圆角 / 柔和投影,                    fit: 快消 / 文创 / 教育 }
+      - { prefix: dt, page_class: dt-theme, zh: 双色调,   en: duotone,      desc: 深紫 + 酸性黄绿 / 双彩竖条 / 撞色克制,           fit: 广告 / 设计 / 新消费 }
+      - { prefix: hw, page_class: hw-theme, zh: 手写笔记, en: handwritten,  desc: 横线纸 / 便签框 / 纸胶带 / 荧光笔,               fit: 创意 / 教育 / 运营 }
+      - { prefix: ad, page_class: ad-theme, zh: 装饰艺术, en: art deco,     desc: 金线 / 扇形角饰 / 双线框 / 沙漏标题,             fit: 高端 / 奢侈 / 酒店 }
+      - { prefix: na,  page_class: na-theme,  zh: 航海,     en: nautical,     desc: 深藏青双线框 / 绳索金 / 大写衬线,                fit: 航运 / 酒店 / 传统行业 }
+      - { prefix: cln, page_class: cln-theme, zh: 临床,     en: clinical,     desc: 冷白青绿 / 表单格 / 青绿标签,                    fit: 医疗 / 医药 / 健康 }
+      - { prefix: bd,  page_class: bd-theme,  zh: 登机牌,   en: boarding pass, desc: 米黄票面 / 齿孔虚线 / 等宽字段,                  fit: 航空 / 旅行 / 服务 }
+      - { prefix: sl,  page_class: sl-theme,  zh: 生态未来, en: solarpunk,    desc: 薄荷白 / 深绿 / 角括号 / 叶绿高亮,               fit: 新能源 / 环保 / ESG }
+
+  - name: 字体与表现
+    suites:
+      - { prefix: fn,  page_class: fn-theme,  zh: 黑色电影, en: noir,       desc: 纯黑灰阶 / 极宽字距细体 / 硬光切边,             fit: 影视 / 内容 / 品牌 }
+      - { prefix: kn,  page_class: kn-theme,  zh: 动能,     en: kinetic,    desc: 倾斜重体 / 速度线 / 黑黄撞色,                    fit: 广告 / 创意 / 活动 }
+      - { prefix: kw,  page_class: kw-theme,  zh: 可爱贴纸, en: kawaii,     desc: 粉紫糖果色 / 粗描边 / 偏移阴影,                 fit: 母婴 / 文创 / 社交 }
+      - { prefix: mk,  page_class: mk-theme,  zh: 马克笔,   en: marker,     desc: 手绘框 / 荧光笔画痕 / 便签歪贴,                  fit: 教育 / 创意 / 活动 }

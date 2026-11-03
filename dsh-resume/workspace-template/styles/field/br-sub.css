@@ -1,0 +1,2 @@
+/* ── 粗野主义·副标题：大写粗体 ── */
+.entry-sub.br-sub { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--br-ink, #000); }

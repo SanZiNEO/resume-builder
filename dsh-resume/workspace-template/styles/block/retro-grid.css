@@ -1,0 +1,10 @@
+/* ── 复古印刷·网格块：双栏报格 ── */
+.block.retro-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px;
+  padding-left: 0; list-style: none;
+}
+.block.retro-grid .entry-body li {
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--rt-rule, #d6c9ad);
+  font-size: 10px;
+}

@@ -1,0 +1,5 @@
+/* ── 七十年代·副标题：砖橙小字 ── */
+.entry-sub.sy-sub {
+  font-size: 10px; font-weight: 600;
+  color: var(--sy-rust, #b4552d);
+}

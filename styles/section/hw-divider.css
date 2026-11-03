@@ -1,0 +1,9 @@
+/* ── 手写笔记风·分隔：手绘波浪点线 ── */
+.section.hw-divider::before {
+  content: '';
+  display: block;
+  height: 6px;
+  margin-bottom: 10px;
+  background: radial-gradient(circle at 6px 3px, var(--hw-accent, #dc2626) 1.5px, transparent 1.6px) 0 0 / 12px 6px repeat-x;
+  opacity: 0.55;
+}

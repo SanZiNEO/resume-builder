@@ -1,0 +1,6 @@
+/* ── 侘寂·正文：行距放开 ── */
+.entry-body.wb-body li, .entry-body.wb-body .block-text {
+  font-size: 10.5px; line-height: 1.92;
+  color: #5a5145;
+  letter-spacing: 0.01em;
+}

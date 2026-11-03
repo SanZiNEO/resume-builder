@@ -1,0 +1,6 @@
+/* ── 蒸汽波·板块：深紫面板 + 粉边 ── */
+.section.vw-section {
+  background: rgba(45, 27, 105, 0.55); border: 1px solid rgba(255, 110, 199, 0.4);
+  border-radius: 4px; padding: 12px 14px; margin-bottom: 14px;
+  box-shadow: inset 0 0 18px rgba(255, 110, 199, 0.12);
+}

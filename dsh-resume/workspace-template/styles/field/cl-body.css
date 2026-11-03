@@ -1,0 +1,5 @@
+/* ── 黏土·正文：暖灰 + 圆润行距 ── */
+.entry-body.cl-body li, .entry-body.cl-body .block-text {
+  font-size: 10.5px; line-height: 1.78;
+  color: #574a44;
+}

@@ -1,0 +1,8 @@
+/* ── 侘寂·内容块：纸色浅底 ── */
+.block.wb-block {
+  background: rgba(245, 241, 232, 0.7);
+  border: none;
+  border-radius: 2px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

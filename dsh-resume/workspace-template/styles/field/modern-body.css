@@ -1,0 +1,7 @@
+/* ── 现代简约·正文：常规字重 + 舒适行距 ── */
+.entry-body.modern-body li,
+.entry-body.modern-body .block-text {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #374151;
+}

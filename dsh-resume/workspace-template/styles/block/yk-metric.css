@@ -1,0 +1,7 @@
+/* ── 千禧·数字强调：蓝粉渐变文字 ── */
+.block.yk-metric .entry-body li strong,
+.block.yk-metric .entry-body li b {
+  background: linear-gradient(135deg, var(--yk-blue, #00b4ff), var(--yk-pink, #ff69b4));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: 800; font-variant-numeric: tabular-nums;
+}

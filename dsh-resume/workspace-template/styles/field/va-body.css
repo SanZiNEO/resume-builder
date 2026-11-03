@@ -1,0 +1,5 @@
+/* ── 校队·正文：衬线紧凑 ── */
+.entry-body.va-body li, .entry-body.va-body .block-text {
+  font-size: 10.5px; line-height: 1.74;
+  color: #241f18;
+}

@@ -1,0 +1,10 @@
+/* ── 镭射·标签：渐变描边 ── */
+.tag.hl-tag {
+  background: transparent;
+  border: 1px solid rgba(180, 140, 255, 0.55);
+  border-radius: 999px;
+  color: #d5c6ff;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0 7px;
+}

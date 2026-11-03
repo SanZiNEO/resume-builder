@@ -1,0 +1,8 @@
+/* ── 渐变·内容块：浅渐变底 ── */
+.block.gradient-block {
+  background: linear-gradient(135deg, #f5f3ff, #fdf4ff);
+  border: 1px solid #ede9fe;
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

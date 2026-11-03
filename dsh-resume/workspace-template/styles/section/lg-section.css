@@ -1,0 +1,8 @@
+/* ── 合同文书·板块：全宽 + 条款计数 ── */
+.section.lg-section {
+  counter-increment: lg-clause;
+  border: none;
+  padding: 10px 0 8px;
+  margin-bottom: 14px;
+  border-top: 1px solid var(--lg-ink, #111);
+}

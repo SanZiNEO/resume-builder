@@ -1,0 +1,7 @@
+/* ── 双色调·元信息：灰紫 + 等宽数字 ── */
+.entry-meta.dt-meta {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--dt-soft, #7c6a9c);
+  font-variant-numeric: tabular-nums;
+}

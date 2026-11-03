@@ -1,0 +1,8 @@
+/* ── 高奢·数字块：细衬线大数字 ── */
+.block.lf-metric .entry-body li strong,
+.block.lf-metric .entry-body li b {
+  color: var(--lf-ink, #141414);
+  font-family: "Didot", "Playfair Display", serif;
+  font-size: 13px; font-weight: 400;
+  font-variant-numeric: oldstyle-nums;
+}

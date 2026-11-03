@@ -1,0 +1,10 @@
+/* ── 高奢·条目：无框 + 顶部发丝线 ── */
+.entry.lf-card {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--lf-rule, #e0ddd6);
+  border-radius: 0;
+  padding: 11px 0 4px;
+  margin-bottom: 14px;
+}
+.entry.lf-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,11 @@
+/* ── 终端·标签：井号标签 ── */
+.tag.tm-tag {
+  background: transparent;
+  border: 1px solid var(--tm-line, #22332b);
+  border-radius: 2px;
+  color: var(--tm-cyan, #79c0ff);
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0 5px;
+}
+.tag.tm-tag::before { content: '#'; opacity: 0.7; }

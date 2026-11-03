@@ -1,0 +1,6 @@
+/* ── 年报·副标题：灰色小字 ── */
+.entry-sub.ar-sub {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #5a6b7c;
+}

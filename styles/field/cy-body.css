@@ -1,0 +1,7 @@
+/* ── 赛博科技风·正文：低亮度白 + 宽行距 ── */
+.entry-body.cy-body li,
+.entry-body.cy-body .block-text {
+  font-size: 11px;
+  line-height: 1.75;
+  color: #b9c9d9;
+}

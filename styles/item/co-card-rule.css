@@ -1,0 +1,10 @@
+/* ── 商务金融风·数据卡：浅蓝渐变 + 内高光 ── */
+.entry.co-card-rule {
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  border: 1px solid var(--co-rule, #cbd5e1);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+.entry.co-card-rule .block:last-child { margin-bottom: 0; }

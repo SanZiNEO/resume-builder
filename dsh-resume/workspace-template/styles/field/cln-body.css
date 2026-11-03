@@ -1,0 +1,5 @@
+/* ── 临床·正文：冷静中性 ── */
+.entry-body.cln-body li, .entry-body.cln-body .block-text {
+  font-size: 10.5px; line-height: 1.74;
+  color: #2b3b39;
+}

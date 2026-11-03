@@ -1,0 +1,8 @@
+/* ── 复古做旧·正文：衬线 + 暖褐字 ── */
+.entry-body.vintage-body li,
+.entry-body.vintage-body .block-text {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 11px;
+  line-height: 1.75;
+  color: #4b3826;
+}

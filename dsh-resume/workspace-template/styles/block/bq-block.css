@@ -1,0 +1,8 @@
+/* ── 巴洛克·内容块：浅酒红底 ── */
+.block.bq-block {
+  background: rgba(92, 26, 27, 0.045);
+  border: 1px solid rgba(92, 26, 27, 0.16);
+  border-radius: 0;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+}

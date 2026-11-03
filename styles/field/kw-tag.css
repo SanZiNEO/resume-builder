@@ -1,0 +1,9 @@
+/* ── 可爱贴纸·标签：糖果胶囊 ── */
+.tag.kw-tag {
+  background: #ffffff;
+  border: 2px solid var(--kw-ink, #3b2c3a);
+  border-radius: 999px;
+  color: var(--kw-ink, #3b2c3a);
+  font-size: 8.5px; font-weight: 700;
+  padding: 1px 9px;
+}

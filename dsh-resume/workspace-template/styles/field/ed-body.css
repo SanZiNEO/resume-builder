@@ -1,0 +1,8 @@
+/* ── 杂志编辑风·正文：衬线 + 放宽行高 ── */
+.entry-body.ed-body li,
+.entry-body.ed-body .block-text {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 11.5px;
+  line-height: 1.75;
+  color: #292524;
+}

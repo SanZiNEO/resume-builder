@@ -1,0 +1,7 @@
+/* ── 校队·标题：厚重衬线 ── */
+.entry-title.va-title {
+  font-family: "Rockwell", "Songti SC", Georgia, serif;
+  font-size: 14px; font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--va-ink, #17150f);
+}

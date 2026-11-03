@@ -1,0 +1,11 @@
+/* ── 终端·网格块：双栏面板 ── */
+.block.tm-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.tm-grid .entry-body li {
+  background: #0e1613;
+  border: 1px dashed var(--tm-line, #22332b);
+  border-radius: 2px;
+  padding: 6px 8px; font-size: 10px;
+}

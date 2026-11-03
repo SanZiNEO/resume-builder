@@ -1,0 +1,10 @@
+/* ── 杂志编辑风·分隔：双细线压底 ── */
+.section.ed-divider { padding-top: 6px; }
+.section.ed-divider::after {
+  content: '';
+  display: block;
+  height: 3px;
+  border-top: 1px solid var(--ed-ink, #1c1917);
+  border-bottom: 1px solid var(--ed-ink, #1c1917);
+  margin-top: 12px;
+}

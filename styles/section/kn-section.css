@@ -1,0 +1,15 @@
+/* ── 动能·板块：左侧速度线 ── */
+.section.kn-section {
+  position: relative;
+  padding: 4px 0 6px 14px;
+  margin-bottom: 13px;
+  border-bottom: 2px solid var(--kn-ink, #111);
+}
+.section.kn-section::before {
+  content: '';
+  position: absolute; left: 0; top: 6px; bottom: 8px;
+  width: 6px;
+  background-image: repeating-linear-gradient(
+    180deg, var(--kn-ink, #111) 0 6px, transparent 6px 10px);
+  transform: skewX(-12deg);
+}

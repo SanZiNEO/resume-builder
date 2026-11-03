@@ -1,0 +1,9 @@
+/* ── 七十年代·栏线条目：粗顶条 ── */
+.entry.sy-card-rule {
+  background: #fdf6e7;
+  border: none;
+  border-top: 6px solid var(--sy-avocado, #7b8c4a);
+  border-radius: 14px 14px 6px 6px;
+  padding: 9px 13px 8px;
+  margin-bottom: 10px;
+}

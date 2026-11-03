@@ -1,0 +1,9 @@
+/* ── 黏土·板块：厚圆角奶油盒 ── */
+.section.cl-section {
+  background: #fffaf5;
+  border: none;
+  border-radius: 20px;
+  padding: 13px 15px 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 14px rgba(214, 173, 158, 0.22);
+}

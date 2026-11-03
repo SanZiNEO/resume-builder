@@ -1,0 +1,8 @@
+/* ── 植物标本·内容块：台纸浅底 ── */
+.block.bt-block {
+  background: rgba(232, 221, 198, 0.28);
+  border: none;
+  border-radius: 2px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

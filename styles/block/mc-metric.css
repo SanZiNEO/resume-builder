@@ -1,0 +1,10 @@
+/* ── 单色·数字块：黑底白字 ── */
+.block.mc-metric .entry-body li strong,
+.block.mc-metric .entry-body li b {
+  display: inline-block;
+  background: var(--mc-ink, #0a0a0a);
+  color: #ffffff;
+  padding: 0 4px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

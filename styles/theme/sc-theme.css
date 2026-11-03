@@ -1,0 +1,11 @@
+/* ── 北欧·主题：白桦白 + 雾蓝 + 浅木 ── */
+.page.sc-theme {
+  --sc-paper: #fbfaf7; --sc-birch: #ece7dd;
+  --sc-fog: #8fa6b2; --sc-ink: #2f3437; --sc-rule: #e3e0d9;
+  background: var(--sc-paper);
+  color: var(--sc-ink);
+  font-family: "Helvetica Neue", "PingFang SC", system-ui, sans-serif;
+}
+.left.sc-theme { background: var(--sc-birch); }
+.right.sc-theme { background: var(--sc-paper); }
+.page.sc-theme .section-title { color: var(--sc-ink); }

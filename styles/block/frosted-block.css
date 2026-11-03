@@ -1,0 +1,9 @@
+/* ── 磨砂玻璃·内容块：半透明 + 模糊 ── */
+.block.frosted-block {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+}

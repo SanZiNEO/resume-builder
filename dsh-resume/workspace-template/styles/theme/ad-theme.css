@@ -1,0 +1,10 @@
+/* ── 装饰艺术·主题：黑金 + 对称几何 ── */
+.page.ad-theme {
+  --ad-ink: #1a1a1a; --ad-gold: #a8863c; --ad-paper: #faf7f0;
+  --ad-rule: #d8cdb4; --ad-muted: #7a6a4f;
+  background: var(--ad-paper); color: var(--ad-ink);
+  font-family: "Didot", "Playfair Display", "Songti SC", serif;
+}
+.left.ad-theme { background: #f4efe3; }
+.right.ad-theme { background: var(--ad-paper); }
+.page.ad-theme .section-title { color: var(--ad-ink); }

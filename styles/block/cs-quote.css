@@ -1,0 +1,15 @@
+/* ── 构成主义·引言块：巨大引号 + 黑杠 ── */
+.block.cs-quote {
+  position: relative;
+  padding: 8px 10px 8px 34px;
+  margin: 10px 0;
+  border-left: 5px solid var(--cs-black, #111);
+  background: rgba(17,17,16,0.035);
+}
+.block.cs-quote::before {
+  content: '\201C';
+  position: absolute; left: 6px; top: -8px;
+  font-size: 38px; line-height: 1;
+  color: var(--cs-red, #c1121f);
+  font-family: Georgia, serif;
+}

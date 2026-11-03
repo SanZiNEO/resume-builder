@@ -1,0 +1,7 @@
+/* ── 侘寂·元信息：极淡字距 ── */
+.entry-meta.wb-meta {
+  font-size: 8.5px; font-weight: 400;
+  letter-spacing: 0.14em;
+  color: rgba(138, 127, 112, 0.9);
+  font-variant-numeric: tabular-nums;
+}

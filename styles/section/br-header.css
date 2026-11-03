@@ -1,0 +1,6 @@
+/* ── 粗野主义·板块标题：黑底荧光黄 ── */
+.section.br-header .section-title {
+  display: inline-block; background: var(--br-ink, #000); color: var(--br-accent, #eaff00);
+  font-size: 13px; font-weight: 900; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 10px; border-bottom: none;
+}

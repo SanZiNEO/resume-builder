@@ -1,0 +1,10 @@
+/* ── 手写笔记风·标签：荧光笔小条 ── */
+.tag.hw-tag {
+  background: var(--hw-highlight, #fef08a);
+  border: none;
+  border-radius: 2px;
+  color: #45401f;
+  font-size: 10px;
+  padding: 1px 5px;
+  transform: rotate(-1deg);
+}

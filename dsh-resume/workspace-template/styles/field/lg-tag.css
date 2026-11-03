@@ -1,0 +1,11 @@
+/* ── 合同文书·标签：方括号 ── */
+.tag.lg-tag {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--lg-gray, #555);
+  font-size: 8.5px; font-weight: 400;
+  padding: 0 2px;
+}
+.tag.lg-tag::before { content: '['; }
+.tag.lg-tag::after { content: ']'; }

@@ -1,0 +1,6 @@
+/* ── 新艺术·副标题：灰绿斜体 ── */
+.entry-sub.nv-sub {
+  font-size: 10px; font-style: italic;
+  letter-spacing: 0.06em;
+  color: var(--nv-sage, #76856a);
+}

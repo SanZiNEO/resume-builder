@@ -1,0 +1,8 @@
+/* ── 登机牌·内容块：米黄票面 ── */
+.block.bd-block {
+  background: rgba(185, 178, 160, 0.12);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

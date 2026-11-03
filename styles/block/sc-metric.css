@@ -1,0 +1,7 @@
+/* ── 北欧·数字块：雾蓝数字 ── */
+.block.sc-metric .entry-body li strong,
+.block.sc-metric .entry-body li b {
+  color: #5b7885;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

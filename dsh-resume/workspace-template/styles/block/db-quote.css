@@ -1,0 +1,11 @@
+/* ── 数据面板·引言块：注释说明 ── */
+.block.db-quote {
+  background: rgba(78, 161, 255, 0.07);
+  border-left: 2px solid var(--db-blue, #4ea1ff);
+  border-radius: 0 4px 4px 0;
+  padding: 9px 12px;
+  margin: 9px 0;
+  color: #a8c4e0;
+  font-size: 10px;
+  line-height: 1.75;
+}

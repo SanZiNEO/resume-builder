@@ -1,0 +1,11 @@
+/* ── 学术论文风·标签：方括号关键词 ── */
+.tag.ac-tag {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 4px 0 0;
+  font-size: 10px;
+  color: var(--ac-muted, #4b5563);
+}
+.tag.ac-tag::before { content: '['; }
+.tag.ac-tag::after { content: ']'; }

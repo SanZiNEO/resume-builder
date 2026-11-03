@@ -1,0 +1,8 @@
+/* ── 镭射·分隔：渐变光带 ── */
+.section.hl-divider::before {
+  content: '';
+  display: block; height: 2px; margin: 0 0 13px;
+  border-radius: 2px;
+  background: var(--hl-grad);
+  opacity: 0.7;
+}

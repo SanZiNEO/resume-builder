@@ -1,0 +1,9 @@
+/* ── 黑色电影·栏线条目：顶部粗白线 ── */
+.entry.fn-card-rule {
+  background: #101010;
+  border: none;
+  border-top: 2px solid #f2f2f2;
+  border-radius: 0;
+  padding: 10px 12px 8px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,6 @@
+/* ── 装饰艺术·板块：双线金框 ── */
+.section.ad-section {
+  border: 1px solid var(--ad-gold, #a8863c);
+  box-shadow: inset 0 0 0 3px var(--ad-paper, #faf7f0), inset 0 0 0 4px var(--ad-gold, #a8863c);
+  padding: 14px 16px; margin-bottom: 16px;
+}

@@ -5,3 +5,4 @@
   border-radius: 12px;
   padding: 12px 16px;
 }
+.entry.glass-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,6 @@
+/* ── 合同文书·标题：粗衬线 ── */
+.entry-title.lg-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--lg-ink, #111);
+}

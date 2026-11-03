@@ -1,0 +1,8 @@
+/* ── 赛博科技风·内容块：暗底 + 细边 ── */
+.block.cy-block {
+  background: #0e141c;
+  border: 1px solid #17222e;
+  border-radius: 2px;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

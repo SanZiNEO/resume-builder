@@ -1,0 +1,8 @@
+/* ── 航海·板块标题：大写衬线 + 双横线 ── */
+.section.na-header .section-title {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--na-navy, #0f2a4a);
+  border-bottom: 3px double var(--na-rope, #c9b48a);
+  padding-bottom: 5px;
+}

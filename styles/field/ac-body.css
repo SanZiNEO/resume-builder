@@ -1,0 +1,9 @@
+/* ── 学术论文风·正文：衬线 + 首行缩进 ── */
+.entry-body.ac-body li,
+.entry-body.ac-body .block-text {
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-size: 11px;
+  line-height: 1.75;
+  text-indent: 2em;
+  color: var(--ac-ink, #111);
+}

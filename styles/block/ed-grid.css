@@ -1,0 +1,11 @@
+/* ── 杂志编辑·网格块：双栏细线分栏 ── */
+.block.ed-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px; padding-left: 0; list-style: none;
+}
+.block.ed-grid .entry-body li {
+  padding: 6px 0 6px 10px; font-size: 10.5px;
+  border-left: 1px solid var(--ed-rule, #d8d4cc);
+  font-family: "Songti SC", Georgia, serif;
+}
+.block.ed-grid .entry-body li::marker { content: ''; }

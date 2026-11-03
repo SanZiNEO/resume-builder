@@ -1,0 +1,12 @@
+/* ── 学术论文风·摘要块：灰底 + 上下线 ── */
+.block.ac-abstract {
+  background: #f5f5f5;
+  border-top: 1px solid var(--ac-rule, #9ca3af);
+  border-bottom: 1px solid var(--ac-rule, #9ca3af);
+  padding: 9px 12px;
+  margin: 10px 0;
+}
+.block.ac-abstract .entry-body li {
+  font-size: 10.5px;
+  line-height: 1.7;
+}

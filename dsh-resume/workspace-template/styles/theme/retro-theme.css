@@ -1,0 +1,14 @@
+/* ── 复古印刷·主题：旧纸底 + 深棕字 + 砖红 ── */
+.page.retro-theme {
+  --rt-ink: #4a3728;
+  --rt-paper: #f7f2e7;
+  --rt-accent: #b45309;
+  --rt-rule: #d6c9ad;
+  --rt-muted: #8a7355;
+  background: var(--rt-paper);
+  color: var(--rt-ink);
+  font-family: "Courier New", "Songti SC", Georgia, serif;
+}
+.left.retro-theme { background: #f2ebdb; }
+.right.retro-theme { background: var(--rt-paper); }
+.page.retro-theme .section-title { color: var(--rt-ink); }

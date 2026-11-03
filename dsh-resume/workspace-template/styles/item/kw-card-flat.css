@@ -1,0 +1,8 @@
+/* ── 可爱贴纸·扁平条目：粉底软块 ── */
+.entry.kw-card-flat {
+  background: rgba(255, 158, 199, 0.18);
+  border: none;
+  border-radius: 16px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}

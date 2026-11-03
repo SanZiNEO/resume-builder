@@ -1,0 +1,2 @@
+/* ── 报纸·元信息：小号大写 ── */
+.entry-meta.np-meta { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--np-muted, #6b655c); }
