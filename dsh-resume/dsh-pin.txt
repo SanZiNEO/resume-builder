@@ -72,6 +72,18 @@ types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译�
             （创建时 -f 输出经 shell 子进程重定向打不开、提取 exit 2；
             bsdtar 原生处理一切正常）。也别用 `-C` 传 Windows 路径，统一 cwd。
 
+  workspace 会话 cwd = 左栏「工作区」的目录（session header 元数据，创建时定死、之后不可变）。
+            默认工作区是系统文档目录；cwd 指到 ~/.dsh/resume 就是旧时代留下的工作区。
+            插件在**激活时**和 **setDir 时**调 `ctx.workspaceRegistry.create(dir)`
+            （幂等：同一路径返回已有记录、不改用户改过的标题），保证项目目录总有
+            对应工作区——新会话 cwd 落在项目里，AGENTS.md 注入、相对路径读写、
+            预览、导出才指向同一份内容。
+            ⚠ 访问必须走 `ctx.inject(['workspaceRegistry'], cb)` 惰性注入：
+            headless 等宿主可能没装配这个服务——直接读属性会因未 inject 抛错，
+            写进 preset 行的 inject 会让那一行永远 pending。
+            客户端已有两条路在用工作区：引导窗的 `ctx.workspaces.create({ path })`
+            和 `enterResumeMode`（建工作区 → startSession → 逐会话设 preset）。
+
   render    渲染器已从 Python（make.py + src/*.py）迁到 TypeScript，随插件分发、跑在 dsh 的 Node 里
             （src/render/，进程内直接调，不起子进程、不落中间文件）。
             **不需要 Python**；只有 PDF / 长图才要可选的 playwright 包（没装则只出 HTML）。

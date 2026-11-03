@@ -87,15 +87,31 @@ declare module '@deepseek-ai/cordis' {
     exportResume(options?: { person?: string | undefined; format?: string | undefined }): Promise<string>
   }
 
+  /** dsh 工作区注册表（左栏「工作区」的后端；并非所有宿主都装配，缺失时跳过同步）。 */
+  export interface WorkspaceRegistryService {
+    /**
+     * 按目录幂等创建/解析工作区：路径经 realpath 规范化，不存在或非目录则拒绝；
+     * 同一路径重复调用返回已有记录、不改用户改过的标题。
+     */
+    create(path: string): Promise<unknown>
+  }
+
   /** 插件上下文（只声明我们用到的部分）。 */
   export interface Context {
     /** 注册一个随上下文释放的资源；返回释放函数。 */
     effect(callback: () => void | (() => void), label?: string): () => void
+    /**
+     * 等服务就绪后带着「已注入这些服务」的子上下文回调；服务缺席时回调不执行。
+     * 用于可选依赖——不能把宿主没有的服务写进本行的 inject，否则整行永远 pending。
+     */
+    inject(names: readonly string[], callback: (child: Context) => void): void
     /** 取已注册的服务/命名空间；没 inject 的命名空间会抛 "cannot get property ... without inject"。 */
     get(name: string): unknown
     readonly tools: ToolsService
     /** 本插件 host 半提供的服务。 */
     readonly resumeProject: ResumeProjectService
+    /** dsh 工作区注册表；经 `inject` 惰性访问，宿主没装配时回调不执行。 */
+    readonly workspaceRegistry?: WorkspaceRegistryService
   }
 
   /** cordis 服务基类：`super(ctx, '<服务名>')` 即把服务挂到该名字下。 */

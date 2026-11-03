@@ -148,6 +148,11 @@ function samePath(left: string, right: string): boolean {
   return normalize(left) === normalize(right)
 }
 
+/** 目录路径的最后一段（左栏工作区用它当名字，这里只是展示用）。 */
+function baseName(dir: string): string {
+  return dir.split(/[\\/]+/).filter(Boolean).pop() ?? dir
+}
+
 /**
  * 打开预览：优先用**插件自己的右栏标签页** —— 只有画面，没有地址栏/前进后退那套浏览器外壳
  * （web 与桌面壳都实测可用）。万一这个类型没注册上，退回官方「浏览器」标签页。
@@ -267,21 +272,10 @@ function createPlugin(require: ClientRequire) {
       }
     }
 
-    const refreshPreview = async (): Promise<void> => {
-      const response = await fetch(`${API}/refresh`, { method: 'POST' })
-      const body = await response.json().catch(() => ({})) as { ok?: boolean; error?: string }
-      setNotice(body.ok === true ? '预览已重建。' : `重建失败：${body.error ?? String(response.status)}`)
-      load()
-    }
-
     if (status === null) {
       return h('div', { className: 'rs-section' },
         h('div', { className: state.error === null ? 'rs-hint' : 'rs-error' }, state.error ?? '读取中…'))
     }
-
-    const previewState = status.build.error !== null
-      ? `构建出错：${status.build.error}`
-      : (status.build.at === null ? '还没构建过' : `已构建（${status.build.at}）`)
 
     return h('div', { className: 'rs-section' }, [
       h('div', { key: 'dir', className: 'rs-field' }, [
@@ -304,18 +298,12 @@ function createPlugin(require: ClientRequire) {
               }, '选择…'),
               h('button', { key: 's', type: 'button', className: 'rs-button rs-primary', disabled: busy, onClick: () => { void saveDir(draft) } }, '保存'),
             ]),
-        h('div', { key: 'h', className: 'rs-hint' }, '项目里要有 data/ 和 styles/。插件自带一份模板，默认铺在 ~/.dsh/resume。'),
+        h('div', { key: 'h', className: 'rs-hint' }, `缺的资产会自动补进来，已有的文件不会被覆盖。新会话请开在左栏「${baseName(status.projectDir)}」工作区。`),
         error === null ? null : h('div', { key: 'e', className: 'rs-error' }, error),
       ]),
 
-      h('div', { key: 'project', className: 'rs-field' }, [
-        h('div', { key: 'l', className: 'rs-label' }, '项目'),
-        h('div', { key: 'v', className: 'rs-value' }, status.isProject ? '看起来是简历项目（有 data/ 和 styles/）' : '这个目录里没有 data/ 或 styles/，渲染会失败'),
-        h('div', { key: 'h', className: 'rs-hint' }, '渲染器在插件里（Node），不需要装 Python。'),
-      ]),
-
-      h('div', { key: 'versions', className: 'rs-field' }, [
-        h('div', { key: 'l', className: 'rs-label' }, '预览的版本'),
+      h('div', { key: 'preview', className: 'rs-field' }, [
+        h('div', { key: 'l', className: 'rs-label' }, '预览'),
         status.versions.length === 0
           ? h('div', { key: 'v', className: 'rs-value' }, 'data/ 下还没有版本目录')
           : h('select', {
@@ -324,17 +312,10 @@ function createPlugin(require: ClientRequire) {
               value: status.selected ?? '',
               onChange: (event: { target: { value: string } }) => { void selectVersion(event.target.value).then(load) },
             }, status.versions.map((person: string) => h('option', { key: person, value: person }, person))),
-        h('div', { key: 'h', className: 'rs-hint' }, 'data/ 下每个目录是一个版本（标准版 / 各公司的目标版）。'),
-      ]),
-
-      h('div', { key: 'preview', className: 'rs-field' }, [
-        h('div', { key: 'l', className: 'rs-label' }, '预览'),
-        h('div', { key: 'v', className: 'rs-value' }, previewState),
         h('div', { key: 'r', className: 'rs-row' }, [
           h('button', { key: 'o', type: 'button', className: 'rs-button rs-primary', onClick: () => { setNotice(openPreviewTab(ctx)) } }, '打开预览'),
-          h('button', { key: 'f', type: 'button', className: 'rs-button rs-outline', onClick: () => { void refreshPreview() } }, '刷新'),
         ]),
-        h('div', { key: 'h', className: 'rs-hint' }, '改完 YAML / CSS 会自动重建；右栏开着的话改一句变一句。'),
+        h('div', { key: 'h', className: 'rs-hint' }, 'data/ 下每个目录是一个版本（标准版 / 各公司的目标版）；改完 YAML / CSS 自动重建，右栏开着的话改一句变一句。'),
       ]),
 
       notice === null ? null : h('div', { key: 'n', className: 'rs-hint' }, notice),

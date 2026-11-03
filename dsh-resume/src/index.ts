@@ -159,10 +159,12 @@ export class ResumeProject extends Service implements ResumeProjectService {
     super(ctx, 'resumeProject')
     this.config = config ?? {}
     // 激活即拉起预览服务：界面与右栏预览都靠它，不能等到有人问才启动。
+    // 顺手把项目目录登记成 dsh 工作区，新会话的 cwd 才会落在项目里。
     ctx.effect(() => {
       void this.ensurePreview().catch((error: unknown) => {
         console.error('[dsh-resume] 预览服务启动失败：', error)
       })
+      this.syncWorkspace()
       return () => { void this.stopServer() }
     }, 'dsh-resume: preview server')
   }
@@ -208,6 +210,7 @@ export class ResumeProject extends Service implements ResumeProjectService {
       this.rewatch(root)
     }
     await this.rebuild()
+    this.syncWorkspace()
     return await this.status()
   }
 
@@ -216,6 +219,25 @@ export class ResumeProject extends Service implements ResumeProjectService {
     if (this.watching !== null) { clearInterval(this.watching); this.watching = null }
     this.stamps.clear()
     this.watch(root)
+  }
+
+  /**
+   * 把当前项目目录登记为 dsh 工作区：左栏出现同名工作区，**新会话的 cwd 就落在
+   * 项目里**——agent 的相对路径读写、AGENTS.md 注入、预览、导出才指向同一份内容。
+   *
+   * `create` 幂等（同一路径重复调用返回已有记录），激活时和每次改目录都调一遍。
+   * 走 `ctx.inject` 惰性访问：宿主没装配 workspaceRegistry（如 headless）时回调
+   * 不执行，预览与导出完全不受影响；失败只打日志。
+   */
+  private syncWorkspace(): void {
+    this.ctx.inject(['workspaceRegistry'], (child) => {
+      void (async () => {
+        const dir = await this.dir()
+        await child.workspaceRegistry?.create(dir)
+      })().catch((error: unknown) => {
+        console.error('[dsh-resume] 注册工作区失败（预览与导出不受影响）：', error)
+      })
+    })
   }
 
   /** 状态快照（界面用）。 */
