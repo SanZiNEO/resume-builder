@@ -12,6 +12,7 @@
  * 装配在 cordis.patch.yml。
  */
 import fsp from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import http from 'node:http'
 import os from 'node:os'
 import path from 'node:path'
@@ -64,6 +65,25 @@ export async function looksLikeProject(dir: string): Promise<boolean> {
   } catch { return false }
 }
 
+/**
+ * 确保目标目录里有我们的基础资产：缺哪项补哪项，已存在的一律不覆盖。
+ *
+ * 默认目录和用户在引导窗里自选的目录走同一条路——选哪个目录就在哪个目录铺，
+ * 目录里原本有什么与迁移无关（同名文件不会被覆盖）。
+ */
+export async function ensureWorkspace(dir: string): Promise<void> {
+  await fsp.mkdir(dir, { recursive: true })
+  for (const item of ['data', 'styles', 'layouts', 'assets']) {
+    const target = path.join(dir, item)
+    if (existsSync(target)) continue
+    await fsp.cp(path.join(TEMPLATE_DIR, item), target, { recursive: true })
+  }
+  const agents = path.join(dir, 'AGENTS.md')
+  if (!existsSync(agents)) {
+    await fsp.copyFile(path.join(TEMPLATE_DIR, 'AGENTS.md'), agents)
+  }
+}
+
 /** 输出目录名用的时间戳（与原来 Python 版一致：YYYYMMDD-HHMMSS）。 */
 function timestamp(): string {
   const now = new Date()
@@ -113,22 +133,15 @@ export class ResumeProject extends Service implements ResumeProjectService {
     }, 'dsh-resume: preview server')
   }
 
-  /** 生效的项目目录：界面写的 > 配置行 > 默认（并确保模板已铺好）。 */
+  /** 生效的项目目录：界面写的 > 配置行 > 默认。三条路径都会确保资产齐备。 */
   async dir(): Promise<string> {
     const state = await readState()
     const configured = state.projectDir ?? this.config.projectDir
-    if (typeof configured === 'string' && configured.trim() !== '') return path.resolve(configured)
-    return await this.ensureTemplate()
-  }
-
-  /** 把插件自带的模板铺到默认目录（只补缺，不覆盖用户已改过的东西）。 */
-  async ensureTemplate(): Promise<string> {
-    const home = path.join(os.homedir(), '.dsh', 'resume')
-    await fsp.mkdir(home, { recursive: true })
-    if (!(await looksLikeProject(home))) {
-      await fsp.cp(TEMPLATE_DIR, home, { recursive: true, force: false, errorOnExist: false })
-    }
-    return home
+    const target = typeof configured === 'string' && configured.trim() !== ''
+      ? path.resolve(configured)
+      : path.join(os.homedir(), '.dsh', 'resume')
+    await ensureWorkspace(target)
+    return target
   }
 
   /** 选中版本（界面可改；缺省 data/ 下第一个）。 */
