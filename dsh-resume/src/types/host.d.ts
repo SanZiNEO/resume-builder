@@ -55,7 +55,7 @@ declare module '@deepseek-ai/cordis' {
   export interface ResumeStatus {
     readonly projectDir: string
     readonly projectDirSource: 'ui' | 'config' | 'default'
-    readonly templateDir: string
+    readonly templateArchive: string
     readonly isProject: boolean
     readonly versions: readonly string[]
     readonly selected: string | undefined

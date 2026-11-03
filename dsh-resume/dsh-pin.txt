@@ -1,13 +1,13 @@
 # dsh-resume —— 运行时版本对齐（改这个文件前先读）
 
-runtime   = dsh 0.2.0-rc.2
-            桌面 app（E:\DeepSeek Harness\）的 nightly feed 最新就是 0.2.0-rc.2，
-            也是本插件唯一的兼容目标。alpha（0.2.1-alpha.x）与 rc 的 API 不同，
-            不要拿 alpha 的包/文档当准。
+runtime   = 目标：desktop 的 nightly feed（会自动更新，运行时版本不固定）。
+            参考源码在 E:\Documents\GitHub\resume\deepseek-harness\（master 快照）。
+            插件必须假设运行时会变：peerDependencies 用 `*`、preset 引用的行
+            照最新 standard.patch.yml 同步；别拿旧包/旧文档当准。
 
 install   = 源码是 TypeScript，构建产物在 lib/：
               pnpm install && pnpm build      # tsdown → lib/{index,policy,client}.js
-              pnpm pack                       # prepack 会先 build，出 dsh-resume-0.1.0.tgz
+              pnpm pack                       # prepack = build + 打模板包 → dsh-resume-<v>.tgz
             装进 profile 后由 dsh 的 loader 直接加载 lib/*.js；
             宿主包（@deepseek-ai/*）一律 external，由 dsh 运行时解析提供。
 
@@ -47,6 +47,30 @@ types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译�
             桌面壳另有一条路：`dsh-overlay/` 往 `apps/desktop/src/main.ts` 插两行，
             挂一个贴主窗右侧的独立 BrowserWindow（见 README「桌面端预览窗」）。
             **不再用 `window.open`** —— 桌面壳里会开不受管的裸窗口。
+
+  bundle    dsh 启动时在 **bundle 层**做兼容性预检（app-boot/profile.ts + plugin-compatibility.ts）：
+            对 `dsh.profile.bundles` 里的每个包，读它自己的 package.json 评估
+            `engines.dsh`（没有则逐个比对 @deepseek-ai/dsh-* 的 peerDependencies）
+            是否满足**运行时版本**。不满足 → 整个 bundle 被跳过（skippedBundles），
+            cordis.patch.yml 一行都不进组合；原因只打到 stderr（`dsh: skipping
+            profile bundle ...`），桌面端看不见。
+            表现：preset 行没注册 → 前端 `agent-preset/not-found: Unknown agent preset`；
+            host 行没加载 → 预览端口 39127 无人监听。
+            ⚠ peerDependencies **不要钉精确版本**——0.1.0 钉死 0.2.0-rc.2，
+            app nightly 一更新整个插件就被静默跳过。
+            （2026-11-03 实锤：桌面 "Unknown agent preset: resume" 的真因就是这个，
+            与 preset 内容无关；0.2.1 起 peer 全部 `*`。）
+
+  template  模板随包只发 workspace-template.tgz（prepack 由 scripts/pack-template.mjs
+            现打；松散的 workspace-template/ 只留在仓库当源，golden 测试也用它）。
+            ensureWorkspace 按缺项 `tar -xzf <tgz> data styles ...`（cwd=目标目录）
+            直接解到用户目录：一个原生进程写完千余个小文件（Windows 上逐文件
+            fsp.cp 极慢）。打包布局固定「顶层就是五个条目」，GNU/bsdtar 按名
+            提取行为才一致；产物 tgz 不进 git（*.tgz 已忽略）。
+            ⚠ Windows 上 tar 必须显式用 `System32\tar.exe`（两端都这么选）：
+            msys GNU tar 被 node 直接拉起时传绝对 Windows 路径会莫名失败
+            （创建时 -f 输出经 shell 子进程重定向打不开、提取 exit 2；
+            bsdtar 原生处理一切正常）。也别用 `-C` 传 Windows 路径，统一 cwd。
 
   render    渲染器已从 Python（make.py + src/*.py）迁到 TypeScript，随插件分发、跑在 dsh 的 Node 里
             （src/render/，进程内直接调，不起子进程、不落中间文件）。

@@ -11,6 +11,7 @@
  *
  * 装配在 cordis.patch.yml。
  */
+import { spawn } from 'node:child_process'
 import fsp from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import http from 'node:http'
@@ -24,8 +25,10 @@ import { renderHtml, renderImage, renderPdf, validateProject } from './render/in
 
 /** 插件包根目录（构建产物在 lib/ 下，包根是它的上一级）。 */
 const PKG_ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
-/** 随包分发的简历项目模板。 */
-const TEMPLATE_DIR = path.join(PKG_ROOT, 'workspace-template')
+/** 随包分发的简历项目模板：prepack 从 workspace-template/ 打出的压缩包，运行时用系统 tar 解。 */
+const TEMPLATE_ARCHIVE = path.join(PKG_ROOT, 'workspace-template.tgz')
+/** 模板里的基础资产：四个目录 + AGENTS.md，迁移时缺哪项补哪项。 */
+const TEMPLATE_ITEMS = ['data', 'styles', 'layouts', 'assets', 'AGENTS.md']
 /** 预览服务端口；客户端半写死同一个值。 */
 export const PREVIEW_PORT = 39127
 /** 控制页/右栏读取的固定预览地址。 */
@@ -69,19 +72,50 @@ export async function looksLikeProject(dir: string): Promise<boolean> {
  * 确保目标目录里有我们的基础资产：缺哪项补哪项，已存在的一律不覆盖。
  *
  * 默认目录和用户在引导窗里自选的目录走同一条路——选哪个目录就在哪个目录铺，
- * 目录里原本有什么与迁移无关（同名文件不会被覆盖）。
+ * 目录里原本有什么与迁移无关（我们只解出缺的项，根本不碰已有的）。
+ *
+ * 模板随包发布为一份 tgz：千余个小文件（样式库）在 Windows 上逐个复制极慢
+ * （每文件一次创建 + 一次 Defender 扫描），这里按缺项用系统 tar 一次性解到
+ * 目标目录——一次迁移一个进程，原生写盘。
  */
 export async function ensureWorkspace(dir: string): Promise<void> {
   await fsp.mkdir(dir, { recursive: true })
-  for (const item of ['data', 'styles', 'layouts', 'assets']) {
-    const target = path.join(dir, item)
-    if (existsSync(target)) continue
-    await fsp.cp(path.join(TEMPLATE_DIR, item), target, { recursive: true })
+  const missing = TEMPLATE_ITEMS.filter((item) => !existsSync(path.join(dir, item)))
+  if (missing.length === 0) return
+  await extractArchive(TEMPLATE_ARCHIVE, dir, missing)
+}
+
+/** 系统 tar 的可执行路径：Windows 显式用自带 bsdtar（System32，Win10 1803+ 必有）。
+ *
+ * 不能无脑用 PATH 里第一个 tar：msys 的 GNU tar 被 node 直接拉起时，创建/提取
+ * 传绝对 Windows 路径会莫名失败（shell 子进程重定向 + 参数启发式转换，实测
+ * 见 dsh-pin.txt「template」条）；System32 的 bsdtar 原生处理 Windows 路径。
+ * macOS / Linux 的 tar 没有这问题，直接用 PATH 里的。
+ */
+let tarBin: string | undefined
+function tarCommand(): string {
+  if (tarBin !== undefined) return tarBin
+  if (process.platform === 'win32') {
+    const systemTar = path.join(process.env.SystemRoot ?? 'C:\\Windows', 'System32', 'tar.exe')
+    if (existsSync(systemTar)) return (tarBin = systemTar)
   }
-  const agents = path.join(dir, 'AGENTS.md')
-  if (!existsSync(agents)) {
-    await fsp.copyFile(path.join(TEMPLATE_DIR, 'AGENTS.md'), agents)
-  }
+  return (tarBin = 'tar')
+}
+
+/** 用系统 tar 把模板包里的缺项直接解到目标目录。
+ *
+ * 目标目录走 `cwd`：tar 按包内顶层条目名（data/styles/...）提取，一次进程
+ * 原生写完千余个小文件，缺什么解什么、已有的根本不碰。
+ */
+function extractArchive(archive: string, dest: string, items: readonly string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(tarCommand(), ['-xzf', archive, ...items], { cwd: dest, stdio: 'ignore' })
+    child.once('error', reject)
+    child.once('exit', (code, signal) => {
+      if (code === 0) resolve()
+      else reject(new Error(`tar 解压模板失败（exit ${code ?? signal}）：${archive}`))
+    })
+  })
 }
 
 /** 输出目录名用的时间戳（与原来 Python 版一致：YYYYMMDD-HHMMSS）。 */
@@ -158,12 +192,30 @@ export class ResumeProject extends Service implements ResumeProjectService {
     await this.rebuild()
   }
 
-  /** 设置项目目录：落盘并重启预览服务。 */
+  /**
+   * 设置项目目录：落盘、把变更监视挪到新根并立刻重建预览。
+   *
+   * 预览服务本身**不**重启：路由层每个请求都实时读当前目录，服务常驻即可。
+   * 之前这里 `stopServer()` 之后没有任何地方把它拉起来（`ensurePreview` 只在
+   * 激活时调用一次），改完目录右栏就一直 `Failed to fetch`。
+   */
   async setDir(dir: string): Promise<ResumeStatus> {
     await writeState({ projectDir: dir })
     this.selected = undefined
-    await this.stopServer()
+    const root = await this.dir()
+    if (this.server !== null) {
+      this.serverRoot = root
+      this.rewatch(root)
+    }
+    await this.rebuild()
     return await this.status()
+  }
+
+  /** 把 mtime 轮询挪到新的项目根（切目录时用；预览服务保持常驻）。 */
+  private rewatch(root: string): void {
+    if (this.watching !== null) { clearInterval(this.watching); this.watching = null }
+    this.stamps.clear()
+    this.watch(root)
   }
 
   /** 状态快照（界面用）。 */
@@ -173,7 +225,7 @@ export class ResumeProject extends Service implements ResumeProjectService {
     return {
       projectDir: root,
       projectDirSource: typeof state.projectDir === 'string' ? 'ui' : (typeof this.config.projectDir === 'string' ? 'config' : 'default'),
-      templateDir: TEMPLATE_DIR,
+      templateArchive: TEMPLATE_ARCHIVE,
       isProject: await looksLikeProject(root),
       versions: await listVersions(root),
       selected: await this.selectedPerson(),
@@ -210,6 +262,8 @@ export class ResumeProject extends Service implements ResumeProjectService {
     if (server !== null) {
       const closed = Promise.withResolvers<void>()
       server.close(() => { closed.resolve() })
+      // keep-alive 连接会一直拖住 close() 的回调；走到这里服务正在拆除，直接断掉。
+      server.closeAllConnections()
       await closed.promise
     }
   }

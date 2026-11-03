@@ -17,7 +17,7 @@
     "locale",
     "knowledge",
     "icon.svg",
-    "workspace-template"
+    "workspace-template.tgz"
   ],
   "meta": {
     "title": "简历模式",
@@ -35,7 +35,8 @@
     "watch": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "test": "node --test test/*.test.mjs",
-    "prepack": "npm run build"
+    "template:pack": "node scripts/pack-template.mjs",
+    "prepack": "npm run build && npm run template:pack"
   },
   "devDependencies": {
     "@types/node": "^22.20.1",
