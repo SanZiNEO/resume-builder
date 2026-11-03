@@ -1,0 +1,9 @@
+/* ── 赛博科技风·扁平条目：仅底部分隔线 ── */
+.entry.cy-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--cy-line, #1e2b3a);
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}

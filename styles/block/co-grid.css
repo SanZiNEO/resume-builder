@@ -1,0 +1,12 @@
+/* ── 商务金融·网格块：浅灰数据格 ── */
+.block.co-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.co-grid .entry-body li {
+  background: #f8fafc;
+  border: 1px solid var(--co-rule, #cbd5e1);
+  border-left: 2px solid var(--co-navy, #1e3a5f);
+  padding: 6px 9px; font-size: 10px;
+  color: var(--co-ink, #0f172a);
+}

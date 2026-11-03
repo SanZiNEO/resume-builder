@@ -1,0 +1,5 @@
+/* ── 植物标本·正文：衬线宽行距 ── */
+.entry-body.bt-body li, .entry-body.bt-body .block-text {
+  font-size: 10.5px; line-height: 1.9;
+  color: #454b3a;
+}

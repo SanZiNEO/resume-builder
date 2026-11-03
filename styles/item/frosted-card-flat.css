@@ -1,0 +1,10 @@
+/* ── 磨砂玻璃·扁平条目：仅底部光边 ── */
+.entry.frosted-card-flat {
+  background: rgba(255, 255, 255, 0.32);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(4px);
+}

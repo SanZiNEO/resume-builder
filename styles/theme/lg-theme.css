@@ -1,0 +1,12 @@
+/* ── 合同文书·主题：纯白 + 黑 + 编号条款 ── */
+.page.lg-theme {
+  --lg-paper: #ffffff; --lg-ink: #111111;
+  --lg-gray: #555555; --lg-rule: #b9b9b9;
+  counter-reset: lg-clause;
+  background: var(--lg-paper);
+  color: var(--lg-ink);
+  font-family: "Songti SC", "Times New Roman", serif;
+}
+.left.lg-theme { background: #f7f7f7; }
+.right.lg-theme { background: var(--lg-paper); }
+.page.lg-theme .section-title { color: var(--lg-ink); }

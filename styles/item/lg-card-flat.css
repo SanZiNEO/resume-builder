@@ -1,0 +1,9 @@
+/* ── 合同文书·扁平条目：左缩进块 ── */
+.entry.lg-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--lg-rule, #b9b9b9);
+  border-radius: 0;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 10px;
+}

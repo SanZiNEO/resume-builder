@@ -1,0 +1,11 @@
+/* ── 航海·引言块：居中船志引文 ── */
+.block.na-quote {
+  padding: 11px 16px;
+  margin: 12px 0;
+  border-top: 1px solid var(--na-rope, #c9b48a);
+  border-bottom: 1px solid var(--na-rope, #c9b48a);
+  color: #34496a;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.9;
+}

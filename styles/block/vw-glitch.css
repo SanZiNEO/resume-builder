@@ -1,0 +1,6 @@
+/* ── 蒸汽波·故障块：红青错位影 ── */
+.block.vw-glitch {
+  background: rgba(45, 27, 105, 0.5); border: 1px solid rgba(255, 110, 199, 0.3);
+  padding: 9px 11px; margin-bottom: 8px;
+  text-shadow: 1px 0 var(--vw-pink, #ff6ec7), -1px 0 var(--vw-cyan, #00f0ff);
+}

@@ -1,0 +1,5 @@
+/* ── 单色·正文：深灰 + 舒展 ── */
+.entry-body.mc-body li, .entry-body.mc-body .block-text {
+  font-size: 10.5px; line-height: 1.76;
+  color: #333333;
+}

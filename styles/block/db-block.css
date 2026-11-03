@@ -1,0 +1,8 @@
+/* ── 数据面板·内容块：内嵌面板 ── */
+.block.db-block {
+  background: rgba(255, 255, 255, 0.025);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

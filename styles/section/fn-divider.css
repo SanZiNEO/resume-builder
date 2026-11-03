@@ -1,0 +1,6 @@
+/* ── 黑色电影·分隔：渐隐白线 ── */
+.section.fn-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 14px;
+  background: linear-gradient(90deg, #f2f2f2, rgba(242,242,242,0.15) 60%, transparent);
+}

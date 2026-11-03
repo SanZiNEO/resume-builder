@@ -1,0 +1,7 @@
+/* ── 报纸·条目：仅细分隔线 ── */
+.entry.np-card {
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--np-rule, #c9c4b8);
+  border-radius: 0; padding: 0 0 10px; margin-bottom: 10px;
+}
+.entry.np-card .block:last-child { margin-bottom: 0; }

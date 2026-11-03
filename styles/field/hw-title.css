@@ -1,0 +1,7 @@
+/* ── 手写笔记风·标题：楷体加粗 ── */
+.entry-title.hw-title {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", cursive;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--hw-ink, #1e3a8a);
+}

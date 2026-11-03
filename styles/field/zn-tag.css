@@ -1,0 +1,12 @@
+/* ── 手工志·标签：歪贴小票 ── */
+.tag.zn-tag {
+  display: inline-block;
+  background: #fffdf4;
+  border: 1px solid var(--zn-ink, #16130f);
+  border-radius: 0;
+  color: var(--zn-ink, #16130f);
+  font-size: 8px; font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0 5px;
+  transform: rotate(-1.6deg);
+}

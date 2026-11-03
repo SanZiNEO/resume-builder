@@ -1,0 +1,11 @@
+/* ── 生态未来·网格块：双栏生态格 ── */
+.block.sl-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.sl-grid .entry-body li {
+  background: #ffffff;
+  border: 1px solid var(--sl-rule, #cdebd6);
+  border-radius: 3px;
+  padding: 7px 9px; font-size: 10px;
+}

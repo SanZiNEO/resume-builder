@@ -1,0 +1,10 @@
+/* ── 玻璃拟态·数字块：蓝色描边数字 ── */
+.block.glass-metric .entry-body li strong,
+.block.glass-metric .entry-body li b {
+  color: #1d4ed8;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: rgba(219, 234, 254, 0.6);
+  border-radius: 4px;
+  padding: 0 4px;
+}

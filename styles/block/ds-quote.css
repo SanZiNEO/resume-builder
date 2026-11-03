@@ -1,0 +1,9 @@
+/* ── 风格派·引言块：红杠 + 衬线引文 ── */
+.block.ds-quote {
+  padding: 7px 10px 7px 14px;
+  margin: 10px 0;
+  border-left: 6px solid var(--ds-red, #d40920);
+  background: #ffffff;
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+}

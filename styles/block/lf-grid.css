@@ -1,0 +1,10 @@
+/* ── 高奢·网格块：四栏极简 ── */
+.block.lf-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px;
+  padding-left: 0; list-style: none;
+}
+.block.lf-grid .entry-body li {
+  padding: 6px 0 6px 12px; font-size: 9.5px;
+  border-left: 1px solid var(--lf-rule, #e0ddd6);
+  letter-spacing: 0.04em;
+}

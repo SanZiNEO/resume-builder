@@ -1,0 +1,9 @@
+/* ── 生态未来·栏线条目：绿色左线 ── */
+.entry.sl-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--sl-lime, #84cc16);
+  border-radius: 0;
+  padding: 3px 0 3px 12px;
+  margin-bottom: 11px;
+}

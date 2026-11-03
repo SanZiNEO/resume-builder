@@ -1,0 +1,8 @@
+/* ── 单色·引言块：灰字 + 细左线 ── */
+.block.mc-quote {
+  padding: 6px 0 6px 14px;
+  margin: 10px 0;
+  border-left: 1px solid var(--mc-gray, #8a8a8a);
+  color: var(--mc-gray, #8a8a8a);
+  font-style: italic;
+}

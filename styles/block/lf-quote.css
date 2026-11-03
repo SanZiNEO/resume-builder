@@ -1,0 +1,12 @@
+/* ── 高奢·引言块：居中衬线斜体 ── */
+.block.lf-quote {
+  padding: 14px 20px;
+  margin: 18px 0;
+  border: none;
+  color: #5a5a56;
+  font-family: "Didot", "Songti SC", serif;
+  font-style: italic;
+  text-align: center;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}

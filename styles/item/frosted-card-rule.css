@@ -1,0 +1,11 @@
+/* ── 磨砂玻璃·栏线条目：左侧冷蓝边 ── */
+.entry.frosted-card-rule {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-left: 3px solid rgba(129, 140, 248, 0.55);
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+}
+.entry.frosted-card-rule .block:last-child { margin-bottom: 0; }

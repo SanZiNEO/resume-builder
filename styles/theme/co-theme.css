@@ -1,0 +1,14 @@
+/* ── 商务金融风·主题：藏青 + 冷白 + 青蓝强调 ── */
+.page.co-theme {
+  --co-ink: #0f172a;
+  --co-navy: #1e3a5f;
+  --co-accent: #0e7490;
+  --co-rule: #cbd5e1;
+  --co-muted: #64748b;
+  background: #ffffff;
+  color: var(--co-ink);
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.left.co-theme { background: #f1f5f9; }
+.right.co-theme { background: #ffffff; }
+.page.co-theme .section-title { color: var(--co-navy); }

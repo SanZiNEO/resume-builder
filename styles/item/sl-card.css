@@ -1,0 +1,19 @@
+/* ── 生态未来·条目：白卡 + 四角括号 ── */
+.entry.sl-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--sl-rule, #cdebd6);
+  border-radius: 4px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}
+.entry.sl-card::before,
+.entry.sl-card::after {
+  content: '';
+  position: absolute;
+  width: 9px; height: 9px;
+  border: 1.5px solid var(--sl-lime, #84cc16);
+}
+.entry.sl-card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.entry.sl-card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.entry.sl-card .block:last-child { margin-bottom: 0; }

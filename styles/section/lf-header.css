@@ -1,0 +1,10 @@
+/* ── 高奢·板块标题：超宽字距大写 + 短金线 ── */
+.section.lf-header .section-title {
+  font-size: 9px; font-weight: 400;
+  letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--lf-ink, #141414);
+  border-bottom: none;
+  padding-bottom: 9px;
+  background-image: linear-gradient(90deg, var(--lf-gold, #9a7b4f) 0 26px, transparent 26px);
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px;
+}

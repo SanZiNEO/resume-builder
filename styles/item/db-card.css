@@ -1,0 +1,10 @@
+/* ── 数据面板·条目：带状态条的卡片 ── */
+.entry.db-card {
+  background: #161c24;
+  border: 1px solid #232b36;
+  border-left: 2px solid var(--db-blue, #4ea1ff);
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+}
+.entry.db-card .block:last-child { margin-bottom: 0; }

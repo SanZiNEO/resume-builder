@@ -1,0 +1,9 @@
+/* ── 现代简约·引言块：浅灰面板 ── */
+.block.modern-quote {
+  background: #f9fafb;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 13px;
+  margin: 10px 0;
+  color: var(--md-muted, #6b7280);
+}

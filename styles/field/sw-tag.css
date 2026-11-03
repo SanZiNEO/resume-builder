@@ -1,0 +1,21 @@
+/* ── 极简瑞士风·标签：无框无底，前缀红点 ── */
+.tag.sw-tag {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 0 0 10px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--sw-muted, #71717a);
+}
+.tag.sw-tag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  background: var(--sw-accent, #dc2626);
+}

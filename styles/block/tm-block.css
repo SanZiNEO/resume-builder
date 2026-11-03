@@ -1,0 +1,8 @@
+/* ── 终端·内容块：代码块质感 ── */
+.block.tm-block {
+  background: #0e1613;
+  border: 1px solid var(--tm-line, #22332b);
+  border-radius: 3px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

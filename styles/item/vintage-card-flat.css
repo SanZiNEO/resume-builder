@@ -1,0 +1,9 @@
+/* ── 复古做旧·扁平条目：点线分隔 ── */
+.entry.vintage-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--vt-rule, #c9b896);
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}

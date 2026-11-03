@@ -1,0 +1,17 @@
+/* ── 构成主义·栏线条目：双色斜角 ── */
+.entry.cs-card-rule {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--cs-black, #111);
+  border-radius: 0;
+  padding: 4px 0 4px 12px;
+  margin-bottom: 11px;
+}
+.entry.cs-card-rule::before {
+  content: '';
+  position: absolute; left: -3px; top: 0;
+  width: 3px; height: 14px;
+  background: var(--cs-red, #c1121f);
+}
+.entry.cs-card-rule .block:last-child { margin-bottom: 0; }

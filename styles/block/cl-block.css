@@ -1,0 +1,8 @@
+/* ── 黏土·内容块：奶油黄软块 ── */
+.block.cl-block {
+  background: rgba(251, 230, 178, 0.45);
+  border: none;
+  border-radius: 16px;
+  padding: 9px 12px;
+  margin-bottom: 7px;
+}

@@ -1,0 +1,7 @@
+/* ── 赛博科技风·元信息：等宽小字 ── */
+.entry-meta.cy-meta {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--cy-dim, #7c8da3);
+}

@@ -1,0 +1,12 @@
+/* ── 马克笔·主题：白纸 + 荧光黄 + 手写感 ── */
+.page.mk-theme {
+  --mk-paper: #fffdf6; --mk-ink: #14130f;
+  --mk-yellow: #ffe45e; --mk-red: #e5484d; --mk-blue: #2f6fed;
+  --mk-rule: #e7e2d2;
+  background: var(--mk-paper);
+  color: var(--mk-ink);
+  font-family: "Bradley Hand", "Comic Sans MS", "PingFang SC", cursive;
+}
+.left.mk-theme { background: #fbf7e9; }
+.right.mk-theme { background: var(--mk-paper); }
+.page.mk-theme .section-title { color: var(--mk-ink); }

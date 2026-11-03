@@ -1,0 +1,6 @@
+/* ── 侘寂·副标题：淡褐小字 ── */
+.entry-sub.wb-sub {
+  font-size: 9.5px; font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--wb-soft, #8a7f70);
+}

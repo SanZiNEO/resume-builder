@@ -1,0 +1,10 @@
+/* ── 镭射·板块：全息渐变描边 ── */
+.section.hl-section {
+  position: relative;
+  background: var(--hl-panel, #1b1924);
+  border: 1px solid transparent;
+  border-image: var(--hl-grad, linear-gradient(120deg, #7cf5ff, #b48cff, #ff8ad4, #ffe27a)) 1;
+  border-radius: 0;
+  padding: 12px 14px 10px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,8 @@
+/* ── 单色·扁平条目：纯留白 ── */
+.entry.mc-card-flat {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 12px;
+}

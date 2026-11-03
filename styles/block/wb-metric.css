@@ -1,0 +1,8 @@
+/* ── 侘寂·数字块：陶土色衬线数字 ── */
+.block.wb-metric .entry-body li strong,
+.block.wb-metric .entry-body li b {
+  color: var(--wb-clay, #a98363);
+  font-weight: 600;
+  font-variant-numeric: oldstyle-nums;
+  border-bottom: 1px solid rgba(169, 131, 99, 0.4);
+}

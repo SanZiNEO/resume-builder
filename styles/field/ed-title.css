@@ -1,0 +1,9 @@
+/* ── 杂志编辑风·标题：大号衬线 + 紧字距 ── */
+.entry-title.ed-title {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--ed-ink, #1c1917);
+}

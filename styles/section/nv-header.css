@@ -1,0 +1,15 @@
+/* ── 新艺术·板块标题：金色衬线 + 花体前置 ── */
+.section.nv-header .section-title {
+  font-size: 11.5px; font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--nv-gold, #b08d3f);
+  border-bottom: none;
+  padding-bottom: 5px;
+  background-image: linear-gradient(90deg, var(--nv-gold, #b08d3f) 0 34px, transparent 34px);
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px;
+}
+.section.nv-header .section-title::before {
+  content: '\2766  ';
+  color: var(--nv-sage, #76856a);
+  font-size: 10px;
+}

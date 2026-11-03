@@ -1,0 +1,10 @@
+/* ── 巴洛克·条目：象牙卡 + 双线边 ── */
+.entry.bq-card {
+  background: #fbf7ec;
+  border: 3px double var(--bq-rule, #d9c9a8);
+  border-radius: 0;
+  padding: 11px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 0 rgba(92, 26, 27, 0.08);
+}
+.entry.bq-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,8 @@
+/* ── 便当·板块：白色便当盒 ── */
+.section.bn-section {
+  background: var(--bn-card, #fff);
+  border: 1px solid var(--bn-line, #e5e7eb);
+  border-radius: 14px;
+  padding: 11px 13px 9px;
+  margin-bottom: 11px;
+}

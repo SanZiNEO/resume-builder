@@ -1,0 +1,12 @@
+/* ── 霓虹·网格块：发光格 ── */
+.block.neon-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.neon-grid .entry-body li {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: 3px;
+  padding: 6px 8px; font-size: 10px;
+  color: #cffafe;
+}

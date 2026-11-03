@@ -1,0 +1,11 @@
+/* ── 渐变·条目：白底 + 渐变描边 ── */
+.entry.gradient-card {
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(135deg, #6366f1, #d946ef);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+}
+.entry.gradient-card .block:last-child { margin-bottom: 0; }

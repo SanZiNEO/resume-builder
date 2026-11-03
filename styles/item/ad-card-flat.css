@@ -1,0 +1,6 @@
+/* ── 装饰艺术·扁平条目：金色细线分隔 ── */
+.entry.ad-card-flat {
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--ad-rule, #d8cdb4);
+  border-radius: 0; padding: 0 0 10px; margin-bottom: 10px;
+}

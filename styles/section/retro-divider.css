@@ -1,0 +1,8 @@
+/* ── 复古印刷·分隔：双细线 ── */
+.section.retro-divider::before {
+  content: '';
+  display: block; margin: 0 0 12px;
+  border-top: 2px solid var(--rt-rule, #d6c9ad);
+  border-bottom: 1px solid rgba(214, 201, 173, 0.6);
+  height: 3px;
+}

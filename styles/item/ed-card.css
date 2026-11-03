@@ -1,0 +1,10 @@
+/* ── 杂志编辑风·条目：无边框，仅左侧细线 ── */
+.entry.ed-card {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--ed-rule, #d8d4cc);
+  border-radius: 0;
+  padding: 2px 0 2px 14px;
+  margin-bottom: 12px;
+}
+.entry.ed-card .block:last-child { margin-bottom: 0; }

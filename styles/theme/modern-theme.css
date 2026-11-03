@@ -1,0 +1,13 @@
+/* ── 现代简约·主题：白底 + 深灰字 + 蓝强调 ── */
+.page.modern-theme {
+  --md-ink: #1f2937;
+  --md-accent: #2563eb;
+  --md-rule: #e5e7eb;
+  --md-muted: #6b7280;
+  background: #ffffff;
+  color: var(--md-ink);
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+.left.modern-theme { background: #f9fafb; }
+.right.modern-theme { background: #ffffff; }
+.page.modern-theme .section-title { color: var(--md-ink); }

@@ -1,0 +1,6 @@
+/* ── 构成主义·副标题：加大字距 ── */
+.entry-sub.cs-sub {
+  font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--cs-gray, #6e675c);
+}

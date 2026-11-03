@@ -1,0 +1,8 @@
+/* ── 现代简约·扁平条目：浅灰底圆角 ── */
+.entry.modern-card-flat {
+  background: #f9fafb;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,9 @@
+/* ── 学术论文风·条目：无框，仅留白 ── */
+.entry.ac-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.entry.ac-card .block:last-child { margin-bottom: 0; }

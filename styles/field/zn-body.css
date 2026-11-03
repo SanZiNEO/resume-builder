@@ -1,0 +1,5 @@
+/* ── 手工志·正文：打字机字 ── */
+.entry-body.zn-body li, .entry-body.zn-body .block-text {
+  font-size: 10.5px; line-height: 1.76;
+  color: #221d17;
+}

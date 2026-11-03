@@ -1,0 +1,8 @@
+/* ── 年报·内容块：浅蓝灰底 ── */
+.block.ar-block {
+  background: rgba(18, 48, 79, 0.035);
+  border: none;
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}

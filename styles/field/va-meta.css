@@ -1,0 +1,7 @@
+/* ── 校队·元信息：粗体数字 ── */
+.entry-meta.va-meta {
+  font-size: 8.5px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #6b5f4a;
+  font-variant-numeric: tabular-nums;
+}

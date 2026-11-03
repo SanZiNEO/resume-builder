@@ -1,0 +1,7 @@
+/* ── 太空时代·元信息：等宽标注 ── */
+.entry-meta.sp-meta {
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sp-orange, #d95f2b);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,10 @@
+/* ── 合同文书·条目：无框 + 编号缩进 ── */
+.entry.lg-card {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--lg-rule, #b9b9b9);
+  border-radius: 0;
+  padding: 3px 0 9px;
+  margin-bottom: 9px;
+}
+.entry.lg-card .block:last-child { margin-bottom: 0; }

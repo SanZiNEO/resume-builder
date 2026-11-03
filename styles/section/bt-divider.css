@@ -1,0 +1,7 @@
+/* ── 植物标本·分隔：虚线标本缝 ── */
+.section.bt-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 13px;
+  background-image: linear-gradient(90deg, var(--bt-rule, #d5cdb8) 0 4px, transparent 4px 8px);
+  background-size: 8px 1px;
+}

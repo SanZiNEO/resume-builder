@@ -1,0 +1,10 @@
+/* ── 侘寂·栏线条目：陶土色粗左线 ── */
+.entry.wb-card-rule {
+  background: rgba(169, 131, 99, 0.05);
+  border: none;
+  border-left: 2px solid var(--wb-clay, #a98363);
+  border-radius: 0;
+  padding: 4px 0 4px 13px;
+  margin-bottom: 12px;
+}
+.entry.wb-card-rule .block:last-child { margin-bottom: 0; }

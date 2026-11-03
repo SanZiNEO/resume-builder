@@ -1,0 +1,6 @@
+/* ── 风格派·副标题：蓝字 ── */
+.entry-sub.ds-sub {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ds-blue, #1356a2);
+}

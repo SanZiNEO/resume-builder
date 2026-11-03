@@ -1,0 +1,9 @@
+/* ── 黏土·标签：薄荷糖胶囊 ── */
+.tag.cl-tag {
+  background: var(--cl-mint, #c7e8d8);
+  border: none;
+  border-radius: 999px;
+  color: #3f6a58;
+  font-size: 8.5px; font-weight: 700;
+  padding: 1px 9px;
+}

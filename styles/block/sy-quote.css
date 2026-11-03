@@ -1,0 +1,10 @@
+/* ── 七十年代·引言块：牛油果软块 ── */
+.block.sy-quote {
+  background: rgba(123, 140, 74, 0.18);
+  border: none;
+  border-radius: 14px;
+  padding: 11px 14px;
+  margin: 10px 0;
+  color: #3f4a24;
+  font-style: italic;
+}

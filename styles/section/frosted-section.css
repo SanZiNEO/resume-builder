@@ -1,0 +1,10 @@
+/* ── 磨砂玻璃·板块：半透明白 + 模糊 + 光边 ── */
+.section.frosted-section {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06);
+}

@@ -1,0 +1,7 @@
+/* ── 报纸·板块标题：居中大写衬线 ── */
+.section.np-header .section-title {
+  text-align: center; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--np-ink, #1a1a1a);
+  border-bottom: 1px solid var(--np-rule, #c9c4b8); padding-bottom: 4px;
+}

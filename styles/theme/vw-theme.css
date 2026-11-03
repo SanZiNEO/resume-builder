@@ -1,0 +1,13 @@
+/* ── 蒸汽波·主题：粉紫青渐变 + 网格地平线 ── */
+.page.vw-theme {
+  --vw-pink: #ff6ec7; --vw-cyan: #00f0ff; --vw-deep: #2d1b69;
+  --vw-ink: #f5e9ff; --vw-dim: #b9a7d6;
+  background:
+    linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px) 0 0 / 100% 26px,
+    linear-gradient(180deg, #2d1b69 0%, #4a2b8c 52%, #1a0f3d 100%);
+  color: var(--vw-ink);
+  font-family: "Orbitron", "PingFang SC", sans-serif;
+}
+.left.vw-theme { background: #241456; }
+.right.vw-theme { background: transparent; }
+.page.vw-theme .section-title { color: var(--vw-cyan); }

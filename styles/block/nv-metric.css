@@ -1,0 +1,8 @@
+/* ── 新艺术·数字块：金色衬线斜体 ── */
+.block.nv-metric .entry-body li strong,
+.block.nv-metric .entry-body li b {
+  color: var(--nv-gold, #b08d3f);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600; font-style: italic;
+  font-variant-numeric: oldstyle-nums;
+}

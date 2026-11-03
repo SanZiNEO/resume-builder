@@ -1,0 +1,13 @@
+/* ── 学术论文风·三线表 ── */
+.block.ac-table .entry-body ul {
+  list-style: none;
+  padding-left: 0;
+  border-top: 1.5px solid var(--ac-ink, #111);
+  border-bottom: 1.5px solid var(--ac-ink, #111);
+}
+.block.ac-table .entry-body li {
+  padding: 4px 0;
+  border-bottom: 0.5px solid #e5e7eb;
+  font-size: 10.5px;
+}
+.block.ac-table .entry-body li:last-child { border-bottom: none; }

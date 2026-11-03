@@ -1,0 +1,9 @@
+/* ── 校队·扁平条目：红粗左线 ── */
+.entry.va-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 5px solid var(--va-crimson, #8c1d18);
+  border-radius: 0;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 11px;
+}

@@ -1,0 +1,7 @@
+/* ── 高奢·元信息：浅灰大写 ── */
+.entry-meta.lf-meta {
+  font-size: 8px; font-weight: 400;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--lf-gray, #8b8b86);
+  font-variant-numeric: tabular-nums;
+}

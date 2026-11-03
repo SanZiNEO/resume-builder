@@ -1,0 +1,10 @@
+/* ── 校队·条目：米白卡 + 红顶条 ── */
+.entry.va-card {
+  background: #fffdf6;
+  border: 1px solid var(--va-rule, #d8cfb8);
+  border-top: 4px solid var(--va-crimson, #8c1d18);
+  border-radius: 0;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}
+.entry.va-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,9 @@
+/* ── 新拟态·板块：整块浮起 ── */
+.section.nm-section {
+  background: var(--nm-bg, #e8ecf3);
+  border: none;
+  border-radius: 16px;
+  padding: 12px 14px 10px;
+  margin-bottom: 13px;
+  box-shadow: 5px 5px 12px var(--nm-lo, #c2cad8), -5px -5px 12px var(--nm-hi, #fff);
+}

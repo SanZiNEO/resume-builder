@@ -1,0 +1,12 @@
+/* ── 临床·分隔：心电图式细线 ── */
+.section.cln-divider::before {
+  content: '';
+  display: block; height: 8px; margin: 0 0 11px;
+  background-image:
+    linear-gradient(90deg, var(--cln-teal, #0f766e) 0 1px, transparent 1px),
+    linear-gradient(90deg, var(--cln-rule, #d7e3e1) 0 100%);
+  background-size: 26px 8px, 100% 1px;
+  background-repeat: repeat-x, no-repeat;
+  background-position: 0 50%, 0 50%;
+  opacity: 0.8;
+}

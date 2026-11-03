@@ -1,0 +1,9 @@
+/* ── 可爱贴纸·分隔：三色圆点 ── */
+.section.kw-divider::before {
+  content: '';
+  display: block; height: 8px; margin: 0 0 12px;
+  background-image: radial-gradient(circle, var(--kw-pink, #ff9ec7) 0 3px, transparent 3px);
+  background-size: 16px 8px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+}

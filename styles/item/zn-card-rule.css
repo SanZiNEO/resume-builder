@@ -1,0 +1,11 @@
+/* ── 手工志·栏线条目：红边纸片 ── */
+.entry.zn-card-rule {
+  background: #fffdf4;
+  border: 2px solid var(--zn-ink, #16130f);
+  border-left: 7px solid var(--zn-red, #cf3a2c);
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  transform: rotate(0.25deg);
+}
+.entry.zn-card-rule .block:last-child { margin-bottom: 0; }

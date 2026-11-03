@@ -1,0 +1,16 @@
+/* ── 新艺术·板块：左侧藤蔓弧线 ── */
+.section.nv-section {
+  position: relative;
+  padding: 6px 0 6px 18px;
+  margin-bottom: 15px;
+}
+.section.nv-section::before {
+  content: '';
+  position: absolute; left: 4px; top: 2px; bottom: 2px;
+  width: 6px;
+  border-left: 1px solid var(--nv-gold, #b08d3f);
+  border-radius: 60% 0 0 60%;
+  border-top: 1px solid var(--nv-gold, #b08d3f);
+  border-bottom: 1px solid var(--nv-gold, #b08d3f);
+  opacity: 0.75;
+}

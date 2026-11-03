@@ -1,0 +1,12 @@
+/* ── 动能·标签：黑底黄字斜块 ── */
+.tag.kn-tag {
+  display: inline-block;
+  background: var(--kn-ink, #111);
+  border: none;
+  border-radius: 0;
+  color: var(--kn-yellow, #f2c400);
+  font-size: 8px; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 1px 6px;
+  transform: skewX(-8deg);
+}

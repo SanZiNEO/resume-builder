@@ -1,0 +1,9 @@
+/* ── 便当·引言块：淡粉便当格 ── */
+.block.bn-quote {
+  background: rgba(254, 205, 211, 0.28);
+  border: none;
+  border-radius: 12px;
+  padding: 9px 12px;
+  margin: 9px 0;
+  color: #6b4a4f;
+}

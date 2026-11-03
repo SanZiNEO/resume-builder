@@ -1,0 +1,6 @@
+/* ── 磨砂玻璃·分隔：冷调细线 ── */
+.section.frosted-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 12px;
+  background: linear-gradient(90deg, rgba(148,163,184,0.55), rgba(148,163,184,0.12), transparent);
+}

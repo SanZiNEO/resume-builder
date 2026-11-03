@@ -1,0 +1,15 @@
+/* ── 新艺术·引言块：花体大引号 ── */
+.block.nv-quote {
+  position: relative;
+  padding: 8px 12px 8px 34px;
+  margin: 11px 0;
+  color: var(--nv-sage, #76856a);
+  font-style: italic;
+  line-height: 1.8;
+}
+.block.nv-quote::before {
+  content: '\201C';
+  position: absolute; left: 8px; top: -4px;
+  font-family: Georgia, serif; font-size: 34px; line-height: 1;
+  color: var(--nv-gold, #b08d3f); opacity: 0.75;
+}

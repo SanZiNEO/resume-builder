@@ -1,0 +1,9 @@
+/* ── 风格派·扁平条目：蓝粗左线 ── */
+.entry.ds-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 6px solid var(--ds-blue, #1356a2);
+  border-radius: 0;
+  padding: 2px 0 2px 11px;
+  margin-bottom: 11px;
+}

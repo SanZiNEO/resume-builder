@@ -1,0 +1,17 @@
+/* ── 手写笔记风·主题：米黄横线纸 + 墨蓝字 ── */
+.page.hw-theme {
+  --hw-ink: #1e3a8a;
+  --hw-paper: #fffdf5;
+  --hw-grid: #eee6cc;
+  --hw-accent: #dc2626;
+  --hw-highlight: #fef08a;
+  --hw-muted: #6b7280;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 23px, var(--hw-grid) 23px 24px),
+    var(--hw-paper);
+  color: var(--hw-ink);
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "Comic Sans MS", cursive;
+}
+.left.hw-theme { background: #fdf8e8; }
+.right.hw-theme { background: var(--hw-paper); }
+.page.hw-theme .section-title { color: var(--hw-ink); }

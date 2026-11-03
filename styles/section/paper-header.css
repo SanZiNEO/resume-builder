@@ -1,0 +1,9 @@
+/* ── 纸张·板块标题：墨色 + 双下划线 ── */
+.section.paper-header .section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #44403c;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #44403c;
+  box-shadow: 0 3px 0 -1px #d6d3d1;
+}

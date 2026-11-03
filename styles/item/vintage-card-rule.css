@@ -1,0 +1,10 @@
+/* ── 复古做旧·栏线条目：金色左线 ── */
+.entry.vintage-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--vt-accent, #a16207);
+  border-radius: 0;
+  padding: 3px 0 3px 13px;
+  margin-bottom: 11px;
+}
+.entry.vintage-card-rule .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,12 @@
+/* ── 莫兰迪·板块标题：灰蓝短杠 ── */
+.section.mrd-header .section-title {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--mrd-ink, #5b5651);
+  border-bottom: none;
+  padding-bottom: 5px;
+  background-image: linear-gradient(90deg, var(--mrd-blue, #a9b8c4) 0 22px, transparent 22px);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 2px;
+}

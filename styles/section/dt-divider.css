@@ -1,0 +1,7 @@
+/* ── 双色调·分隔：紫→酸渐变条 ── */
+.section.dt-divider::before {
+  content: '';
+  display: block; height: 4px; margin: 0 0 12px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--dt-violet, #5b21b6) 0 62%, var(--dt-acid, #d4f114) 62%);
+}

@@ -1,0 +1,8 @@
+/* ── 极简瑞士风·内容块：浅灰底、无边框 ── */
+.block.sw-block {
+  background: #f7f7f7;
+  border: none;
+  border-radius: 0;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}

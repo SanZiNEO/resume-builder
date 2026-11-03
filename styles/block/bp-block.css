@@ -1,0 +1,8 @@
+/* ── 蓝图·内容块：图纸注释框 ── */
+.block.bp-block {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(232, 244, 255, 0.12);
+  border-radius: 1px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

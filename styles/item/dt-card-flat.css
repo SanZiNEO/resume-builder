@@ -1,0 +1,8 @@
+/* ── 双色调·扁平条目：淡紫底片 ── */
+.entry.dt-card-flat {
+  background: rgba(91, 33, 182, 0.055);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 11px;
+  margin-bottom: 9px;
+}

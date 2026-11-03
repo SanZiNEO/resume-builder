@@ -1,0 +1,10 @@
+/* ── 构成主义·标签：黑底米白方块 ── */
+.tag.cs-tag {
+  background: var(--cs-black, #111);
+  border: none;
+  border-radius: 0;
+  color: #f3ede2;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 1px 6px;
+}

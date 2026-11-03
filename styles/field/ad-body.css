@@ -1,0 +1,5 @@
+/* ── 装饰艺术·正文：衬线 + 宽行距 ── */
+.entry-body.ad-body li, .entry-body.ad-body .block-text {
+  font-family: "Playfair Display", "Songti SC", serif;
+  font-size: 11px; line-height: 1.8; color: #2b2b2b;
+}

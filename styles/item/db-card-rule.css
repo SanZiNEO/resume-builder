@@ -1,0 +1,9 @@
+/* ── 数据面板·栏线条目：绿色顶条 ── */
+.entry.db-card-rule {
+  background: #161c24;
+  border: 1px solid #232b36;
+  border-top: 2px solid var(--db-green, #3ddc97);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}

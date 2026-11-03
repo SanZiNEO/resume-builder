@@ -1,0 +1,10 @@
+/* ── 杂志编辑风·首字下沉：段首字放大 ── */
+.block.ed-dropcap .entry-body li:first-child::first-letter {
+  float: left;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 34px;
+  line-height: 0.9;
+  padding: 2px 6px 0 0;
+  color: var(--ed-accent, #9f1239);
+  font-weight: 700;
+}

@@ -1,0 +1,6 @@
+/* ── 莫兰迪·副标题：灰调小字 ── */
+.entry-sub.mrd-sub {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--mrd-soft, #857f78);
+}

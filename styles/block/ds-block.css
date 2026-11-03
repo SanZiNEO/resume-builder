@@ -1,0 +1,8 @@
+/* ── 风格派·内容块：浅灰格 + 黑边 ── */
+.block.ds-block {
+  background: #f7f7f3;
+  border: 1px solid var(--ds-ink, #101010);
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

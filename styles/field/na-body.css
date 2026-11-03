@@ -1,0 +1,5 @@
+/* ── 航海·正文：衬线稳字 ── */
+.entry-body.na-body li, .entry-body.na-body .block-text {
+  font-size: 10.5px; line-height: 1.84;
+  color: #23364f;
+}

@@ -1,0 +1,5 @@
+/* ── 登机牌·正文：等宽紧凑 ── */
+.entry-body.bd-body li, .entry-body.bd-body .block-text {
+  font-size: 10px; line-height: 1.72;
+  color: #2a2823;
+}

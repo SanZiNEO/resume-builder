@@ -1,0 +1,3 @@
+/* ── 粗野主义·跑马灯块：黑底荧光字 ── */
+.block.br-marquee { background: var(--br-ink, #000); color: var(--br-accent, #eaff00); padding: 6px 10px; margin-bottom: 8px; overflow: hidden; }
+.block.br-marquee .entry-body li { font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; font-size: 10px; color: var(--br-accent, #eaff00); }

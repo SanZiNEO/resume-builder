@@ -1,0 +1,9 @@
+/* ── 登机牌·栏线条目：砖红顶条 ── */
+.entry.bd-card-rule {
+  background: #fffdf7;
+  border: 1px solid var(--bd-rule, #ded7c6);
+  border-top: 4px solid var(--bd-accent, #c2452d);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}

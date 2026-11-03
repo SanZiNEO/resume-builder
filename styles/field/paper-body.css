@@ -1,0 +1,8 @@
+/* ── 纸张·正文：衬线 + 暖褐字 ── */
+.entry-body.paper-body li,
+.entry-body.paper-body .block-text {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 11px;
+  line-height: 1.75;
+  color: #57534e;
+}

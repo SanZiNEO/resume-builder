@@ -1,0 +1,7 @@
+/* ── 镭射·标题：高亮白 + 微光 ── */
+.entry-title.hl-title {
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(180, 140, 255, 0.35);
+}

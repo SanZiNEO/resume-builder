@@ -1,0 +1,7 @@
+/* ── 装饰艺术·引言块：居中斜体 ── */
+.block.ad-quote {
+  text-align: center; padding: 10px 16px; margin: 12px 0;
+  border-top: 1px solid var(--ad-rule, #d8cdb4);
+  border-bottom: 1px solid var(--ad-rule, #d8cdb4);
+}
+.block.ad-quote .entry-body li { font-style: italic; color: var(--ad-muted, #7a6a4f); }

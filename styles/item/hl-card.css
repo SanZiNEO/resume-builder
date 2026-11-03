@@ -1,0 +1,10 @@
+/* ── 镭射·条目：玻璃卡 + 全息内光 ── */
+.entry.hl-card {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.entry.hl-card .block:last-child { margin-bottom: 0; }

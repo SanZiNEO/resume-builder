@@ -1,0 +1,9 @@
+/* ── 数据面板·数字块：等宽高亮数字 ── */
+.block.db-metric .entry-body li strong,
+.block.db-metric .entry-body li b {
+  color: var(--db-blue, #4ea1ff);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}

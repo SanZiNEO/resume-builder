@@ -1,0 +1,12 @@
+/* ── 现代简约·网格块：双栏浅卡 ── */
+.block.modern-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.modern-grid .entry-body li {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 7px 9px; font-size: 10px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}

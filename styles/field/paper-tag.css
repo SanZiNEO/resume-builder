@@ -1,0 +1,9 @@
+/* ── 纸张·标签：淡黄纸签 ── */
+.tag.paper-tag {
+  background: #fef3c7;
+  border: 1px solid #e8d9a8;
+  border-radius: 2px;
+  color: #78350f;
+  font-size: 8.5px; font-weight: 500;
+  padding: 0 5px;
+}

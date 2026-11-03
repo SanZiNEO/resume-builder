@@ -1,0 +1,10 @@
+/* ── 七十年代·条目：奶油卡 + 厚圆角 ── */
+.entry.sy-card {
+  background: #fdf6e7;
+  border: 2px solid var(--sy-ink, #4a3527);
+  border-radius: 16px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 0 var(--sy-mustard, #d9a13b);
+}
+.entry.sy-card .block:last-child { margin-bottom: 0; }

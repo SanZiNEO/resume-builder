@@ -1,0 +1,16 @@
+/* ── 赛博科技风·板块标题：青色发光 + 洋红引导符 ── */
+.section.cy-header .section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cy-cyan, #22d3ee);
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.25);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
+}
+.section.cy-header .section-title::before {
+  content: '\258D';
+  color: var(--cy-magenta, #e879f9);
+  margin-right: 5px;
+}

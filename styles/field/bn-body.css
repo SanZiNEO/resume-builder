@@ -1,0 +1,5 @@
+/* ── 便当·正文：中性深灰 ── */
+.entry-body.bn-body li, .entry-body.bn-body .block-text {
+  font-size: 10.5px; line-height: 1.72;
+  color: #374151;
+}

@@ -1,0 +1,2 @@
+/* ── 粗野主义·正文：黑字 + 紧凑行距 ── */
+.entry-body.br-body li, .entry-body.br-body .block-text { font-size: 11px; line-height: 1.6; color: var(--br-ink, #000); }

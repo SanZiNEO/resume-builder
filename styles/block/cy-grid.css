@@ -1,0 +1,12 @@
+/* ── 赛博科技·网格块：深色发光格 ── */
+.block.cy-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+  padding-left: 0; list-style: none;
+}
+.block.cy-grid .entry-body li {
+  background: var(--cy-panel, #121821);
+  border: 1px solid var(--cy-line, #1e2b3a);
+  border-left: 2px solid var(--cy-cyan, #22d3ee);
+  padding: 6px 8px; font-size: 10px;
+  color: var(--cy-ink, #d7e2ee);
+}

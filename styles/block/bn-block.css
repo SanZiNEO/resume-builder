@@ -1,0 +1,8 @@
+/* ── 便当·内容块：淡黄格 ── */
+.block.bn-block {
+  background: rgba(253, 230, 138, 0.24);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

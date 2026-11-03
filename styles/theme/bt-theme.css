@@ -1,0 +1,11 @@
+/* ── 植物标本·主题：牛皮纸 + 鼠尾草绿 + 墨绿 ── */
+.page.bt-theme {
+  --bt-paper: #f5f2e6; --bt-kraft: #e8ddc6;
+  --bt-sage: #6b7f5e; --bt-ink: #343a2c; --bt-rule: #d5cdb8;
+  background: var(--bt-paper);
+  color: var(--bt-ink);
+  font-family: "Songti SC", "Georgia", serif;
+}
+.left.bt-theme { background: #efeadd; }
+.right.bt-theme { background: var(--bt-paper); }
+.page.bt-theme .section-title { color: var(--bt-sage); }

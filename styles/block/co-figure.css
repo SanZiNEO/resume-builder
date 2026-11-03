@@ -1,0 +1,11 @@
+/* ── 商务金融风·数据条：上下细线 + 灰字 ── */
+.block.co-figure {
+  border-top: 1px solid var(--co-rule, #cbd5e1);
+  border-bottom: 1px solid var(--co-rule, #cbd5e1);
+  padding: 8px 0;
+  margin: 8px 0;
+}
+.block.co-figure .entry-body li {
+  font-size: 11px;
+  color: var(--co-muted, #64748b);
+}

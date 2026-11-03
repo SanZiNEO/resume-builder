@@ -1,0 +1,6 @@
+/* ── 粗野主义·扁平条目：荧光黄粗左线 ── */
+.entry.br-card-flat {
+  background: transparent; border: none;
+  border-left: 8px solid var(--br-accent, #eaff00);
+  border-radius: 0; padding: 2px 0 2px 12px; margin-bottom: 12px;
+}

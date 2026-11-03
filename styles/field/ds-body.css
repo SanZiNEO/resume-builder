@@ -1,0 +1,5 @@
+/* ── 风格派·正文：黑字中宫收紧 ── */
+.entry-body.ds-body li, .entry-body.ds-body .block-text {
+  font-size: 10.5px; line-height: 1.68;
+  color: #1a1a1a;
+}

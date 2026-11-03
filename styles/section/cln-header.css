@@ -1,0 +1,12 @@
+/* ── 临床·板块标题：青绿标签 ── */
+.section.cln-header .section-title {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cln-teal, #0f766e);
+  background: var(--cln-cyan, #e0f2f1);
+  border-bottom: none;
+  border-radius: 3px;
+  padding: 2px 9px;
+  margin-bottom: 6px;
+}

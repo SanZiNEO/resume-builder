@@ -1,0 +1,11 @@
+/* ── 手工志·条目：贴纸卡 + 微歪 ── */
+.entry.zn-card {
+  background: var(--zn-paper, #fbf7ec);
+  border: 1px solid var(--zn-ink, #16130f);
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 10px;
+  transform: rotate(-0.35deg);
+  box-shadow: 2px 2px 0 rgba(22, 19, 15, 0.14);
+}
+.entry.zn-card .block:last-child { margin-bottom: 0; }

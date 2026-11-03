@@ -1,0 +1,8 @@
+/* ── 校队·数字块：深红衬线数字 ── */
+.block.va-metric .entry-body li strong,
+.block.va-metric .entry-body li b {
+  color: var(--va-crimson, #8c1d18);
+  font-family: "Rockwell", Georgia, serif;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

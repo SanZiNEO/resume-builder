@@ -1,0 +1,10 @@
+/* ── 黑色电影·引言块：灰阶独白 ── */
+.block.fn-quote {
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-left: 1px solid #6a6a6a;
+  color: var(--fn-mid, #a3a3a3);
+  font-family: "Didot", Georgia, serif;
+  font-style: italic;
+  line-height: 1.95;
+}

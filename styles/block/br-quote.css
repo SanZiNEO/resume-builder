@@ -1,0 +1,6 @@
+/* ── 粗野主义·引言块：超大引号 ── */
+.block.br-quote { position: relative; padding: 8px 12px 8px 40px; margin: 10px 0; border: 2px solid var(--br-ink, #000); }
+.block.br-quote::before {
+  content: '\201C'; position: absolute; left: 6px; top: -6px;
+  font-size: 42px; line-height: 1; font-family: Georgia, serif; color: var(--br-ink, #000);
+}

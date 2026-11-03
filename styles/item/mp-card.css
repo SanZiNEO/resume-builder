@@ -1,0 +1,7 @@
+/* ── 孟菲斯·条目：白底圆角 + 蓝阴影 ── */
+.entry.mp-card {
+  background: #ffffff; border: 2px solid var(--mp-ink, #1a1a1a);
+  border-radius: 14px; padding: 10px 12px; margin-bottom: 10px;
+  box-shadow: 4px 4px 0 var(--mp-blue, #4dabf7);
+}
+.entry.mp-card .block:last-child { margin-bottom: 0; }

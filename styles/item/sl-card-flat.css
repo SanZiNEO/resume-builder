@@ -1,0 +1,8 @@
+/* ── 生态未来·扁平条目：薄荷底 ── */
+.entry.sl-card-flat {
+  background: rgba(217, 249, 157, 0.28);
+  border: none;
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+}

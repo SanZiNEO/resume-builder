@@ -1,0 +1,18 @@
+/* ── 风格派·条目：黑框白底 + 黄角块 ── */
+.entry.ds-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--ds-ink, #101010);
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 10px;
+}
+.entry.ds-card::after {
+  content: '';
+  position: absolute; right: -2px; top: -2px;
+  width: 12px; height: 12px;
+  background: var(--ds-yellow, #f7d842);
+  border-left: 2px solid var(--ds-ink, #101010);
+  border-bottom: 2px solid var(--ds-ink, #101010);
+}
+.entry.ds-card .block:last-child { margin-bottom: 0; }

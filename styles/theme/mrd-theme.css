@@ -1,0 +1,13 @@
+/* ── 莫兰迪·主题：低饱和灰调 + 柔光 ── */
+.page.mrd-theme {
+  --mrd-bg: #f2efeb; --mrd-card: #faf8f5;
+  --mrd-pink: #d3b8b4; --mrd-blue: #a9b8c4;
+  --mrd-green: #b3bda9; --mrd-stone: #c3c0ba;
+  --mrd-ink: #5b5651; --mrd-soft: #857f78;
+  background: var(--mrd-bg);
+  color: var(--mrd-ink);
+  font-family: "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.mrd-theme { background: #eeebe6; }
+.right.mrd-theme { background: var(--mrd-bg); }
+.page.mrd-theme .section-title { color: var(--mrd-ink); font-weight: 500; }

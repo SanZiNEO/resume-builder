@@ -1,0 +1,6 @@
+/* ── 北欧·标题：轻字重无衬线 ── */
+.entry-title.sc-title {
+  font-size: 13.5px; font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--sc-ink, #2f3437);
+}

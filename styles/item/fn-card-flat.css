@@ -1,0 +1,9 @@
+/* ── 黑色电影·扁平条目：极暗底 ── */
+.entry.fn-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--fn-line, #2b2b2b);
+  border-radius: 0;
+  padding: 6px 0 9px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,10 @@
+/* ── 双色调·条目：白卡 + 紫色左缘 ── */
+.entry.dt-card {
+  background: #ffffff;
+  border: 1px solid var(--dt-line, #ddd0f7);
+  border-left: 4px solid var(--dt-violet, #5b21b6);
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+}
+.entry.dt-card .block:last-child { margin-bottom: 0; }

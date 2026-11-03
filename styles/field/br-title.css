@@ -1,0 +1,2 @@
+/* ── 粗野主义·标题：超粗 + 紧字距 ── */
+.entry-title.br-title { font-size: 16px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; color: var(--br-ink, #000); }

@@ -1,0 +1,10 @@
+/* ── 霓虹·标签：青色描边 ── */
+.tag.neon-tag {
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid #22d3ee;
+  border-radius: 3px;
+  color: #67e8f9;
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0 5px;
+}

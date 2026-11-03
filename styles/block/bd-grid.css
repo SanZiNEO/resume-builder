@@ -1,0 +1,12 @@
+/* ── 登机牌·网格块：票面字段格 ── */
+.block.bd-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0; padding-left: 0; list-style: none;
+}
+.block.bd-grid .entry-body li {
+  padding: 6px 8px; font-size: 9.5px;
+  border-bottom: 1px dashed var(--bd-dash, #b9b2a0);
+}
+.block.bd-grid .entry-body li:nth-child(odd) {
+  border-right: 1px dashed var(--bd-dash, #b9b2a0);
+}

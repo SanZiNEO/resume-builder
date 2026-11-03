@@ -1,0 +1,10 @@
+/* ── 复古做旧·标签：金线小签 ── */
+.tag.vintage-tag {
+  background: transparent;
+  border: 1px solid var(--vt-accent, #a16207);
+  border-radius: 0;
+  color: var(--vt-accent, #a16207);
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 0 6px;
+}

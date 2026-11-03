@@ -1,0 +1,7 @@
+/* ── 赛博科技风·数字强调：青色发光数字 ── */
+.block.cy-metric .entry-body li strong,
+.block.cy-metric .entry-body li b {
+  color: var(--cy-cyan, #22d3ee);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 6px rgba(34, 211, 238, 0.4);
+}

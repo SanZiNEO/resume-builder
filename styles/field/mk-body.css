@@ -1,0 +1,5 @@
+/* ── 马克笔·正文：手写体松行距 ── */
+.entry-body.mk-body li, .entry-body.mk-body .block-text {
+  font-size: 11px; line-height: 1.8;
+  color: #2a261d;
+}

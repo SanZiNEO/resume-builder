@@ -1,0 +1,6 @@
+/* ── 高奢·分隔：居中细线 ── */
+.section.lf-divider::before {
+  content: '';
+  display: block; width: 30px; height: 1px; margin: 0 auto 20px;
+  background: var(--lf-rule, #e0ddd6);
+}

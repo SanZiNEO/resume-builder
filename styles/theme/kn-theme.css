@@ -1,0 +1,11 @@
+/* ── 动能·主题：白底 + 黑 + 信号黄 ── */
+.page.kn-theme {
+  --kn-paper: #f5f5f2; --kn-ink: #111111;
+  --kn-yellow: #f2c400; --kn-blue: #1f4bff; --kn-rule: #d8d8d2;
+  background: var(--kn-paper);
+  color: var(--kn-ink);
+  font-family: "Archivo Black", "Arial Black", "PingFang SC", sans-serif;
+}
+.left.kn-theme { background: #efefea; }
+.right.kn-theme { background: var(--kn-paper); }
+.page.kn-theme .section-title { color: var(--kn-ink); }

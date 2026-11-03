@@ -1,0 +1,9 @@
+/* ── 手工志·数字块：红色马克笔 ── */
+.block.zn-metric .entry-body li strong,
+.block.zn-metric .entry-body li b {
+  color: var(--zn-ink, #16130f);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background-image: linear-gradient(180deg, transparent 58%, rgba(207, 58, 44, 0.38) 58%);
+  padding: 0 1px;
+}

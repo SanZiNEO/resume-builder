@@ -1,0 +1,12 @@
+/* ── 七十年代·主题：奶油底 + 砖橙 + 芥末黄 ── */
+.page.sy-theme {
+  --sy-cream: #f4e7d3; --sy-ink: #4a3527;
+  --sy-rust: #b4552d; --sy-mustard: #d9a13b;
+  --sy-avocado: #7b8c4a; --sy-rule: #d8c3a2;
+  background: var(--sy-cream);
+  color: var(--sy-ink);
+  font-family: "Cooper Black", "Songti SC", "PingFang SC", sans-serif;
+}
+.left.sy-theme { background: #efdfc6; }
+.right.sy-theme { background: var(--sy-cream); }
+.page.sy-theme .section-title { color: var(--sy-rust); }

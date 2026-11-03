@@ -1,0 +1,6 @@
+/* ── 校队·分隔：粗红杠 ── */
+.section.va-divider::before {
+  content: '';
+  display: block; height: 4px; margin: 0 0 12px;
+  background: linear-gradient(90deg, var(--va-crimson, #8c1d18) 0 30%, var(--va-ink, #17150f) 30% 34%, transparent 34%);
+}

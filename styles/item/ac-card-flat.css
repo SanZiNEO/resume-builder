@@ -1,0 +1,9 @@
+/* ── 学术论文风·扁平条目：底部点线 ── */
+.entry.ac-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--ac-rule, #9ca3af);
+  border-radius: 0;
+  padding: 0 0 9px;
+  margin-bottom: 9px;
+}

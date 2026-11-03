@@ -1,0 +1,6 @@
+/* ── 七十年代·标题：粗圆字 ── */
+.entry-title.sy-title {
+  font-size: 14px; font-weight: 800;
+  letter-spacing: -0.005em;
+  color: var(--sy-ink, #4a3527);
+}

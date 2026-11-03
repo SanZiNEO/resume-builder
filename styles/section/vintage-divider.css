@@ -1,0 +1,9 @@
+/* ── 复古做旧·分隔：暗金双线 ── */
+.section.vintage-divider::before {
+  content: '';
+  display: block; margin: 0 0 13px;
+  border-top: 1px solid var(--vt-accent, #a16207);
+  border-bottom: 1px solid rgba(161, 98, 7, 0.3);
+  height: 3px;
+  opacity: 0.7;
+}

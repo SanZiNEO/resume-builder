@@ -1,0 +1,10 @@
+/* ── 数据面板·标签：状态色描边 ── */
+.tag.db-tag {
+  background: rgba(78, 161, 255, 0.1);
+  border: 1px solid rgba(78, 161, 255, 0.4);
+  border-radius: 3px;
+  color: #9dc7ff;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0 5px;
+}

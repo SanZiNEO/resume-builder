@@ -1,0 +1,9 @@
+/* ── 新艺术·栏线条目：金色双线顶 ── */
+.entry.nv-card-rule {
+  background: transparent;
+  border: none;
+  border-top: 3px double var(--nv-gold, #b08d3f);
+  border-radius: 0;
+  padding: 9px 2px 4px;
+  margin-bottom: 11px;
+}

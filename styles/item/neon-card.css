@@ -5,3 +5,4 @@
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.18);
   border-radius: 10px;
 }
+.entry.neon-card .block:last-child { margin-bottom: 0; }

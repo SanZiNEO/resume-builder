@@ -1,0 +1,13 @@
+/* ── 蓝图·板块标题：工程标注体 ── */
+.section.bp-header .section-title {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--bp-cyan, #8fd6ff);
+  padding-bottom: 3px;
+  border-bottom: 1px dashed var(--bp-line, rgba(232,244,255,0.22));
+}
+.section.bp-header .section-title::before {
+  content: '\25C6  ';
+  font-size: 7px; vertical-align: 2px;
+  color: var(--bp-accent, #ffd166);
+}

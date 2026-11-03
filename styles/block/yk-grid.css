@@ -1,0 +1,9 @@
+/* ── 千禧·网格块：两栏圆角小卡 ── */
+.block.yk-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.yk-grid .entry-body li {
+  background: #fff; border: 1px solid #cbe7fa; border-radius: 10px;
+  padding: 7px 9px; font-size: 10.5px;
+}

@@ -1,0 +1,13 @@
+/* ── 终端·板块标题：命令行提示符 ── */
+.section.tm-header .section-title {
+  font-family: inherit;
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--tm-green, #7ee787);
+  border-bottom: none;
+}
+.section.tm-header .section-title::before {
+  content: '$ ';
+  color: var(--tm-dim, #7d9488);
+  font-weight: 400;
+}

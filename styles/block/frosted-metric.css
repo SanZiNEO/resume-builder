@@ -1,0 +1,10 @@
+/* ── 磨砂玻璃·数字块：靛蓝数字 ── */
+.block.frosted-metric .entry-body li strong,
+.block.frosted-metric .entry-body li b {
+  color: #4338ca;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: rgba(224, 231, 255, 0.7);
+  border-radius: 4px;
+  padding: 0 4px;
+}

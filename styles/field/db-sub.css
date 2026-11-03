@@ -1,0 +1,5 @@
+/* ── 数据面板·副标题：灰蓝 ── */
+.entry-sub.db-sub {
+  font-size: 9.5px; font-weight: 500;
+  color: var(--db-dim, #7d8b9c);
+}

@@ -1,0 +1,7 @@
+/* ── 蓝图·元信息：淡白标注 ── */
+.entry-meta.bp-meta {
+  font-size: 8.5px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(232, 244, 255, 0.55);
+  font-variant-numeric: tabular-nums;
+}

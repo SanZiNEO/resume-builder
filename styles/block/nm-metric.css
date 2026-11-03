@@ -1,0 +1,8 @@
+/* ── 新拟态·数字块：蓝色微光 ── */
+.block.nm-metric .entry-body li strong,
+.block.nm-metric .entry-body li b {
+  color: var(--nm-accent, #5b7cfa);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 0 var(--nm-hi, #fff);
+}

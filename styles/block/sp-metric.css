@@ -1,0 +1,9 @@
+/* ── 太空时代·数字块：橙色等宽 ── */
+.block.sp-metric .entry-body li strong,
+.block.sp-metric .entry-body li b {
+  color: var(--sp-orange, #d95f2b);
+  font-family: "DIN Alternate", "Courier New", monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}

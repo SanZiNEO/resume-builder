@@ -1,0 +1,12 @@
+/* ── 可爱贴纸·主题：粉白 + 糖果色 + 粗描边 ── */
+.page.kw-theme {
+  --kw-bg: #fff5fa; --kw-ink: #3b2c3a;
+  --kw-pink: #ff9ec7; --kw-lilac: #c9a7ff; --kw-mint: #9fe6cf;
+  --kw-rule: #ffd9e8;
+  background: var(--kw-bg);
+  color: var(--kw-ink);
+  font-family: "Nunito", "Quicksand", "PingFang SC", sans-serif;
+}
+.left.kw-theme { background: #fff0f7; }
+.right.kw-theme { background: var(--kw-bg); }
+.page.kw-theme .section-title { color: var(--kw-ink); }

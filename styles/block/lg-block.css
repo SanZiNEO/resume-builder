@@ -1,0 +1,8 @@
+/* ── 合同文书·内容块：浅灰条款底 ── */
+.block.lg-block {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-radius: 0;
+  padding: 8px 11px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,7 @@
+/* ── 玻璃拟态·正文：深灰 + 舒适行距 ── */
+.entry-body.glass-body li,
+.entry-body.glass-body .block-text {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #334155;
+}

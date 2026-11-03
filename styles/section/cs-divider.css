@@ -1,0 +1,7 @@
+/* ── 构成主义·分隔：红黑双杠 ── */
+.section.cs-divider::before {
+  content: '';
+  display: block; height: 8px; margin: 0 0 12px;
+  background: linear-gradient(90deg,
+    var(--cs-black, #111) 0 58%, var(--cs-red, #c1121f) 58% 72%, transparent 72%);
+}

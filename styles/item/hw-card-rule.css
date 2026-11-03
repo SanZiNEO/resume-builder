@@ -1,0 +1,10 @@
+/* ── 手写笔记风·重点条目：红笔左条 ── */
+.entry.hw-card-rule {
+  background: #fffdf0;
+  border: 1px solid #e6dcbe;
+  border-left: 3px solid var(--hw-accent, #dc2626);
+  border-radius: 3px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.entry.hw-card-rule .block:last-child { margin-bottom: 0; }

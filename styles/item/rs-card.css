@@ -1,0 +1,7 @@
+/* ── 孔版印刷·条目：米白卡 + 双色错位阴影 ── */
+.entry.rs-card {
+  background: #fffdf9; border: 1px solid var(--rs-rule, #ded5c8);
+  border-radius: 0; padding: 10px 12px; margin-bottom: 9px;
+  box-shadow: 2px 2px 0 rgba(255, 92, 138, 0.35), 4px 4px 0 rgba(44, 125, 160, 0.28);
+}
+.entry.rs-card .block:last-child { margin-bottom: 0; }

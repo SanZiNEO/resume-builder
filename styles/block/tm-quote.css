@@ -1,0 +1,15 @@
+/* ── 终端·引言块：注释语法 ── */
+.block.tm-quote {
+  position: relative;
+  padding: 4px 10px 4px 26px;
+  margin: 9px 0;
+  border-left: 1px solid var(--tm-line, #22332b);
+  color: var(--tm-dim, #7d9488);
+  font-style: italic;
+}
+.block.tm-quote::before {
+  content: '//';
+  position: absolute; left: 6px; top: 3px;
+  color: var(--tm-amber, #e3b341);
+  font-style: normal;
+}

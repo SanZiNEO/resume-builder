@@ -1,0 +1,18 @@
+/* ── 赛博科技风·主题：深空底 + 青霓虹 + 洋红点缀 ── */
+.page.cy-theme {
+  --cy-bg: #0a0e14;
+  --cy-panel: #121821;
+  --cy-ink: #d7e2ee;
+  --cy-dim: #7c8da3;
+  --cy-cyan: #22d3ee;
+  --cy-magenta: #e879f9;
+  --cy-line: #1e2b3a;
+  background:
+    linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px) 0 0 / 100% 22px,
+    var(--cy-bg);
+  color: var(--cy-ink);
+  font-family: "JetBrains Mono", "SF Mono", Consolas, "PingFang SC", monospace;
+}
+.left.cy-theme { background: #070b10; }
+.right.cy-theme { background: var(--cy-bg); }
+.page.cy-theme .section-title { color: var(--cy-cyan); }

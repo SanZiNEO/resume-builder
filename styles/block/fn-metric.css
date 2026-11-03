@@ -1,0 +1,8 @@
+/* ── 黑色电影·数字块：纯白粗数字 ── */
+.block.fn-metric .entry-body li strong,
+.block.fn-metric .entry-body li b {
+  color: #ffffff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}

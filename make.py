@@ -4,6 +4,7 @@
 唯一入口，子命令式：
     python make.py                    # 一键全流程（校验 + 构建 + PDF + 图片）
     python make.py validate           # 只校验 YAML（AI 写完后自查）
+    python make.py styles             # 样式手册：画廊 + A4 手册 PDF + 打包所有风格
     python make.py build --person me
     python make.py build --no-images  # 跳过图片（只构建 + PDF）
     python make.py build --no-pdf     # 跳过 PDF（只构建 + 长图）
@@ -40,6 +41,12 @@ def cmd_validate(args) -> int:
         print(f'共 {len(problems)} 个问题')
         return 1
     print('全部通过')
+    return 0
+
+
+def cmd_styles(args) -> int:
+    from scripts.style_book import build
+    build(out_dir=args.out, make_pdf=not args.no_pdf, make_zip=not args.no_zip)
     return 0
 
 
@@ -136,6 +143,12 @@ def main() -> int:
     p_val = sub.add_parser('validate', help='只校验 YAML（AI 写完后自查）')
     p_val.add_argument('--person', default='me')
     p_val.set_defaults(func=cmd_validate)
+
+    p_styles = sub.add_parser('styles', help='把 styles/ 里所有风格打包成样式手册（画廊 + PDF + zip）')
+    p_styles.add_argument('--out', help='输出目录（默认 output/styles-book-{时间戳}）')
+    p_styles.add_argument('--no-pdf', action='store_true', help='跳过 PDF 导出')
+    p_styles.add_argument('--no-zip', action='store_true', help='不压缩成 zip')
+    p_styles.set_defaults(func=cmd_styles)
 
     p_watch = sub.add_parser('watch', help='监听 YAML 变化自动重建')
     p_watch.add_argument('--person', default='me')

@@ -1,0 +1,7 @@
+/* ── 杂志编辑风·板块：上下细线包裹，无底色 ── */
+.section.ed-section {
+  border-top: 2px solid var(--ed-ink, #1c1917);
+  border-bottom: 1px solid var(--ed-rule, #d8d4cc);
+  padding: 14px 0 16px;
+  margin-bottom: 18px;
+}

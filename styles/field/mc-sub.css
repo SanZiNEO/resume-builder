@@ -1,0 +1,6 @@
+/* ── 单色·副标题：灰字 ── */
+.entry-sub.mc-sub {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--mc-gray, #8a8a8a);
+}

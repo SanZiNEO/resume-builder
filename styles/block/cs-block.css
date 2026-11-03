@@ -1,0 +1,8 @@
+/* ── 构成主义·内容块：红调浅底 + 硬边 ── */
+.block.cs-block {
+  background: rgba(193, 18, 31, 0.055);
+  border: 1px solid rgba(193, 18, 31, 0.2);
+  border-radius: 0;
+  padding: 8px 10px;
+  margin-bottom: 7px;
+}

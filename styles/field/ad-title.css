@@ -1,0 +1,5 @@
+/* ── 装饰艺术·标题：衬线 + 宽字距 ── */
+.entry-title.ad-title {
+  font-family: "Didot", "Playfair Display", "Songti SC", serif;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.06em; color: var(--ad-ink, #1a1a1a);
+}

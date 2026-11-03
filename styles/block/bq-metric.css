@@ -1,0 +1,8 @@
+/* ── 巴洛克·数字块：酒红衬线数字 ── */
+.block.bq-metric .entry-body li strong,
+.block.bq-metric .entry-body li b {
+  color: var(--bq-wine, #5c1a1b);
+  font-family: "Baskerville", Georgia, serif;
+  font-weight: 700;
+  font-variant-numeric: oldstyle-nums;
+}

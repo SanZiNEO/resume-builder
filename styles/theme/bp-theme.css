@@ -1,0 +1,15 @@
+/* ── 蓝图·主题：工程图纸 + 网格底纹 ── */
+.page.bp-theme {
+  --bp-bg: #0b2c4d; --bp-ink: #e8f4ff; --bp-cyan: #8fd6ff;
+  --bp-accent: #ffd166; --bp-line: rgba(232, 244, 255, 0.22);
+  background-color: var(--bp-bg);
+  background-image:
+    linear-gradient(to right, rgba(232,244,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232,244,255,0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: var(--bp-ink);
+  font-family: "DIN Alternate", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.bp-theme { background-color: #0a2643; }
+.right.bp-theme { background-color: transparent; }
+.page.bp-theme .section-title { color: var(--bp-cyan); }

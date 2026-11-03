@@ -1,0 +1,11 @@
+/* ── 校队·网格块：双栏粗格 ── */
+.block.va-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0; padding-left: 0; list-style: none;
+  border-top: 2px solid var(--va-ink, #17150f);
+}
+.block.va-grid .entry-body li {
+  padding: 6px 9px; font-size: 10px;
+  border-bottom: 1px solid var(--va-rule, #d8cfb8);
+}
+.block.va-grid .entry-body li:nth-child(odd) { border-right: 1px solid var(--va-rule, #d8cfb8); }

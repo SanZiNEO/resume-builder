@@ -1,0 +1,14 @@
+/* ── 极简瑞士风·主题：纯白 + 纯黑 + 瑞士红 ── */
+.page.sw-theme {
+  --sw-ink: #111111;
+  --sw-paper: #ffffff;
+  --sw-accent: #dc2626;
+  --sw-rule: #d4d4d4;
+  --sw-muted: #71717a;
+  background: var(--sw-paper);
+  color: var(--sw-ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", sans-serif;
+}
+.left.sw-theme { background: #fafafa; }
+.right.sw-theme { background: var(--sw-paper); }
+.page.sw-theme .section-title { color: var(--sw-ink); }

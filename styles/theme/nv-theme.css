@@ -1,0 +1,11 @@
+/* ── 新艺术·主题：米色纸 + 金线 + 灰绿 ── */
+.page.nv-theme {
+  --nv-paper: #f3efe2; --nv-ink: #37362a;
+  --nv-gold: #b08d3f; --nv-sage: #76856a; --nv-rule: #d9cfb6;
+  background: var(--nv-paper);
+  color: var(--nv-ink);
+  font-family: "Songti SC", "Playfair Display", Georgia, serif;
+}
+.left.nv-theme { background: #eee9da; }
+.right.nv-theme { background: var(--nv-paper); }
+.page.nv-theme .section-title { color: var(--nv-gold); }

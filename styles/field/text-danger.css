@@ -1,1 +1,2 @@
-.text-danger { color: #dc2626; }
+/* ── 文字·问题 / 下降（行内 {style:text-danger}） ── */
+.text-danger { color: #b91c1c; font-weight: 600; }

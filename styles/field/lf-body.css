@@ -1,0 +1,6 @@
+/* ── 高奢·正文：细字重 + 大行距 ── */
+.entry-body.lf-body li, .entry-body.lf-body .block-text {
+  font-size: 10px; line-height: 2.05;
+  color: #3c3c39;
+  letter-spacing: 0.02em;
+}

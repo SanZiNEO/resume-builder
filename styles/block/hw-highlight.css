@@ -1,0 +1,7 @@
+/* ── 手写笔记风·荧光笔块：整段划亮 ── */
+.block.hw-highlight .entry-body li {
+  display: inline;
+  background: linear-gradient(transparent 55%, var(--hw-highlight, #fef08a) 55%);
+  padding: 0 2px;
+  font-size: 12px;
+}

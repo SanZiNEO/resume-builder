@@ -1,0 +1,5 @@
+/* ── 蓝图·正文：淡白 + 松行距 ── */
+.entry-body.bp-body li, .entry-body.bp-body .block-text {
+  font-size: 10.5px; line-height: 1.75;
+  color: rgba(232, 244, 255, 0.85);
+}

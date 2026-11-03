@@ -1,0 +1,6 @@
+/* ── 植物标本·副标题：拉丁学名感 ── */
+.entry-sub.bt-sub {
+  font-size: 9.5px; font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--bt-sage, #6b7f5e);
+}

@@ -1,0 +1,12 @@
+/* ── 数据面板·主题：深灰底 + 蓝绿红状态色 ── */
+.page.db-theme {
+  --db-bg: #12161c; --db-panel: #1a2029;
+  --db-ink: #dbe4ee; --db-dim: #7d8b9c;
+  --db-blue: #4ea1ff; --db-green: #3ddc97; --db-red: #ff5c7a;
+  background: var(--db-bg);
+  color: var(--db-ink);
+  font-family: "Inter", "PingFang SC", system-ui, sans-serif;
+}
+.left.db-theme { background: #0e1218; }
+.right.db-theme { background: var(--db-bg); }
+.page.db-theme .section-title { color: var(--db-blue); }

@@ -1,0 +1,11 @@
+/* ── 纸张·主题别名：等同 theme/paper.css，便于整套引用 ── */
+.page.paper-theme {
+  --pp-paper: #fdf6e3; --pp-ink: #3f2d1c;
+  --pp-title: #7c2d12; --pp-rule: #ddd6c3; --pp-muted: #8a6d4b;
+  background: var(--pp-paper);
+  color: var(--pp-ink);
+  font-family: "Songti SC", "Noto Serif SC", Georgia, serif;
+}
+.left.paper-theme { background: #f5e8c9; color: var(--pp-ink); }
+.right.paper-theme { background: var(--pp-paper); color: var(--pp-ink); }
+.page.paper-theme .section-title { color: var(--pp-title); }

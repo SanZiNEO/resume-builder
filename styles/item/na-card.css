@@ -1,0 +1,19 @@
+/* ── 航海·条目：藏青细框 + 角标 ── */
+.entry.na-card {
+  position: relative;
+  background: #fffdf7;
+  border: 1px solid var(--na-navy, #0f2a4a);
+  border-radius: 0;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}
+.entry.na-card::before,
+.entry.na-card::after {
+  content: '';
+  position: absolute;
+  width: 7px; height: 7px;
+  border: 1px solid var(--na-red, #9b2226);
+}
+.entry.na-card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.entry.na-card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.entry.na-card .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,6 @@
+/* ── 现代简约·标题：半粗 + 深灰 ── */
+.entry-title.modern-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--md-ink, #1f2937);
+}

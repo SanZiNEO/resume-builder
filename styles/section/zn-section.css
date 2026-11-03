@@ -1,0 +1,13 @@
+/* ── 手工志·板块：胶带贴条 ── */
+.section.zn-section {
+  position: relative;
+  padding: 14px 0 6px;
+  margin-bottom: 14px;
+}
+.section.zn-section::before {
+  content: '';
+  position: absolute; left: -4px; top: 0;
+  width: 54px; height: 11px;
+  background: rgba(207, 58, 44, 0.22);
+  transform: rotate(-2.5deg);
+}

@@ -1,0 +1,7 @@
+/* ── 商务金融风·正文：紧凑行高 + 高对比 ── */
+.entry-body.co-body li,
+.entry-body.co-body .block-text {
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #1e293b;
+}

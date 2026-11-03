@@ -1,0 +1,6 @@
+/* ── 合同文书·副标题：常规衬线 ── */
+.entry-sub.lg-sub {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--lg-gray, #555);
+}

@@ -1,0 +1,9 @@
+/* ── 高奢·内容块：无底，细上边 ── */
+.block.lf-block {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}

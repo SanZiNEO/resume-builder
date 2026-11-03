@@ -1,0 +1,10 @@
+/* ── 单色·条目：细底线分隔 ── */
+.entry.mc-card {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--mc-line, #dcdcdc);
+  border-radius: 0;
+  padding: 2px 0 9px;
+  margin-bottom: 9px;
+}
+.entry.mc-card .block:last-child { margin-bottom: 0; }

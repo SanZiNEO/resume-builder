@@ -1,0 +1,9 @@
+/* ── 高奢·栏线条目：极细左线 ── */
+.entry.lf-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--lf-gold, #9a7b4f);
+  border-radius: 0;
+  padding: 4px 0 4px 14px;
+  margin-bottom: 14px;
+}

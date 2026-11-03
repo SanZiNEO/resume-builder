@@ -1,0 +1,9 @@
+/* ── 包豪斯·分隔：三色方块排 ── */
+.section.bh-divider::before {
+  content: '';
+  display: block; height: 6px; margin-bottom: 12px;
+  background: linear-gradient(90deg,
+    var(--bh-red, #d62828) 0 18px, transparent 18px 24px,
+    var(--bh-yellow, #fcbf49) 24px 42px, transparent 42px 48px,
+    var(--bh-blue, #1d3557) 48px 66px, transparent 66px);
+}

@@ -1,0 +1,8 @@
+/* ── 七十年代·内容块：芥末浅底 ── */
+.block.sy-block {
+  background: rgba(217, 161, 59, 0.16);
+  border: none;
+  border-radius: 12px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+}

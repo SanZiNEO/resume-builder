@@ -1,0 +1,10 @@
+/* ── 复古印刷·标签：旧纸方签 ── */
+.tag.retro-tag {
+  background: #f0e5cc;
+  border: 1px solid var(--rt-rule, #d6c9ad);
+  border-radius: 0;
+  color: var(--rt-accent, #b45309);
+  font-size: 8px; font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0 5px;
+}

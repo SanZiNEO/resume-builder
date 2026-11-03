@@ -1,0 +1,8 @@
+/* ── 可爱贴纸·内容块：淡粉底 ── */
+.block.kw-block {
+  background: rgba(255, 217, 232, 0.55);
+  border: none;
+  border-radius: 14px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+}

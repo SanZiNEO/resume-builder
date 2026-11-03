@@ -1,0 +1,10 @@
+/* ── 手写笔记风·条目：便签卡 ── */
+.entry.hw-card {
+  background: #fffef9;
+  border: 1px solid #e6dcbe;
+  border-radius: 3px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 1px 2px 0 rgba(180, 160, 110, 0.14);
+}
+.entry.hw-card .block:last-child { margin-bottom: 0; }

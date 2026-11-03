@@ -1,0 +1,9 @@
+/* ── 新艺术·扁平条目：灰绿细左线 ── */
+.entry.nv-card-flat {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--nv-sage, #76856a);
+  border-radius: 0;
+  padding: 3px 0 3px 13px;
+  margin-bottom: 12px;
+}

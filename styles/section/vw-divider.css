@@ -1,0 +1,6 @@
+/* ── 蒸汽波·分隔：粉青渐变线 ── */
+.section.vw-divider::before {
+  content: ''; display: block; height: 2px; margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--vw-pink, #ff6ec7), var(--vw-cyan, #00f0ff));
+  opacity: 0.65;
+}

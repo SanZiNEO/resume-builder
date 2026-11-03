@@ -1,0 +1,9 @@
+/* ── 手写笔记风·扁平条目：虚线分隔 ── */
+.entry.hw-card-flat {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #d9cfae;
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,12 @@
+/* ── 双色调·主题：深紫 + 酸性黄绿 + 浅紫底 ── */
+.page.dt-theme {
+  --dt-deep: #2b0f54; --dt-violet: #5b21b6;
+  --dt-acid: #d4f114; --dt-bg: #f6f3ff;
+  --dt-line: #ddd0f7; --dt-soft: #7c6a9c;
+  background: var(--dt-bg);
+  color: var(--dt-deep);
+  font-family: "Space Grotesk", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.dt-theme { background: #efe9ff; }
+.right.dt-theme { background: var(--dt-bg); }
+.page.dt-theme .section-title { color: var(--dt-deep); }

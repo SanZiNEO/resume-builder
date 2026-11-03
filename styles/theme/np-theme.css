@@ -1,0 +1,10 @@
+/* ── 报纸·主题：新闻纸 + 黑 + 一点红 ── */
+.page.np-theme {
+  --np-ink: #1a1a1a; --np-paper: #f9f7f2; --np-red: #b3261e;
+  --np-rule: #c9c4b8; --np-muted: #6b655c;
+  background: var(--np-paper); color: var(--np-ink);
+  font-family: "Times New Roman", "Songti SC", "Noto Serif CJK SC", serif;
+}
+.left.np-theme { background: #f2efe7; }
+.right.np-theme { background: var(--np-paper); }
+.page.np-theme .section-title { color: var(--np-ink); }

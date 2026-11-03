@@ -1,0 +1,8 @@
+/* ── 北欧·扁平条目：木色浅片 ── */
+.entry.sc-card-flat {
+  background: rgba(236, 231, 221, 0.55);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}

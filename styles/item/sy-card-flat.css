@@ -1,0 +1,8 @@
+/* ── 七十年代·扁平条目：牛油果色浅底 ── */
+.entry.sy-card-flat {
+  background: rgba(123, 140, 74, 0.14);
+  border: none;
+  border-radius: 14px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+}

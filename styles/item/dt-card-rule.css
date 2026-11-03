@@ -1,0 +1,10 @@
+/* ── 双色调·栏线条目：酸性顶条 ── */
+.entry.dt-card-rule {
+  background: #ffffff;
+  border: 1px solid var(--dt-line, #ddd0f7);
+  border-top: 4px solid var(--dt-acid, #d4f114);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 9px;
+}
+.entry.dt-card-rule .block:last-child { margin-bottom: 0; }

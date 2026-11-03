@@ -1,0 +1,6 @@
+/* ── 孔版印刷·板块：双色错位边 ── */
+.section.rs-section {
+  border: 1px solid var(--rs-blue, #2c7da0);
+  padding: 12px 14px; margin-bottom: 16px;
+  box-shadow: 3px 3px 0 var(--rs-pink, #ff5c8a);
+}

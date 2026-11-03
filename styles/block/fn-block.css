@@ -1,0 +1,8 @@
+/* ── 黑色电影·内容块：更深凹面 ── */
+.block.fn-block {
+  background: #0a0a0a;
+  border: 1px solid var(--fn-line, #2b2b2b);
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

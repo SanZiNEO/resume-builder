@@ -1,0 +1,7 @@
+/* ── 杂志编辑风·元信息：小号大写 + 宽字距 ── */
+.entry-meta.ed-meta {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ed-muted, #78716c);
+}

@@ -1,0 +1,13 @@
+/* ── 极简瑞士风·引言块：细体大字 + 左线 ── */
+.block.sw-quote {
+  border-left: 2px solid var(--sw-ink, #111);
+  background: transparent;
+  padding: 2px 0 2px 14px;
+  margin: 10px 0;
+}
+.block.sw-quote .entry-body li {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sw-ink, #111);
+}

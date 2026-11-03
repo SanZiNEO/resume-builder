@@ -1,0 +1,11 @@
+/* ── 双色调·网格块：双栏白格 ── */
+.block.dt-grid .entry-body ul {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px;
+  padding-left: 0; list-style: none;
+}
+.block.dt-grid .entry-body li {
+  background: #ffffff;
+  border: 1px solid var(--dt-line, #ddd0f7);
+  border-radius: 8px;
+  padding: 7px 9px; font-size: 10px;
+}

@@ -1,0 +1,11 @@
+/* ── 新拟态·主题：同色底 + 双向柔光阴影 ── */
+.page.nm-theme {
+  --nm-bg: #e8ecf3; --nm-hi: #ffffff; --nm-lo: #c2cad8;
+  --nm-ink: #3d4654; --nm-soft: #7b8798; --nm-accent: #5b7cfa;
+  background: var(--nm-bg);
+  color: var(--nm-ink);
+  font-family: "Nunito", "Helvetica Neue", "PingFang SC", sans-serif;
+}
+.left.nm-theme { background: #e4e9f1; }
+.right.nm-theme { background: var(--nm-bg); }
+.page.nm-theme .section-title { color: var(--nm-ink); }

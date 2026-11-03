@@ -1,0 +1,7 @@
+/* ── 年报·元信息：金色大写 ── */
+.entry-meta.ar-meta {
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ar-gold, #a8894f);
+  font-variant-numeric: tabular-nums;
+}

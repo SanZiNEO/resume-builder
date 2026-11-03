@@ -1,0 +1,9 @@
+/* ── 临床·条目：白色记录卡 ── */
+.entry.cln-card {
+  background: #ffffff;
+  border: 1px solid var(--cln-rule, #d7e3e1);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+}
+.entry.cln-card .block:last-child { margin-bottom: 0; }

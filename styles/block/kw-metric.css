@@ -1,0 +1,12 @@
+/* ── 可爱贴纸·数字块：糖果底块 ── */
+.block.kw-metric .entry-body li strong,
+.block.kw-metric .entry-body li b {
+  display: inline-block;
+  background: var(--kw-pink, #ff9ec7);
+  color: #4a2036;
+  border: 2px solid var(--kw-ink, #3b2c3a);
+  border-radius: 10px;
+  padding: 0 6px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,5 @@
+/* ── 马克笔·副标题：蓝笔小字 ── */
+.entry-sub.mk-sub {
+  font-size: 10px; font-weight: 700;
+  color: var(--mk-blue, #2f6fed);
+}

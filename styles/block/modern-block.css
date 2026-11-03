@@ -1,0 +1,8 @@
+/* ── 现代简约·内容块：白底 + 极浅边 ── */
+.block.modern-block {
+  background: #ffffff;
+  border: 1px solid var(--md-rule, #e5e7eb);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}

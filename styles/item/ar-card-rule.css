@@ -1,0 +1,10 @@
+/* ── 年报·栏线条目：双线顶 ── */
+.entry.ar-card-rule {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--ar-navy, #12304f);
+  border-bottom: 1px solid var(--ar-rule, #d7dee5);
+  border-radius: 0;
+  padding: 9px 2px 8px;
+  margin-bottom: 10px;
+}

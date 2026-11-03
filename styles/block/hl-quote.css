@@ -1,0 +1,10 @@
+/* ── 镭射·引言块：柔光面板 ── */
+.block.hl-quote {
+  background: rgba(180, 140, 255, 0.09);
+  border-left: 2px solid var(--hl-c2, #b48cff);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 13px;
+  margin: 10px 0;
+  color: #d9d2ea;
+  font-style: italic;
+}

@@ -1,0 +1,7 @@
+/* ── 渐变·正文：深灰 + 舒适行距 ── */
+.entry-body.gradient-body li,
+.entry-body.gradient-body .block-text {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #374151;
+}

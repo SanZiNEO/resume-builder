@@ -1,0 +1,7 @@
+/* ── 玻璃拟态·标题：深灰 + 白投影 ── */
+.entry-title.glass-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}

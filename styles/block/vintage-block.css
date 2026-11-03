@@ -1,0 +1,8 @@
+/* ── 复古做旧·内容块：浅羊皮底 ── */
+.block.vintage-block {
+  background: #f6eddc;
+  border: 1px solid #ddcba9;
+  border-radius: 0;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}

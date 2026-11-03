@@ -1,0 +1,3 @@
+/* ── 报纸·数字强调：红色衬线数字 ── */
+.block.np-metric .entry-body li strong,
+.block.np-metric .entry-body li b { color: var(--np-red, #b3261e); font-family: Georgia, serif; font-size: 13px; font-variant-numeric: tabular-nums; }

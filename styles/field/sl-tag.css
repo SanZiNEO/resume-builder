@@ -1,0 +1,9 @@
+/* ── 生态未来·标签：薄荷胶囊 ── */
+.tag.sl-tag {
+  background: rgba(217, 249, 157, 0.6);
+  border: none;
+  border-radius: 999px;
+  color: #3f6212;
+  font-size: 8.5px; font-weight: 600;
+  padding: 1px 8px;
+}

@@ -1,0 +1,7 @@
+/* ── 磨砂玻璃·正文：冷灰 + 舒适行距 ── */
+.entry-body.frosted-body li,
+.entry-body.frosted-body .block-text {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #334155;
+}

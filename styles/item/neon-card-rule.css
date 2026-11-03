@@ -1,0 +1,11 @@
+/* ── 霓虹·栏线条目：洋红左光边 ── */
+.entry.neon-card-rule {
+  background: rgba(17, 24, 39, 0.7);
+  border: none;
+  border-left: 2px solid #f472b6;
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+  box-shadow: -2px 0 10px rgba(244, 114, 182, 0.35);
+}
+.entry.neon-card-rule .block:last-child { margin-bottom: 0; }

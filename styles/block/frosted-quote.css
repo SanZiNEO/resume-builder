@@ -1,0 +1,11 @@
+/* ── 磨砂玻璃·引言块：半透明面板 ── */
+.block.frosted-quote {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10px 13px;
+  margin: 10px 0;
+  color: #475569;
+  font-style: italic;
+  backdrop-filter: blur(8px);
+}

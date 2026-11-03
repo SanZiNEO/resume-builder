@@ -1,0 +1,5 @@
+/* ── 现代简约·副标题：小号灰字 ── */
+.entry-sub.modern-sub {
+  font-size: 10.5px;
+  color: var(--md-muted, #6b7280);
+}

@@ -1,0 +1,7 @@
+/* ── 马克笔·板块：手绘框 ── */
+.section.mk-section {
+  border: 2px solid var(--mk-ink, #14130f);
+  border-radius: 14px 6px 16px 8px;
+  padding: 11px 13px 10px;
+  margin-bottom: 13px;
+}

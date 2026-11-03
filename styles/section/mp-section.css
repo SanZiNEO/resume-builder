@@ -1,0 +1,6 @@
+/* ── 孟菲斯·板块：白底粗圆边 + 粉阴影 ── */
+.section.mp-section {
+  background: #ffffff; border: 3px solid var(--mp-ink, #1a1a1a);
+  border-radius: 16px; padding: 12px 14px; margin-bottom: 16px;
+  box-shadow: 6px 6px 0 var(--mp-pink, #ff6b9d);
+}

@@ -1,0 +1,11 @@
+/* ── 风格派·栏线条目：黄顶条 + 黑底线 ── */
+.entry.ds-card-rule {
+  background: #ffffff;
+  border: none;
+  border-top: 6px solid var(--ds-yellow, #f7d842);
+  border-bottom: 2px solid var(--ds-ink, #101010);
+  border-radius: 0;
+  padding: 8px 10px 8px;
+  margin-bottom: 10px;
+}
+.entry.ds-card-rule .block:last-child { margin-bottom: 0; }

@@ -1,0 +1,10 @@
+/* ── 极简瑞士风·栏线条目：左侧红线 ── */
+.entry.sw-card-rule {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--sw-accent, #dc2626);
+  border-radius: 0;
+  padding: 0 0 0 12px;
+  margin-bottom: 14px;
+}
+.entry.sw-card-rule .block:last-child { margin-bottom: 0; }

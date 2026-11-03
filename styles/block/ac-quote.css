@@ -1,0 +1,10 @@
+/* ── 学术论文风·引文块：缩进小字 ── */
+.block.ac-quote {
+  margin: 10px 0;
+  padding: 0 0 0 24px;
+}
+.block.ac-quote .entry-body li {
+  font-size: 10.5px;
+  line-height: 1.7;
+  color: var(--ac-muted, #4b5563);
+}

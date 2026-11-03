@@ -1,0 +1,18 @@
+/* ── 植物标本·条目：标本卡 + 左上针孔 ── */
+.entry.bt-card {
+  position: relative;
+  background: #fffdf6;
+  border: 1px solid var(--bt-rule, #d5cdb8);
+  border-radius: 2px;
+  padding: 10px 13px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(107, 127, 94, 0.08);
+}
+.entry.bt-card::before {
+  content: '';
+  position: absolute; left: 7px; top: 7px;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(107, 127, 94, 0.35);
+}
+.entry.bt-card .block:last-child { margin-bottom: 0; }

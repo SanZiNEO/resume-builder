@@ -1,0 +1,10 @@
+/* ── 新艺术·标签：金线胶囊 ── */
+.tag.nv-tag {
+  background: transparent;
+  border: 1px solid rgba(176, 141, 63, 0.55);
+  border-radius: 999px;
+  color: var(--nv-gold, #b08d3f);
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 0 7px;
+}

@@ -1,0 +1,10 @@
+/* ── 双色调·标签：紫框 + 酸性点 ── */
+.tag.dt-tag {
+  background: transparent;
+  border: 1px solid var(--dt-violet, #5b21b6);
+  border-radius: 999px;
+  color: var(--dt-violet, #5b21b6);
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0 7px;
+}

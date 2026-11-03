@@ -1,0 +1,9 @@
+/* ── 植物标本·数字块：墨绿衬线 ── */
+.block.bt-metric .entry-body li strong,
+.block.bt-metric .entry-body li b {
+  color: var(--bt-sage, #6b7f5e);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-variant-numeric: oldstyle-nums;
+  border-bottom: 1px solid rgba(107, 127, 94, 0.35);
+}

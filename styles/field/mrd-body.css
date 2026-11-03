@@ -1,0 +1,5 @@
+/* ── 莫兰迪·正文：柔和行距 ── */
+.entry-body.mrd-body li, .entry-body.mrd-body .block-text {
+  font-size: 10.5px; line-height: 1.78;
+  color: #5b5651;
+}

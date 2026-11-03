@@ -1,0 +1,8 @@
+/* ── 手写笔记风·正文：楷体 + 贴合横线 ── */
+.entry-body.hw-body li,
+.entry-body.hw-body .block-text {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", cursive;
+  font-size: 12px;
+  line-height: 24px;
+  color: #2b3a55;
+}

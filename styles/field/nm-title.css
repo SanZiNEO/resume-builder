@@ -1,0 +1,6 @@
+/* ── 新拟态·标题：圆润粗字 ── */
+.entry-title.nm-title {
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--nm-ink, #3d4654);
+}

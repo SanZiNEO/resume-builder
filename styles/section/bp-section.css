@@ -1,0 +1,7 @@
+/* ── 蓝图·板块：虚线图纸框 ── */
+.section.bp-section {
+  border: 1px dashed var(--bp-line, rgba(232,244,255,0.22));
+  border-radius: 1px;
+  padding: 10px 12px 10px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,8 @@
+/* ── 黏土·扁平条目：薄荷色平片 ── */
+.entry.cl-card-flat {
+  background: rgba(199, 232, 216, 0.42);
+  border: none;
+  border-radius: 16px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+}

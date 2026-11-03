@@ -1,0 +1,8 @@
+/* ── 航海·数字块：藏青衬线数字 ── */
+.block.na-metric .entry-body li strong,
+.block.na-metric .entry-body li b {
+  color: var(--na-red, #9b2226);
+  font-family: "Baskerville", Georgia, serif;
+  font-weight: 700;
+  font-variant-numeric: oldstyle-nums;
+}

@@ -1,0 +1,6 @@
+/* ── 纸张·分隔：手绘细线 ── */
+.section.paper-divider::before {
+  content: '';
+  display: block; height: 1px; margin: 0 0 13px;
+  background: var(--pp-rule, #ddd6c3);
+}

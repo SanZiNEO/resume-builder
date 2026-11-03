@@ -1,0 +1,7 @@
+/* ── 装饰艺术·条目：米底金边 ── */
+.entry.ad-card {
+  background: #fffdf8; border: 1px solid var(--ad-rule, #d8cdb4);
+  border-radius: 0; padding: 10px 12px; margin-bottom: 9px;
+  box-shadow: 0 1px 0 var(--ad-gold, #a8863c);
+}
+.entry.ad-card .block:last-child { margin-bottom: 0; }
