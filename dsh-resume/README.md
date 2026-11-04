@@ -1,81 +1,70 @@
-# dsh-resume
+# dsh-resume-sp
 
-DeepSeek Harness 的简历插件。左栏新增「简历」入口，进入后工作区指向简历项目，会话使用「简历顾问」模式，右栏显示实时预览。
+DeepSeek Harness 的简历插件。它在会话里挂一个简历顾问，左边对话、右边实时预览，AI 只在简历项目的 YAML 与 CSS 里改内容。
+
+一份简历是一个目录：`data/` 存内容，`styles/` 存样式，`layouts/` 存版式。插件把这个目录交给 AI 读写，并把结果渲染成页面。
 
 ## 安装
 
 ```sh
-dsh plugin --profile <profile> add dsh-resume-cv
+dsh plugin --profile <profile> add dsh-resume-sp
 ```
 
-桌面版也可在 Plugins → Add plugin 中填入包名或 tarball 路径。
+桌面版：Plugins → Add plugin，填包名或 tarball 路径。
 
-## 功能
+## 开始
 
-- 左栏「简历」入口：注册工作区、新建会话、打开右栏预览。
-- 首次使用引导：选择简历项目目录。
-- 设置 → 简历模式：项目目录、预览版本、打开预览、刷新。
-- 会话模式「简历顾问」：逐会话生效，不修改全局默认模式。
-- `export` 工具：校验后导出 HTML、PDF 或长图。
+点左栏「简历」进入简历模式。第一次进入时选择简历项目目录；默认目录 `~/.dsh/resume`，插件会把随包模板写入该目录。
 
-## 项目目录
+进入后直接说需求，例如「把学生会宣传部那段改成内容运营的语气」。AI 改 YAML，右栏预览随之刷新。
 
-默认 `~/.dsh/resume`，首次使用时写入随包模板。目录需包含 `data/` 与 `styles/`，布局位于 `layouts/`。
+配置在 设置 → 简历模式：项目目录、预览版本、打开预览、刷新。
 
-已有项目可在引导窗或设置页中改指。
+## 简历项目
 
-## 环境要求
+```
+data/<版本>/       一个版本一个目录，例如 data/me/
+  personal.yaml    基本信息
+  education.yaml   教育
+  summary.yaml     个人简介
+  skills.yaml      技能
+  internships/     实习，一个文件一段
+  projects/        项目，一个文件一段
+styles/            样式库
+layouts/           版式
+output/            导出产物
+```
 
-- dsh 0.2.0-rc.2
-- 无需 Python。渲染器随插件分发，运行在 dsh 的 Node 进程中。
-- 导出 PDF 或长图需要 Chromium 内核浏览器：优先使用系统已安装的 Edge 或 Chrome，其次为可选的 `playwright`。两者都缺失时，HTML 导出与预览不受影响。
+每个 YAML 末尾的 `reference:` 是记忆区，构建时从该行起整段截断，不参与渲染。对话里确认的口径、数字与红线写在这里。
 
-## 右栏预览
+多版本：复制 `data/<版本>/` 并改名。
 
-预览使用插件注册的右栏标签页，web 与桌面壳均可用。
+## 导出
 
-如需预览窗口附着在主窗口右侧、随主窗口移动，可将 `dsh-overlay/` 应用到 dsh 源码树：
+`export` 工具先校验再构建。
+
+| format | 输出 |
+| --- | --- |
+| `html` | 自包含 HTML，默认 |
+| `pdf` | PDF 文件 |
+| `image` | 长图 |
+| `all` | 以上全部 |
+
+PDF 与长图使用系统已安装的 Edge 或 Chrome 渲染，其次使用可选的 `playwright`。
+
+## 预览窗口
+
+默认形态是右栏标签页，web 与桌面壳均可用。预览服务使用固定端口 `39127`。
+
+独立窗口并跟随主窗口时，使用仓库里的 `dsh-overlay/`：先应用到 dsh 源码树，再从源码构建桌面版。
 
 ```sh
 node dsh-overlay/apply.mjs <dsh 源码目录>
 ```
 
-该脚本新增 `apps/desktop/src/resume-preview-window.ts`，并在 `apps/desktop/src/main.ts` 中插入两行；重复执行会跳过已应用的部分。使用该选项需要自行从源码构建桌面版。
+## 环境
 
-## 写入限制
-
-- 仅限制写操作：`edit` 与 `write` 只能写入简历项目内的 `.yaml`、`.yml`、`.css` 文件；`read` 不受限制。
-- `styles/` 中已存在的样式文件不可修改。新增样式写入 `styles/<类别>/<名字>-custom.css`，并在 YAML 的 `style` 列表中引用。
-- 限制作用于使用「简历顾问」模式的会话。
-
-## 已知限制
-
-- 预览使用固定端口 39127。同时运行两个 dsh 实例时，第二个实例的预览不可用，设置页会显示对应错误。
-- 右栏预览不使用官方浏览器标签页，因此没有地址栏与前进/后退。该类型未注册时回退到官方浏览器标签页，再回退到独立窗口。
-- 写入限制不阻止通过 shell 直接修改文件。
-
-## 卸载
-
-```sh
-dsh plugin --profile <profile> remove dsh-resume-cv
-```
-
-插件的配置与预览服务随卸载移除，简历项目目录中的文件不受影响。
-
-## 目录结构
-
-```
-src/index.ts          host：项目目录、预览服务（HTTP）、变更轮询
-src/policy.ts         写入限制与 export 工具
-src/client.ts         浏览器端：左栏入口、设置页、引导窗、会话头预览按钮
-src/render/           渲染器：YAML → HTML，PDF 与长图，含独立 CLI
-src/types/            宿主 API 类型声明
-lib/                  构建产物，随包发布
-cordis.patch.yml      装配层：host 行与「简历顾问」preset
-knowledge/            方法论资料
-workspace-template/   简历项目模板
-dsh-pin.txt           运行时版本对齐说明
-```
+dsh 0.2.0-rc.2。渲染器随插件分发，运行在 dsh 的 Node 进程内，不依赖 Python。
 
 ## 开发
 
@@ -86,13 +75,18 @@ pnpm test
 pnpm pack
 ```
 
-`pnpm pack` 依次执行 build、check:bundle 与 template:pack。check:bundle 执行两遍 `lib/client.js`，校验注册 id 与包名一致、模块体位于 factory 闭包内。
+`pnpm pack` 依次执行 build、check:bundle、template:pack。`check:bundle` 执行两遍 `lib/client.js`，校验注册 id 与包名一致、模块体位于 factory 闭包内。
 
 包内容由 `package.json` 的 `files` 决定：`lib/`、`cordis.patch.yml`、`locale/`、`knowledge/`、`icon.svg`、`workspace-template.tgz`。
 
-## 发布
-
-```sh
-npm version <x.y.z> --no-git-tag-version
-npm publish
 ```
+src/index.ts       host：项目目录、预览服务、变更轮询
+src/policy.ts      写边界、记录提醒、export 工具
+src/client.ts      浏览器端：入口、设置页、引导窗、预览按钮
+src/render/        YAML → HTML 渲染器，PDF 与长图
+cordis.patch.yml   装配层：host 行与「简历顾问」preset
+```
+
+## 许可
+
+MIT

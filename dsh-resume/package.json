@@ -1,7 +1,18 @@
 {
-  "name": "dsh-resume-cv",
+  "name": "dsh-resume-sp",
   "version": "0.1.0",
-  "description": "简历模式：把 dsh 变成简历顾问（人设 + 写边界 + 导出 + 右栏实时预览）",
+  "description": "简历模式：把会话变成简历顾问，右栏实时预览，导出 HTML / PDF / 长图",
+  "license": "MIT",
+  "author": "ShanZhi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanZiNEO/resume-builder.git",
+    "directory": "dsh-resume"
+  },
+  "homepage": "https://github.com/SanZiNEO/resume-builder/tree/dsh-plugin/dsh-resume#readme",
+  "bugs": {
+    "url": "https://github.com/SanZiNEO/resume-builder/issues"
+  },
   "keywords": [
     "dsh-plugin",
     "dsh",

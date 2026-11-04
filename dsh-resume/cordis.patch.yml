@@ -17,7 +17,7 @@
 - insert:
     # ① host 半：项目目录 + 预览服务
     - id: dsh-resume
-      name: dsh-resume-cv
+      name: dsh-resume-sp
 
     # ② 简历顾问 preset（= standard preset，只换人设、加一行 policy）
     - id: preset-resume
@@ -40,7 +40,7 @@
 
                 The resume body is the opposite: draft, show, confirm, then write.
           - id: resume-policy
-            name: dsh-resume-cv/policy
+            name: dsh-resume-sp/policy
           - id: agent-instructions
             name: '@deepseek-ai/dsh-agent-instructions'
             config:
