@@ -32,6 +32,7 @@
   "peerDependencies": {
     "@deepseek-ai/dsh-agent-instructions": "*",
     "@deepseek-ai/dsh-agent-preset": "*",
+    "@deepseek-ai/dsh-llm": "*",
     "@deepseek-ai/dsh-persona": "*",
     "@deepseek-ai/dsh-tools": "*"
   },

@@ -97,9 +97,29 @@ declare module '@deepseek-ai/cordis' {
   }
 
   /** 插件上下文（只声明我们用到的部分）。 */
+  /** 一步开始前准入的用户消息与可插话的位置。 */
+  export interface PreStepPayload {
+    readonly agent: object
+    readonly messages: readonly import('@deepseek-ai/dsh-llm').UserMessage[]
+  }
+
+  /** 这一步进入模型调用的决定；`messages` 会排在本步准入的消息之后。 */
+  export type PreStepDecision =
+    | { readonly kind: 'reject' }
+    | {
+      readonly kind: 'enter'
+      readonly messages: readonly import('@deepseek-ai/dsh-llm').UserMessage[]
+      readonly startsRequestSeries?: true
+    }
+
   export interface Context {
     /** 注册一个随上下文释放的资源；返回释放函数。 */
     effect(callback: () => void | (() => void), label?: string): () => void
+    /** 订阅宿主事件；返回取消订阅函数。这里只声明本插件用到的那个事件。 */
+    on(
+      event: 'agent/pre-step',
+      listener: (payload: PreStepPayload, next: () => Promise<PreStepDecision>) => Promise<PreStepDecision>,
+    ): () => void
     /**
      * 等服务就绪后带着「已注入这些服务」的子上下文回调；服务缺席时回调不执行。
      * 用于可选依赖——不能把宿主没有的服务写进本行的 inject，否则整行永远 pending。
@@ -119,6 +139,25 @@ declare module '@deepseek-ai/cordis' {
     constructor(ctx: Context, name: string)
     readonly ctx: Context
   }
+}
+
+declare module '@deepseek-ai/dsh-llm' {
+  /** 会话里的一次用户消息（宿主 `createUserMessage` 的最小可用面）。 */
+  export interface UserMessage {
+    readonly id: string
+    readonly role: 'user'
+    readonly content: readonly { readonly type: 'text'; readonly text: string }[]
+    readonly source: { readonly kind: string }
+  }
+
+  /**
+   * 造一条带稳定 id 的用户消息。提醒类消息走这个入口，不自己拼对象：
+   * 消息会被写进会话日志，缺失字段在生产端才能暴露。
+   */
+  export function createUserMessage(input: {
+    content: readonly { readonly type: 'text'; readonly text: string }[]
+    source: { readonly kind: string }
+  }): UserMessage
 }
 
 declare module '@deepseek-ai/schemastery' {

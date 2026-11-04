@@ -1,10 +1,12 @@
 /**
  * dsh-resume/policy —— 挂在「简历顾问」preset 里的那一行。
  *
- * 两件事，都只对使用该 preset 的会话生效（同一 profile 里的其它会话不受影响）：
+ * 三件事，都只对使用该 preset 的会话生效（同一 profile 里的其它会话不受影响）：
  *   1. 写边界：`edit` / `write` 只能落在简历项目里，且只能是 .yaml / .yml / .css；
  *      `read` 完全不拦。
- *   2. `export` 工具：先 validate 再 build，失败把错误原文交回模型自己修。
+ *   2. 记录提醒：每条用户消息进来时，往这一步的上下文里放一段提醒，让模型自己
+ *      判断这句话里有没有该记进 `reference` 的事实；记录动作本身走宿主的 read/edit。
+ *   3. `export` 工具：先 validate 再 build，失败把错误原文交回模型自己修。
  *
  * guard 是同步的，所以项目目录在这里是**同步缓存**：激活时取一次，
  * 会话工作区本身就是简历项目时优先用它。
@@ -12,6 +14,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import type { Context, ToolExecution } from '@deepseek-ai/cordis'
+import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import type { UserMessage } from '@deepseek-ai/dsh-llm'
 import { defineTool } from '@deepseek-ai/dsh-tools'
 
 export const name = 'resume-policy'
@@ -57,12 +61,90 @@ function inside(filePath: string, root: string): boolean {
   return relative !== '' && !relative.startsWith('..') && !path.isAbsolute(relative)
 }
 
+/** 提醒消息的来源标记：测试与渲染层据此把它和真实用户输入区分开。 */
+const REMINDER_SOURCE = 'resume-record'
+
+/** 一条用户消息只提醒一次。 */
+const reminded = new WeakMap<object, Set<string>>()
+
+/** 项目上下文：根目录、当前版本、该版本目录下的一级条目。 */
+interface ProjectContext {
+  readonly person: string
+  readonly entries: readonly string[]
+}
+
+/** `dir()` 会读状态文件并补齐模板，不宜每步都跑；按时间缓存。 */
+let cachedContext: { at: number; value: ProjectContext | undefined } | undefined
+
+/** 取一条消息里的纯文本。 */
+function textOf(message: UserMessage): string {
+  return message.content
+    .filter(block => block.type === 'text')
+    .map(block => block.text)
+    .join('\n')
+    .trim()
+}
+
+/** 读当前项目与版本；没有项目、没有版本、目录不可读时返回 undefined（不注入）。 */
+async function resolveContext(ctx: Context): Promise<ProjectContext | undefined> {
+  const now = Date.now()
+  if (cachedContext !== undefined && now - cachedContext.at < 60_000) return cachedContext.value
+  let value: ProjectContext | undefined
+  try {
+    const root = await ctx.resumeProject.dir()
+    const person = await ctx.resumeProject.selectedPerson()
+    if (person !== undefined) {
+      const entries = fs.readdirSync(path.join(root, 'data', person), { withFileTypes: true })
+        .filter(entry => entry.isDirectory() || /\.ya?ml$/i.test(entry.name))
+        .map(entry => (entry.isDirectory() ? `${entry.name}/（目录）` : entry.name))
+      if (entries.length > 0) value = { person, entries }
+    }
+  } catch {
+    value = undefined
+  }
+  cachedContext = { at: now, value }
+  return value
+}
+
+/** 提醒正文：只引用用户原话，不替模型做分类；协议在 AGENTS.md 里。 */
+function renderReminder(text: string, context: ProjectContext): string {
+  const quoted = (text.length > 200 ? `${text.slice(0, 200)}…` : text).replace(/\s*\n\s*/g, ' ')
+  return [
+    '<system-reminder>',
+    `用户刚说：「${quoted}」`,
+    '如果这句话里有值得现在记下的事实——时间、年级、学历、学校、公司、职位、职责、数字及其口径、被否掉的说法、红线——按 AGENTS.md 的记录协议：先 read 目标 YAML，再把内容并入 reference 里合适的键。本条消息只处理一次；已经记过的跳过。',
+    '没有可记的就继续当前话题，不要提及这条提醒。',
+    `当前版本 data/${context.person}/ 下有：${context.entries.join('、')}`,
+    '</system-reminder>',
+  ].join('\n')
+}
+
 /** 写边界 + export 工具。 */
 export function apply(ctx: Context, config: PolicyConfig = {}): void {
   const protectStyles = config.protectStyleLibrary ?? true
   /** 项目目录的同步缓存（host 半的服务是异步的）。 */
   let projectRoot: string | null = null
   void ctx.resumeProject.dir().then((dir) => { projectRoot = dir }, () => { projectRoot = null })
+
+  // 每条用户消息进来时挂一段提醒；判断权在模型，插件只负责让它看见。
+  ctx.on('agent/pre-step', async (payload, next) => {
+    const decision = await next()
+    if (decision.kind !== 'enter') return decision
+    const message = payload.messages.find(item =>
+      item.source.kind !== REMINDER_SOURCE && textOf(item) !== '')
+    if (message === undefined) return decision
+    const seen = reminded.get(payload.agent) ?? new Set<string>()
+    if (seen.has(message.id)) return decision
+    const context = await resolveContext(ctx)
+    if (context === undefined) return decision
+    seen.add(message.id)
+    reminded.set(payload.agent, seen)
+    const reminder = createUserMessage({
+      content: [{ type: 'text', text: renderReminder(textOf(message), context) }],
+      source: { kind: REMINDER_SOURCE },
+    })
+    return { ...decision, messages: [...decision.messages, reminder] }
+  })
 
   ctx.effect(() => ctx.tools.guard((exec: ToolExecution) => {
     if (!WRITE_TOOLS.has(exec.name)) return undefined
