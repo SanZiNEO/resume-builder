@@ -84,6 +84,22 @@ types     = src/types/*.d.ts 是**手抄**的宿主声明，价值是在编译�
             客户端已有两条路在用工作区：引导窗的 `ctx.workspaces.create({ path })`
             和 `enterResumeMode`（建工作区 → startSession → 逐会话设 preset）。
 
+  bundleid  client 产物的注册 id **必须逐字等于 package.json 的 name**（现为
+            dsh-resume-cv）。宿主按**包名**建 boot 图（client-modules 的
+            `graphRow(packageName, …)`），再拿包名回查 __ModuleLoader__ 注册的工厂；
+            id 写成别的名字（例如 cordis 行 id `dsh-resume`）就永远
+            「loaded without registering」，entry 挂掉 → web boot 失败 → 桌面弹
+            「应用无法启动或已意外停止」（2026-11-04 实锤）。
+            这个 id 现在由 tsdown.config.ts 从 package.json 生成，源码里**不再手写**；
+            scripts/check-bundle.mjs 在 prepack 里复检。
+            另：client 产物必须整个包在 factory 闭包里（顶层 const 会落进页面全局
+            词法环境——同一脚本二次执行 const 重声明，报错还指向第一行，把真因遮死）。
+            改包名要同步四处：package.json、cordis.patch.yml 的 host 行 name 与
+            policy 行 name、profile 的 bundles 与依赖、公开仓库 README 安装节。
+            ⚠ scoped 名不是问题：官方插件全是 @deepseek-ai/* scoped 名。
+            之前那次「scoped 名的 / 撞装载语法」的判断是错的——换成裸名后报错一模一样，
+            真正的差别只在包名与手写 id 是否相等。
+
   render    渲染器已从 Python（make.py + src/*.py）迁到 TypeScript，随插件分发、跑在 dsh 的 Node 里
             （src/render/，进程内直接调，不起子进程、不落中间文件）。
             **不需要 Python**；PDF / 长图按能力分层（src/render/pdf.ts）：

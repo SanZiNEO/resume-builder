@@ -1,8 +1,13 @@
 {
-  "name": "dsh-resume",
-  "version": "0.2.1",
-  "private": true,
+  "name": "dsh-resume-cv",
+  "version": "0.1.0",
   "description": "简历模式：把 dsh 变成简历顾问（人设 + 写边界 + 导出 + 右栏实时预览）",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "resume",
+    "resume-builder"
+  ],
   "type": "module",
   "exports": {
     ".": "./lib/index.js",
@@ -35,8 +40,9 @@
     "watch": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "test": "node --test test/*.test.mjs",
+    "check:bundle": "node scripts/check-bundle.mjs",
     "template:pack": "node scripts/pack-template.mjs",
-    "prepack": "npm run build && npm run template:pack"
+    "prepack": "npm run build && npm run check:bundle && npm run template:pack"
   },
   "devDependencies": {
     "@types/node": "^22.20.1",

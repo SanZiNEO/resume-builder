@@ -1,34 +1,41 @@
-# Host contract notes (dsh 0.2.0-rc.2)
+# dsh-resume 宿主契约
 
-Read this before changing anything that touches the `dsh` host. Everything below was verified against an
-installed `0.2.0-rc.2` runtime — not against docs, and not against an alpha.
+本文件记录插件依赖的 dsh 行为，以及在目标版本上的实测结论。改动涉及宿主的代码前先读。
 
-**Compatibility target.** The plugin is verified on `dsh` **0.2.0-rc.2** (the newest desktop build at the
-time of writing) and declares `>=0.2.0-rc.2` in `peerDependencies`. Alphas of the `0.2.1` line differ in
-places (see below) — re-verify before widening the range.
+目标版本为 dsh 0.2.0-rc.2（桌面版）。`peerDependencies` 声明为 `*`，升级 dsh 后需按本文逐条复核。
 
-**Install shape.** Sources are TypeScript; `lib/` holds the build output and is what `dsh`'s loader loads:
+## 装配
 
-```sh
-pnpm install && pnpm build     # tsdown → lib/{index,policy,client}.js
-pnpm pack                      # prepack builds first
-```
+preset 的 `plugins` 列表是完整替换，没有继承。注册表在挂载时逐行审计，任意一行 import 失败会导致整个 preset 挂载失败。
 
-Host packages (`@deepseek-ai/*`) are always external and resolved by the `dsh` runtime.
+`cordis.patch.yml` 中列出的包名必须在目标运行时存在。升级 dsh 后，按该版本的 `@deepseek-ai/dsh-web-app/presets/standard.patch.yml` 重新同步。
 
-**Types.** `src/types/*.d.ts` is a hand-written transcription of the host APIs this plugin uses: the
-official type packages are not published for every `dsh` version. Its value is catching API misuse at
-compile time (a missing `inject` namespace, `mounted.get()` instead of `mounted.getSnapshot()`, …).
-Re-check it against the installed `.d.ts` files whenever the `dsh` version moves.
+## 客户端
 
-## Contracts that bit us
+`package.json#dsh.client` 与 `exports["./client"]` 指向构建产物。`dsh.client.inject` 只决定激活顺序，不加载模块。
 
-| Area | What the host actually does |
-|---|---|
-| **preset** | A preset's `plugins` list is **replaced wholesale** (no inheritance), and the registry audits it: **one row that fails to import fails the whole preset**. Every package name in `cordis.patch.yml` must exist in the target runtime — `@deepseek-ai/dsh-tool-schedule` does not exist in `0.2.0-rc.2` (it is `0.2.1-alpha.x` only). After a `dsh` upgrade, re-sync the list against that version's `@deepseek-ai/dsh-web-app/presets/standard.patch.yml`. |
-| **cwd** | `0.2.0-rc.2` has **no** `ctx.workingDirectory` service (that is `0.2.1-alpha.2`+). The session workspace is `agent.session.header.cwd` — for a guard, `exec.agent.session.header.cwd`. |
-| **tools** | `ctx.tools.guard()` on a plain context is global; `ctx.tools.restrict()` **requires an agent scope** (it throws otherwise). This plugin only adds a guard, and mounts it inside the preset — so it applies to sessions using that preset and to nothing else. |
-| **persona** | `dsh-persona` may only be mounted inside a preset (agent scope). `complete: true` collapses the whole system prompt to that one section, taking tool guidance, plan-mode text and the harness identity with it — this plugin deliberately does **not** use it. |
-| **client half** | `package.json#dsh.client` plus `exports["./client"]` pointing at a **built** bundle (`window.__ModuleLoader__.load({ id, factory })`). `dsh.client.inject` only orders activation; it does not load modules. |
-| **preview** | The preview tab is this plugin's own right-sidebar type (`ctx.sidebarRightTabs.register` + a body keyed under `sidebar.right.pane.tab`). A loopback iframe renders fine in both the web app and the desktop shell — but the *official* browser tab (used as a fallback) carries its own address bar, which is why the plugin ships its own type. |
-| **renderer** | The YAML → HTML renderer lives in `src/render/`, runs in-process (no subprocess, no temp files), and needs no Python. PDF / long-image export needs the optional `playwright` package. `test/golden/` holds a byte-for-byte reference produced by the original Python implementation — the renderer must keep passing it. |
+产物由宿主的 client-modules 以 classic script 形式加载，有三项约束：
+
+- 注册 id 必须与 `package.json` 的 `name` 一致。宿主按包名建立 boot 图，再按包名回查工厂；id 不一致时该条目不会激活。
+- 模块体必须位于 `load({ id, factory })` 的 factory 内。顶层声明会进入页面全局词法环境，同一脚本二次执行会因重复声明报错。
+- `factory` 的返回值为插件对象，由该对象提供 `inject` 与 `apply`。
+
+`scripts/check-bundle.mjs` 在前两条上做打包前校验。
+
+## 会话与工具
+
+- 0.2.0-rc.2 没有 `ctx.workingDirectory`。会话工作区为 `agent.session.header.cwd`。
+- `ctx.tools.guard()` 挂在普通 ctx 上作用于全局，挂在 preset 作用域内只作用于该会话。`ctx.tools.restrict()` 需要 agent 作用域。
+- `dsh-persona` 只能挂在 preset 内。`complete: true` 会将系统提示压成单段，工具说明、plan 模式说明与 harness 身份一并丢失，本插件不使用该选项。
+
+## 预览
+
+预览是插件注册的右栏标签页，由 `ctx.sidebarRightTabs.register` 与 `sidebar.right.pane.tab` 的 body 组成。iframe 指向 `127.0.0.1:39127`，web 与桌面壳均可用。
+
+官方的浏览器标签页带地址栏，仅在该类型未注册时作为回退。
+
+## 渲染器
+
+渲染器位于 `src/render/`，在宿主进程内运行，不启动子进程，不写临时文件，不依赖 Python。
+
+导出 PDF 与长图时使用 `puppeteer-core` 驱动系统 Edge 或 Chrome，缺失时回退到可选的 `playwright`。`test/golden/` 保存原 Python 实现的逐字节参照产物。

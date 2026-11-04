@@ -19,6 +19,18 @@ python make.py build --person demo
 
 然后打开 `output/demo-*/demo-*.html` 查看构建结果。
 
+## 作为 dsh 插件使用
+
+本项目同时是 DeepSeek Harness 插件，包名 `dsh-resume-cv`。
+
+```bash
+dsh plugin --profile <profile> add dsh-resume-cv
+```
+
+桌面版可在 插件 → 添加插件 中填入包名。
+
+安装后左栏新增「简历」入口，首次进入时选择简历项目目录，插件会写入随包模板。该会话使用「简历顾问」模式，仅修改项目内的 YAML 与 CSS，右栏显示实时预览；`export` 工具导出 HTML、PDF 或长图。
+
 ## 快速开始
 
 ```bash

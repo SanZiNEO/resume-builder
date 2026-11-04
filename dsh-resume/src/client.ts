@@ -551,7 +551,16 @@ function createPlugin(require: ClientRequire) {
   }
 }
 
-window.__ModuleLoader__.load({
-  id: 'dsh-resume',
-  factory: createPlugin,
-})
+// 注册尾注不在这里写：tsdown.config.ts 会把它包成宿主要求的闭包工厂——
+//   window.__ModuleLoader__.load({ id: <package.json 的 name>, factory: (require) => { …; return createPlugin(require) } })
+// 手写 `load({ id, factory })` 等于把包名复制到第二处，改名时必然漏掉一行，
+// 而宿主只认包名（按包名建图、按包名回查工厂）。
+//
+// 下面这条守卫有两个作用，缺一不可：
+//   ① 打包锚点：footer 里的 `return createPlugin(require)` 在打包器眼里不存在
+//      （banner/footer 是字符串拼接，不参与依赖分析）。这里不真引用一次，
+//      rolldown 会把整套声明当死代码删干净，产物只剩 banner 和 footer 两行。
+//   ② 产物完整性断言：真出现空包，用户看到的是这句明确的话，而不是插件静默消失。
+if (typeof createPlugin !== 'function') {
+  throw new Error('dsh-resume/client: 工厂函数丢失——client bundle 构建不完整')
+}
